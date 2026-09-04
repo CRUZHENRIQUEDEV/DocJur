@@ -17,6 +17,8 @@
    Não renderiza UI.
    ================================================================ */
 /* global DocJurUtils */
+/** @typedef {Record<string, string>} StorePhData */
+/** @typedef {{ id: string, title: string, createdAt: string, updatedAt: string, content: string, data: StorePhData, rawSnapshot: StorePhData, lawyerId?: string|null, clientId?: string|null, defendantId?: string|null, categoryId?: string|null, templateId?: string|null }} StoreSavedDoc */
 const DocJurStore = (() => {
   const { $, $$, formatDateBR, currentDateBR, genDocId, escHtml } = DocJurUtils;
 
@@ -27,29 +29,35 @@ const DocJurStore = (() => {
    * @typedef {"lawyers"|"clients"|"defendants"|"documents"|"preferences"|"lastRefs"|"dataSnapshots"} EntityName
    *
    * @typedef {Object} StorageDriver
-   * @property {(ent: EntityName, id: string) => Promise<any>|any} get
-   * @property {(ent: EntityName, id: string, val: any) => Promise<void>|void} set
-   * @property {(ent: EntityName, id: string) => Promise<void>|void} remove
-   * @property {(ent: EntityName) => Promise<Array<any>>|Array<any>} list
-   * @property {(ent: EntityName) => Promise<Record<string,any>>|Record<string,any>} all
-   * @property {() => Promise<void>|void} clearAll
-   * @property {(ent: EntityName, val: any) => Promise<string>|string} insert  (gera id se faltar, retorna id)
-   * @property {(ent: EntityName, id: string, patch: any) => Promise<any>|any} update
+   * @property {(ent: EntityName, id: string) => any} get
+   * @property {(ent: EntityName, id: string, val: any) => void} set
+   * @property {(ent: EntityName, id: string) => void} remove
+   * @property {(ent: EntityName) => Array<any>} list
+   * @property {(ent: EntityName) => Record<string,any>} all
+   * @property {(ent: EntityName) => void} clearAll
+   * @property {(ent: EntityName, val: any) => string} insert  (gera id se faltar, retorna id)
+   * @property {(ent: EntityName, id: string, patch: any) => any} update
    */
 
   /**
    * LocalStorageDriver — tabela=entidade, chave= `docjur_${ent}__${id}`.
    * Mantém compatibilidade com chaves antigas (docjur_data / docjur_docs / docjur_last_doc)
    * na migração inicial (ver migrateLegacy).
-   * @implements {StorageDriver}
+   * @type {StorageDriver & { _pref: string, _key: (ent: EntityName, id: string|any) => string, _keysOf: (ent: EntityName) => string[] }}
    */
   const LocalStorageDriver = {
     _pref: "docjur_",
+    /**
+     * @param {EntityName} ent
+     * @param {string|any} id
+     */
     _key(ent, id) {
       return this._pref + ent + "__" + String(id);
     },
+    /** @param {EntityName} ent */
     _keysOf(ent) {
       const prefix = this._pref + ent + "__";
+      /** @type {string[]} */
       const out = [];
       for (let i = 0; i < localStorage.length; i++) {
         const k = localStorage.key(i);
@@ -57,17 +65,32 @@ const DocJurStore = (() => {
       }
       return out;
     },
+    /**
+     * @param {EntityName} ent
+     * @param {string} id
+     */
     get(ent, id) {
       const raw = localStorage.getItem(this._key(ent, id));
       return raw ? JSON.parse(raw) : null;
     },
+    /**
+     * @param {EntityName} ent
+     * @param {string} id
+     * @param {any} val
+     */
     set(ent, id, val) {
       localStorage.setItem(this._key(ent, id), JSON.stringify(val));
     },
+    /**
+     * @param {EntityName} ent
+     * @param {string} id
+     */
     remove(ent, id) {
       localStorage.removeItem(this._key(ent, id));
     },
+    /** @param {EntityName} ent */
     all(ent) {
+      /** @type {Record<string, any>} */
       const out = {};
       this._keysOf(ent).forEach((k) => {
         try {
@@ -79,6 +102,7 @@ const DocJurStore = (() => {
       });
       return out;
     },
+    /** @param {EntityName} ent */
     list(ent) {
       return Object.values(this.all(ent)).sort((a, b) =>
         (a.updatedAt || a.createdAt || "") < (b.updatedAt || b.createdAt || "")
@@ -86,9 +110,14 @@ const DocJurStore = (() => {
           : -1,
       );
     },
+    /** @param {EntityName} ent */
     clearAll(ent) {
       this._keysOf(ent).forEach((k) => localStorage.removeItem(k));
     },
+    /**
+     * @param {EntityName} ent
+     * @param {any} val
+     */
     insert(ent, val) {
       const id =
         val.id ||
@@ -105,6 +134,11 @@ const DocJurStore = (() => {
       this.set(ent, id, record);
       return id;
     },
+    /**
+     * @param {EntityName} ent
+     * @param {string} id
+     * @param {any} patch
+     */
     update(ent, id, patch) {
       const existing = this.get(ent, id) || {};
       const next = {
@@ -118,10 +152,13 @@ const DocJurStore = (() => {
     },
   };
 
-  /** Driver ativo (substitua por qualquer outro amanhã). */
+  /** Driver ativo (substitua por qualquer outro amanhã).
+   * @type {any}
+   */
   let driver = LocalStorageDriver;
   /** Troca o driver em runtime — útil p/ migração ou testes.
-   * @param {StorageDriver} d */
+   * @param {StorageDriver | any} d
+   */
   function useDriver(d) {
     driver = d;
     migrateLegacy();
@@ -137,9 +174,11 @@ const DocJurStore = (() => {
       if (!migrated) {
         // 2.1 Mapa docjur_docs (antigo Record<id, SavedDoc>) → entity "documents" (1 record por doc)
         const oldDocs = JSON.parse(localStorage.getItem("docjur_docs") || "{}");
-        Object.entries(oldDocs).forEach(([id, doc]) => {
-          if (!driver.get("documents", id)) driver.set("documents", id, doc);
-        });
+        Object.entries(oldDocs).forEach(
+          (/** @type {[string, any]} */ [id, doc]) => {
+            if (!driver.get("documents", id)) driver.set("documents", id, doc);
+          },
+        );
         const last = localStorage.getItem("docjur_last_doc");
         if (last)
           driver.set("lastRefs", "lastDocId", { id: "lastDocId", value: last });
@@ -166,10 +205,14 @@ const DocJurStore = (() => {
   // ============================================================
   const DATE_KEYS = new Set(["DOC_DATA", "PROC_DATA", "CLI_NASC"]);
 
-  /** @returns {import("./utils.js").PhData} — dados prontos para o editor (datas formatadas) */
+  /** @returns {StorePhData} — dados prontos para o editor (datas formatadas) */
   function collectData() {
+    /** @type {Record<string, string>} */
     const data = {};
-    $$("input[data-ph], select[data-ph], textarea[data-ph]").forEach((el) => {
+    /** @type {NodeListOf<HTMLInputElement|HTMLSelectElement|HTMLTextAreaElement>} */
+    // @ts-ignore — $$ retorna NodeList generico mas filtramos para form controls
+    const inputs = $$("input[data-ph], select[data-ph], textarea[data-ph]");
+    inputs.forEach((el) => {
       const key = el.dataset.ph || "";
       let val = el.value || "";
       if (DATE_KEYS.has(key)) val = formatDateBR(val);
@@ -178,21 +221,28 @@ const DocJurStore = (() => {
     return data;
   }
 
-  /** Apenas valores crus (preenchimento fiel dos <inputs>) */
+  /** Apenas valores crus (preenchimento fiel dos <inputs>) @returns {StorePhData} */
   function rawSnapshot() {
+    /** @type {Record<string, string>} */
     const obj = {};
-    $$("input[data-ph], select[data-ph], textarea[data-ph]").forEach((el) => {
+    /** @type {NodeListOf<HTMLInputElement|HTMLSelectElement|HTMLTextAreaElement>} */
+    // @ts-ignore
+    const inputs = $$("input[data-ph], select[data-ph], textarea[data-ph]");
+    inputs.forEach((el) => {
       obj[el.dataset.ph || ""] = el.value || "";
     });
     return obj;
   }
 
-  /** Preenche formulário de volta. */
+  /** Preenche formulário de volta. @param {StorePhData|Record<string,any>|null|undefined} data */
   function loadData(data) {
     if (!data) return;
-    $$("input[data-ph], select[data-ph], textarea[data-ph]").forEach((el) => {
+    /** @type {NodeListOf<HTMLInputElement|HTMLSelectElement|HTMLTextAreaElement>} */
+    // @ts-ignore
+    const inputs = $$("input[data-ph], select[data-ph], textarea[data-ph]");
+    inputs.forEach((el) => {
       const key = el.dataset.ph || "";
-      const v = data[key];
+      const v = /** @type {any} */ (data)[key];
       if (v === undefined || v === null) return;
       if (DATE_KEYS.has(key) && typeof v === "string" && v.includes(" de "))
         return;
@@ -202,7 +252,10 @@ const DocJurStore = (() => {
 
   /** Limpa todos os inputs. */
   function clearData() {
-    $$("input[data-ph], select[data-ph], textarea[data-ph]").forEach((el) => {
+    /** @type {NodeListOf<HTMLInputElement|HTMLSelectElement|HTMLTextAreaElement>} */
+    // @ts-ignore
+    const inputs = $$("input[data-ph], select[data-ph], textarea[data-ph]");
+    inputs.forEach((el) => {
       el.value = "";
     });
   }
@@ -220,12 +273,14 @@ const DocJurStore = (() => {
     try {
       const snap = driver.get("dataSnapshots", "currentForm");
       if (snap && snap.value) {
-        Object.entries(snap.value).forEach(([k, v]) => {
-          const el = /** @type {HTMLInputElement|null} */ (
-            document.querySelector(`[data-ph="${escHtml(k)}"]`)
-          );
-          if (el && v !== undefined && v !== null) el.value = String(v);
-        });
+        Object.entries(snap.value).forEach(
+          (/** @type {[string, any]} */ [k, v]) => {
+            const el = /** @type {HTMLInputElement|null} */ (
+              document.querySelector(`[data-ph="${escHtml(k)}"]`)
+            );
+            if (el && v !== undefined && v !== null) el.value = String(v);
+          },
+        );
       }
     } catch (e) {
       console.warn("[DocJurStore.restoreData]", e);
@@ -237,6 +292,8 @@ const DocJurStore = (() => {
   // ============================================================
   // 4. PREFERÊNCIAS — tema, zoom, defaults
   // ============================================================
+  /** @typedef {{ id: string, theme: "light"|"dark"|"system", zoom: number, defaultEditorFont: string, defaultEditorSize: string, confirmClearData: boolean, autoSaveFormMs: number, uiLeftCollapsed: boolean, uiRightCollapsed: boolean, uiEditorCollapsed: boolean }} StorePrefs */
+  /** @type {StorePrefs} */
   const DEF_PREFS = {
     id: "global",
     theme: "light", // "light" | "dark" | "system"
@@ -245,10 +302,18 @@ const DocJurStore = (() => {
     defaultEditorSize: "3", // 1..7, execCommand fontSize
     confirmClearData: true,
     autoSaveFormMs: 1500, // debounce persistData ao digitar
+    uiLeftCollapsed: false,
+    uiRightCollapsed: false,
+    uiEditorCollapsed: false,
   };
+  /** @returns {StorePrefs} */
   function getPrefs() {
-    return { ...DEF_PREFS, ...(driver.get("preferences", "global") || {}) };
+    return /** @type {StorePrefs} */ ({
+      ...DEF_PREFS,
+      ...(driver.get("preferences", "global") || {}),
+    });
   }
+  /** @param {Partial<StorePrefs>} patch */
   function setPrefs(patch) {
     return driver.update("preferences", "global", patch);
   }
@@ -257,6 +322,8 @@ const DocJurStore = (() => {
   // 5. ENTIDADES REUTILIZÁVEIS — Advogado / Cliente / Réu
   //   (hoje usadas para CRUD no storage; amanhã, tela de cadastro)
   // ============================================================
+  /** @typedef {"lawyers"|"clients"|"defendants"} PartyEntity */
+  /** @type {Record<PartyEntity, PartyEntity>} */
   const ENT = {
     lawyers: "lawyers",
     clients: "clients",
@@ -264,7 +331,7 @@ const DocJurStore = (() => {
   };
   /**
    * Extrai advogado/cliente/rédos campos do formulário → objeto normalizado.
-   * @returns {{ lawyer: any, client: any, defendant: any }}
+   * @returns {{ lawyer: Record<string,string>, client: Record<string,string>, defendant: Record<string,string> }}
    */
   function snapshotParties() {
     const raw = rawSnapshot();
@@ -316,9 +383,14 @@ const DocJurStore = (() => {
       },
     };
   }
-  /** Salva advogado/corrente como contato reutilizável (se nome não vazio). */
+  /**
+   * Salva advogado/corrente como contato reutilizável (se nome não vazio).
+   * @param {PartyEntity} entity
+   * @returns {string|null}
+   */
   function saveCurrentParty(entity) {
     const { lawyer, client, defendant } = snapshotParties();
+    /** @type {Record<PartyEntity, Record<string,string>>} */
     const map = { lawyers: lawyer, clients: client, defendants: defendant };
     const record = map[entity];
     if (!record || !record.name || !record.name.trim()) return null;
@@ -326,17 +398,25 @@ const DocJurStore = (() => {
     // Evita duplicação exata por nome
     const existing = driver
       .list(entity)
-      .find((r) => r.name && r.name.trim().toLowerCase() === nameKey);
+      .find(
+        (/** @type {any} */ r) =>
+          r.name && r.name.trim().toLowerCase() === nameKey,
+      );
     if (existing) return driver.update(entity, existing.id, record).id;
     return driver.insert(entity, record);
   }
-  /** Preenche o formulário com dados de uma entidade salva. */
+  /**
+   * Preenche o formulário com dados de uma entidade salva.
+   * @param {PartyEntity} entity
+   * @param {string} id
+   */
   function applyPartyToForm(entity, id) {
-    const rec = driver.get(entity, id);
+    const rec = /** @type {any} */ (driver.get(entity, id));
     if (!rec) return;
+    /** @type {Record<PartyEntity, string>} */
     const PREFIX = { lawyers: "ADV_", clients: "CLI_", defendants: "REU_" };
     const p = PREFIX[entity];
-    const f = (suffix, value) => {
+    const f = (/** @type {string} */ suffix, /** @type {any} */ value) => {
       const el = /** @type {HTMLInputElement|null} */ (
         $(`[data-ph="${p}${suffix}"]`)
       );
@@ -415,6 +495,7 @@ const DocJurStore = (() => {
   function listDocs() {
     return driver.list("documents");
   }
+  /** @param {string} id */
   function getDoc(id) {
     return driver.get("documents", id);
   }
@@ -424,31 +505,34 @@ const DocJurStore = (() => {
    * @param {string|null} id — null/"" cria novo
    * @param {string} title
    * @param {string} content — HTML editor
-   * @returns {{ id: string, doc: import("./utils.js").SavedDoc }}
+   * @returns {{ id: string, doc: StoreSavedDoc }}
    */
   function upsertDoc(id, title, content) {
-    const existing = id ? driver.get("documents", id) : null;
+    const existing = id
+      ? /** @type {StoreSavedDoc|null} */ (driver.get("documents", id))
+      : null;
     const now = new Date().toISOString();
     // Salva entidades reutilizáveis em paralelo (opcional)
     const p = snapshotParties();
     const lawyerId =
       p.lawyer && p.lawyer.name
         ? saveCurrentParty(ENT.lawyers)
-        : existing?.lawyerId || null;
+        : (existing && existing.lawyerId) || null;
     const clientId =
       p.client && p.client.name
         ? saveCurrentParty(ENT.clients)
-        : existing?.clientId || null;
+        : (existing && existing.clientId) || null;
     const defendantId =
       p.defendant && p.defendant.name
         ? saveCurrentParty(ENT.defendants)
-        : existing?.defendantId || null;
+        : (existing && existing.defendantId) || null;
 
-    const docId = existing?.id || genDocId();
+    const docId = (existing && existing.id) || genDocId();
+    /** @type {StoreSavedDoc} */
     const doc = {
       id: docId,
       title: title || "Documento sem título",
-      createdAt: existing?.createdAt || now,
+      createdAt: (existing && existing.createdAt) || now,
       updatedAt: now,
       content,
       data: collectData(),
@@ -456,41 +540,49 @@ const DocJurStore = (() => {
       lawyerId,
       clientId,
       defendantId,
-      categoryId: existing?.categoryId || null,
-      templateId: existing?.templateId || null,
+      categoryId: (existing && existing.categoryId) || null,
+      templateId: (existing && existing.templateId) || null,
     };
     driver.set("documents", docId, doc);
     driver.set("lastRefs", "lastDocId", { id: "lastDocId", value: docId });
     return { id: docId, doc };
   }
+  /** @param {string} id */
   function deleteDoc(id) {
     driver.remove("documents", id);
     const last = driver.get("lastRefs", "lastDocId");
     if (last && last.value === id)
       driver.set("lastRefs", "lastDocId", { id: "lastDocId", value: null });
   }
+  /** @param {string} id */
   function rememberDoc(id) {
     driver.set("lastRefs", "lastDocId", { id: "lastDocId", value: id });
   }
+  /** @returns {string|null} */
   function lastDocId() {
     const last = driver.get("lastRefs", "lastDocId");
-    return last?.value || null;
+    return (last && last.value) || null;
   }
 
   // ============================================================
   // 7. BINDS — formulário → persistência
   // ============================================================
+  /** @type {ReturnType<typeof setTimeout>|null} */
   let _debTimer = null;
+  /** @param {(() => void)|undefined|any} [onChange] */
   function bindFormEvents(onChange) {
     const ms = getPrefs().autoSaveFormMs || 800;
     const handler = () => {
       if (_debTimer) clearTimeout(_debTimer);
       _debTimer = setTimeout(() => {
         persistData();
-        onChange && onChange();
+        if (typeof onChange === "function") onChange();
       }, ms);
     };
-    $$("input[data-ph], select[data-ph], textarea[data-ph]").forEach((el) => {
+    /** @type {NodeListOf<HTMLInputElement|HTMLSelectElement|HTMLTextAreaElement>} */
+    // @ts-ignore
+    const inputs = $$("input[data-ph], select[data-ph], textarea[data-ph]");
+    inputs.forEach((el) => {
       el.addEventListener("input", handler);
       el.addEventListener("change", handler);
     });
@@ -538,8 +630,10 @@ const DocJurStore = (() => {
     saveCurrentParty,
     applyPartyToForm,
     listEntity: (/** @type {EntityName} */ e) => driver.list(e),
-    getEntity: (/** @type {EntityName} */ e, id) => driver.get(e, id),
-    deleteEntity: (/** @type {EntityName} */ e, id) => driver.remove(e, id),
+    getEntity: (/** @type {EntityName} */ e, /** @type {string} */ id) =>
+      driver.get(e, id),
+    deleteEntity: (/** @type {EntityName} */ e, /** @type {string} */ id) =>
+      driver.remove(e, id),
 
     // Documents
     loadAllDocs,
@@ -555,4 +649,4 @@ const DocJurStore = (() => {
   };
 })();
 
-window.DocJurStore = DocJurStore;
+/** @type {any} */ (window).DocJurStore = DocJurStore;

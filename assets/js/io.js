@@ -5,10 +5,11 @@
    Depende de DocJurUtils, DocJurStore, DocJurUI, DocJurEditor.
    ================================================================ */
 /* global DocJurUtils, DocJurStore, DocJurUI, DocJurEditor, mammoth, pdfjsLib, html2pdf */
+/** @typedef {{ docTitle: string, currentDocId: string|null, templateId: string|null, zoomLevel: number, colorMode: "foreColor"|"backColor"|"highlight"|"hiliteColor", editorLocked: boolean }} IoAppState */
 const DocJurIO = (() => {
   const { $, fileToArrayBuffer, downloadBlob, escHtml } = DocJurUtils;
 
-  /** @type {import("./utils.js").AppState|null} */
+  /** @type {IoAppState|null} */
   let STATE = null;
 
   // ================================================================
@@ -25,11 +26,13 @@ const DocJurIO = (() => {
     btnImport?.addEventListener("click", trigger);
 
     zone?.addEventListener("dragover", (e) => {
-      e.preventDefault(); zone.classList.add("drag");
+      e.preventDefault();
+      zone.classList.add("drag");
     });
     zone?.addEventListener("dragleave", () => zone.classList.remove("drag"));
     zone?.addEventListener("drop", (e) => {
-      e.preventDefault(); zone.classList.remove("drag");
+      e.preventDefault();
+      zone.classList.remove("drag");
       const file = /** @type {DragEvent} */ (e).dataTransfer?.files?.[0];
       if (file) handleFile(file);
     });
@@ -49,14 +52,16 @@ const DocJurIO = (() => {
         // @ts-ignore mammoth é global via CDN
         const res = await mammoth.convertToHtml({ arrayBuffer: buf });
         const editor = DocJurEditor.editorEl;
-        if (editor) editor.innerHTML = `<div class="imported-docx">${res.value}</div>`;
+        if (editor)
+          editor.innerHTML = `<div class="imported-docx">${res.value}</div>`;
         if (STATE) STATE.docTitle = file.name.replace(/\.[^.]+$/, "");
         const title = /** @type {HTMLElement|null} */ ($("#editor-title"));
         if (title && STATE) title.textContent = STATE.docTitle;
         DocJurEditor.applyPlaceholders();
         DocJurEditor.updateStats();
         DocJurUI.toast(`DOCX importado com sucesso: ${file.name}`, "success");
-        if (res.messages && res.messages.length) console.warn("[mammoth]", res.messages);
+        if (res.messages && res.messages.length)
+          console.warn("[mammoth]", res.messages);
       } else if (name.endsWith(".pdf")) {
         DocJurUI.toast("Lendo PDF (extraindo texto)...", "info");
         // @ts-ignore
@@ -70,9 +75,11 @@ const DocJurIO = (() => {
           const page = await pdf.getPage(i);
           const content = await page.getTextContent();
           const parts = [];
-          for (const it of /** @type {any[]} */ (content.items)) parts.push(it.str || "");
+          for (const it of /** @type {any[]} */ (content.items))
+            parts.push(it.str || "");
           html += `<p style="text-align:justify;margin-bottom:8pt;">${escHtml(parts.join(" "))}</p>`;
-          if (i < pdf.numPages) html += `<div style="page-break-after:always;"></div>`;
+          if (i < pdf.numPages)
+            html += `<div style="page-break-after:always;"></div>`;
         }
         const editor = DocJurEditor.editorEl;
         if (editor) editor.innerHTML = html;
@@ -87,7 +94,10 @@ const DocJurIO = (() => {
       }
     } catch (err) {
       console.error("[DocJurIO.handleFile]", err);
-      DocJurUI.toast(`Erro ao importar: ${/** @type {any} */ (err).message || err}`, "error");
+      DocJurUI.toast(
+        `Erro ao importar: ${/** @type {any} */ (err).message || err}`,
+        "error",
+      );
     }
   }
 
@@ -105,7 +115,7 @@ const DocJurIO = (() => {
       filename: fileName,
       image: { type: "jpeg", quality: 0.98 },
       html2canvas: { scale: 2, useCORS: true, backgroundColor: "#ffffff" },
-      jsPDF: { unit: "cm", format: "a4", orientation: "portrait" }
+      jsPDF: { unit: "cm", format: "a4", orientation: "portrait" },
     };
     // @ts-ignore html2pdf global via CDN
     html2pdf()
@@ -113,10 +123,12 @@ const DocJurIO = (() => {
       .set(opt)
       .save()
       .then(() => DocJurUI.toast("PDF gerado com sucesso!", "success"))
-      .catch(/** @param {any} err */ (err) => {
-        console.error(err);
-        DocJurUI.toast("Erro ao gerar PDF", "error");
-      });
+      .catch(
+        /** @param {any} err */ (err) => {
+          console.error(err);
+          DocJurUI.toast("Erro ao gerar PDF", "error");
+        },
+      );
   }
 
   // ================================================================
@@ -161,17 +173,43 @@ const DocJurIO = (() => {
   function saveCurrentDoc(forceAsNew = false) {
     const editor = DocJurEditor.editorEl;
     if (!editor || !STATE) return;
-    const suggested = STATE.docTitle && STATE.docTitle !== "Documento sem título" ? STATE.docTitle : "";
-    const title = prompt("Nome do documento:", suggested);
+    const suggested =
+      STATE.docTitle && STATE.docTitle !== "Documento sem título"
+        ? STATE.docTitle
+        : "";
+    const msg = forceAsNew
+      ? "Salvar como (novo documento no histórico):"
+      : "Nome do documento:";
+    const title = prompt(msg, suggested);
     if (title === null) return;
     STATE.docTitle = title.trim() || "Documento sem título";
     const titleEl = /** @type {HTMLElement|null} */ ($("#editor-title"));
     if (titleEl) titleEl.textContent = STATE.docTitle;
 
     const idToUpdate = forceAsNew ? null : STATE.currentDocId;
-    const { id, doc } = DocJurStore.upsertDoc(idToUpdate || null, STATE.docTitle, editor.innerHTML);
+    const now = new Date().toISOString();
+    // Detecta template ativo (se há algum tpl-item.active no menu) — salva no histórico como referência
+    const activeTpl = /** @type {HTMLElement|null} */ (
+      document.querySelector(".tpl-item.active")
+    );
+    const templateId =
+      (activeTpl && activeTpl.dataset && activeTpl.dataset.tpl) ||
+      STATE.templateId ||
+      null;
+    if (templateId) STATE.templateId = templateId;
+
+    const { id, doc } = DocJurStore.upsertDoc(
+      idToUpdate || null,
+      STATE.docTitle,
+      editor.innerHTML,
+    );
+    // Garante que templateId seja salvo na entidade (upsertDoc não sabe o template, então atualizamos)
+    if (templateId && doc.templateId !== templateId) {
+      DocJurStore.driver.update("documents", id, { templateId });
+    }
     STATE.currentDocId = id;
-    DocJurUI.toast(`Documento salvo: "${doc.title}"`, "success");
+    const verb = forceAsNew ? "novo salvo" : "salvo";
+    DocJurUI.toast(`Documento ${verb}: "${doc.title}"`, "success");
   }
 
   /** Abre modal de listagem e delega load/delete para Store + Editor */
@@ -196,7 +234,7 @@ const DocJurIO = (() => {
    * @param {string} id
    */
   function loadDocById(id) {
-    const docs = DocJurStore.loadAllDocs();
+    const docs = /** @type {Record<string, any>} */ (DocJurStore.loadAllDocs());
     const d = docs[id];
     if (!d || !STATE) return;
     STATE.currentDocId = id;
@@ -219,22 +257,31 @@ const DocJurIO = (() => {
   function promptRestoreLastDoc() {
     const id = DocJurStore.lastDocId();
     if (!id || !STATE) return false;
-    const doc = DocJurStore.loadAllDocs()[id];
+    const allDocs = /** @type {Record<string, any>} */ (
+      DocJurStore.loadAllDocs()
+    );
+    const doc = allDocs[id];
     if (!doc) return false;
     if (!confirm(`Continuar trabalhando em "${doc.title}"?`)) return false;
     loadDocById(id);
     return true;
   }
 
+  /** @param {IoAppState} state */
   function init(state) {
     STATE = state;
     initImportHandlers();
   }
 
   return {
-    init, saveCurrentDoc, openDocBrowser, loadDocById,
-    promptRestoreLastDoc, exportPDF, exportDOCX
+    init,
+    saveCurrentDoc,
+    openDocBrowser,
+    loadDocById,
+    promptRestoreLastDoc,
+    exportPDF,
+    exportDOCX,
   };
 })();
 
-window.DocJurIO = DocJurIO;
+/** @type {any} */ (window).DocJurIO = DocJurIO;

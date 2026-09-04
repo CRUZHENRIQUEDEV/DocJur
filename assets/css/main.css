@@ -193,6 +193,29 @@ textarea {
   gap: 1px;
   background: var(--ui-border);
   min-height: 0;
+  transition: grid-template-columns 220ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+/* estados globais por combinação de painéis colapsados */
+.main.left-collapsed {
+  grid-template-columns: 42px 1fr 280px;
+}
+.main.right-collapsed {
+  grid-template-columns: 300px 1fr 42px;
+}
+.main.editor-collapsed {
+  grid-template-columns: 300px 42px 280px;
+}
+.main.left-collapsed.right-collapsed {
+  grid-template-columns: 42px 1fr 42px;
+}
+.main.left-collapsed.editor-collapsed {
+  grid-template-columns: 42px 42px 280px;
+}
+.main.right-collapsed.editor-collapsed {
+  grid-template-columns: 300px 42px 42px;
+}
+.main.left-collapsed.right-collapsed.editor-collapsed {
+  grid-template-columns: 42px 42px 42px;
 }
 
 .panel {
@@ -213,11 +236,84 @@ textarea {
   font-size: var(--ui-font-size-sm);
   flex-shrink: 0;
   color: var(--ui-text-secondary);
+  min-height: 40px;
 }
 .panel-header .panel-actions {
   display: flex;
+  align-items: center;
   gap: var(--dj-pad-xs);
 }
+.panel-sep {
+  width: 1px;
+  height: 18px;
+  margin: 0 2px;
+  background: var(--ui-border);
+  opacity: 0.9;
+  flex-shrink: 0;
+}
+.btn-minimize i {
+  transition: transform 220ms ease;
+}
+
+/* ===== Colapsamento por painel (oculta body/tabs/upload/toolbar e ajusta header) ===== */
+.panel[data-panel="left"].collapsed .panel-header,
+.panel[data-panel="right"].collapsed .panel-header,
+.panel[data-panel="editor"].collapsed .panel-header {
+  padding: var(--dj-pad-sm) 6px;
+  border-bottom: 1px solid var(--ui-border);
+}
+.panel[data-panel="left"].collapsed .panel-header > span:first-child,
+.panel[data-panel="right"].collapsed .panel-header > span:first-child,
+.panel[data-panel="editor"].collapsed .panel-header > span:first-child {
+  display: none;
+}
+.panel[data-panel="left"].collapsed .panel-header .panel-actions,
+.panel[data-panel="right"].collapsed .panel-header .panel-actions {
+  width: 100%;
+  justify-content: center;
+}
+.panel[data-panel="editor"].collapsed
+  .panel-header
+  .panel-actions
+  > *:not(.btn-minimize) {
+  display: none;
+}
+
+/* esconde conteúdos (painel) no estado colapsado */
+.panel.collapsed > .panel-body,
+.panel.collapsed > .tabs,
+.panel.collapsed > .upload-zone,
+.panel.collapsed > .editor-toolbar,
+.panel.collapsed > .editor-footer,
+.panel.collapsed > .meta-row {
+  display: none !important;
+}
+
+/* Header colapsado dos painéis laterais — mantém só o botão e gira label */
+.panel[data-panel="left"].collapsed,
+.panel[data-panel="right"].collapsed {
+  position: relative;
+}
+.panel[data-panel="left"].collapsed::after,
+.panel[data-panel="right"].collapsed::after {
+  content: attr(data-panel-label);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  transform-origin: center center;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--ui-text-secondary);
+  white-space: nowrap;
+  pointer-events: none;
+  text-transform: uppercase;
+}
+.panel[data-panel="right"].collapsed::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
 .panel-body {
   flex: 1;
   overflow-y: auto;
@@ -742,12 +838,93 @@ textarea {
   padding: 0 2px;
   white-space: nowrap;
   font-weight: var(--ui-font-weight-medium);
+  cursor: help;
+  transition:
+    box-shadow var(--ui-transition-fast),
+    background var(--ui-transition-fast);
+}
+.editor-page .ph:hover {
+  box-shadow:
+    0 0 0 1px #ca8a04,
+    0 2px 6px rgba(202, 138, 4, 0.25);
+  background: #fff0a8;
 }
 .editor-page .ph-filled {
   background: #d3f9d8;
   border-color: #2f9e44;
   color: #1b4332;
   font-weight: var(--ui-font-weight-normal);
+}
+.editor-page .ph-filled:hover {
+  box-shadow:
+    0 0 0 1px #2f9e44,
+    0 2px 6px rgba(47, 158, 68, 0.25);
+  background: #b2f2bb;
+}
+
+/* ============================================================
+   BADGES — status de documento real / pendente
+   ============================================================ */
+.tpl-item {
+  flex-wrap: wrap;
+  row-gap: 2px;
+}
+.tpl-item .tpl-name {
+  flex: 1;
+  min-width: 0;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 5px;
+  font-size: 9.5px;
+  font-weight: 700;
+  border-radius: 3px;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  user-select: none;
+  white-space: nowrap;
+}
+.badge-real {
+  background: color-mix(in srgb, var(--ui-success) 14%, transparent);
+  color: var(--ui-success);
+  border: 1px solid color-mix(in srgb, var(--ui-success) 45%, transparent);
+}
+.tpl-item.active .badge-real {
+  background: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.badge-pending {
+  background: color-mix(in srgb, var(--ui-warning) 22%, transparent);
+  color: #9a6700;
+  border: 1px solid color-mix(in srgb, var(--ui-warning) 55%, transparent);
+}
+.tpl-item.active .badge-pending {
+  background: rgba(255, 255, 255, 0.22);
+  color: #fff8e1;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.badge-imp {
+  background: color-mix(in srgb, #1b76d6 16%, transparent);
+  color: #1b76d6;
+  border: 1px solid color-mix(in srgb, #1b76d6 55%, transparent);
+}
+.tpl-item.active .badge-imp {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.55);
+}
+.badge-done {
+  background: color-mix(in srgb, #6f42c1 18%, transparent);
+  color: #6f42c1;
+  border: 1px solid color-mix(in srgb, #6f42c1 55%, transparent);
+}
+.tpl-item.active .badge-done {
+  background: rgba(255, 255, 255, 0.22);
+  color: #f6edff;
+  border-color: rgba(255, 255, 255, 0.55);
 }
 
 /* ============================================================

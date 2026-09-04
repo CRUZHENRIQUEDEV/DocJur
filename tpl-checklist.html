@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DocJur — Checklist de Implementação de Templates</title>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<link rel="stylesheet" href="assets/css/global-theme.css" />
+<link rel="stylesheet" href="assets/css/main.css" />
+<style>
+  body { font-family: var(--dj-font); color: var(--ui-text); background: var(--ui-bg); }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 28px 24px; }
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    margin-bottom: 20px;
+  }
+  .topbar h1 { font-size: 18px; font-weight: 700; display:flex; align-items:center; gap: 10px; }
+  .topbar h1 i { color: var(--ui-accent); }
+  .topbar nav { display: flex; gap: 6px; }
+  .progress-head {
+    background: var(--ui-card-bg); border: 1px solid var(--ui-border); border-radius: var(--ui-radius-lg);
+    padding: 18px 20px; margin-bottom: 20px;
+  }
+  .progress-bar {
+    height: 12px; background: var(--ui-bg-secondary); border: 1px solid var(--ui-border); border-radius: 999px;
+    overflow: hidden; margin: 10px 0 6px;
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--ui-success), color-mix(in srgb, var(--ui-success) 60%, var(--ui-accent)));
+    transition: width .3s;
+  }
+  .progress-meta {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 11px; color: var(--ui-text-muted); font-weight: 600;
+  }
+  .prog-legend { display:flex; gap:14px; }
+  .prog-legend span { display:inline-flex; align-items:center; gap:4px; }
+  .dot { width:9px; height:9px; border-radius:50%; display:inline-block; }
+  .cat {
+    background: var(--ui-card-bg); border: 1px solid var(--ui-border); border-radius: var(--ui-radius-lg);
+    margin-bottom: 14px; overflow: hidden;
+  }
+  .cat-head {
+    display: grid; grid-template-columns: auto 1fr auto auto auto; gap: 12px; align-items: center;
+    padding: 12px 16px; background: var(--ui-bg-secondary); cursor: pointer;
+    border-bottom: 1px solid var(--ui-border); user-select: none;
+  }
+  .cat-head:hover { background: var(--renderer-bg-hover); }
+  .cat-head .chev { transition: transform var(--ui-transition-fast); color: var(--ui-text-muted); }
+  .cat.collapsed .chev { transform: rotate(-90deg); }
+  .cat-head .tag { font-size: 11px; padding: 3px 8px; border-radius: 999px; background: var(--ui-accent-light); color: var(--ui-accent); font-weight: 700; border: 1px solid color-mix(in srgb, var(--ui-accent) 35%, transparent); }
+  .cat-head .name { font-size: 13px; font-weight: 700; color: var(--ui-text); }
+  .cat-head .meta { font-size: 11px; color: var(--ui-text-muted); font-weight: 600; }
+  .mini-prog {
+    width: 110px; height: 7px; background: var(--ui-bg); border: 1px solid var(--ui-border);
+    border-radius: 999px; overflow: hidden;
+  }
+  .mini-prog > span { display:block; height:100%; background: var(--ui-success); }
+  .cat-body { padding: 0; }
+  .cat.collapsed .cat-body { display: none; }
+  .tpl-row {
+    display: grid; grid-template-columns: 32px 36px 1fr auto; gap: 10px; align-items: center;
+    padding: 9px 16px; border-bottom: 1px solid var(--ui-border-light);
+    font-size: 12px;
+  }
+  .tpl-row:last-child { border-bottom: none; }
+  .tpl-row:hover { background: var(--renderer-bg-hover); }
+  .tpl-row input[type=checkbox] { accent-color: var(--ui-success); width:15px; height:15px; cursor: pointer; }
+  .num { font-size: 10.5px; color: var(--ui-text-muted); font-weight: 700; }
+  .tpl-name { font-weight: 600; color: var(--ui-text); line-height: 1.25; }
+  .tpl-src { font-size: 10.5px; color: var(--ui-text-muted); margin-top: 2px; }
+  .tpl-actions { display:flex; gap:4px; align-items:center; }
+  .badge-imp {
+    font-size: 9.5px; font-weight: 700; padding: 2px 7px; border-radius: 3px; letter-spacing: .2px;
+    background: color-mix(in srgb, var(--ui-success) 18%, transparent); color: var(--ui-success);
+    border: 1px solid color-mix(in srgb, var(--ui-success) 45%, transparent);
+  }
+  .badge-sk {
+    font-size: 9.5px; font-weight: 700; padding: 2px 7px; border-radius: 3px; letter-spacing: .2px;
+    background: color-mix(in srgb, var(--ui-warning) 22%, transparent); color: #9a6700;
+    border: 1px solid color-mix(in srgb, var(--ui-warning) 55%, transparent);
+  }
+  .btn-icon-sm { padding: 3px 6px; font-size: 10.5px; }
+  .filters {
+    display: flex; gap: 8px; align-items: center; margin-bottom: 16px; flex-wrap: wrap;
+  }
+  .filters input, .filters select {
+    padding: 7px 10px; background: var(--renderer-input-bg); border: 1px solid var(--renderer-input-border);
+    border-radius: var(--ui-radius-sm); font-size: 12px; color: var(--ui-text);
+  }
+  .chip-btn {
+    padding: 5px 10px; font-size: 11px; border-radius: 999px; border: 1px solid var(--ui-border);
+    background: var(--ui-card-bg); color: var(--ui-text-secondary); font-weight: 600; cursor: pointer;
+  }
+  .chip-btn.active { background: var(--ui-accent-light); border-color: var(--ui-accent); color: var(--ui-accent); }
+  .summary-actions { display:flex; gap:8px; margin-left: auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <h1><i data-lucide="check-square-2"></i> Checklist de Implementação — Templates TJDFT</h1>
+    <nav>
+      <a class="btn btn-ghost btn-sm" href="index.html"><i data-lucide="home"></i> Início</a>
+      <a class="btn btn-sm" href="documentos-juridicos.html"><i data-lucide="file-edit"></i> Abrir Editor</a>
+    </nav>
+  </div>
+
+  <div class="filters">
+    <input type="text" id="filtro" placeholder="Buscar por nome/assunto..." style="min-width: 260px;" />
+    <button class="chip-btn active" data-f="all">Todos</button>
+    <button class="chip-btn" data-f="done">Feitos</button>
+    <button class="chip-btn" data-f="todo">Pendentes</button>
+    <div class="summary-actions">
+      <button class="btn btn-sm btn-ghost" id="btn-export"><i data-lucide="download"></i> Exportar JSON</button>
+      <button class="btn btn-sm btn-ghost" id="btn-reset" title="Apaga progresso do checklist (não apaga documentos)"><i data-lucide="rotate-ccw"></i> Resetar</button>
+    </div>
+  </div>
+
+  <div class="progress-head">
+    <div style="font-weight: 700; font-size: 13px; display:flex; align-items:center; gap: 8px;">
+      <i data-lucide="activity" style="color:var(--ui-success);"></i> Progresso Geral
+      <span id="prog-text" style="font-weight: 600; color: var(--ui-text-muted); font-size: 11px;">0 / 0 (0%)</span>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="prog-fill" style="width:0%"></div></div>
+    <div class="progress-meta">
+      <div class="prog-legend">
+        <span><span class="dot" style="background: var(--ui-success);"></span> Implementados</span>
+        <span><span class="dot" style="background: color-mix(in srgb, var(--ui-warning) 70%, #fff);"></span> Esqueleto genérico</span>
+        <span><span class="dot" style="background: var(--ui-error);"></span> Feito: 0</span>
+      </div>
+      <div id="prog-counts" style="font-weight: 700; font-size: 11.5px; color: var(--ui-text);"></div>
+    </div>
+  </div>
+
+  <div id="cats-root"></div>
+</div>
+
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/store.js"></script>
+<script src="assets/js/templates.js"></script>
+<script>
+  const { $, escHtml } = DocJurUtils;
+  const LS_KEY = "docjur_tplDone";
+  const tjdft = DocJurTemplates.CATEGORIES.find((c) => c.id === "tjdft");
+  const items = (tjdft?.items || []).slice();
+
+  const CAT_GROUPS = [
+    { id: 1, name: "Petição Geral",  tag: "01 — GERAL",        prefix: ["1."] },
+    { id: 2, name: "Acidente de Trânsito", tag: "02 — TRÂNSITO",   prefix: ["2."] },
+    { id: 3, name: "Banco / Cartão de Crédito", tag: "03 — BANCO/CARTÃO", prefix: ["3."] },
+    { id: 4, name: "Cobrança de Dívida", tag: "04 — COBRANÇA",    prefix: ["4."] },
+    { id: 5, name: "Compra de Produto (Consumidor)", tag: "05 — CONSUMIDOR", prefix: ["5."] },
+    { id: 6, name: "Condomínio / Direito de Vizinhança", tag: "06 — VIZINHANÇA", prefix: ["6."] },
+    { id: 7, name: "Despejo para Uso Próprio", tag: "07 — DESPEJO", prefix: ["7."] },
+    { id: 8, name: "Estabelecimento de Ensino", tag: "08 — ENSINO", prefix: ["8."] },
+    { id: 9, name: "Execução de Título Extrajudicial", tag: "09 — EXEC EXTRAJUD", prefix: ["9."] },
+    { id: 10, name: "Execução de Título Judicial", tag: "10 — EXEC JUDICIAL", prefix: ["10."] },
+    { id: 11, name: "Locação de Imóvel", tag: "11 — LOCAÇÃO", prefix: ["11."] },
+    { id: 12, name: "Negativação Indevida", tag: "12 — NEGATIVAÇÃO", prefix: ["12."] },
+    { id: 13, name: "Operadora de Turismo", tag: "13 — TURISMO", prefix: ["13."] },
+    { id: 14, name: "Planos de Saúde", tag: "14 — SAÚDE", prefix: ["14."] },
+    { id: 15, name: "Prestação de Serviços (Consumidor)", tag: "15 — PREST SERVIÇO", prefix: ["15."] },
+    { id: 16, name: "Telefonia / TV / Internet", tag: "16 — TELECOM", prefix: ["16."] },
+    { id: 17, name: "Transporte Aéreo", tag: "17 — AÉREO", prefix: ["17."] },
+    { id: 18, name: "Transporte Rodoviário", tag: "18 — RODOVIÁRIO", prefix: ["18."] },
+    { id: 19, name: "Veículos (exceto Colisão)", tag: "19 — VEÍCULOS", prefix: ["19."] },
+    { id: 20, name: "Juizados Especiais da Fazenda do DF", tag: "20 — FAZENDA DF", prefix: ["20."] },
+    { id: 21, name: "Ações contra CAESB e CEB", tag: "21 — CAESB/CEB", prefix: ["21."] },
+    { id: 22, name: "Compra e Venda entre Particulares", tag: "22 — COMPRA/VENDA", prefix: ["22."] },
+    { id: 23, name: "Consórcio", tag: "23 — CONSÓRCIO", prefix: ["23."] },
+  ];
+
+  function getTplNum(tpl) {
+    const f = tpl.sourceFile?.split("/")?.pop() || tpl.id;
+    const m = f.match(/^(\d+(?:\.\d+)*)[\s\.\-]/);
+    return m ? m[1] : "";
+  }
+  function getCatOf(tpl) {
+    const n = getTplNum(tpl);
+    for (const g of CAT_GROUPS) {
+      if (g.prefix.some((p) => n.startsWith(p))) return g.id;
+    }
+    return 0;
+  }
+  const catsGrouped = {};
+  CAT_GROUPS.forEach((g) => catsGrouped[g.id] = []);
+  catsGrouped[0] = [];
+  items.forEach((t) => catsGrouped[getCatOf(t)].push(t));
+
+  function loadDone() {
+    try {
+      const s = JSON.parse(localStorage.getItem(LS_KEY) || "[]");
+      const set = new Set(s);
+      items.forEach((it) => { if (DocJurTemplates.TEMPLATES[it.id]) set.add(it.id); });
+      return set;
+    } catch { return new Set(); }
+  }
+  function saveDone(set) {
+    localStorage.setItem(LS_KEY, JSON.stringify(Array.from(set)));
+  }
+  function hasHtmlReal(id) { return !!DocJurTemplates.TEMPLATES[id]; }
+
+  let DONE = loadDone();
+  let currentFilter = "all";
+  let currentQ = "";
+
+  function matches(tpl) {
+    const q = currentQ.trim().toLowerCase();
+    const okQ = !q || (tpl.name.toLowerCase().includes(q) || (tpl.sourceFile || "").toLowerCase().includes(q) || tpl.id.toLowerCase().includes(q));
+    if (currentFilter === "done" && !DONE.has(tpl.id)) return false;
+    if (currentFilter === "todo" && DONE.has(tpl.id)) return false;
+    return okQ;
+  }
+
+  function render() {
+    const root = $("#cats-root");
+    root.innerHTML = "";
+    let totalDone = 0, total = 0;
+
+    CAT_GROUPS.forEach((g) => {
+      const arr = catsGrouped[g.id] || [];
+      const filtered = arr.filter(matches);
+      if (currentQ && filtered.length === 0) return;
+      const doneCount = arr.filter((x) => DONE.has(x.id)).length;
+      total += arr.length;
+      totalDone += doneCount;
+      const pct = arr.length ? Math.round((doneCount / arr.length) * 100) : 0;
+
+      const cat = document.createElement("div");
+      cat.className = "cat";
+      cat.innerHTML = `
+        <div class="cat-head">
+          <i data-lucide="chevron-down" class="chev"></i>
+          <span class="tag">${escHtml(g.tag)}</span>
+          <div>
+            <div class="name">${escHtml(g.name)}</div>
+          </div>
+          <div class="mini-prog"><span style="width:${pct}%"></span></div>
+          <div class="meta">${doneCount} / ${arr.length} (${pct}%)</div>
+        </div>
+        <div class="cat-body"></div>
+      `;
+      const body = cat.querySelector(".cat-body");
+      filtered.forEach((tpl) => {
+        const num = getTplNum(tpl);
+        const real = hasHtmlReal(tpl.id);
+        const checked = DONE.has(tpl.id);
+        const row = document.createElement("label");
+        row.className = "tpl-row";
+        row.innerHTML = `
+          <input type="checkbox" data-id="${escHtml(tpl.id)}" ${checked ? "checked" : ""} />
+          <div class="num">${escHtml(num || "—")}</div>
+          <div>
+            <div class="tpl-name">${escHtml(tpl.name)}</div>
+            <div class="tpl-src"><i data-lucide="file-text" style="width:11px;height:11px;vertical-align:-1px;"></i> ${escHtml(tpl.sourceFile || "")}</div>
+          </div>
+          <div class="tpl-actions">
+            ${real ? `<span class="badge-imp" title="Template HTML já existe no TEMPLATES (templates.js)">IMPLEMENTADO</span>` : `<span class="badge-sk" title="Usa skeleton genérico (sem HTML real)">ESQUELETO</span>`}
+            <a class="btn btn-sm btn-ghost btn-icon-sm" href="documentos-juridicos.html#tpl=${encodeURIComponent(tpl.id)}" title="Abrir no editor"><i data-lucide="edit-3"></i></a>
+          </div>
+        `;
+        body.appendChild(row);
+      });
+
+      if (filtered.length === 0) {
+        body.innerHTML = `<li style="padding:12px 16px; color: var(--ui-text-muted); font-size:12px; text-align:center;">Nada encontrado para a busca atual.</li>`;
+      }
+
+      cat.querySelector(".cat-head").addEventListener("click", () => cat.classList.toggle("collapsed"));
+      root.appendChild(cat);
+    });
+
+    // Progresso geral
+    const pctT = total ? Math.round((totalDone / total) * 100) : 0;
+    $("#prog-fill").style.width = pctT + "%";
+    $("#prog-text").textContent = `${totalDone} / ${total} (${pctT}%)`;
+    const dots = document.querySelectorAll(".prog-legend .dot");
+    if (dots[2]) dots[2].style.background = "var(--ui-success)";
+    $("#prog-counts").textContent = `${totalDone} feitos · ${total - totalDone} pendentes · ${total} total`;
+
+    // Checkbox handlers
+    root.querySelectorAll('input[type=checkbox][data-id]').forEach((cb) => {
+      cb.addEventListener("change", (e) => {
+        const id = cb.dataset.id;
+        if (cb.checked) DONE.add(id); else DONE.delete(id);
+        saveDone(DONE);
+        DONE = loadDone();
+        render();
+      });
+    });
+
+    if (window.lucide) window.lucide.createIcons();
+  }
+
+  $("#filtro")?.addEventListener("input", (e) => { currentQ = e.target.value; render(); });
+  document.querySelectorAll(".chip-btn").forEach((b) => {
+    b.addEventListener("click", () => {
+      document.querySelectorAll(".chip-btn").forEach((x) => x.classList.remove("active"));
+      b.classList.add("active");
+      currentFilter = b.dataset.f;
+      render();
+    });
+  });
+  $("#btn-reset")?.addEventListener("click", () => {
+    if (!confirm("Resetar o progresso do checklist (apenas marcações, não apaga templates nem documentos salvos)?")) return;
+    localStorage.removeItem(LS_KEY);
+    DONE = loadDone();
+    render();
+  });
+  $("#btn-export")?.addEventListener("click", () => {
+    const done = Array.from(DONE);
+    const obj = CAT_GROUPS.map((g) => {
+      const arr = catsGrouped[g.id] || [];
+      return {
+        grupo: g.name, tag: g.tag, total: arr.length,
+        feitos: arr.filter((x) => DONE.has(x.id)).length,
+        items: arr.map((x) => ({ id: x.id, nome: x.name, fonte: x.sourceFile, feito: DONE.has(x.id), html_real: hasHtmlReal(x.id) }))
+      };
+    });
+    const blob = new Blob([JSON.stringify({ resumo: { feitos: done.length, total: items.length }, detalhes: obj }, null, 2)], { type: "application/json" });
+    DocJurUtils.downloadBlob(blob, `docjur-checklist-templates-${new Date().toISOString().slice(0,10)}.json`);
+  });
+
+  render();
+  if (window.lucide) window.lucide.createIcons();
+</script>
+</body>
+</html>

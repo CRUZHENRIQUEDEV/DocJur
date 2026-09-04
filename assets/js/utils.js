@@ -6,41 +6,61 @@
 /* eslint-disable no-unused-vars */
 // ---- Tipos (TypeScript-ready via JSDoc) ----
 /**
- * @typedef {Object} PhData  — Dicionário de placeholder => valor (ambos string)
- * @property {string} [k]  — ex: { ADV_NOME: "Dr. Fulano", CLI_DOC: "000.000.000-00" }
+ * @typedef {Record<string, string>} PhData
+ * Dicionario placeholder => valor. Ex: { ADV_NOME: "Dr. Fulano", CLI_DOC: "000.000.000-00" }
  *
- * @typedef {Object} DocTemplate
- * @property {string} id       — identificador único (ex: "peticao-inicial")
- * @property {string} name     — nome amigável (UI)
- * @property {string} icon     — nome de ícone Lucide
- * @property {string} html     — string HTML com placeholders `{{CHAVE}}`
+ * @typedef {Object} DocTemplateItem
+ * @property {string} id              - identificador unico (ex: "tjdft-1-1")
+ * @property {string} name            - nome amigavel UI
+ * @property {string} icon            - nome icone Lucide
+ * @property {string} [html]          - string HTML com placeholders {{CHAVE}} (opcional)
+ * @property {string} [sourceFile]    - DOCX real de referencia
+ * @property {boolean} [pending]      - true se ainda sem documento real
+ * @property {boolean} [implemented]  - marcacao alternativa de concluido
  *
  * @typedef {Object} DocTemplateCategory
- * @property {string} id          — ex: "judiciais"
- * @property {string} name        — nome da categoria
- * @property {string} icon        — ícone Lucide
- * @property {DocTemplate[]} items
+ * @property {string} id                  - ex: "1-inicial"
+ * @property {string} name                - nome da categoria
+ * @property {string} icon                - icone Lucide
+ * @property {DocTemplateItem[]} items    - itens da categoria
  *
  * @typedef {Object} SavedDoc
- * @property {string} id            — ex: doc_1710000000000
+ * @property {string} id               - ex: doc_1710000000000
  * @property {string} title
- * @property {string} createdAt     — ISO string
- * @property {string} updatedAt     — ISO string
- * @property {string} content       — innerHTML do editor
- * @property {PhData} data          — dados dos campos do formulário
+ * @property {string} createdAt        - ISO string
+ * @property {string} updatedAt        - ISO string
+ * @property {string} content          - innerHTML editor
+ * @property {PhData} data             - dados dos campos (datas formatadas)
+ * @property {PhData} rawSnapshot      - dados crus do formulario
+ * @property {string|null} [lawyerId]     - FK advogado
+ * @property {string|null} [clientId]     - FK parte
+ * @property {string|null} [defendantId]  - FK reu
+ * @property {string|null} [categoryId]   - categoria template
+ * @property {string|null} [templateId]   - id template base
  *
  * @typedef {Object} AppState
  * @property {string} docTitle
  * @property {string | null} currentDocId
+ * @property {string | null} templateId
  * @property {number} zoomLevel
- * @property {"foreColor"|"hiliteColor"} colorMode
+ * @property {"foreColor"|"backColor"|"highlight"|"hiliteColor"} colorMode
  * @property {boolean} editorLocked
  */
 
 const DocJurUtils = (() => {
   const MESES = [
-    "janeiro","fevereiro","março","abril","maio","junho",
-    "julho","agosto","setembro","outubro","novembro","dezembro"
+    "janeiro",
+    "fevereiro",
+    "março",
+    "abril",
+    "maio",
+    "junho",
+    "julho",
+    "agosto",
+    "setembro",
+    "outubro",
+    "novembro",
+    "dezembro",
   ];
 
   /**
@@ -50,7 +70,8 @@ const DocJurUtils = (() => {
    * @param {ParentNode} [root=document]
    * @returns {T | null}
    */
-  const $ = (sel, root = document) => /** @type {T|null} */ (root.querySelector(sel));
+  const $ = (sel, root = document) =>
+    /** @type {T|null} */ (root.querySelector(sel));
 
   /**
    * querySelectorAll -> array
@@ -59,8 +80,7 @@ const DocJurUtils = (() => {
    * @param {ParentNode} [root=document]
    * @returns {T[]}
    */
-  const $$ = (sel, root = document) =>
-    Array.from(root.querySelectorAll(sel));
+  const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
   /**
    * HTML-escape para evitar XSS ao injetar valores de usuário no editor
@@ -68,7 +88,7 @@ const DocJurUtils = (() => {
    * @returns {string}
    */
   function escHtml(s) {
-    const str = (s == null ? "" : String(s));
+    const str = s == null ? "" : String(s);
     return str
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
@@ -108,7 +128,7 @@ const DocJurUtils = (() => {
     return {
       words: t.trim() ? t.trim().split(/\s+/).length : 0,
       chars: t.length,
-      charsNoSpace: t.replace(/\s+/g, "").length
+      charsNoSpace: t.replace(/\s+/g, "").length,
     };
   }
 
@@ -131,7 +151,13 @@ const DocJurUtils = (() => {
       if (ok) filled++;
       const cls = ok ? "ph ph-filled" : "ph";
       const inner = ok ? escHtml(v) : `{{${key}}}`;
-      return `<span class="${cls}" data-ph="${key}">${inner}</span>`;
+      const label = (() => {
+        const tpl = /** @type {any} */ (window)["DocJurTemplates"];
+        return tpl && typeof tpl.phLabel === "function"
+          ? tpl.phLabel(key)
+          : key;
+      })();
+      return `<span class="${cls}" data-ph="${key}" title="${escHtml(label)}">${inner}</span>`;
     };
 
     // 1) Raw {{CHAVE}} (novos)
@@ -140,7 +166,7 @@ const DocJurUtils = (() => {
     // 2) Spans .ph existentes com chave em data-ph (refresh)
     out = out.replace(
       /<span class="ph(?: ph-filled)?" data-ph="(\w+)">([^<]+)<\/span>/g,
-      (_m, key) => resolve(key)
+      (_m, key) => resolve(key),
     );
 
     return { html: out, filled, total };
@@ -150,7 +176,8 @@ const DocJurUtils = (() => {
    * Gera ID único para documentos salvos
    * @returns {string}
    */
-  const genDocId = () => `doc_${Date.now()}_${Math.floor(Math.random() * 10000)}`;
+  const genDocId = () =>
+    `doc_${Date.now()}_${Math.floor(Math.random() * 10000)}`;
 
   /**
    * Formato brasileiro de data/hora a partir de ISO string (para listagem de docs)
@@ -161,9 +188,11 @@ const DocJurUtils = (() => {
     try {
       return new Date(iso).toLocaleString("pt-BR", {
         dateStyle: "short",
-        timeStyle: "short"
+        timeStyle: "short",
       });
-    } catch { return iso; }
+    } catch {
+      return iso;
+    }
   }
 
   /**
@@ -212,12 +241,21 @@ const DocJurUtils = (() => {
 
   // Expose para outros módulos clássicos (script tag)
   return {
-    $, $$, escHtml, formatDateBR, currentDateBR, countText,
-    replacePlaceholders, genDocId, fmtBRDateTime,
-    fileToArrayBuffer, fileToText, downloadBlob,
-    MESES
+    $,
+    $$,
+    escHtml,
+    formatDateBR,
+    currentDateBR,
+    countText,
+    replacePlaceholders,
+    genDocId,
+    fmtBRDateTime,
+    fileToArrayBuffer,
+    fileToText,
+    downloadBlob,
+    MESES,
   };
 })();
 
 // Export global para uso nos outros scripts (sem module bundler)
-window.DocJurUtils = DocJurUtils;
+/** @type {any} */ (window).DocJurUtils = DocJurUtils;

@@ -20,14 +20,40 @@
           <span>DocJur — Gerador de Documentos Jurídicos</span>
         </div>
         <div class="actions">
+          <a
+            class="btn btn-ghost btn-sm"
+            href="index.html"
+            title="Ir para a tela inicial (Dashboard)"
+          >
+            <i data-lucide="home"></i> Início
+          </a>
+          <a
+            class="btn btn-ghost btn-sm"
+            href="tpl-checklist.html"
+            title="Checklist de Implementação de Templates"
+          >
+            <i data-lucide="check-square-2"></i> Checklist
+          </a>
+          <div class="tb-sep"></div>
           <button class="btn btn-ghost" id="btn-new" title="Novo Documento">
             <i data-lucide="file-plus"></i> Novo
           </button>
           <button class="btn btn-ghost" id="btn-open" title="Abrir Salvo">
             <i data-lucide="folder-open"></i> Abrir
           </button>
-          <button class="btn" id="btn-save" title="Salvar no Navegador">
+          <button
+            class="btn"
+            id="btn-save"
+            title="Salvar no Navegador (atualiza o atual)"
+          >
             <i data-lucide="save"></i> Salvar
+          </button>
+          <button
+            class="btn btn-primary"
+            id="btn-save-as"
+            title="Salvar Como (novo documento no histórico)"
+          >
+            <i data-lucide="save-all"></i> Salvar Como
           </button>
           <div class="tb-sep"></div>
           <button class="btn" id="btn-import" title="Importar DOCX/PDF">
@@ -60,7 +86,7 @@
       <!-- MAIN 3-COLUMN -->
       <main class="main">
         <!-- LEFT PANEL: DATA -->
-        <section class="panel">
+        <section class="panel" data-panel="left" data-panel-label="DADOS">
           <div class="panel-header">
             <span
               ><i
@@ -83,6 +109,14 @@
                 title="Limpar dados"
               >
                 <i data-lucide="rotate-ccw"></i>
+              </button>
+              <span class="panel-sep"></span>
+              <button
+                class="btn btn-sm btn-ghost btn-minimize"
+                data-panel-toggle="left"
+                title="Minimizar painel esquerdo (dobrar)"
+              >
+                <i data-lucide="panel-left-close"></i>
               </button>
             </div>
           </div>
@@ -456,7 +490,7 @@
         </section>
 
         <!-- CENTER PANEL: EDITOR -->
-        <section class="panel">
+        <section class="panel" data-panel="editor">
           <div class="panel-header">
             <span
               ><i
@@ -493,6 +527,14 @@
                 title="Aumentar zoom"
               >
                 <i data-lucide="plus"></i>
+              </button>
+              <span class="panel-sep"></span>
+              <button
+                class="btn btn-sm btn-ghost btn-minimize"
+                data-panel-toggle="editor"
+                title="Minimizar editor (modo foco dados/modelos)"
+              >
+                <i data-lucide="minimize-2"></i>
               </button>
             </div>
           </div>
@@ -681,9 +723,7 @@
                 {{REU_CIDADE}}/{{REU_UF}}, pelos fatos e fundamentos de direito
                 a seguir expostos, vem requerer o que segue:
               </p>
-              <h3 style="margin: 12pt 0 6pt; font-size: 13pt">
-                I — DOS FATOS
-              </h3>
+              <h3 style="margin: 12pt 0 6pt; font-size: 13pt">I — DOS FATOS</h3>
               <p
                 style="
                   text-align: justify;
@@ -762,7 +802,7 @@
         </section>
 
         <!-- RIGHT PANEL: TEMPLATES -->
-        <section class="panel">
+        <section class="panel" data-panel="right" data-panel-label="MODELOS">
           <div class="panel-header">
             <span
               ><i
@@ -778,6 +818,14 @@
                 title="Buscar modelo"
               >
                 <i data-lucide="search"></i>
+              </button>
+              <span class="panel-sep"></span>
+              <button
+                class="btn btn-sm btn-ghost btn-minimize"
+                data-panel-toggle="right"
+                title="Minimizar painel direito (dobrar)"
+              >
+                <i data-lucide="panel-right-close"></i>
               </button>
             </div>
           </div>
