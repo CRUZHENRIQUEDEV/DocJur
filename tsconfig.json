@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": false,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "strict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": true,
+    "allowJs": true,
+    "checkJs": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@utils": ["assets/js/utils.js"],
+      "@store": ["assets/js/store.js"],
+      "@templates": ["assets/js/templates.js"],
+      "@editor": ["assets/js/editor.js"],
+      "@io": ["assets/js/io.js"],
+      "@ui": ["assets/js/ui.js"]
+    }
+  },
+  "include": [
+    "assets/js/**/*.js",
+    "src/**/*.ts",
+    "src/**/*.d.ts"
+  ],
+  "_migrationNotes": {
+    "whenMovingToVite": "mover assets/js -> src, ativar checkJs:false quando tudo for .ts"
+  }
+}

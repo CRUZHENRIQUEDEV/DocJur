@@ -1,0 +1,790 @@
+/**
+ * ZenithSolutions - Global Theme CSS
+ * Arquivo base para variáveis de cores e temas (claro/escuro)
+ * Todos os componentes devem importar este arquivo como base
+ */
+
+/* ============================================
+   TEMA CLARO (Default) - Cores shadcn/ui
+   ============================================ */
+:root {
+  /* Cores primárias */
+  --ui-accent: #8ec8ee;
+  --ui-accent-hover: #7db8de;
+  --ui-accent-active: #6da8ce;
+  --ui-accent-light: rgba(142, 200, 238, 0.15);
+
+  /* Backgrounds (shadcn/ui) */
+  --ui-bg: hsl(0, 0%, 100%);
+  --ui-bg-secondary: hsl(210, 40%, 96.1%);
+  --ui-bg-tertiary: hsl(210, 40%, 98%);
+  --ui-tabs-bg: hsl(0, 0%, 100%);
+  --ui-sidebar-bg: hsl(210, 40%, 96.1%);
+  --ui-modal-bg: #ffffff;
+  --ui-card-bg: hsl(0, 0%, 100%);
+  --ui-input-bg: hsl(214.3, 31.8%, 91.4%);
+  --ui-toolbar-bg: hsl(210, 40%, 96.1%);
+  --ui-canvas-bg: hsl(0, 0%, 100%);
+  --ui-status-bg: #8ec8ee;
+
+  /* Cor de fundo padrão para painéis (Ribbon, Tabs, ProjectBrowser) */
+  --ui-panel-bg: #f5f5f5;
+  --ui-ribbon-bg: #f5f5f5;
+  --ui-ribbon-tabs-bg: #e8e8e8;
+  --ui-ribbon-tab-hover: #e0e0e0;
+
+  /* Checkbox - Modo claro */
+  --ui-checkbox-checked: rgb(142, 200, 238);
+  --ui-checkbox-border: hsl(214.3, 31.8%, 91.4%);
+  --ui-checkbox-hover: rgb(122, 180, 218);
+
+  /* Textos (shadcn/ui) */
+  --ui-text: hsl(222.2, 84%, 4.9%);
+  --ui-text-secondary: hsl(215.4, 16.3%, 46.9%);
+  --ui-text-muted: hsl(215.4, 16.3%, 46.9%);
+  --ui-text-disabled: hsl(214.3, 31.8%, 91.4%);
+  --ui-text-inverse: hsl(210, 40%, 98%);
+
+  /* Bordas (shadcn/ui) */
+  --ui-border: hsl(214.3, 31.8%, 91.4%);
+  --ui-border-light: hsl(210, 40%, 96.1%);
+  --ui-border-focus: hsl(215, 20.2%, 65.1%);
+
+  /* Botões (shadcn/ui) */
+  --ui-button-bg: var(--ui-status-bg);
+  --ui-button-hover: var(--ui-status-bg);
+  --ui-button-active: var(--ui-status-bg);
+  --ui-button-text: hsl(210, 40%, 98%);
+  --ui-button-secondary-bg: var(--ui-status-bg);
+  --ui-button-secondary-hover: var(--ui-status-bg);
+  --ui-button-secondary-text: hsl(210, 40%, 98%);
+
+  /* Estados */
+  --ui-success: #28a745;
+  --ui-warning: #ffc107;
+  --ui-error: #dc3545;
+  --ui-info: #17a2b8;
+
+  /* Sombras */
+  --ui-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --ui-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --ui-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --ui-shadow-focus: 0 0 0 3px
+    color-mix(in srgb, var(--ui-accent) 22%, transparent);
+  --ui-shadow-slider: 0 2px 6px rgba(0, 0, 0, 0.2);
+  --ui-shadow-slider-hover: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --ui-shadow-modal: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+  /* Sliders */
+  --ui-slider-track-bg: #d0d0d0;
+  --ui-slider-track-border: #b0b0b0;
+  --ui-slider-thumb-border: #ffffff;
+
+  /* Info Box / Notes */
+  --ui-info-box-bg: #f5f5f5;
+  --ui-info-box-border: #666666;
+  --ui-info-box-text: #333333;
+  --ui-info-box-text-strong: #000000;
+
+  /* Modal - Removido duplicação, já definido acima */
+  --ui-modal-border: #e0e0e0;
+  --ui-modal-hover-bg: #f5f5f5;
+
+  /* Transições */
+  --ui-transition-fast: 0.15s ease;
+  --ui-transition-normal: 0.2s ease;
+  --ui-transition-slow: 0.3s ease;
+
+  /* Espaçamentos */
+  --ui-spacing-xs: 4px;
+  --ui-spacing-sm: 8px;
+  --ui-spacing-md: 16px;
+  --ui-spacing-lg: 24px;
+  --ui-spacing-xl: 32px;
+
+  /* Border Radius */
+  --ui-radius-sm: 4px;
+  --ui-radius-md: 6px;
+  --ui-radius-lg: 8px;
+  --ui-radius-xl: 12px;
+  --ui-radius-full: 9999px;
+
+  /* Tipografia */
+  --ui-font-family:
+    "Inter", system-ui, -apple-system, "Segoe UI", "Ubuntu", "Cantarell",
+    sans-serif;
+  --ui-font-size-xs: 11px;
+  --ui-font-size-sm: 12px;
+  --ui-font-size-md: 14px;
+  --ui-font-size-lg: 16px;
+  --ui-font-size-xl: 20px;
+  --ui-font-weight-normal: 400;
+  --ui-font-weight-medium: 500;
+  --ui-font-weight-semibold: 600;
+  --ui-font-weight-bold: 700;
+
+  /* Z-index */
+  --ui-z-dropdown: 100;
+  --ui-z-sticky: 200;
+  --ui-z-fixed: 300;
+  --ui-z-modal-backdrop: 400;
+  --ui-z-modal: 500;
+  --ui-z-popover: 600;
+  --ui-z-tooltip: 700;
+  --ui-z-modal-backdrop-top: 2147483646;
+  --ui-z-modal-top: 2147483647;
+
+  /* Renderer Variables */
+  --renderer-bg-primary: #f5f5f5;
+  --renderer-bg-secondary: #ffffff;
+  --renderer-bg-tertiary: #fafafa;
+  --renderer-bg-hover: rgba(0, 0, 0, 0.04);
+  --renderer-bg-active: rgba(0, 120, 212, 0.08);
+  --renderer-border: #e0e0e0;
+  --renderer-border-light: #f0f0f0;
+  --renderer-border-dark: #d0d0d0;
+  --renderer-text-primary: #1a1a1a;
+  --renderer-text-secondary: #666666;
+  --renderer-text-muted: #999999;
+  --renderer-text-disabled: #cccccc;
+  --renderer-accent: #6b6b6b;
+  --renderer-accent-hover: #555555;
+  --renderer-accent-light: rgba(107, 107, 107, 0.1);
+  --renderer-input-bg: #ffffff;
+  --renderer-input-border: #d0d0d0;
+  --renderer-input-focus-border: #8ec8ee;
+  --renderer-input-focus-bg: #ffffff;
+  --renderer-button-bg: #f0f0f0;
+  --renderer-button-hover: #e0e0e0;
+  --renderer-button-active: #d0d0d0;
+  --renderer-button-primary-bg: #8ec8ee;
+  --renderer-button-primary-hover: #7db8de;
+  --renderer-scrollbar-track: #f0f0f0;
+  --renderer-scrollbar-thumb: #c0c0c0;
+  --renderer-scrollbar-thumb-hover: #a0a0a0;
+  --renderer-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --renderer-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --renderer-shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.2);
+  --renderer-icon-color: #333333;
+  --renderer-icon-hover: #8ec8ee;
+
+  /* Sidebar/Panel Variables (compatibilidade shadcn/ui) */
+  --sidebar-bg: hsl(210, 40%, 96.1%);
+  --border-color: hsl(214.3, 31.8%, 91.4%);
+  --ui-accent-contrast: hsl(210, 40%, 98%);
+
+  /* shadcn/ui - Variáveis adicionais para compatibilidade */
+  /* Mapear --background para usar --ui-modal-bg */
+  /* Converter --ui-modal-bg (#ffffff) para HSL: 0 0% 100% */
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  /* Primário: azul suave em HSL — mantém todo componente novo alinhado ao tema global. */
+  --primary: 204 74% 75%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --ring: 215 20.2% 65.1%;
+  --viewer-bg: #f0f0f0;
+}
+
+/* ============================================
+   TEMA ESCURO
+   ============================================ */
+[data-theme="dark"],
+.dark-mode {
+  /* Cores primárias */
+  --ui-accent: #8ec8ee;
+  --ui-accent-hover: #a8d8f0;
+  --ui-accent-active: #7db8de;
+  --ui-accent-light: rgba(142, 200, 238, 0.2);
+
+  /* Backgrounds - AZUL como ProjectBrowser */
+  --ui-bg: #34495e;
+  --ui-bg-secondary: #2c3e50;
+  --ui-bg-tertiary: #3d5a80;
+  --ui-tabs-bg: #34495e;
+  --ui-sidebar-bg: #34495e;
+  --ui-modal-bg: #2c3e50;
+
+  /* shadcn/ui - Mapear --background para tema escuro */
+  /* Converter --ui-modal-bg (#2c3e50) para HSL: aproximadamente 210 30% 25% */
+  --background: 210 30% 25%;
+  --ui-card-bg: #34495e;
+  --ui-input-bg: #2c3e50;
+  --ui-toolbar-bg: #2c3e50;
+  --ui-canvas-bg: #34495e;
+  --ui-status-bg: #8ec8ee;
+
+  /* Textos */
+  --ui-text: #e0e0e0;
+  --ui-text-secondary: #cccccc;
+  --ui-text-muted: #888888;
+  --ui-text-disabled: #666666;
+  --ui-text-inverse: #1a1a1a;
+
+  /* Bordas — valores claros para contrastar com fundos azul-marinho */
+  --ui-border: #5e7a8e;
+  --ui-border-light: #4a6478;
+  --ui-border-focus: var(--ui-accent);
+
+  /* Botões */
+  --ui-button-bg: var(--ui-status-bg);
+  --ui-button-hover: var(--ui-status-bg);
+  --ui-button-active: var(--ui-status-bg);
+  --ui-button-text: #ffffff;
+  --ui-button-secondary-bg: var(--ui-status-bg);
+  --ui-button-secondary-hover: var(--ui-status-bg);
+  --ui-button-secondary-text: #ffffff;
+
+  /* Estados */
+  --ui-success: #4caf50;
+  --ui-warning: #ff9800;
+  --ui-error: #f44336;
+  --ui-info: #2196f3;
+
+  /* Sombras */
+  --ui-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --ui-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --ui-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.4);
+  --ui-shadow-focus: 0 0 0 3px
+    color-mix(in srgb, var(--ui-accent) 30%, transparent);
+  --ui-shadow-slider: 0 2px 6px rgba(0, 0, 0, 0.4);
+  --ui-shadow-slider-hover: 0 2px 8px rgba(0, 0, 0, 0.5);
+  --ui-shadow-modal: 0 8px 32px rgba(0, 0, 0, 0.6);
+
+  /* Sliders */
+  --ui-slider-track-bg: #3d5a80;
+  --ui-slider-track-border: #2c3e50;
+  --ui-slider-thumb-border: #2c3e50;
+
+  /* Info Box / Notes */
+  --ui-info-box-bg: #2a2a2a;
+  --ui-info-box-border: #888888;
+  --ui-info-box-text: #e0e0e0;
+  --ui-info-box-text-strong: #ffffff;
+
+  /* Modal - Removido duplicação, já definido acima */
+  --ui-modal-border: #333333;
+  --ui-modal-hover-bg: #333333;
+
+  /* Renderer Variables */
+  --renderer-bg-primary: #34495e;
+  --renderer-bg-secondary: #2c3e50;
+  --renderer-bg-tertiary: #3d5a80;
+  --renderer-bg-hover: rgba(255, 255, 255, 0.05);
+  --renderer-bg-active: rgba(93, 173, 226, 0.15);
+  --renderer-border: #3d5a80;
+  --renderer-border-light: #4a6fa5;
+  --renderer-border-dark: #2c3e50;
+  --renderer-text-primary: #ecf0f1;
+  --renderer-text-secondary: #bdc3c7;
+  --renderer-text-muted: #95a5a6;
+  --renderer-text-disabled: #7f8c8d;
+  --renderer-accent: #8ec8ee;
+  --renderer-accent-hover: #7db8de;
+  --renderer-accent-light: rgba(142, 200, 238, 0.2);
+  --renderer-input-bg: #2c3e50;
+  --renderer-input-border: #3d5a80;
+  --renderer-input-focus-border: #8ec8ee;
+  --renderer-input-focus-bg: #243342;
+  --renderer-button-bg: #3d5a80;
+  --renderer-button-hover: #4a6fa5;
+  --renderer-button-active: #8ec8ee;
+  --renderer-button-primary-bg: #8ec8ee;
+  --renderer-button-primary-hover: #7db8de;
+  --renderer-scrollbar-track: #2c3e50;
+  --renderer-scrollbar-thumb: #3d5a80;
+  --renderer-scrollbar-thumb-hover: #4a6fa5;
+  --renderer-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --renderer-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --renderer-shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.5);
+  --renderer-icon-color: #ecf0f1;
+  --renderer-icon-hover: #8ec8ee;
+
+  /* Sidebar/Panel Variables (compatibilidade) */
+  --sidebar-bg: #252526;
+  --border-color: #3e3e42;
+  --ui-accent-contrast: #ffffff;
+
+  /* Cor de fundo padrão para painéis (Ribbon, Tabs, ProjectBrowser) */
+  --ui-panel-bg: #34495e;
+  --ui-ribbon-bg: #2c3e50;
+  --ui-ribbon-tabs-bg: #2c3e50;
+  --ui-ribbon-tab-hover: #3d5a80;
+
+  /* Checkbox - Azul no modo escuro */
+  --ui-checkbox-checked: rgb(122, 180, 218);
+  --ui-checkbox-border: #3d5a80;
+  --ui-checkbox-hover: rgb(142, 200, 238);
+
+  /* shadcn/ui - Variáveis adicionais para compatibilidade */
+  --background: 220 14% 10%;
+  --foreground: 210 20% 90%;
+  --muted: 220 14% 18%;
+  --muted-foreground: 215 16% 65%;
+  --popover: 220 14% 12%;
+  --popover-foreground: 210 20% 90%;
+  --card: 220 14% 14%;
+  --card-foreground: 210 20% 90%;
+  --border: 220 14% 25%;
+  --input: 220 14% 22%;
+  /* Primário: azul suave em HSL (tema escuro). */
+  --primary: 204 74% 75%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --accent: 202 76% 75%;
+  --accent-foreground: 216 34% 17%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --ring: 224.3 76.3% 48%;
+  --viewer-bg: #263238;
+}
+
+/* ============================================
+   CLASSES UTILITÁRIAS
+   ============================================ */
+
+/* Containers */
+.ui-container {
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Cards / Sections */
+.ui-card {
+  background: var(--ui-card-bg);
+  border: 1px solid var(--ui-border);
+  border-radius: var(--ui-radius-lg);
+  padding: var(--ui-spacing-lg);
+}
+
+.ui-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ui-spacing-sm);
+  background: color-mix(in srgb, var(--ui-tabs-bg) 75%, transparent);
+  padding: var(--ui-spacing-lg);
+  border-radius: var(--ui-radius-lg);
+  border: 1px solid var(--ui-border);
+  margin-bottom: var(--ui-spacing-lg);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Títulos */
+.ui-title {
+  font-size: var(--ui-font-size-xl);
+  font-weight: var(--ui-font-weight-bold);
+  color: var(--ui-text);
+  margin-bottom: var(--ui-spacing-lg);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ui-section-title {
+  font-size: var(--ui-font-size-lg);
+  font-weight: var(--ui-font-weight-bold);
+  color: var(--ui-text-muted);
+  margin-bottom: var(--ui-spacing-md);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Formulários */
+.ui-form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--ui-spacing-md);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ui-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ui-spacing-sm);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.ui-label {
+  font-size: var(--ui-font-size-sm);
+  font-weight: var(--ui-font-weight-semibold);
+  color: var(--ui-text);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Inputs */
+.ui-input,
+.ui-select {
+  padding: 10px 12px;
+  background: color-mix(in srgb, var(--ui-tabs-bg) 82%, transparent);
+  border: 1px solid var(--ui-border);
+  border-radius: var(--ui-radius-md);
+  color: var(--ui-text);
+  font-size: var(--ui-font-size-md);
+  font-weight: var(--ui-font-weight-medium);
+  transition: all var(--ui-transition-normal);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.ui-input:focus,
+.ui-select:focus {
+  outline: none;
+  border-color: var(--ui-accent);
+  box-shadow: var(--ui-shadow-focus);
+}
+
+.ui-select option {
+  background: var(--ui-tabs-bg);
+  color: var(--ui-text);
+}
+
+/* Botões */
+.ui-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ui-spacing-sm);
+  padding: 10px 16px;
+  background: var(--ui-button-bg);
+  border: none;
+  border-radius: var(--ui-radius-md);
+  color: var(--ui-button-text);
+  font-size: var(--ui-font-size-sm);
+  font-weight: var(--ui-font-weight-medium);
+  cursor: pointer;
+  transition: all var(--ui-transition-normal);
+  width: 100%;
+}
+
+.ui-btn:hover {
+  background: var(--ui-button-hover);
+}
+
+.ui-btn:active {
+  background: var(--ui-button-active);
+}
+
+.ui-btn-secondary {
+  background: var(--ui-button-secondary-bg);
+  color: var(--ui-button-secondary-text);
+  border: 1px solid var(--ui-border);
+}
+
+.ui-btn-secondary:hover {
+  background: var(--ui-button-secondary-hover);
+}
+
+/* Checkbox */
+.ui-checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: var(--ui-spacing-sm);
+  margin-bottom: var(--ui-spacing-sm);
+}
+
+.ui-checkbox-group input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--ui-accent);
+  cursor: pointer;
+}
+
+.ui-checkbox-group label {
+  font-size: var(--ui-font-size-sm);
+  color: var(--ui-text);
+  cursor: pointer;
+}
+
+/* Tooltips */
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: calc(100% + 8px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--ui-bg-tertiary);
+  color: var(--ui-text);
+  padding: 6px 10px;
+  border-radius: var(--ui-radius-sm);
+  font-size: var(--ui-font-size-xs);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--ui-transition-fast);
+  border: 1px solid var(--ui-border);
+  z-index: var(--ui-z-tooltip);
+}
+
+[data-tooltip]:hover::after {
+  opacity: 1;
+}
+
+/* Status Bar */
+.ui-status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--ui-spacing-md);
+  height: 30px;
+  background: var(--ui-status-bg);
+  color: var(--ui-text-inverse);
+  font-size: var(--ui-font-size-xs);
+}
+
+/* Listas */
+.ui-list {
+  max-height: 200px;
+  overflow-y: auto;
+  background: var(--ui-button-secondary-bg);
+  border: 1px solid var(--ui-border);
+  border-radius: var(--ui-radius-md);
+  padding: var(--ui-spacing-xs);
+}
+
+.ui-list-item {
+  padding: var(--ui-spacing-xs) var(--ui-spacing-sm);
+  margin: 2px 0;
+  background: var(--ui-input-bg);
+  border-radius: var(--ui-radius-sm);
+  cursor: pointer;
+  font-size: var(--ui-font-size-xs);
+  transition: background var(--ui-transition-fast);
+}
+
+.ui-list-item:hover {
+  background: var(--ui-button-secondary-hover);
+}
+
+.ui-list-item.selected {
+  background: var(--ui-accent);
+  color: var(--ui-text-inverse);
+}
+
+/* Empty State */
+.ui-empty {
+  text-align: center;
+  padding: var(--ui-spacing-md);
+  color: var(--ui-text-muted);
+  font-style: italic;
+  font-size: var(--ui-font-size-xs);
+}
+
+/* ============================================
+   PAINÉIS E TABS (Padrão RightPanelManager)
+   ============================================ */
+
+/* Panel Manager */
+.ui-panel-manager {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--sidebar-bg);
+  border-left: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 100;
+}
+
+/* Estado colapsado */
+.ui-panel-manager.collapsed {
+  width: 48px !important;
+  min-width: 48px;
+}
+
+.ui-panel-manager.collapsed .ui-panel-content {
+  display: none;
+}
+
+.ui-panel-manager.collapsed .ui-panel-tab span {
+  display: none;
+}
+
+.ui-panel-manager.collapsed .ui-panel-tabs {
+  flex-direction: column;
+  height: 100%;
+  border-bottom: none;
+  border-right: 2px solid var(--border-color);
+}
+
+.ui-panel-manager.collapsed .ui-panel-tab {
+  writing-mode: vertical-rl;
+  padding: 16px 8px;
+  border-bottom: none;
+  border-right: 3px solid transparent;
+}
+
+.ui-panel-manager.collapsed .ui-panel-tab.active {
+  border-right-color: var(--ui-accent);
+  border-bottom-color: transparent;
+}
+
+/* Tabs de alternância */
+.ui-panel-tabs {
+  display: flex;
+  background: var(--renderer-bg-secondary);
+  border-bottom: 2px solid var(--renderer-border);
+  padding: 0;
+  gap: 0;
+}
+
+.ui-panel-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: var(--renderer-text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.ui-panel-tab:hover {
+  background: var(--renderer-bg-hover);
+  color: var(--renderer-text-primary);
+}
+
+.ui-panel-tab.active {
+  background: var(--renderer-bg-primary);
+  color: var(--renderer-accent);
+  border-bottom-color: var(--renderer-accent);
+  font-weight: 600;
+}
+
+.ui-panel-tab svg {
+  flex-shrink: 0;
+}
+
+.ui-panel-tab span {
+  white-space: nowrap;
+}
+
+/* Conteúdo do painel */
+.ui-panel-content {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsividade - ocultar texto em telas menores */
+@media (max-width: 400px) {
+  .ui-panel-tab span {
+    display: none;
+  }
+
+  .ui-panel-tab {
+    padding: 10px 12px;
+  }
+}
+
+/* ============================================
+   TABS (shadcn/ui) - Override para tema claro
+   ============================================ */
+
+/* Tabs do ViewManager - seguir padrão RibbonPanel */
+[data-radix-collection-item] {
+  color: var(--ui-text, #333) !important;
+}
+
+[data-radix-collection-item][data-state="active"] {
+  background-color: rgba(0, 120, 212, 0.08) !important;
+  color: var(--ui-text, #333) !important;
+  border-bottom: 2px solid var(--ui-accent, #8ec8ee) !important;
+  font-weight: 600 !important;
+}
+
+[data-radix-collection-item]:hover {
+  background-color: var(--ui-ribbon-tab-hover, #d8d8d8) !important;
+}
+
+/* Tema escuro */
+[data-theme="dark"] [data-radix-collection-item] {
+  color: var(--ui-text, #e0e0e0) !important;
+}
+
+[data-theme="dark"] [data-radix-collection-item][data-state="active"] {
+  background-color: rgba(0, 120, 212, 0.2) !important;
+  color: var(--ui-text, #e0e0e0) !important;
+}
+
+[data-theme="dark"] [data-radix-collection-item]:hover {
+  background-color: var(--ui-ribbon-tab-hover, #333333) !important;
+}
+
+/* ============================================
+   SNAPS DIALOG - Forçar uso das cores do tema
+   ============================================ */
+/* Mapear --background do shadcn para usar --ui-modal-bg */
+div[role="dialog"][id^="radix-"] {
+  background: var(--ui-modal-bg) !important;
+  background-color: var(--ui-modal-bg) !important;
+  color: var(--ui-text) !important;
+}
+
+/* Garantir que bg-background use as cores do tema */
+div[role="dialog"][id^="radix-"].bg-background,
+div[role="dialog"].bg-background {
+  background: var(--ui-modal-bg) !important;
+  background-color: var(--ui-modal-bg) !important;
+}
+
+/* ============================================
+   FAMILY 3D FORM / PROFILE SELECTOR - Selects
+   Usar variáveis do tema (evitar fundo branco)
+   ============================================ */
+.family-3d-form .form-select,
+.family-3d-modal .form-select,
+.family-3d-form .selector-select,
+.family-3d-modal .selector-select,
+.profile-selection-section .selector-select {
+  background: var(--ui-input-bg) !important;
+  color: var(--ui-text) !important;
+  border-color: var(--ui-border);
+}
+
+.family-3d-form .form-select:focus,
+.family-3d-modal .form-select:focus,
+.family-3d-form .selector-select:focus,
+.family-3d-modal .selector-select:focus,
+.profile-selection-section .selector-select:focus {
+  border-color: var(--ui-accent);
+  outline: none;
+}
+
+.family-3d-form .form-select option,
+.family-3d-modal .form-select option,
+.family-3d-form .selector-select option,
+.family-3d-modal .selector-select option,
+.profile-selection-section .selector-select option {
+  background: var(--ui-input-bg);
+  color: var(--ui-text);
+}

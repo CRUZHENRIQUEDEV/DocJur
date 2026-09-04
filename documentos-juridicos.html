@@ -1,0 +1,898 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DocJur - Gerador de Documentos Jurídicos</title>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link rel="stylesheet" href="assets/css/global-theme.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- HEADER -->
+      <header class="app-header">
+        <div class="brand">
+          <i data-lucide="scale"></i>
+          <span>DocJur — Gerador de Documentos Jurídicos</span>
+        </div>
+        <div class="actions">
+          <button class="btn btn-ghost" id="btn-new" title="Novo Documento">
+            <i data-lucide="file-plus"></i> Novo
+          </button>
+          <button class="btn btn-ghost" id="btn-open" title="Abrir Salvo">
+            <i data-lucide="folder-open"></i> Abrir
+          </button>
+          <button class="btn" id="btn-save" title="Salvar no Navegador">
+            <i data-lucide="save"></i> Salvar
+          </button>
+          <div
+            class="tb-sep"
+            style="width: 1px; height: 22px; background: #475569"
+          ></div>
+          <button class="btn" id="btn-import" title="Importar DOCX/PDF">
+            <i data-lucide="upload"></i> Importar
+          </button>
+          <button class="btn btn-warn" id="btn-docx" title="Baixar DOCX">
+            <i data-lucide="file-text"></i> DOCX
+          </button>
+          <button class="btn btn-success" id="btn-pdf" title="Exportar PDF">
+            <i data-lucide="file-down"></i> PDF
+          </button>
+          <button
+            class="btn btn-primary"
+            id="btn-ai"
+            title="Assistente IA (em breve)"
+            disabled
+          >
+            <i data-lucide="sparkles"></i> IA
+          </button>
+          <button
+            class="btn btn-ghost btn-icon"
+            id="btn-theme-toggle"
+            title="Alternar tema claro/escuro"
+          >
+            <i data-lucide="moon" id="icon-theme"></i>
+          </button>
+        </div>
+      </header>
+
+      <!-- MAIN 3-COLUMN -->
+      <main class="main">
+        <!-- LEFT PANEL: DATA -->
+        <section class="panel">
+          <div class="panel-header">
+            <span
+              ><i
+                data-lucide="database"
+                style="width: 13px; height: 13px; vertical-align: -2px"
+              ></i>
+              Dados do Documento</span
+            >
+            <div class="panel-actions">
+              <button
+                class="btn btn-sm btn-ghost"
+                id="btn-apply-data"
+                title="Aplicar dados nos placeholders"
+              >
+                <i data-lucide="play"></i>
+              </button>
+              <button
+                class="btn btn-sm btn-ghost"
+                id="btn-clear-data"
+                title="Limpar dados"
+              >
+                <i data-lucide="rotate-ccw"></i>
+              </button>
+            </div>
+          </div>
+          <div class="tabs" id="data-tabs">
+            <button class="tab active" data-tab="tab-adv">
+              <i data-lucide="gavel"></i> Advogado
+            </button>
+            <button class="tab" data-tab="tab-cli">
+              <i data-lucide="user"></i> Cliente
+            </button>
+            <button class="tab" data-tab="tab-reu">
+              <i data-lucide="user-x"></i> Réu
+            </button>
+            <button class="tab" data-tab="tab-proc">
+              <i data-lucide="scroll"></i> Processo
+            </button>
+          </div>
+          <div class="panel-body">
+            <!-- TAB ADVOGADO -->
+            <div class="tab-content active" id="tab-adv">
+              <div class="section-title">
+                <i data-lucide="gavel"></i> Dados do Advogado
+              </div>
+              <div class="form-row">
+                <label>Nome Completo</label
+                ><input type="text" id="adv_nome" data-ph="ADV_NOME" />
+              </div>
+              <div class="grid-2">
+                <div class="form-row">
+                  <label>OAB / UF</label
+                  ><input
+                    type="text"
+                    id="adv_oab"
+                    placeholder="123.456/DF"
+                    data-ph="ADV_OAB"
+                  />
+                </div>
+                <div class="form-row">
+                  <label>CPF</label
+                  ><input
+                    type="text"
+                    id="adv_cpf"
+                    placeholder="000.000.000-00"
+                    data-ph="ADV_CPF"
+                  />
+                </div>
+              </div>
+              <div class="form-row">
+                <label>E-mail</label
+                ><input type="email" id="adv_email" data-ph="ADV_EMAIL" />
+              </div>
+              <div class="form-row">
+                <label>Telefone</label
+                ><input
+                  type="text"
+                  id="adv_tel"
+                  placeholder="(61) 90000-0000"
+                  data-ph="ADV_TEL"
+                />
+              </div>
+              <div class="form-row">
+                <label>Endereço Comercial</label
+                ><input
+                  type="text"
+                  id="adv_end"
+                  placeholder="Rua, Número, Bairro"
+                  data-ph="ADV_END"
+                />
+              </div>
+              <div class="grid-3">
+                <div class="form-row">
+                  <label>CEP</label
+                  ><input type="text" id="adv_cep" data-ph="ADV_CEP" />
+                </div>
+                <div class="form-row">
+                  <label>Cidade</label
+                  ><input type="text" id="adv_cidade" data-ph="ADV_CIDADE" />
+                </div>
+                <div class="form-row">
+                  <label>UF</label
+                  ><input type="text" id="adv_uf" data-ph="ADV_UF" />
+                </div>
+              </div>
+              <div class="section-title">
+                <i data-lucide="briefcase"></i> Escritório (opcional)
+              </div>
+              <div class="form-row">
+                <label>Razão Social</label
+                ><input type="text" id="esc_razao" data-ph="ESC_RAZAO" />
+              </div>
+              <div class="grid-2">
+                <div class="form-row">
+                  <label>CNPJ</label
+                  ><input type="text" id="esc_cnpj" data-ph="ESC_CNPJ" />
+                </div>
+                <div class="form-row">
+                  <label>Nome Fantasia</label
+                  ><input type="text" id="esc_fant" data-ph="ESC_FANT" />
+                </div>
+              </div>
+            </div>
+
+            <!-- TAB CLIENTE -->
+            <div class="tab-content" id="tab-cli">
+              <div class="section-title">
+                <i data-lucide="user"></i> Cliente / Autor
+              </div>
+              <div class="grid-2">
+                <div class="form-row">
+                  <label>Nome Completo</label
+                  ><input type="text" id="cli_nome" data-ph="CLI_NOME" />
+                </div>
+                <div class="form-row">
+                  <label>Tipo</label>
+                  <select id="cli_tipo" data-ph="CLI_TIPO">
+                    <option value="Pessoa Física">Pessoa Física</option>
+                    <option value="Pessoa Jurídica">Pessoa Jurídica</option>
+                  </select>
+                </div>
+              </div>
+              <div class="grid-2">
+                <div class="form-row">
+                  <label>CPF / CNPJ</label
+                  ><input type="text" id="cli_doc" data-ph="CLI_DOC" />
+                </div>
+                <div class="form-row">
+                  <label>RG / IE</label
+                  ><input type="text" id="cli_rg" data-ph="CLI_RG" />
+                </div>
+              </div>
+              <div class="grid-2">
+                <div class="form-row">
+                  <label>Nacionalidade</label
+                  ><input type="text" id="cli_nac" data-ph="CLI_NAC" />
+                </div>
+                <div class="form-row">
+                  <label>Estado Civil</label>
+                  <select id="cli_ec" data-ph="CLI_EC">
+                    <option value="">—</option>
+                    <option>Solteiro(a)</option>
+                    <option>Casado(a)</option>
+                    <option>Divorciado(a)</option>
+                    <option>Viúvo(a)</option>
+                    <option>Separado(a)</option>
+                    <option>União Estável</option>
+                  </select>
+                </div>
+              </div>
+              <div class="grid-2">
+                <div class="form-row">
+                  <label>Profissão</label
+                  ><input type="text" id="cli_prof" data-ph="CLI_PROF" />
+                </div>
+                <div class="form-row">
+                  <label>Data Nasc.</label
+                  ><input type="date" id="cli_nasc" data-ph="CLI_NASC" />
+                </div>
+              </div>
+              <div class="form-row">
+                <label>E-mail</label
+                ><input type="email" id="cli_email" data-ph="CLI_EMAIL" />
+              </div>
+              <div class="form-row">
+                <label>Telefone</label
+                ><input type="text" id="cli_tel" data-ph="CLI_TEL" />
+              </div>
+              <div class="form-row">
+                <label>Endereço</label
+                ><input type="text" id="cli_end" data-ph="CLI_END" />
+              </div>
+              <div class="grid-3">
+                <div class="form-row">
+                  <label>CEP</label
+                  ><input type="text" id="cli_cep" data-ph="CLI_CEP" />
+                </div>
+                <div class="form-row">
+                  <label>Cidade</label
+                  ><input type="text" id="cli_cidade" data-ph="CLI_CIDADE" />
+                </div>
+                <div class="form-row">
+                  <label>UF</label
+                  ><input type="text" id="cli_uf" data-ph="CLI_UF" />
+                </div>
+              </div>
+            </div>
+
+            <!-- TAB RÉU -->
+            <div class="tab-content" id="tab-reu">
+              <div class="section-title">
+                <i data-lucide="user-x"></i> Réu / Requerido
+              </div>
+              <div class="grid-2">
+                <div class="form-row">
+                  <label>Nome / Razão Social</label
+                  ><input type="text" id="reu_nome" data-ph="REU_NOME" />
+                </div>
+                <div class="form-row">
+                  <label>Tipo</label>
+                  <select id="reu_tipo" data-ph="REU_TIPO">
+                    <option value="Pessoa Física">Pessoa Física</option>
+                    <option value="Pessoa Jurídica">Pessoa Jurídica</option>
+                    <option value="Órgão Público">Órgão Público</option>
+                  </select>
+                </div>
+              </div>
+              <div class="grid-2">
+                <div class="form-row">
+                  <label>CPF / CNPJ</label
+                  ><input type="text" id="reu_doc" data-ph="REU_DOC" />
+                </div>
+                <div class="form-row">
+                  <label>RG / IE</label
+                  ><input type="text" id="reu_rg" data-ph="REU_RG" />
+                </div>
+              </div>
+              <div class="grid-2">
+                <div class="form-row">
+                  <label>Nacionalidade</label
+                  ><input type="text" id="reu_nac" data-ph="REU_NAC" />
+                </div>
+                <div class="form-row">
+                  <label>Representante Legal</label
+                  ><input type="text" id="reu_rep" data-ph="REU_REP" />
+                </div>
+              </div>
+              <div class="form-row">
+                <label>E-mail</label
+                ><input type="email" id="reu_email" data-ph="REU_EMAIL" />
+              </div>
+              <div class="form-row">
+                <label>Telefone</label
+                ><input type="text" id="reu_tel" data-ph="REU_TEL" />
+              </div>
+              <div class="form-row">
+                <label>Endereço</label
+                ><input type="text" id="reu_end" data-ph="REU_END" />
+              </div>
+              <div class="grid-3">
+                <div class="form-row">
+                  <label>CEP</label
+                  ><input type="text" id="reu_cep" data-ph="REU_CEP" />
+                </div>
+                <div class="form-row">
+                  <label>Cidade</label
+                  ><input type="text" id="reu_cidade" data-ph="REU_CIDADE" />
+                </div>
+                <div class="form-row">
+                  <label>UF</label
+                  ><input type="text" id="reu_uf" data-ph="REU_UF" />
+                </div>
+              </div>
+              <div class="section-title">
+                <i data-lucide="users"></i> Partes Adicionais (campos genéricos)
+              </div>
+              <div class="grid-2">
+                <div class="form-row">
+                  <label>Campo 1</label
+                  ><input type="text" id="gen_1" data-ph="GEN_1" />
+                </div>
+                <div class="form-row">
+                  <label>Campo 2</label
+                  ><input type="text" id="gen_2" data-ph="GEN_2" />
+                </div>
+              </div>
+              <div class="form-row">
+                <label>Campo 3 (Texto Longo)</label
+                ><textarea id="gen_3" data-ph="GEN_3"></textarea>
+              </div>
+            </div>
+
+            <!-- TAB PROCESSO -->
+            <div class="tab-content" id="tab-proc">
+              <div class="section-title">
+                <i data-lucide="scroll"></i> Processo Judicial
+              </div>
+              <div class="form-row">
+                <label>Número do Processo</label
+                ><input
+                  type="text"
+                  id="proc_num"
+                  placeholder="0000000-00.0000.0.00.0000"
+                  data-ph="PROC_NUM"
+                />
+              </div>
+              <div class="grid-2">
+                <div class="form-row">
+                  <label>Vara</label
+                  ><input type="text" id="proc_vara" data-ph="PROC_VARA" />
+                </div>
+                <div class="form-row">
+                  <label>Fórum</label
+                  ><input type="text" id="proc_forum" data-ph="PROC_FORUM" />
+                </div>
+              </div>
+              <div class="grid-2">
+                <div class="form-row">
+                  <label>Comarca</label
+                  ><input
+                    type="text"
+                    id="proc_comarca"
+                    data-ph="PROC_COMARCA"
+                  />
+                </div>
+                <div class="form-row">
+                  <label>UF</label
+                  ><input type="text" id="proc_uf" data-ph="PROC_UF" />
+                </div>
+              </div>
+              <div class="form-row">
+                <label>Assunto / Classe</label
+                ><input type="text" id="proc_assunto" data-ph="PROC_ASSUNTO" />
+              </div>
+              <div class="grid-2">
+                <div class="form-row">
+                  <label>Valor da Causa (R$)</label
+                  ><input
+                    type="text"
+                    id="proc_valor"
+                    placeholder="0,00"
+                    data-ph="PROC_VALOR"
+                  />
+                </div>
+                <div class="form-row">
+                  <label>Data dos Fatos</label
+                  ><input type="date" id="proc_data" data-ph="PROC_DATA" />
+                </div>
+              </div>
+              <div class="grid-2">
+                <div class="form-row">
+                  <label>Juiz(a) Relator(a)</label
+                  ><input type="text" id="proc_juiz" data-ph="PROC_JUIZ" />
+                </div>
+                <div class="form-row">
+                  <label>Instância</label>
+                  <select id="proc_inst" data-ph="PROC_INST">
+                    <option>1ª Instância</option>
+                    <option>2ª Instância</option>
+                    <option>Superior Tribunal</option>
+                    <option>Supremo Tribunal</option>
+                  </select>
+                </div>
+              </div>
+              <div class="section-title">
+                <i data-lucide="calendar"></i> Metadados do Documento
+              </div>
+              <div class="grid-2">
+                <div class="form-row">
+                  <label>Cidade</label
+                  ><input type="text" id="doc_cidade" data-ph="DOC_CIDADE" />
+                </div>
+                <div class="form-row">
+                  <label>UF</label
+                  ><input type="text" id="doc_uf" data-ph="DOC_UF" />
+                </div>
+              </div>
+              <div class="form-row">
+                <label>Data</label
+                ><input type="date" id="doc_data" data-ph="DOC_DATA" />
+              </div>
+              <div class="form-row">
+                <label>Título do Documento</label
+                ><input
+                  type="text"
+                  id="doc_titulo"
+                  placeholder="Ex: Petição Inicial"
+                  data-ph="DOC_TITULO"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CENTER PANEL: EDITOR -->
+        <section class="panel">
+          <div class="panel-header">
+            <span
+              ><i
+                data-lucide="file-edit"
+                style="width: 13px; height: 13px; vertical-align: -2px"
+              ></i>
+              Editor — <span id="editor-title">Documento sem título</span></span
+            >
+            <div class="panel-actions">
+              <button
+                class="btn btn-sm btn-ghost"
+                id="btn-toggle-edit"
+                title="Bloquear/Desbloquear edição"
+              >
+                <i data-lucide="lock-open"></i>
+              </button>
+              <button
+                class="btn btn-sm btn-ghost"
+                id="btn-word-count"
+                title="Contar palavras"
+              >
+                <i data-lucide="type"></i>
+              </button>
+              <button
+                class="btn btn-sm btn-ghost"
+                id="btn-zoom-out"
+                title="Diminuir zoom"
+              >
+                <i data-lucide="minus"></i>
+              </button>
+              <button
+                class="btn btn-sm btn-ghost"
+                id="btn-zoom-in"
+                title="Aumentar zoom"
+              >
+                <i data-lucide="plus"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="editor-toolbar" id="toolbar">
+            <div class="tb-group">
+              <select class="tb-select" id="tb-font" title="Fonte">
+                <option value='"Times New Roman", Georgia, serif'>
+                  Times New Roman
+                </option>
+                <option value="Arial, sans-serif">Arial</option>
+                <option value="Calibri, sans-serif">Calibri</option>
+                <option value="Georgia, serif">Georgia</option>
+                <option value="Verdana, sans-serif">Verdana</option>
+                <option value="Courier New, monospace">Courier New</option>
+                <option value="Tahoma, sans-serif">Tahoma</option>
+              </select>
+              <select class="tb-select" id="tb-size" title="Tamanho">
+                <option value="1">8pt</option>
+                <option value="2">10pt</option>
+                <option value="3" selected>12pt</option>
+                <option value="4">14pt</option>
+                <option value="5">18pt</option>
+                <option value="6">24pt</option>
+                <option value="7">36pt</option>
+              </select>
+            </div>
+            <div class="tb-group">
+              <button class="tb-btn" data-cmd="bold" title="Negrito (Ctrl+B)">
+                <i data-lucide="bold"></i>
+              </button>
+              <button class="tb-btn" data-cmd="italic" title="Itálico (Ctrl+I)">
+                <i data-lucide="italic"></i>
+              </button>
+              <button
+                class="tb-btn"
+                data-cmd="underline"
+                title="Sublinhado (Ctrl+U)"
+              >
+                <i data-lucide="underline"></i>
+              </button>
+              <button class="tb-btn" data-cmd="strikeThrough" title="Tachado">
+                <i data-lucide="strikethrough"></i>
+              </button>
+            </div>
+            <div class="tb-group" id="grp-color">
+              <button class="tb-btn" id="btn-color" title="Cor do texto">
+                <i data-lucide="palette"></i>
+              </button>
+              <button class="tb-btn" id="btn-hl" title="Cor de fundo">
+                <i data-lucide="highlighter"></i>
+              </button>
+              <div class="tb-sep"></div>
+              <button class="tb-btn" data-cmd="subscript" title="Subscrito">
+                <i data-lucide="subscript"></i>
+              </button>
+              <button class="tb-btn" data-cmd="superscript" title="Sobrescrito">
+                <i data-lucide="superscript"></i>
+              </button>
+            </div>
+            <div class="tb-group">
+              <button
+                class="tb-btn"
+                data-cmd="justifyLeft"
+                title="Alinhar à esquerda"
+              >
+                <i data-lucide="align-left"></i>
+              </button>
+              <button
+                class="tb-btn"
+                data-cmd="justifyCenter"
+                title="Centralizar"
+              >
+                <i data-lucide="align-center"></i>
+              </button>
+              <button
+                class="tb-btn"
+                data-cmd="justifyRight"
+                title="Alinhar à direita"
+              >
+                <i data-lucide="align-right"></i>
+              </button>
+              <button class="tb-btn" data-cmd="justifyFull" title="Justificado">
+                <i data-lucide="align-justify"></i>
+              </button>
+            </div>
+            <div class="tb-group">
+              <select class="tb-select" id="tb-list" title="Lista">
+                <option value="">Estilo de lista</option>
+                <option value="insertUnorderedList">• Marcadores</option>
+                <option value="insertOrderedList">1. Numerada</option>
+              </select>
+              <button class="tb-btn" data-cmd="outdent" title="Diminuir recuo">
+                <i data-lucide="indent-decrease"></i>
+              </button>
+              <button class="tb-btn" data-cmd="indent" title="Aumentar recuo">
+                <i data-lucide="indent-increase"></i>
+              </button>
+            </div>
+            <div class="tb-group">
+              <select class="tb-select" id="tb-head" title="Título">
+                <option value="">Parágrafo</option>
+                <option value="h1">Título 1</option>
+                <option value="h2">Título 2</option>
+                <option value="h3">Título 3</option>
+                <option value="blockquote">Citação</option>
+                <option value="pre">Código</option>
+              </select>
+            </div>
+            <div class="tb-group">
+              <button class="tb-btn" id="btn-hr" title="Linha horizontal">
+                <i data-lucide="minus"></i>
+              </button>
+              <button class="tb-btn" id="btn-link" title="Inserir link">
+                <i data-lucide="link"></i>
+              </button>
+              <button class="tb-btn" id="btn-unlink" title="Remover link">
+                <i data-lucide="link-2-off"></i>
+              </button>
+            </div>
+            <div class="tb-group">
+              <button class="tb-btn" data-cmd="undo" title="Desfazer (Ctrl+Z)">
+                <i data-lucide="undo"></i>
+              </button>
+              <button class="tb-btn" data-cmd="redo" title="Refazer (Ctrl+Y)">
+                <i data-lucide="redo"></i>
+              </button>
+              <div class="tb-sep"></div>
+              <button
+                class="tb-btn"
+                id="btn-clear-fmt"
+                title="Limpar formatação"
+              >
+                <i data-lucide="eraser"></i>
+              </button>
+              <button
+                class="tb-btn"
+                id="btn-select-all"
+                title="Selecionar tudo"
+              >
+                <i data-lucide="square-check"></i>
+              </button>
+            </div>
+            <div class="tb-group">
+              <button class="tb-btn" id="btn-ph" title="Inserir placeholder">
+                <i data-lucide="curly-braces"></i>
+              </button>
+              <button
+                class="tb-btn"
+                id="btn-page-break"
+                title="Quebra de página"
+              >
+                <i data-lucide="scissors"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="editor-wrap" id="editor-wrap">
+            <div
+              class="editor-page"
+              id="editor"
+              contenteditable="true"
+              spellcheck="false"
+            >
+              <h1
+                style="text-align: center; font-size: 18pt; margin-bottom: 24pt"
+              >
+                {{DOC_TITULO}}
+              </h1>
+              <p style="text-align: justify; margin-bottom: 12pt">
+                <strong>{{CLI_NOME}}</strong>, {{CLI_NAC}}, {{CLI_EC}},
+                {{CLI_PROF}}, portador do CPF nº {{CLI_DOC}}, residente e
+                domiciliado em {{CLI_END}}, {{CLI_CIDADE}}/{{CLI_UF}}, CEP
+                {{CLI_CEP}}, por intermédio do advogado abaixo assinado, vem,
+                respeitosamente, à presença de Vossa Excelência, perante a
+                {{PROC_VARA}} do {{PROC_FORUM}} da Comarca de
+                {{PROC_COMARCA}}/{{PROC_UF}}, interpor a presente
+              </p>
+              <h2 style="text-align: center; font-size: 14pt; margin: 20pt 0">
+                {{DOC_TITULO}}
+              </h2>
+              <p style="text-align: justify; margin-bottom: 12pt">
+                Em face de <strong>{{REU_NOME}}</strong>, {{REU_TIPO}}, inscrito
+                no {{REU_TIPO == 'Pessoa Jurídica' ? 'CNPJ' : 'CPF'}} sob o nº
+                {{REU_DOC}}, residente/domiciliado em {{REU_END}},
+                {{REU_CIDADE}}/{{REU_UF}}, pelos fatos e fundamentos de direito
+                a seguir expostos, vem requerer o que segue:
+              </p>
+              <h3 style="margin: 18pt 0 10pt; font-size: 13pt">
+                I — DOS FATOS
+              </h3>
+              <p
+                style="
+                  text-align: justify;
+                  margin-bottom: 12pt;
+                  text-indent: 1.5cm;
+                "
+              >
+                {{GEN_3}}
+              </p>
+              <h3 style="margin: 18pt 0 10pt; font-size: 13pt">
+                II — DO DIREITO
+              </h3>
+              <p
+                style="
+                  text-align: justify;
+                  margin-bottom: 12pt;
+                  text-indent: 1.5cm;
+                "
+              >
+                Diante dos fatos narrados, aplica-se ao caso o disposto nos
+                artigos 186, 187 e 927 do Código Civil, bem assim os princípios
+                da responsabilidade civil objetiva, ensejando a reparação
+                integral dos danos causados ao autor.
+              </p>
+              <h3 style="margin: 18pt 0 10pt; font-size: 13pt">
+                III — DOS PEDIDOS
+              </h3>
+              <p style="text-align: justify; margin-bottom: 8pt">
+                Diante do exposto, requer:
+              </p>
+              <ol style="margin-left: 1.5cm; margin-bottom: 12pt">
+                <li style="margin-bottom: 6pt">
+                  Seja deferida a citação do réu para, querendo, defender-se no
+                  prazo legal;
+                </li>
+                <li style="margin-bottom: 6pt">
+                  Seja julgada procedente a ação, para condenar o réu ao
+                  pagamento das indenizações pleiteadas;
+                </li>
+                <li style="margin-bottom: 6pt">
+                  Seja concedida a tutela provisória de urgência, nos termos do
+                  art. 300 do CPC;
+                </li>
+                <li>
+                  Sejam condenados o réu ao pagamento de custas, despesas
+                  processuais e honorários advocatícios.
+                </li>
+              </ol>
+              <p style="text-align: justify; margin-bottom: 24pt">
+                Dá-se à causa o valor de R$ {{PROC_VALOR}}.
+              </p>
+              <p style="text-align: center; margin: 40pt 0 10pt">
+                Nestes termos, pede deferimento.
+              </p>
+              <p style="text-align: center; margin-bottom: 40pt">
+                {{DOC_CIDADE}}/{{DOC_UF}}, {{DOC_DATA}}.
+              </p>
+              <div style="text-align: center; margin-top: 80pt">
+                <div
+                  style="
+                    width: 200px;
+                    border-top: 1px solid #000;
+                    margin: 0 auto 4pt;
+                  "
+                ></div>
+                <div style="font-weight: 600">{{ADV_NOME}}</div>
+                <div style="font-size: 11pt">OAB/{{ADV_UF}} nº {{ADV_OAB}}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="editor-meta">
+            <span id="meta-stats">Palavras: 0 · Caracteres: 0</span>
+            <span id="meta-ph">Placeholders: 0 preenchidos / 0</span>
+          </div>
+        </section>
+
+        <!-- RIGHT PANEL: TEMPLATES -->
+        <section class="panel">
+          <div class="panel-header">
+            <span
+              ><i
+                data-lucide="layout-template"
+                style="width: 13px; height: 13px; vertical-align: -2px"
+              ></i>
+              Modelos</span
+            >
+            <div class="panel-actions">
+              <button
+                class="btn btn-sm btn-ghost"
+                id="btn-search-tpl"
+                title="Buscar modelo"
+              >
+                <i data-lucide="search"></i>
+              </button>
+            </div>
+          </div>
+          <div class="upload-zone" id="upload-zone">
+            <i
+              data-lucide="upload-cloud"
+              style="width: 28px; height: 28px; margin-bottom: 4px"
+            ></i>
+            <div style="font-weight: 600; margin-bottom: 2px">
+              Importar Arquivo
+            </div>
+            <div style="font-size: 10.5px">
+              Arraste .docx ou .pdf aqui<br />ou clique para selecionar
+            </div>
+            <input
+              type="file"
+              id="file-input"
+              accept=".docx,.pdf,.doc"
+              style="display: none"
+            />
+          </div>
+          <div class="panel-body">
+            <ul class="cat-list" id="tpl-tree">
+              <!-- FILLED BY JS -->
+            </ul>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- MODAL: DOCS SALVOS -->
+    <div class="modal-backdrop" id="modal-open">
+      <div class="modal">
+        <div class="modal-header">
+          <span>Documentos Salvos</span>
+          <button class="btn btn-sm btn-ghost" id="btn-close-open">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <ul class="doc-list" id="doc-list">
+            <!-- FILLED BY JS -->
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-ghost" id="btn-cancel-open">Fechar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL: PLACEHOLDER PICKER -->
+    <div class="modal-backdrop" id="modal-ph">
+      <div class="modal" style="max-width: 400px">
+        <div class="modal-header">
+          <span>Inserir Placeholder</span>
+          <button class="btn btn-sm btn-ghost" id="btn-close-ph">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-row">
+            <label>Buscar</label
+            ><input
+              type="text"
+              id="ph-search"
+              placeholder="Digite para filtrar..."
+            />
+          </div>
+          <ul class="doc-list" id="ph-list" style="max-height: 250px">
+            <!-- FILLED BY JS -->
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL: COLOR PICKER -->
+    <div class="modal-backdrop" id="modal-color">
+      <div class="modal" style="max-width: 260px">
+        <div class="modal-header">
+          <span id="color-title">Cor do Texto</span>
+          <button class="btn btn-sm btn-ghost" id="btn-close-color">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-row" style="margin-bottom: 10px">
+            <label>Paleta personalizada</label>
+            <input
+              type="color"
+              id="color-custom"
+              style="
+                width: 100%;
+                height: 30px;
+                border: none;
+                background: transparent;
+                cursor: pointer;
+              "
+            />
+          </div>
+          <div class="color-grid" id="color-grid"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast-container" id="toasts"></div>
+
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/store.js"></script>
+    <script src="assets/js/templates.js"></script>
+    <script src="assets/js/ui.js"></script>
+    <script src="assets/js/editor.js"></script>
+    <script src="assets/js/io.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

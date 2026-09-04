@@ -1,0 +1,35 @@
+{
+  "name": "docjur",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Gerador de Documentos Jurídicos — Prototótipo (HTML/CSS/JS com JSDoc, pronto para migrar TS + Vite)",
+  "type": "module",
+  "scripts": {
+    "dev:static": "start documentos-juridicos.html",
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "lint": "echo \"TODO: adicionar eslint/prettier\""
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "vite": "^5.4.0"
+  },
+  "dependencies": {
+    "html2pdf.js": "^0.10.1",
+    "lucide": "^0.400.0",
+    "mammoth": "^1.8.0",
+    "pdfjs-dist": "^4.5.0"
+  },
+  "_migrationNotes": {
+    "toTs": "Renomear ./assets/js/*.js -> ./src/*.ts ; substituir script tags por import 'app.ts' ; habilitar strict em tsconfig",
+    "aliases": {
+      "@utils": "./assets/js/utils.js",
+      "@store": "./assets/js/store.js",
+      "@templates": "./assets/js/templates.js",
+      "@editor": "./assets/js/editor.js",
+      "@io": "./assets/js/io.js",
+      "@ui": "./assets/js/ui.js"
+    }
+  }
+}
