@@ -1,0 +1,50 @@
+
+<h1 style="text-align:center;font-size:16pt;margin-bottom:18pt;">FICHA DE ATENDIMENTO</h1>
+<p style="text-align:justify;margin-bottom:12pt;">
+<strong>Data do Atendimento:</strong> {{DOC_DATA}}
+<br><strong>Advogado(a) Responsável:</strong> {{ADV_NOME}} / OAB {{ADV_OAB}}
+<br><strong>Área do Direito:</strong> {{PROC_ASSUNTO}}
+</p>
+<h3 style="margin:14pt 0 8pt;font-size:12pt;">DADOS DO CLIENTE</h3>
+<p style="text-align:justify;margin-bottom:10pt;">
+<strong>Nome:</strong> {{CLI_NOME}} &nbsp;|&nbsp; <strong>Tipo:</strong> {{CLI_TIPO}}
+<br><strong>CPF/CNPJ:</strong> {{CLI_DOC}} &nbsp;|&nbsp; <strong>RG/IE:</strong> {{CLI_RG}}
+<br><strong>Nacionalidade:</strong> {{CLI_NAC}} &nbsp;|&nbsp; <strong>Estado Civil:</strong> {{CLI_EC}}
+<br><strong>Profissão:</strong> {{CLI_PROF}} &nbsp;|&nbsp; <strong>Data Nasc.:</strong> {{CLI_NASC}}
+<br><strong>Endereço:</strong> {{CLI_END}} — {{CLI_CIDADE}}/{{CLI_UF}} — CEP {{CLI_CEP}}
+<br><strong>Tel:</strong> {{CLI_TEL}} &nbsp;|&nbsp; <strong>E-mail:</strong> {{CLI_EMAIL}}
+</p>
+<h3 style="margin:14pt 0 8pt;font-size:12pt;">RELATO FATUAL</h3>
+<p style="text-align:justify;margin-bottom:10pt;text-indent:1.5cm;">{{GEN_3}}</p>
+<h3 style="margin:14pt 0 8pt;font-size:12pt;">ANÁLISE PRELIMINAR</h3>
+<p style="text-align:justify;margin-bottom:10pt;text-indent:1.5cm;">{{GEN_2}}</p>
+<h3 style="margin:14pt 0 8pt;font-size:12pt;">MEDIDAS A SEREM ADOTADAS</h3>
+<ul style="margin-left:1.5cm;margin-bottom:10pt;">
+<li style="margin-bottom:5pt;">Ato 1: {{GEN_1}}</li>
+<li style="margin-bottom:5pt;">Ato 2: [preencher]</li>
+<li>Ato 3: [preencher]</li>
+</ul>
+<h3 style="margin:14pt 0 8pt;font-size:12pt;">DOCUMENTOS APRESENTADOS</h3>
+<ul style="margin-left:1.5cm;margin-bottom:10pt;">
+<li style="margin-bottom:5pt;">[] CPF / RG</li>
+<li style="margin-bottom:5pt;">[] Comprovante de residência</li>
+<li style="margin-bottom:5pt;">[] Contratos</li>
+<li style="margin-bottom:5pt;">[] Extratos / Comprovantes</li>
+<li>[] Outros: ______________________________</li>
+</ul>
+<h3 style="margin:14pt 0 8pt;font-size:12pt;">HONORÁRIOS</h3>
+<p style="text-align:justify;margin-bottom:10pt;">
+Valor estimado da causa: R$ {{PROC_VALOR}}
+<br>Honorários acordados: [preencher]
+<br>Forma de pagamento: [preencher]
+</p>
+<div style="display:flex;justify-content:space-between;margin-top:60pt;">
+<div style="width:48%;">
+<div style="border-top:1px solid #000;margin-bottom:4pt;"></div>
+<p style="text-align:center;font-size:11pt;">Cliente: {{CLI_NOME}}</p>
+</div>
+<div style="width:48%;">
+<div style="border-top:1px solid #000;margin-bottom:4pt;"></div>
+<p style="text-align:center;font-size:11pt;">Advogado: {{ADV_NOME}}</p>
+</div>
+</div>

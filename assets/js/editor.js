@@ -59,9 +59,11 @@ const DocJurEditor = (() => {
   /**
    * Carrega um template por ID, marcando ativo no painel direito,
    * definindo título, substituindo placeholders.
+   * Carrega o HTML sob demanda via fetch (lazy-loader em templates.js).
    * @param {string} id
+   * @returns {Promise<void>}
    */
-  function loadTemplate(id) {
+  async function loadTemplate(id) {
     $$(".tpl-item").forEach((el) => {
       const h = /** @type {HTMLElement} */ (el);
       h.classList.toggle("active", h.dataset.tpl === id);
@@ -75,7 +77,13 @@ const DocJurEditor = (() => {
     if (dtInput) dtInput.value = title;
     if (STATE) STATE.docTitle = title;
     if (refs.title) refs.title.textContent = title;
-    if (refs.editor) refs.editor.innerHTML = DocJurTemplates.getHtml(id);
+    if (refs.editor)
+      refs.editor.innerHTML =
+        '<p style="color:var(--text-muted)">Carregando modelo... aguarde.</p>';
+    const html = DocJurTemplates.getHtmlAsync
+      ? await DocJurTemplates.getHtmlAsync(id)
+      : DocJurTemplates.getHtml(id);
+    if (refs.editor) refs.editor.innerHTML = html;
     applyPlaceholders();
     updateStats();
     const ui = /** @type {any} */ (window)["DocJurUI"];

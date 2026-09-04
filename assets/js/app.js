@@ -296,6 +296,17 @@ const DocJurApp = (() => {
   //                       BOOTSTRAP
   // ================================================================
   function initAfterDomReady() {
+    // 0b) Carrega manifesto de templates implementados (lazy fetch — não bloqueia boot).
+    //     Se falhar (ex: file:// sem servidor web) cai em skeleton padrão.
+    if (typeof DocJurTemplates !== "undefined" && DocJurTemplates.init) {
+      DocJurTemplates.init().catch((err) =>
+        console.warn(
+          "[DocJur] templates.init(): manifesto não carregou (file://?); fallback skeleton genérico:",
+          err,
+        ),
+      );
+    }
+
     // Garante Lucide (CDN) inicializado
     const lucideApi = getLucide();
     if (lucideApi) lucideApi.createIcons();
