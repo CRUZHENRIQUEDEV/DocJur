@@ -83,10 +83,10 @@ const DocJurEditor = (() => {
   // ================================================================
 
   function setZoom(z) {
-    if (!refs.editor || !STATE) return;
+    if (!refs.editorWrap || !STATE) return;
     STATE.zoomLevel = Math.max(0.5, Math.min(2, z));
-    refs.editor.style.transform = `scale(${STATE.zoomLevel})`;
-    refs.editor.style.transformOrigin = "top center";
+    refs.editorWrap.style.transform = `scale(${STATE.zoomLevel})`;
+    refs.editorWrap.style.transformOrigin = "top center";
   }
 
   // ================================================================

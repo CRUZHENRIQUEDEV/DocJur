@@ -149,8 +149,7 @@ const DocJurApp = (() => {
     const prefs = DocJurStore.getPrefs();
     if (prefs.zoom && prefs.zoom !== 1.0) {
       STATE.zoomLevel = prefs.zoom;
-      const wrap = /** @type {HTMLElement|null} */ ($("#editor-wrap"));
-      if (wrap) wrap.style.transform = `scale(${STATE.zoomLevel})`;
+      DocJurEditor.setZoom(STATE.zoomLevel);
     }
     if (prefs.defaultEditorFont) {
       const ed = /** @type {HTMLElement|null} */ ($("#editor"));

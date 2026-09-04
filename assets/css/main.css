@@ -415,18 +415,25 @@ textarea {
   padding: var(--dj-pad-lg);
   display: flex;
   justify-content: center;
+  align-items: flex-start;
+  transform-origin: top center;
 }
 .editor-page {
   width: 21cm;
   min-height: 29.7cm;
+  height: auto;
+  max-height: none;
   background: var(--ui-canvas-bg, #fff);
   box-shadow: var(--renderer-shadow-md);
   padding: 2.5cm;
   font-family: var(--dj-page-font);
   font-size: 12pt;
   line-height: 1.5;
-  color: #000; /* Folha sempre legível */
+  color: #000;
   border-radius: 1px;
+  overflow: visible;
+  box-sizing: border-box;
+  display: flow-root;
 }
 [data-theme="dark"] .editor-page,
 .dark-mode .editor-page {

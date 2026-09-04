@@ -175,40 +175,40 @@ const DocJurTemplates = (() => {
    * @type {string}
    */
   const DEFAULT_HTML = `
-<h1 style="text-align:center;font-size:18pt;margin-bottom:24pt;">{{DOC_TITULO}}</h1>
-<p style="text-align:justify;margin-bottom:12pt;">
+<h1 style="text-align:center;font-size:18pt;margin-bottom:16pt;">{{DOC_TITULO}}</h1>
+<p style="text-align:justify;margin-bottom:10pt;">
   <strong>{{CLI_NOME}}</strong>, {{CLI_NAC}}, {{CLI_EC}}, {{CLI_PROF}}, portador do CPF nº {{CLI_DOC}},
   residente e domiciliado em {{CLI_END}}, {{CLI_CIDADE}}/{{CLI_UF}}, CEP {{CLI_CEP}},
   por intermédio do advogado abaixo assinado, vem, respeitosamente, à presença de Vossa Excelência,
   perante a {{PROC_VARA}} do {{PROC_FORUM}} da Comarca de {{PROC_COMARCA}}/{{PROC_UF}},
   interpor a presente
 </p>
-<h2 style="text-align:center;font-size:14pt;margin:20pt 0;">{{DOC_TITULO}}</h2>
-<p style="text-align:justify;margin-bottom:12pt;">
+<h2 style="text-align:center;font-size:14pt;margin:14pt 0;">{{DOC_TITULO}}</h2>
+<p style="text-align:justify;margin-bottom:10pt;">
   Em face de <strong>{{REU_NOME}}</strong>, {{REU_TIPO}}, inscrito no CPF/CNPJ sob o nº {{REU_DOC}},
   residente/domiciliado em {{REU_END}}, {{REU_CIDADE}}/{{REU_UF}}, pelos fatos e fundamentos de direito a seguir expostos,
   vem requerer o que segue:
 </p>
-<h3 style="margin:18pt 0 10pt;font-size:13pt;">I — DOS FATOS</h3>
-<p style="text-align:justify;margin-bottom:12pt;text-indent:1.5cm;">{{GEN_3}}</p>
-<h3 style="margin:18pt 0 10pt;font-size:13pt;">II — DO DIREITO</h3>
-<p style="text-align:justify;margin-bottom:12pt;text-indent:1.5cm;">
+<h3 style="margin:12pt 0 6pt;font-size:13pt;">I — DOS FATOS</h3>
+<p style="text-align:justify;margin-bottom:10pt;text-indent:1.5cm;">{{GEN_3}}</p>
+<h3 style="margin:12pt 0 6pt;font-size:13pt;">II — DO DIREITO</h3>
+<p style="text-align:justify;margin-bottom:10pt;text-indent:1.5cm;">
   Diante dos fatos narrados, aplica-se ao caso o disposto nos artigos 186, 187 e 927 do Código Civil,
   bem assim os princípios da responsabilidade civil objetiva, ensejando a reparação integral dos danos
   causados ao autor.
 </p>
-<h3 style="margin:18pt 0 10pt;font-size:13pt;">III — DOS PEDIDOS</h3>
-<p style="text-align:justify;margin-bottom:8pt;">Diante do exposto, requer:</p>
-<ol style="margin-left:1.5cm;margin-bottom:12pt;">
-  <li style="margin-bottom:6pt;">Seja deferida a citação do réu para, querendo, defender-se no prazo legal;</li>
-  <li style="margin-bottom:6pt;">Seja julgada procedente a ação, para condenar o réu ao pagamento das indenizações pleiteadas;</li>
-  <li style="margin-bottom:6pt;">Seja concedida a tutela provisória de urgência, nos termos do art. 300 do CPC;</li>
+<h3 style="margin:12pt 0 6pt;font-size:13pt;">III — DOS PEDIDOS</h3>
+<p style="text-align:justify;margin-bottom:6pt;">Diante do exposto, requer:</p>
+<ol style="margin-left:1.5cm;margin-bottom:10pt;">
+  <li style="margin-bottom:4pt;">Seja deferida a citação do réu para, querendo, defender-se no prazo legal;</li>
+  <li style="margin-bottom:4pt;">Seja julgada procedente a ação, para condenar o réu ao pagamento das indenizações pleiteadas;</li>
+  <li style="margin-bottom:4pt;">Seja concedida a tutela provisória de urgência, nos termos do art. 300 do CPC;</li>
   <li>Sejam condenados o réu ao pagamento de custas, despesas processuais e honorários advocatícios.</li>
 </ol>
-<p style="text-align:justify;margin-bottom:24pt;">Dá-se à causa o valor de R$ {{PROC_VALOR}}.</p>
-<p style="text-align:center;margin:40pt 0 10pt;">Nestes termos, pede deferimento.</p>
-<p style="text-align:center;margin-bottom:40pt;">{{DOC_CIDADE}}/{{DOC_UF}}, {{DOC_DATA}}.</p>
-<div style="text-align:center;margin-top:80pt;">
+<p style="text-align:justify;margin-bottom:14pt;">Dá-se à causa o valor de R$ {{PROC_VALOR}}.</p>
+<p style="text-align:center;margin:20pt 0 6pt;">Nestes termos, pede deferimento.</p>
+<p style="text-align:center;margin-bottom:24pt;">{{DOC_CIDADE}}/{{DOC_UF}}, {{DOC_DATA}}.</p>
+<div style="text-align:center;margin-top:40pt;">
   <div style="width:200px;border-top:1px solid #000;margin:0 auto 4pt;"></div>
   <div style="font-weight:600;">{{ADV_NOME}}</div>
   <div style="font-size:11pt;">OAB/{{ADV_UF}} nº {{ADV_OAB}}</div>
