@@ -1,186 +1,363 @@
 <!doctype html>
 <html lang="pt-BR">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>DocJur — Início</title>
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-<link rel="stylesheet" href="assets/css/global-theme.css" />
-<link rel="stylesheet" href="assets/css/main.css" />
-<style>
-  body { font-family: var(--dj-font); color: var(--ui-text); background: var(--ui-bg); }
-  .dash-wrap { max-width: 1180px; margin: 0 auto; padding: 32px 24px; }
-  .dash-hero {
-    display: flex; align-items: center; justify-content: space-between; gap: 16px;
-    padding: 24px; border-radius: var(--ui-radius-lg);
-    background: linear-gradient(135deg, color-mix(in srgb, var(--ui-accent) 18%, transparent), var(--ui-bg-secondary));
-    border: 1px solid var(--ui-border); margin-bottom: 24px;
-  }
-  .dash-hero h1 { font-size: 22px; font-weight: 700; display:flex; align-items:center; gap:10px; }
-  .dash-hero h1 i { color: var(--ui-accent); }
-  .dash-hero p { color: var(--ui-text-secondary); margin-top: 4px; font-size: 12.5px; }
-  .hero-actions { display: flex; gap: 8px; flex-wrap: wrap; }
-  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-bottom: 24px; }
-  .stat-card {
-    background: var(--ui-card-bg); border: 1px solid var(--ui-border); border-radius: var(--ui-radius-md);
-    padding: 14px 16px;
-  }
-  .stat-card .label { font-size: 10.5px; color: var(--ui-text-muted); text-transform: uppercase; letter-spacing: .3px; font-weight: 600; }
-  .stat-card .value { font-size: 24px; font-weight: 700; margin-top: 4px; color: var(--ui-text); }
-  .stat-card .value small { font-size: 12px; color: var(--ui-text-muted); font-weight: 500; }
-  .cols-2 { display: grid; grid-template-columns: 1.5fr 1fr; gap: 16px; }
-  @media (max-width: 860px) { .cols-2 { grid-template-columns: 1fr; } }
-  .panel-card {
-    background: var(--ui-card-bg); border: 1px solid var(--ui-border); border-radius: var(--ui-radius-lg);
-    overflow: hidden;
-  }
-  .panel-card header {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 12px 16px; border-bottom: 1px solid var(--ui-border);
-    background: var(--ui-bg-secondary); font-weight: 600;
-  }
-  .panel-card header h2 { font-size: 13px; display:flex; align-items:center; gap:8px; }
-  .panel-card header h2 i { color: var(--ui-accent); width:15px; height:15px; }
-  .hist-list { list-style: none; max-height: 460px; overflow-y: auto; }
-  .hist-list li {
-    padding: 12px 16px; border-bottom: 1px solid var(--ui-border-light);
-    display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: center;
-    cursor: pointer; transition: background var(--ui-transition-fast);
-  }
-  .hist-list li:hover { background: var(--renderer-bg-hover); }
-  .hist-list li:last-child { border-bottom: none; }
-  .hist-list .title { font-weight: 600; font-size: 12.5px; color: var(--ui-text); }
-  .hist-list .meta { font-size: 10.5px; color: var(--ui-text-muted); margin-top: 3px; }
-  .hist-list .meta i { width:12px; height:12px; vertical-align:-2px; margin-right: 3px; }
-  .hist-list .empty {
-    padding: 28px 16px; text-align: center; color: var(--ui-text-muted); font-size: 12px;
-    cursor: default;
-  }
-  .hist-list .empty:hover { background: transparent; }
-  .actions-list { padding: 8px; display: flex; flex-direction: column; gap: 6px; }
-  .action-row {
-    display: flex; align-items: center; gap: 10px; padding: 10px 12px;
-    border: 1px solid var(--ui-border); border-radius: var(--ui-radius-sm);
-    color: var(--ui-text); text-decoration: none; transition: all var(--ui-transition-fast);
-    background: var(--ui-card-bg); font-size: 12px; font-weight: 500;
-  }
-  .action-row:hover { background: var(--ui-accent-light); border-color: var(--ui-accent); transform: translateY(-1px); }
-  .action-row i { color: var(--ui-accent); width:16px; height:16px; flex-shrink: 0; }
-  .action-row small { display:block; color: var(--ui-text-muted); font-size:10.5px; font-weight: 400; margin-top:2px; }
-  .hist-btn {
-    padding: 6px 10px; font-size: 10.5px;
-  }
-</style>
-</head>
-<body>
-<div class="dash-wrap">
-  <section class="dash-hero">
-    <div>
-      <h1><i data-lucide="scale"></i> DocJur — Gerador de Documentos Jurídicos</h1>
-      <p>Petições Iniciais do TJDFT · Contratos · Procurações · Histórico completo de cada processo.</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DocJur — Início</title>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <link rel="stylesheet" href="assets/css/global-theme.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+      body {
+        font-family: var(--dj-font);
+        color: var(--ui-text);
+        background: var(--ui-bg);
+      }
+      .dash-wrap {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 32px 24px;
+      }
+      .dash-hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 24px;
+        border-radius: var(--ui-radius-lg);
+        background: linear-gradient(
+          135deg,
+          color-mix(in srgb, var(--ui-accent) 18%, transparent),
+          var(--ui-bg-secondary)
+        );
+        border: 1px solid var(--ui-border);
+        margin-bottom: 24px;
+      }
+      .dash-hero h1 {
+        font-size: 22px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .dash-hero h1 i {
+        color: var(--ui-accent);
+      }
+      .dash-hero p {
+        color: var(--ui-text-secondary);
+        margin-top: 4px;
+        font-size: 12.5px;
+      }
+      .hero-actions {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        gap: 12px;
+        margin-bottom: 24px;
+      }
+      .stat-card {
+        background: var(--ui-card-bg);
+        border: 1px solid var(--ui-border);
+        border-radius: var(--ui-radius-md);
+        padding: 14px 16px;
+      }
+      .stat-card .label {
+        font-size: 10.5px;
+        color: var(--ui-text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
+        font-weight: 600;
+      }
+      .stat-card .value {
+        font-size: 24px;
+        font-weight: 700;
+        margin-top: 4px;
+        color: var(--ui-text);
+      }
+      .stat-card .value small {
+        font-size: 12px;
+        color: var(--ui-text-muted);
+        font-weight: 500;
+      }
+      .cols-2 {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 16px;
+      }
+      @media (max-width: 860px) {
+        .cols-2 {
+          grid-template-columns: 1fr;
+        }
+      }
+      .panel-card {
+        background: var(--ui-card-bg);
+        border: 1px solid var(--ui-border);
+        border-radius: var(--ui-radius-lg);
+        overflow: hidden;
+      }
+      .panel-card header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--ui-border);
+        background: var(--ui-bg-secondary);
+        font-weight: 600;
+      }
+      .panel-card header h2 {
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .panel-card header h2 i {
+        color: var(--ui-accent);
+        width: 15px;
+        height: 15px;
+      }
+      .hist-list {
+        list-style: none;
+        max-height: 460px;
+        overflow-y: auto;
+      }
+      .hist-list li {
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--ui-border-light);
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 8px;
+        align-items: center;
+        cursor: pointer;
+        transition: background var(--ui-transition-fast);
+      }
+      .hist-list li:hover {
+        background: var(--renderer-bg-hover);
+      }
+      .hist-list li:last-child {
+        border-bottom: none;
+      }
+      .hist-list .title {
+        font-weight: 600;
+        font-size: 12.5px;
+        color: var(--ui-text);
+      }
+      .hist-list .meta {
+        font-size: 10.5px;
+        color: var(--ui-text-muted);
+        margin-top: 3px;
+      }
+      .hist-list .meta i {
+        width: 12px;
+        height: 12px;
+        vertical-align: -2px;
+        margin-right: 3px;
+      }
+      .hist-list .empty {
+        padding: 28px 16px;
+        text-align: center;
+        color: var(--ui-text-muted);
+        font-size: 12px;
+        cursor: default;
+      }
+      .hist-list .empty:hover {
+        background: transparent;
+      }
+      .actions-list {
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .action-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 12px;
+        border: 1px solid var(--ui-border);
+        border-radius: var(--ui-radius-sm);
+        color: var(--ui-text);
+        text-decoration: none;
+        transition: all var(--ui-transition-fast);
+        background: var(--ui-card-bg);
+        font-size: 12px;
+        font-weight: 500;
+      }
+      .action-row:hover {
+        background: var(--ui-accent-light);
+        border-color: var(--ui-accent);
+        transform: translateY(-1px);
+      }
+      .action-row i {
+        color: var(--ui-accent);
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+      }
+      .action-row small {
+        display: block;
+        color: var(--ui-text-muted);
+        font-size: 10.5px;
+        font-weight: 400;
+        margin-top: 2px;
+      }
+      .hist-btn {
+        padding: 6px 10px;
+        font-size: 10.5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dash-wrap">
+      <section class="dash-hero">
+        <div>
+          <h1>
+            <i data-lucide="scale"></i> DocJur — Gerador de Documentos Jurídicos
+          </h1>
+          <p>
+            Petições Iniciais do TJDFT · Contratos · Procurações · Histórico
+            completo de cada processo.
+          </p>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="documentos-juridicos.html">
+            <i data-lucide="file-plus"></i> Novo Documento
+          </a>
+          <a class="btn btn-ghost" href="tpl-checklist.html">
+            <i data-lucide="check-square"></i> Checklist de Implementação
+          </a>
+        </div>
+      </section>
+
+      <section class="stat-grid" id="stat-grid"></section>
+
+      <section class="cols-2">
+        <div class="panel-card">
+          <header>
+            <h2>
+              <i data-lucide="history"></i> Histórico de Documentos Salvos
+            </h2>
+            <a
+              class="btn btn-sm btn-ghost"
+              href="documentos-juridicos.html"
+              id="btn-goto-editor"
+            >
+              <i data-lucide="folder-open"></i> Abrir todos
+            </a>
+          </header>
+          <ul class="hist-list" id="hist-list">
+            <li class="empty">
+              Nenhum documento salvo ainda. Clique em "Novo Documento" para
+              começar.
+            </li>
+          </ul>
+        </div>
+
+        <div class="panel-card">
+          <header>
+            <h2><i data-lucide="layout-grid"></i> Ações Rápidas</h2>
+          </header>
+          <div class="actions-list">
+            <a
+              class="action-row"
+              href="documentos-juridicos.html#tpl=tjdft-1-1"
+            >
+              <i data-lucide="file-signature"></i>
+              <div>
+                Petição Inicial Geral (PF)
+                <small>1.1 — TJDFT · Mais utilizada</small>
+              </div>
+            </a>
+            <a
+              class="action-row"
+              href="documentos-juridicos.html#tpl=tjdft-1-2"
+            >
+              <i data-lucide="building-2"></i>
+              <div>
+                Petição Inicial Geral (PJ)
+                <small>1.2 — TJDFT · Pessoa Jurídica ré</small>
+              </div>
+            </a>
+            <a
+              class="action-row"
+              href="documentos-juridicos.html#tpl=tjdft-2-1"
+            >
+              <i data-lucide="car"></i>
+              <div>
+                Acidente de Trânsito (1x1)
+                <small>2.1 — Indenização por danos</small>
+              </div>
+            </a>
+            <a
+              class="action-row"
+              href="documentos-juridicos.html#tpl=tjdft-11-1-0"
+            >
+              <i data-lucide="home"></i>
+              <div>
+                Cobrança de Aluguel (Locatário)
+                <small>11.1.0 — Locação de imóvel</small>
+              </div>
+            </a>
+            <a
+              class="action-row"
+              href="documentos-juridicos.html#tpl=tjdft-12-1"
+            >
+              <i data-lucide="ban"></i>
+              <div>
+                Negativação Indevida (dívida paga)
+                <small>12.1 — Baixa + Indenização</small>
+              </div>
+            </a>
+            <a class="action-row" href="tpl-checklist.html">
+              <i data-lucide="check-square"></i>
+              <div>
+                Ver Checklist Completo
+                <small>Veja quais DOCX já foram importados</small>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="documentos-juridicos.html">
-        <i data-lucide="file-plus"></i> Novo Documento
-      </a>
-      <a class="btn btn-ghost" href="tpl-checklist.html">
-        <i data-lucide="check-square"></i> Checklist de Implementação
-      </a>
-    </div>
-  </section>
 
-  <section class="stat-grid" id="stat-grid"></section>
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/store.js"></script>
+    <script src="assets/js/adv-catalog.js"></script>
+    <script src="assets/js/templates.js"></script>
+    <script>
+      const { $, escHtml, fmtBRDateTime } = DocJurUtils;
+      if (window.lucide) window.lucide.createIcons();
 
-  <section class="cols-2">
-    <div class="panel-card">
-      <header>
-        <h2><i data-lucide="history"></i> Histórico de Documentos Salvos</h2>
-        <a class="btn btn-sm btn-ghost" href="documentos-juridicos.html" id="btn-goto-editor">
-          <i data-lucide="folder-open"></i> Abrir todos
-        </a>
-      </header>
-      <ul class="hist-list" id="hist-list">
-        <li class="empty">Nenhum documento salvo ainda. Clique em "Novo Documento" para começar.</li>
-      </ul>
-    </div>
+      // --- Stats ---
+      const docs = DocJurStore.listDocs();
+      const tjdft = DocJurTemplates.CATEGORIES.find((c) => c.id === "tjdft");
+      const totalTpl = tjdft ? tjdft.items.length : 0;
+      // Implementados = marcados no storage (entity: "tplProgress") ou TEMPLATES[id] real
+      function getImplementedCount() {
+        try {
+          const done = JSON.parse(
+            localStorage.getItem("docjur_tplDone") || "[]",
+          );
+          const ids = new Set(done);
+          if (tjdft)
+            tjdft.items.forEach((it) => {
+              if (DocJurTemplates.TEMPLATES[it.id]) ids.add(it.id);
+            });
+          return ids.size;
+        } catch {
+          return 0;
+        }
+      }
+      const impl = getImplementedCount();
+      const pendingTpl = Math.max(0, totalTpl - impl);
 
-    <div class="panel-card">
-      <header><h2><i data-lucide="layout-grid"></i> Ações Rápidas</h2></header>
-      <div class="actions-list">
-        <a class="action-row" href="documentos-juridicos.html#tpl=tjdft-1-1">
-          <i data-lucide="file-signature"></i>
-          <div>
-            Petição Inicial Geral (PF)
-            <small>1.1 — TJDFT · Mais utilizada</small>
-          </div>
-        </a>
-        <a class="action-row" href="documentos-juridicos.html#tpl=tjdft-1-2">
-          <i data-lucide="building-2"></i>
-          <div>
-            Petição Inicial Geral (PJ)
-            <small>1.2 — TJDFT · Pessoa Jurídica ré</small>
-          </div>
-        </a>
-        <a class="action-row" href="documentos-juridicos.html#tpl=tjdft-2-1">
-          <i data-lucide="car"></i>
-          <div>
-            Acidente de Trânsito (1x1)
-            <small>2.1 — Indenização por danos</small>
-          </div>
-        </a>
-        <a class="action-row" href="documentos-juridicos.html#tpl=tjdft-11-1-0">
-          <i data-lucide="home"></i>
-          <div>
-            Cobrança de Aluguel (Locatário)
-            <small>11.1.0 — Locação de imóvel</small>
-          </div>
-        </a>
-        <a class="action-row" href="documentos-juridicos.html#tpl=tjdft-12-1">
-          <i data-lucide="ban"></i>
-          <div>
-            Negativação Indevida (dívida paga)
-            <small>12.1 — Baixa + Indenização</small>
-          </div>
-        </a>
-        <a class="action-row" href="tpl-checklist.html">
-          <i data-lucide="check-square"></i>
-          <div>
-            Ver Checklist Completo
-            <small>Veja quais DOCX já foram importados</small>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-</div>
+      const advCount = DocJurStore.listEntity("lawyers").length;
+      const cliCount = DocJurStore.listEntity("clients").length;
 
-<script src="assets/js/utils.js"></script>
-<script src="assets/js/store.js"></script>
-<script src="assets/js/templates.js"></script>
-<script>
-  const { $, escHtml, fmtBRDateTime } = DocJurUtils;
-  if (window.lucide) window.lucide.createIcons();
-
-  // --- Stats ---
-  const docs = DocJurStore.listDocs();
-  const tjdft = DocJurTemplates.CATEGORIES.find((c) => c.id === "tjdft");
-  const totalTpl = tjdft ? tjdft.items.length : 0;
-  // Implementados = marcados no storage (entity: "tplProgress") ou TEMPLATES[id] real
-  function getImplementedCount() {
-    try {
-      const done = JSON.parse(localStorage.getItem("docjur_tplDone") || "[]");
-      const ids = new Set(done);
-      if (tjdft) tjdft.items.forEach((it) => { if (DocJurTemplates.TEMPLATES[it.id]) ids.add(it.id); });
-      return ids.size;
-    } catch { return 0; }
-  }
-  const impl = getImplementedCount();
-  const pendingTpl = Math.max(0, totalTpl - impl);
-
-  const advCount = DocJurStore.listEntity("lawyers").length;
-  const cliCount = DocJurStore.listEntity("clients").length;
-
-  $("#stat-grid").innerHTML = `
+      $("#stat-grid").innerHTML = `
     <div class="stat-card"><div class="label">Documentos Salvos</div>
       <div class="value">${docs.length}<small> · histórico</small></div></div>
     <div class="stat-card"><div class="label">Templates TJDFT</div>
@@ -191,12 +368,15 @@
       <div class="value">${cliCount + advCount}<small> · ${cliCount} clientes</small></div></div>
   `;
 
-  // --- Histórico (últimos 10) ---
-  const list = $("#hist-list");
-  if (docs.length === 0) {
-    list.innerHTML = `<li class="empty">Nenhum documento salvo ainda. Clique em "Novo Documento" para começar.</li>`;
-  } else {
-    list.innerHTML = docs.slice(0, 10).map((d) => `
+      // --- Histórico (últimos 10) ---
+      const list = $("#hist-list");
+      if (docs.length === 0) {
+        list.innerHTML = `<li class="empty">Nenhum documento salvo ainda. Clique em "Novo Documento" para começar.</li>`;
+      } else {
+        list.innerHTML = docs
+          .slice(0, 10)
+          .map(
+            (d) => `
       <li data-id="${escHtml(d.id)}">
         <div>
           <div class="title">${escHtml(d.title)}</div>
@@ -209,15 +389,17 @@
           <i data-lucide="edit-3"></i> Abrir
         </a>
       </li>
-    `).join("");
-    list.querySelectorAll("li[data-id]").forEach((li) => {
-      li.addEventListener("click", (e) => {
-        if (e.target.closest(".hist-btn")) return;
-        window.location.href = `documentos-juridicos.html#doc=${encodeURIComponent(li.dataset.id || "")}`;
-      });
-    });
-  }
-  if (window.lucide) window.lucide.createIcons();
-</script>
-</body>
+    `,
+          )
+          .join("");
+        list.querySelectorAll("li[data-id]").forEach((li) => {
+          li.addEventListener("click", (e) => {
+            if (e.target.closest(".hist-btn")) return;
+            window.location.href = `documentos-juridicos.html#doc=${encodeURIComponent(li.dataset.id || "")}`;
+          });
+        });
+      }
+      if (window.lucide) window.lucide.createIcons();
+    </script>
+  </body>
 </html>

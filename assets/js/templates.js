@@ -122,6 +122,7 @@ const DocJurTemplates = (() => {
   //  HELPERS para construir catálogo de docs reais (TJDFT)
   // ============================================================
   const SRC = "Peticao/TJDFT/";
+  const SRC_ADV = "Peticao/AdvogadoGerados/";
 
   /**
    * Cria um item de template BASEADO EM DOCUMENTO REAL.
@@ -136,6 +137,22 @@ const DocJurTemplates = (() => {
     name,
     icon,
     sourceFile: SRC + sourceFile,
+    implemented: true,
+  });
+
+  /**
+   * Cria um item de template ADVOGADO baseado em arquivo em AdvogadoGerados/.
+   * @param {string} id
+   * @param {string} name
+   * @param {string} icon
+   * @param {string} sourceFile — nome do arquivo .docx em Peticao/AdvogadoGerados/
+   * @returns {TplTemplateItem}
+   */
+  const realTplAdv = (id, name, icon, sourceFile) => ({
+    id,
+    name,
+    icon,
+    sourceFile: SRC_ADV + sourceFile,
     implemented: true,
   });
 
@@ -1536,6 +1553,23 @@ const DocJurTemplates = (() => {
         pendingTpl("inventario", "Inventário Extrajudicial", "notebook-pen"),
       ],
     },
+
+    // ================================================================
+    //  CATEGORIA 8 — Modelos Advogado (910 templates, lazy-load HTML individual)
+    //  Arquivos .docx reais em Peticao/AdvogadoGerados/
+    //  Catalogo em arquivo SEPARADO assets/js/adv-catalog.js (carrega ANTES de templates.js)
+    //  HTML de cada template em assets/templates/adv-*.html (fetch sob demanda 1 por clique)
+    // ================================================================
+    {
+      id: "advogado",
+      icon: "briefcase",
+      name: "💼 Modelos Advogado — 910 Petições (Lazy-Load)",
+      items: Array.isArray(/** @type {any} */ (window).DocJurAdvCatalog)
+        ? /** @type {Array<[string,string,string,string]>} */ (
+            /** @type {any} */ (window).DocJurAdvCatalog
+          ).map((t) => realTplAdv(t[0], t[1], t[2], t[3]))
+        : [],
+    },
   ];
 
   // ================================================================
@@ -1605,9 +1639,13 @@ const DocJurTemplates = (() => {
       if (!resp.ok) return;
       /** @type {TplManifestFormat} */
       const data = await resp.json();
-      if (data && Array.isArray(data.implemented)) populateImplemented(data.implemented);
+      if (data && Array.isArray(data.implemented))
+        populateImplemented(data.implemented);
     } catch (err) {
-      console.warn("[DocJurTemplates] manifesto templates não carregado (file:// sem servidor?); fallback skeleton:", err);
+      console.warn(
+        "[DocJurTemplates] manifesto templates não carregado (file:// sem servidor?); fallback skeleton:",
+        err,
+      );
     }
   }
   /** @type {Promise<void>|null} */
@@ -1726,10 +1764,9 @@ confiança e da moralidade administrativa.
     templateMeta,
     init,
     getHtmlAsync,
-getHtml,
+    getHtml,
     skeletonFor,
   };
 })();
 
 /** @type {any} */ (window).DocJurTemplates = DocJurTemplates;
-
