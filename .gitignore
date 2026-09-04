@@ -56,3 +56,9 @@ $RECYCLE.BIN/
 # --- Storage local backups / dumps ---
 storage-backups/
 *.dump.json
+
+# --- Navegador / downloads temporarios ---
+*.crdownload
+*.part
+*.download
+Unconfirmed*
