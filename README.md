@@ -1,6 +1,6 @@
 # DocJur
 
-> **Automação de Documentos Jurídicos Brasileiros** · Interface densa em 3 painéis · Editor A4 WYSIWYG · 186 modelos base reais em DOCX/PDF · Storage extensível (LocalStorage hoje, SQLite/Supabase amanhã) · Zero build — abre no navegador com duplo clique.
+> **Automação de Documentos Jurídicos Brasileiros** · Interface densa em 3 painéis · Editor A4 WYSIWYG · 203 modelos base reais em DOCX/PDF · Storage extensível (LocalStorage hoje, SQLite/Supabase amanhã) · Zero build — abre no navegador com duplo clique.
 
 ---
 
@@ -39,9 +39,9 @@ Pasta oficial: [`Peticao/`](./Peticao/)
 
 | Tipo | Quantidade |
 |---|---|
-| Arquivos `.docx` (modelos base editáveis) | **181** |
+| Arquivos `.docx` (modelos base editáveis) | **198** |
 | Arquivos `.pdf` (orientações de fluxo processual) | **5** |
-| **Total de documentos base** | **186** |
+| **Total de documentos base** | **203** |
 
 ### 1.2 Convenção de Nomenclatura
 
@@ -57,13 +57,13 @@ Exemplos:
 11.10.1 Locação de imóvel – Locatário x locador (PF) – imóvel sem condições habitáveis – rescisão e indenização.docx
 ```
 
-- Grupos principais: **1 a 20** (número inteiro)
-- Sub-grupos: `.1, .2, .3 ...` (ex. `17.4`, `9.5`, `20.12`)
-- Sub-sub-grupos (variação dentro do mesmo tema): `.1, .2` (ex. `11.10.1` = PF, `11.10` = Imobiliária; `19.04.1` = Réu PJ; `20.12.0` = GDF, `20.12.1` = DETRAN apenas)
+- Grupos principais: **1 a 21** (número inteiro)
+- Sub-grupos: `.1, .2, .3 ...` (ex. `17.4`, `9.5`, `20.12`, `21.3`)
+- Sub-sub-grupos (variação dentro do mesmo tema): `.1, .2` (ex. `11.10.1` = PF, `11.10` = Imobiliária; `19.04.1` = Réu PJ; `20.12.0` = GDF, `20.12.1` = DETRAN apenas; `20.32.1` = Danos Morais)
 - Sufixo `*_ORIENTAÇÕES.pdf`: manual de fluxo processual de cada área (não são modelos para editar).
 - `Peticao.docx`: modelo simplificado avulso de petição (esqueleto rápido, sem categoria numérica).
 
-### 1.3 Catálogo por Categoria (20 grupos + 5 manuais PDF + 1 modelo avulso)
+### 1.3 Catálogo por Categoria (21 grupos + 5 manuais PDF + 1 modelo avulso)
 
 | # | Categoria | Qtd | Exemplos de modelos mais usados |
 |---|---|---|---|
@@ -86,7 +86,8 @@ Exemplos:
 | **17** | **Transporte Aéreo** | 10 | 17.1 Atraso Voo, 17.2 Cancelamento COVID, 17.3 Cancelamento Operadora, 17.4 Dano Mala, 17.5 Desistência Consumidor, 17.6 Extravio Bagagem, 17.7 No-Show, 17.8 Overbooking, 17.9 Violação Objetos |
 | **18** | **Transporte Rodoviário** | 6 | 18.1 Pane Ônibus, 18.2 Atraso Embarque, 18.3 Dano Mala, 18.4 Extravio, 18.5 Overbooking, 18.6 Violação Objetos |
 | **19** | **Veículo** (Compra e Venda / Estacionamento / Seguro) | 19 | 19.01 Dano Intencional, 19.02/19.03 Furto Estacionamento (objetos x veículo irrecuperável), 19.04.x Vício Oculto (PF/PJ), 19.05 Transferência com Débitos, 19.07/19.08 Venda com Ágio + Débitos (pagos/não pagos), 19.09.x Defeito Grave, 19.10 Débitos Anteriores, 19.11.x Documentação Pendente (PF/PJ), 19.12/19.13 Seguro — não cobrem conserto, 19.14 Falta de Pagamento, 19.15 Zero Km — Garantia Recusada |
-| **20** | **Fazenda / GDF** (Juizados Fazendários · Poder Público) | ⭐ **28** | 20.01/20.02 Exercícios Financeiros Findos (servidor ativo/inativo), 20.03 Reconhecimento de Gratificação, 20.04 Medicamento não Fornecido (Ressarcimento), 20.05–20.08 Saúde Tutela Urgência (Cirurgia/Exame/Medicamento/Tratamento), 20.09/20.10 Buraco na Pista (DER/NOVACAP) — Ressarcimento, 20.11/20.12.x Baixa Registro / Negativa Propriedade (débitos IPVA) DETRAN/GDF, 20.13–20.18 Nulidade Multa (DER/DETRAN isolado/ambos) c/ s/ Notificação, 20.19 Baixa Registro Veículo DETRAN, 20.20 Clonagem de Placa — Nulidade Multa, 20.21–20.23 Transferência Pontuação CNH (DER + DETRAN, cada órgão separado, ambos) |
+| **20** | **Fazenda / GDF** (Juizados Fazendários · Poder Público · DF) | ⭐ **37** | 20.01/20.02 Exercícios Financeiros Findos (servidor ativo/inativo), 20.03 Reconhecimento de Gratificação, 20.04 Medicamento não Fornecido — Ressarcimento, 20.05–20.08 Saúde Tutela Urgência (Cirurgia/Exame/Medicamento/Tratamento), 20.09/20.10 Buraco na Pista (DER vs NOVACAP) — Ressarcimento, 20.11/20.12.x Baixa Registro/Negativa Propriedade (débitos IPVA) DETRAN/GDF, 20.13–20.18 Nulidade Multa (DER/DETRAN isolado/ambos c/s notificação), 20.19 Baixa Registro Veículo DETRAN, 20.20 Clonagem de Placa — Nulidade Multa, 20.21–20.23 Transferência Pontuação CNH (DER + DETRAN, isolado/ambos), 20.24/20.25/20.26 CNH Definitiva / Inclusão EAR / Provisória — Negativa Renovação, 20.27 Nulidade Negativa Propriedade c/ Danos Morais + Tutela, 20.28 Excesso Tributo ITBI — Restituição da Diferença, 20.29/20.29.1–20.31/20.31.1 INAS-GDF Saúde Tutela (Tratamento/Cirurgia/Medicamento) + versões c/ Danos Morais, 20.32/20.32.1 INAS Negativa Cobertura — Ressarcimento s/ Danos Morais |
+| **21** | **CAESB / Saneamento DF** (Água · Esgoto · Aumento · Multa) | 8 | 21.1 Aumento Substancial — Contas Pagas — Caça-Vazamentos — Devolução em Dobro, 21.2 Aumento Substancial — Não Pagas — CORTE DE ÁGUA + Tutela de Urgência, 21.3 Aumento Substancial — Não Pagas — Ameaça de Corte + Tutela, 21.4 Multa Indevida — Conta Paga — Devolução em Dobro, 21.5 Multa Indevida — Não Pagas — Corte de Água + Tutela, 21.6 Multa Indevida — Não Pagas — Ameaça de Corte + Tutela |
 | — | **Orientações PDF + Modelo Avulso** (6 arquivos — 5 manuais + 1 DOCX) | 6 | 5 manuais de fluxo: `AçãoCONSUMIDOR_ORIENTAÇÕES.pdf`, `CobrançaDívida_ORIENTAÇÕES.pdf`, `DespejoUsoPróprio_ORIENTAÇÕES.pdf`, `ExecuçãoExtrajudicial_ORIENTAÇÕES.pdf`, `JuizadosFazendários_ORIENTAÇÕES.pdf` · 1 DOCX avulso: `Peticao.docx` (esqueleto rápido de petição) |
 
 ### 1.4 Como Usar Um Documento Base Dentro do App
@@ -104,8 +105,8 @@ Exemplos:
 
 ```
 DocJur/
-├── Peticao/                          ← ⭐ FONTE DA VERDADE (186 arquivos — 181 DOCX + 5 PDFs de orientação)
-│   ├── 1.x ... 20.x                ← 20 categorias jurídicas numeradas (1 a 19 direito privado, 20 Fazenda/GDF público)
+├── Peticao/                          ← ⭐ FONTE DA VERDADE (203 arquivos — 198 DOCX + 5 PDFs de orientação)
+│   ├── 1.x ... 21.x                ← 21 categorias jurídicas numeradas (1 a 19 direito privado, 20 Fazenda/GDF público, 21 CAESB saneamento DF)
 │   ├── *_ORIENTAÇÕES.pdf            ← 5 manuais de fluxo processual (Consumidor, Cobrança, Despejo, Execução, Juizados Fazendários)
 │   └── Peticao.docx                ← 1 modelo DOCX avulso (esqueleto simples de petição)
 │
