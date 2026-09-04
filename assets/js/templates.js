@@ -136,6 +136,7 @@ const DocJurTemplates = (() => {
     name,
     icon,
     sourceFile: SRC + sourceFile,
+    implemented: true,
   });
 
   /**
