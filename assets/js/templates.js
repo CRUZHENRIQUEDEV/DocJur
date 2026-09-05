@@ -1555,20 +1555,38 @@ const DocJurTemplates = (() => {
     },
 
     // ================================================================
-    //  CATEGORIA 8 — Modelos Advogado (910 templates, lazy-load HTML individual)
-    //  Arquivos .docx reais em Peticao/AdvogadoGerados/
-    //  Catalogo em arquivo SEPARADO assets/js/adv-catalog.js (carrega ANTES de templates.js)
+    //  CATEGORIA 8 — Modelos Advogado (1.360 templates, lazy-load HTML individual)
+    //  Arquivos .docx reais em Peticao/AdvogadoGerados/ + NovosAdvGerados/
+    //  3 catalogos SEPARADOS: assets/js/adv-catalog.js + adv-catalog-2.js + adv-catalog-3.js (carregam ANTES de templates.js)
     //  HTML de cada template em assets/templates/adv-*.html (fetch sob demanda 1 por clique)
     // ================================================================
     {
       id: "advogado",
       icon: "briefcase",
-      name: "💼 Modelos Advogado — 910 Petições (Lazy-Load)",
-      items: Array.isArray(/** @type {any} */ (window).DocJurAdvCatalog)
-        ? /** @type {Array<[string,string,string,string]>} */ (
-            /** @type {any} */ (window).DocJurAdvCatalog
-          ).map((t) => realTplAdv(t[0], t[1], t[2], t[3]))
-        : [],
+      name: "💼 Modelos Advogado — 1.360 Petições (Lazy-Load)",
+      items: (() => {
+        /** @type {Array<Array<string>>} */
+        const A = Array.isArray(/** @type {any} */ (window).DocJurAdvCatalog)
+          ? /** @type {Array<Array<string>>} */ (
+              /** @type {any} */ (window).DocJurAdvCatalog
+            )
+          : [];
+        /** @type {Array<Array<string>>} */
+        const B = Array.isArray(/** @type {any} */ (window).DocJurAdvCatalog2)
+          ? /** @type {Array<Array<string>>} */ (
+              /** @type {any} */ (window).DocJurAdvCatalog2
+            )
+          : [];
+        /** @type {Array<Array<string>>} */
+        const C = Array.isArray(/** @type {any} */ (window).DocJurAdvCatalog3)
+          ? /** @type {Array<Array<string>>} */ (
+              /** @type {any} */ (window).DocJurAdvCatalog3
+            )
+          : [];
+        return A.concat(B)
+          .concat(C)
+          .map((t) => realTplAdv(t[0], t[1], t[2], t[3]));
+      })(),
     },
   ];
 
