@@ -5,6 +5,55 @@
    ================================================================ */
 /* eslint-disable no-unused-vars */
 // ---- Tipos (TypeScript-ready via JSDoc) ----
+
+/**
+ * Normaliza uma chave de placeholder removendo acentos e chars Unicode latinos
+ * p/ ASCII (ex: "NATUREZA_AÇÃO" → "NATUREZA_ACAO").
+ * Também remove caracteres inválidos que não sejam letra/dígito/_ e
+ * força UPPERCASE, mantendo compatibilidade com 1.572 templates ADV+TJDFT.
+ * @param {string} key
+ * @returns {string}
+ */
+function normalizePhKey(key) {
+  if (!key) return "";
+  // Normalização Unicode NFD separa letra+acento em 2 codepoints
+  let k = String(key).normalize("NFD");
+  // Remove combining marks (todos os acentos agudo/circunflexo/cedilha/tilde etc)
+  k = k.replace(/[\u0300-\u036f]/g, "");
+  // Remove tudo exceto letras ASCII, dígitos, underline
+  k = k.replace(/[^A-Za-z0-9_]/g, "");
+  // Força uppercase
+  return k.toUpperCase();
+}
+
+/**
+ * Mapa aliases de chaves normalizadas de templates ADV (910 arquivos)
+ * para chaves genéricas existentes no formulário e no PH_LABELS.
+ * Evita quebrar compatibilidade com 910 arquivos gerados em lote e
+ * não requer novo input no painel esquerdo.
+ * @type {Record<string, string>}
+ */
+const PH_ALIASES = {
+  NATUREZA_ACAO: "GEN_1",
+  NATUREZA_DA_ACAO: "GEN_1",
+  NATUREZA: "GEN_1",
+  ACAO: "GEN_1",
+};
+
+/**
+ * Resolve uma chave de placeholder aplicando normalização + alias +
+ * fallback seguro para chaves não encontradas no data.
+ * @param {string} rawKey
+ * @param {Record<string, string>} data
+ * @returns {{ key: string, normalized: string, value: string }}
+ */
+function resolvePh(rawKey, data) {
+  const normalized = normalizePhKey(rawKey);
+  const aliased = PH_ALIASES[normalized];
+  const key = aliased || normalized;
+  const value = data && typeof data[key] === "string" ? data[key] : "";
+  return { key, normalized, value };
+}
 /**
  * @typedef {Record<string, string>} PhData
  * Dicionario placeholder => valor. Ex: { ADV_NOME: "Dr. Fulano", CLI_DOC: "000.000.000-00" }
@@ -98,6 +147,16 @@ const DocJurUtils = (() => {
   }
 
   /**
+   * Escape para uso em atributos HTML (ex: style="..." ou title="...").
+   * Mesmo comportamento de escHtml, nome semântico.
+   * @param {unknown} s
+   * @returns {string}
+   */
+  function escAttr(s) {
+    return escHtml(s);
+  }
+
+  /**
    * Converte data ISO ("2026-01-31") -> "31 de janeiro de 2026"
    * @param {string} dateStr
    * @returns {string}
@@ -135,6 +194,8 @@ const DocJurUtils = (() => {
   /**
    * Substitui placeholders {{CHAVE}} por valores de `data`, com classe de estilo.
    * Preserva spans já existentes (.ph) com o mesmo atributo data-ph.
+   * Suporta chaves com acentos (ex: {{NATUREZA_AÇÃO}} dos 910 templates ADV)
+   * via normalização Unicode + aliases GENéricos.
    * @param {string} html
    * @param {PhData} data
    * @returns {{ html:string, filled:number, total:number }}
@@ -143,30 +204,55 @@ const DocJurUtils = (() => {
     let filled = 0;
     let total = 0;
     const d = data || /** @type {PhData} */ ({});
+    const tpl = /** @type {any} */ (window)["DocJurTemplates"];
+    const phLabelFn =
+      tpl && typeof tpl.phLabel === "function"
+        ? tpl.phLabel
+        : (/** @type {string} */ k) => k;
 
-    const resolve = (/** @type {string} */ key) => {
+    const resolve = (/** @type {string} */ rawKey) => {
       total++;
-      const v = d[key];
+      // Normaliza chave + aplica alias (NATUREZA_AÇÃO → NATUREZA_ACAO → GEN_1)
+      const { key, value } = resolvePh(rawKey, d);
+      // Lookup do dado final
+      const v = value !== undefined && value !== null ? value : (d[key] ?? "");
       const ok = typeof v === "string" && v.trim() !== "";
       if (ok) filled++;
-      const cls = ok ? "ph ph-filled" : "ph";
-      const inner = ok ? escHtml(v) : `{{${key}}}`;
-      const label = (() => {
-        const tpl = /** @type {any} */ (window)["DocJurTemplates"];
-        return tpl && typeof tpl.phLabel === "function"
-          ? tpl.phLabel(key)
-          : key;
-      })();
-      return `<span class="${cls}" data-ph="${key}" title="${escHtml(label)}">${inner}</span>`;
+      const cls = ok ? "ph ph-filled" : "ph ph-empty";
+      const inner = ok ? escHtml(v) : escHtml(phLabelFn(key) || key);
+      const label = phLabelFn(key) || key;
+      return `<span class="${cls}" contenteditable="${ok ? "true" : "false"}" data-ph="${key}" title="${escHtml(label)}">${inner}</span>`;
     };
 
-    // 1) Raw {{CHAVE}} (novos)
-    let out = html.replace(/\{\{(\w+)\}\}/g, (_m, key) => resolve(key));
+    // 1) Raw {{CHAVE}} (novos, nunca renderizados antes)
+    //    Regex captura QUALQUER coisa entre {{ }}, não só \w — pega acentos (ÇÃO)
+    //    que existem em 910 templates ADV.
+    let out = html.replace(/\{\{([^{}]+?)\}\}/g, (_m, rawKey) =>
+      resolve(rawKey),
+    );
 
-    // 2) Spans .ph existentes com chave em data-ph (refresh)
+    // 2) Spans .ph existentes com data-ph (refresh / re-aplicar)
+    //    RegEx agnostico a ORDEM de atributos e atributos extras injetados
+    //    (data-trae-ref, data-*, title, contenteditable, etc).
+    //    data-ph agora também aceita caracteres especiais (por retrocompatibilidade
+    //    se houver span antigo salvo em localStorage com chave não-normalizada).
+    const dataPhCapture = 'data-ph="([^"]+)"';
+    const classPh = 'class="ph(?: ph-filled| ph-empty)?"';
+    // 2a — data-ph DEPOIS de class="ph..."
     out = out.replace(
-      /<span class="ph(?: ph-filled)?" data-ph="(\w+)">([^<]+)<\/span>/g,
-      (_m, key) => resolve(key),
+      new RegExp(
+        `<span[^>]*${classPh}[^>]*${dataPhCapture}[^>]*>([^<]*)</span>`,
+        "g",
+      ),
+      (_m, keyRaw) => resolve(keyRaw),
+    );
+    // 2b — data-ph ANTES de class="ph..." (browser rearranja atributos as vezes)
+    out = out.replace(
+      new RegExp(
+        `<span[^>]*${dataPhCapture}[^>]*${classPh}[^>]*>([^<]*)</span>`,
+        "g",
+      ),
+      (_m, keyRaw) => resolve(keyRaw),
     );
 
     return { html: out, filled, total };
@@ -244,6 +330,7 @@ const DocJurUtils = (() => {
     $,
     $$,
     escHtml,
+    escAttr,
     formatDateBR,
     currentDateBR,
     countText,

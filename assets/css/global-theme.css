@@ -5,9 +5,109 @@
  */
 
 /* ============================================
+   CSS RESET — global, evita overflow / margens padrão
+   ============================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family:
+    var(--ui-font-sans, system-ui),
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  background: var(--ui-bg, #fff);
+  color: var(--ui-text, #0a0a0a);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  min-width: 960px; /* evita GRID 3-colunas esmagar coluna editor p/ 0px em viewport < 300+280+min */
+  overflow-x: auto; /* scroll horizontal se viewport for menor que o min layout */
+}
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* ============================================
    TEMA CLARO (Default) - Cores shadcn/ui
    ============================================ */
 :root {
+  /* Font tokens (novos) */
+  --ui-font-sans:
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --dj-page-font: "Times New Roman", Times, Georgia, serif;
+  --dj-pad-xs: 4px;
+  --dj-pad-sm: 6px;
+  --dj-pad-md: 10px;
+  --dj-pad-lg: 14px;
+  --dj-pad-xl: 18px;
+  --dj-radius-sm: 3px;
+  --dj-radius-md: 5px;
+  --dj-radius-lg: 8px;
+  --ui-transition-fast: 150ms ease;
+  --renderer-bg-hover: hsl(210, 28%, 92.8%);
+  --renderer-button-bg: var(--ui-button-bg, #fff);
+  --renderer-button-hover: var(--ui-bg-tertiary, #fafafa);
+  --renderer-button-active: hsl(212, 23%, 89%);
+  --renderer-button-primary-bg: var(--ui-accent);
+  --renderer-button-primary-hover: var(--ui-accent-hover);
+  --renderer-button-primary-active: var(--ui-accent-active);
+  --renderer-shadow-md: 0 2px 8px rgba(15, 23, 42, 0.08),
+    0 1px 2px rgba(15, 23, 42, 0.06);
+  --renderer-shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.1),
+    0 1px 1px rgba(15, 23, 42, 0.04);
+
   /* Cores primárias */
   --ui-accent: #8ec8ee;
   --ui-accent-hover: #7db8de;

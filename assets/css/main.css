@@ -861,6 +861,18 @@ textarea {
     0 2px 6px rgba(47, 158, 68, 0.25);
   background: #b2f2bb;
 }
+.editor-page .ph-empty {
+  background: #fff5f5;
+  border-bottom: 1px dashed #c92a2a;
+  border-radius: 2px;
+  padding: 0 2px;
+  color: #c92a2a;
+  font-style: italic;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: help;
+  user-select: none;
+}
 
 /* ============================================================
    BADGES — status de documento real / pendente

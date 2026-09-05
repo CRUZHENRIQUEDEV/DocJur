@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
   "use strict";
   /**
    * @license Adv-catalog-3 (NOVO lote +300 templates 30 areas ineditas: Digital LGPD Bancario Sucessorio Civil Contratos Imobiliario Trabalho Previdenciario Tributario Penal Consumidor Admin Eleitoral Militar Aduaneiro PI Telecom Saude Seguros Societario Domestica Ambiental Urbanistico CADE Concorrencia Transito Educacional Alimentar Redes Sociais ANEEL Logistica Franquias).
@@ -430,61 +430,61 @@
  [
   "adv-tributario-municipal-estadual-federal-01-ipva-veiculo-multa-juros-indenizacao-pagamento-indevido",
   "Direito Tributário Municipal/Estadual/Federal — IPVA Veículo Multa Juros Indenização Pagamento Indevido",
-  "landmark-building",
+  "building-2",
   "tributario-municipal-estadual-federal/01 IPVA Veículo Multa Juros Indenização Pagamento Indevido — modelo 71.docx"
  ],
  [
   "adv-tributario-municipal-estadual-federal-02-iptu-imovel-progressivo-multa-isencao-idoso-indenizacao",
   "Direito Tributário Municipal/Estadual/Federal — IPTU Imóvel Progressivo Multa Isenção Idoso Indenização",
-  "landmark-building",
+  "building-2",
   "tributario-municipal-estadual-federal/02 IPTU Imóvel Progressivo Multa Isenção Idoso Indenização — modelo 72.docx"
  ],
  [
   "adv-tributario-municipal-estadual-federal-03-itbi-transferencia-imovel-compra-venda-doador-pagamento-indevido",
   "Direito Tributário Municipal/Estadual/Federal — ITBI Transferência Imóvel Compra Venda Doador Pagamento Indevido",
-  "landmark-building",
+  "building-2",
   "tributario-municipal-estadual-federal/03 ITBI Transferência Imóvel Compra Venda Doador Pagamento Indevido — modelo 73.docx"
  ],
  [
   "adv-tributario-municipal-estadual-federal-04-ipi-imposto-produto-industrializado-restituicao-indenizacao",
   "Direito Tributário Municipal/Estadual/Federal — IPI Imposto Produto Industrializado Restituição Indenização",
-  "landmark-building",
+  "building-2",
   "tributario-municipal-estadual-federal/04 IPI Imposto Produto Industrializado Restituição Indenização — modelo 74.docx"
  ],
  [
   "adv-tributario-municipal-estadual-federal-05-imposto-renda-restituicao-retido-fonte-pf-indevido-multa",
   "Direito Tributário Municipal/Estadual/Federal — Imposto Renda Restituição Retido Fonte PF Indevido Multa",
-  "landmark-building",
+  "building-2",
   "tributario-municipal-estadual-federal/05 Imposto Renda Restituição Retido Fonte PF Indevido Multa — modelo 75.docx"
  ],
  [
   "adv-tributario-municipal-estadual-federal-06-multa-tributaria-municipal-agua-esgoto-iss-indenizacao",
   "Direito Tributário Municipal/Estadual/Federal — Multa Tributária Municipal Água Esgoto ISS Indenização",
-  "landmark-building",
+  "building-2",
   "tributario-municipal-estadual-federal/06 Multa Tributária Municipal Água Esgoto ISS Indenização — modelo 76.docx"
  ],
  [
   "adv-tributario-municipal-estadual-federal-07-parcelamento-tributario-receita-federal-estaduais-municipais",
   "Direito Tributário Municipal/Estadual/Federal — Parcelamento Tributário Receita Federal Estaduais Municipais",
-  "landmark-building",
+  "building-2",
   "tributario-municipal-estadual-federal/07 Parcelamento Tributário Receita Federal Estaduais Municipais — modelo 77.docx"
  ],
  [
   "adv-tributario-municipal-estadual-federal-08-execucao-fiscal-carteira-divida-ativa-inscricao-imovel-bem",
   "Direito Tributário Municipal/Estadual/Federal — Execução Fiscal Carteira Dívida Ativa Inscrição Imóvel Bem",
-  "landmark-building",
+  "building-2",
   "tributario-municipal-estadual-federal/08 Execução Fiscal Carteira Dívida Ativa Inscrição Imóvel Bem — modelo 78.docx"
  ],
  [
   "adv-tributario-municipal-estadual-federal-09-certidao-negativa-divida-ativa-cnh-cnpj-restricao-indenizacao",
   "Direito Tributário Municipal/Estadual/Federal — Certidão Negativa Dívida Ativa CNH CNPJ Restrição Indenização",
-  "landmark-building",
+  "building-2",
   "tributario-municipal-estadual-federal/09 Certidão Negativa Dívida Ativa CNH CNPJ Restrição Indenização — modelo 79.docx"
  ],
  [
   "adv-tributario-municipal-estadual-federal-10-issqn-prefeitura-servico-indenizacao-multa-cobranca-indevida",
   "Direito Tributário Municipal/Estadual/Federal — ISSQN Prefeitura Serviço Indenização Multa Cobrança Indevida",
-  "landmark-building",
+  "building-2",
   "tributario-municipal-estadual-federal/10 ISSQN Prefeitura Serviço Indenização Multa Cobrança Indevida — modelo 80.docx"
  ],
  [
@@ -610,61 +610,61 @@
  [
   "adv-administrativo-avancado-01-licitacao-edital-pregao-eletronico-contrato-administrativo-indenizacao",
   "Direito Administrativo Avançado — Licitação Edital Pregão Eletrônico Contrato Administrativo Indenização",
-  "landmark-flag",
+  "file-text",
   "administrativo-avancado/01 Licitação Edital Pregão Eletrônico Contrato Administrativo Indenização — modelo 101.docx"
  ],
  [
   "adv-administrativo-avancado-02-servidor-publico-estavel-tempo-contribuicao-aposentadoria",
   "Direito Administrativo Avançado — Servidor Público Estável Tempo Contribuição Aposentadoria",
-  "landmark-flag",
+  "file-text",
   "administrativo-avancado/02 Servidor Público Estável Tempo Contribuição Aposentadoria — modelo 102.docx"
  ],
  [
   "adv-administrativo-avancado-03-ato-administrativo-anulacao-revogacao-indenizacao-conselho",
   "Direito Administrativo Avançado — Ato Administrativo Anulação Revogação Indenização Conselho",
-  "landmark-flag",
+  "file-text",
   "administrativo-avancado/03 Ato Administrativo Anulação Revogação Indenização Conselho — modelo 103.docx"
  ],
  [
   "adv-administrativo-avancado-04-improbidade-administrativa-lei-8429-multa-indenizacao-bem",
   "Direito Administrativo Avançado — Improbidade Administrativa Lei 8429 Multa Indenização Bem",
-  "landmark-flag",
+  "file-text",
   "administrativo-avancado/04 Improbidade Administrativa Lei 8429 Multa Indenização Bem — modelo 104.docx"
  ],
  [
   "adv-administrativo-avancado-05-serventia-extrajudicial-cartorio-notario-registro-imoveis",
   "Direito Administrativo Avançado — Serventia Extrajudicial Cartório Notário Registro Imóveis",
-  "landmark-flag",
+  "file-text",
   "administrativo-avancado/05 Serventia Extrajudicial Cartório Notário Registro Imóveis — modelo 105.docx"
  ],
  [
   "adv-administrativo-avancado-06-registro-contrato-imovel-cartorio-indenizacao-erro-registro",
   "Direito Administrativo Avançado — Registro Contrato Imóvel Cartório Indenização Erro Registro",
-  "landmark-flag",
+  "file-text",
   "administrativo-avancado/06 Registro Contrato Imóvel Cartório Indenização Erro Registro — modelo 106.docx"
  ],
  [
   "adv-administrativo-avancado-07-protesto-cartorio-titulo-divida-indenizacao-cancelamento",
   "Direito Administrativo Avançado — Protesto Cartório Título Dívida Indenização Cancelamento",
-  "landmark-flag",
+  "file-text",
   "administrativo-avancado/07 Protesto Cartório Título Dívida Indenização Cancelamento — modelo 107.docx"
  ],
  [
   "adv-administrativo-avancado-08-concurso-publico-edital-anulado-vaga-espera-convocacao",
   "Direito Administrativo Avançado — Concurso Público Edital Anulado Vaga Espera Convocação",
-  "landmark-flag",
+  "file-text",
   "administrativo-avancado/08 Concurso Público Edital Anulado Vaga Espera Convocação — modelo 108.docx"
  ],
  [
   "adv-administrativo-avancado-09-empresa-publica-sociedade-economica-mista-funcionario-publico",
   "Direito Administrativo Avançado — Empresa Pública Sociedade Econômica Mista Funcionário Público",
-  "landmark-flag",
+  "file-text",
   "administrativo-avancado/09 Empresa Pública Sociedade Econômica Mista Funcionário Público — modelo 109.docx"
  ],
  [
   "adv-administrativo-avancado-10-ata-notarial-negocio-juridico-cartorio-indenizacao-testamento",
   "Direito Administrativo Avançado — Ata Notarial Negócio Jurídico Cartório Indenização Testamento",
-  "landmark-flag",
+  "file-text",
   "administrativo-avancado/10 Ata Notarial Negócio Jurídico Cartório Indenização Testamento — modelo 110.docx"
  ],
  [
@@ -1330,61 +1330,61 @@
  [
   "adv-concorrencia-antitruste-cade-01-acordo-acaracao-cartel-preco-supermercado-combustivel-gasolina",
   "Concorrência e Antitruste CADE — Acordo Acareação Cartel Preço Supermercado Combustível Gasolina",
-  "scale-balanced",
+  "scale",
   "concorrencia-antitruste-cade/01 Acordo Acareação Cartel Preço Supermercado Combustível Gasolina — modelo 221.docx"
  ],
  [
   "adv-concorrencia-antitruste-cade-02-abuso-posicao-dominante-empresa-grande-mercado-micro-pequena",
   "Concorrência e Antitruste CADE — Abuso Posição Dominante Empresa Grande Mercado Micro Pequena",
-  "scale-balanced",
+  "scale",
   "concorrencia-antitruste-cade/02 Abuso Posição Dominante Empresa Grande Mercado Micro Pequena — modelo 222.docx"
  ],
  [
   "adv-concorrencia-antitruste-cade-03-preco-predatorio-venda-abaixo-custo-empresa-concorrente",
   "Concorrência e Antitruste CADE — Preço Predatório Venda Abaixo Custo Empresa Concorrente",
-  "scale-balanced",
+  "scale",
   "concorrencia-antitruste-cade/03 Preço Predatório Venda Abaixo Custo Empresa Concorrente — modelo 223.docx"
  ],
  [
   "adv-concorrencia-antitruste-cade-04-barreira-entrada-mercado-nova-empresa-franquia-servico",
   "Concorrência e Antitruste CADE — Barreira Entrada Mercado Nova Empresa Franquia Serviço",
-  "scale-balanced",
+  "scale",
   "concorrencia-antitruste-cade/04 Barreira Entrada Mercado Nova Empresa Franquia Serviço — modelo 224.docx"
  ],
  [
   "adv-concorrencia-antitruste-cade-05-fusao-aquisicao-empresa-aprovacao-cade-concentracao-mercado",
   "Concorrência e Antitruste CADE — Fusão Aquisição Empresa Aprovação CADE Concentração Mercado",
-  "scale-balanced",
+  "scale",
   "concorrencia-antitruste-cade/05 Fusão Aquisição Empresa Aprovação CADE Concentração Mercado — modelo 225.docx"
  ],
  [
   "adv-concorrencia-antitruste-cade-06-processo-cade-cartel-supermercado-cimento-saude-educacao",
   "Concorrência e Antitruste CADE — Processo CADE Cartel Supermercado Cimento Saúde Educação",
-  "scale-balanced",
+  "scale",
   "concorrencia-antitruste-cade/06 Processo CADE Cartel Supermercado Cimento Saúde Educação — modelo 226.docx"
  ],
  [
   "adv-concorrencia-antitruste-cade-07-multa-cade-empresa-concorrencia-desleal-pratica-abusiva",
   "Concorrência e Antitruste CADE — Multa CADE Empresa Concorrência Desleal Prática Abusiva",
-  "scale-balanced",
+  "scale",
   "concorrencia-antitruste-cade/07 Multa CADE Empresa Concorrência Desleal Prática Abusiva — modelo 227.docx"
  ],
  [
   "adv-concorrencia-antitruste-cade-08-defesa-consumidor-supermercado-pao-acucar-carrefour-atacadao",
   "Concorrência e Antitruste CADE — Defesa Consumidor Supermercado Pão Açúcar Carrefour Atacadão",
-  "scale-balanced",
+  "scale",
   "concorrencia-antitruste-cade/08 Defesa Consumidor Supermercado Pão Açúcar Carrefour Atacadão — modelo 228.docx"
  ],
  [
   "adv-concorrencia-antitruste-cade-09-concorrencia-desleal-marketing-publicidade-difamacao-empresa",
   "Concorrência e Antitruste CADE — Concorrência Desleal Marketing Publicidade Difamação Empresa",
-  "scale-balanced",
+  "scale",
   "concorrencia-antitruste-cade/09 Concorrência Desleal Marketing Publicidade Difamação Empresa — modelo 229.docx"
  ],
  [
   "adv-concorrencia-antitruste-cade-10-conselho-administrativo-defesa-economica-cade-recurso-decisao",
   "Concorrência e Antitruste CADE — Conselho Administrativo Defesa Econômica CADE Recurso Decisão",
-  "scale-balanced",
+  "scale",
   "concorrencia-antitruste-cade/10 Conselho Administrativo Defesa Econômica CADE Recurso Decisão — modelo 230.docx"
  ],
  [
@@ -1510,121 +1510,121 @@
  [
   "adv-alimentar-agropecuario-avancado-01-anvisa-rotulagem-produto-alimento-padaria-supermercado-indenizacao",
   "Direito Alimentar e Agropecuário Avançado — ANVISA Rotulagem Produto Alimento Padaria Supermercado Indenização",
-  "utensils-crossed",
+  "utensils",
   "alimentar-agropecuario-avancado/01 ANVISA Rotulagem Produto Alimento Padaria Supermercado Indenização — modelo 251.docx"
  ],
  [
   "adv-alimentar-agropecuario-avancado-02-transgenico-soja-milho-alimento-nao-rotulado-ctnbio-indenizacao",
   "Direito Alimentar e Agropecuário Avançado — Transgênico Soja Milho Alimento Não Rotulado CTNBio Indenização",
-  "utensils-crossed",
+  "utensils",
   "alimentar-agropecuario-avancado/02 Transgênico Soja Milho Alimento Não Rotulado CTNBio Indenização — modelo 252.docx"
  ],
  [
   "adv-alimentar-agropecuario-avancado-03-agrotoxico-alimento-hortifruti-fruta-legume-contaminacao",
   "Direito Alimentar e Agropecuário Avançado — Agrotóxico Alimento Hortifrutti Fruta Legume Contaminação",
-  "utensils-crossed",
+  "utensils",
   "alimentar-agropecuario-avancado/03 Agrotóxico Alimento Hortifrutti Fruta Legume Contaminação — modelo 253.docx"
  ],
  [
   "adv-alimentar-agropecuario-avancado-04-alimento-contaminacao-restaurante-lanchonete-hamburgueria-dt",
   "Direito Alimentar e Agropecuário Avançado — Alimento Contaminação Restaurante Lanchonete Hamburgueria DT",
-  "utensils-crossed",
+  "utensils",
   "alimentar-agropecuario-avancado/04 Alimento Contaminação Restaurante Lanchonete Hamburgueria DT — modelo 254.docx"
  ],
  [
   "adv-alimentar-agropecuario-avancado-05-vigilancia-sanitaria-visa-municipal-estadual-anvisa-restaurante",
   "Direito Alimentar e Agropecuário Avançado — Vigilância Sanitária VISA Municipal Estadual ANVISA Restaurante",
-  "utensils-crossed",
+  "utensils",
   "alimentar-agropecuario-avancado/05 Vigilância Sanitária VISA Municipal Estadual ANVISA Restaurante — modelo 255.docx"
  ],
  [
   "adv-alimentar-agropecuario-avancado-06-mapa-inspecao-federal-carne-bovina-suina-ave-sif-industria",
   "Direito Alimentar e Agropecuário Avançado — MAPA Inspeção Federal Carne Bovina Suína Ave SIF Indústria",
-  "utensils-crossed",
+  "utensils",
   "alimentar-agropecuario-avancado/06 MAPA Inspeção Federal Carne Bovina Suína Ave SIF Indústria — modelo 256.docx"
  ],
  [
   "adv-alimentar-agropecuario-avancado-07-sif-sisp-siesprodutos-origem-animal-carne-leite-ovo",
   "Direito Alimentar e Agropecuário Avançado — SIF SISP SIES Produtos Origem Animal Carne Leite Ovo",
-  "utensils-crossed",
+  "utensils",
   "alimentar-agropecuario-avancado/07 SIF SISP SIES Produtos Origem Animal Carne Leite Ovo — modelo 257.docx"
  ],
  [
   "adv-alimentar-agropecuario-avancado-08-leite-adulterado-agua-urea-formal-deido-industria-laticinios",
   "Direito Alimentar e Agropecuário Avançado — Leite Adulterado Água Uréia Formaldeído Indústria Laticínios",
-  "utensils-crossed",
+  "utensils",
   "alimentar-agropecuario-avancado/08 Leite Adulterado Água Uréia Formaldeído Indústria Laticínios — modelo 258.docx"
  ],
  [
   "adv-alimentar-agropecuario-avancado-09-carne-contaminada-salmonela-e-coli-supermercado-acougue-indenizacao",
   "Direito Alimentar e Agropecuário Avançado — Carne Contaminada Salmonela E. Coli Supermercado Açougue Indenização",
-  "utensils-crossed",
+  "utensils",
   "alimentar-agropecuario-avancado/09 Carne Contaminada Salmonela E. Coli Supermercado Açougue Indenização — modelo 259.docx"
  ],
  [
   "adv-alimentar-agropecuario-avancado-10-agrotoxico-proibido-ibama-anvisa-mapa-multa-indenizacao",
   "Direito Alimentar e Agropecuário Avançado — Agrotóxico Proibido IBAMA ANVISA MAPA Multa Indenização",
-  "utensils-crossed",
+  "utensils",
   "alimentar-agropecuario-avancado/10 Agrotóxico Proibido IBAMA ANVISA MAPA Multa Indenização — modelo 260.docx"
  ],
  [
   "adv-redes-sociais-meta-google-tiktok-01-instagram-facebook-meta-remocao-conteudo-sem-justificativa",
   "Redes Sociais Meta Google TikTok — Instagram Facebook Meta Remoção Conteúdo Sem Justificativa",
-  "instagram",
+  "share-2",
   "redes-sociais-meta-google-tiktok/01 Instagram Facebook Meta Remoção Conteúdo Sem Justificativa — modelo 261.docx"
  ],
  [
   "adv-redes-sociais-meta-google-tiktok-02-bloqueio-conta-instagram-facebook-meta-perfil-empresarial-pessoal",
   "Redes Sociais Meta Google TikTok — Bloqueio Conta Instagram Facebook Meta Perfil Empresarial Pessoal",
-  "instagram",
+  "share-2",
   "redes-sociais-meta-google-tiktok/02 Bloqueio Conta Instagram Facebook Meta Perfil Empresarial Pessoal — modelo 262.docx"
  ],
  [
   "adv-redes-sociais-meta-google-tiktok-03-youtube-google-remocao-video-monetizacao-bloqueada-canal",
   "Redes Sociais Meta Google TikTok — YouTube Google Remoção Vídeo Monetização Bloqueada Canal",
-  "instagram",
+  "share-2",
   "redes-sociais-meta-google-tiktok/03 YouTube Google Remoção Vídeo Monetização Bloqueada Canal — modelo 263.docx"
  ],
  [
   "adv-redes-sociais-meta-google-tiktok-04-tiktok-suspensao-conta-perfil-ao-vivo-live-bloqueio",
   "Redes Sociais Meta Google TikTok — TikTok Suspensão Conta Perfil Ao Vivo Live Bloqueio",
-  "instagram",
+  "share-2",
   "redes-sociais-meta-google-tiktok/04 TikTok Suspensão Conta Perfil Ao Vivo Live Bloqueio — modelo 264.docx"
  ],
  [
   "adv-redes-sociais-meta-google-tiktok-05-google-ads-banimento-conta-anunciante-restricao-publicidade",
   "Redes Sociais Meta Google TikTok — Google Ads Banimento Conta Anunciante Restrição Publicidade",
-  "instagram",
+  "share-2",
   "redes-sociais-meta-google-tiktok/05 Google Ads Banimento Conta Anunciante Restrição Publicidade — modelo 265.docx"
  ],
  [
   "adv-redes-sociais-meta-google-tiktok-06-lgpd-redes-sociais-dados-pessoais-conta-meta-google-tiktok",
   "Redes Sociais Meta Google TikTok — LGPD Redes Sociais Dados Pessoais Conta Meta Google TikTok",
-  "instagram",
+  "share-2",
   "redes-sociais-meta-google-tiktok/06 LGPD Redes Sociais Dados Pessoais Conta Meta Google TikTok — modelo 266.docx"
  ],
  [
   "adv-redes-sociais-meta-google-tiktok-07-golpe-whatsapp-pix-clone-grupo-familia-indenizacao-banco",
   "Redes Sociais Meta Google TikTok — Golpe WhatsApp PIX Clone Grupo Família Indenização Banco",
-  "instagram",
+  "share-2",
   "redes-sociais-meta-google-tiktok/07 Golpe WhatsApp PIX Clone Grupo Família Indenização Banco — modelo 267.docx"
  ],
  [
   "adv-redes-sociais-meta-google-tiktok-08-fake-news-instagram-facebook-whatsapp-telegram-indenizacao-honra",
   "Redes Sociais Meta Google TikTok — Fake News Instagram Facebook WhatsApp Telegram Indenização Honra",
-  "instagram",
+  "share-2",
   "redes-sociais-meta-google-tiktok/08 Fake News Instagram Facebook WhatsApp Telegram Indenização Honra — modelo 268.docx"
  ],
  [
   "adv-redes-sociais-meta-google-tiktok-09-direito-a-desconexao-trabalho-whatsapp-empresa-horario-extra",
   "Redes Sociais Meta Google TikTok — Direito a Desconexão Trabalho WhatsApp Empresa Horário Extra",
-  "instagram",
+  "share-2",
   "redes-sociais-meta-google-tiktok/09 Direito a Desconexão Trabalho WhatsApp Empresa Horário Extra — modelo 269.docx"
  ],
  [
   "adv-redes-sociais-meta-google-tiktok-10-indenizacao-honra-calunia-difamacao-internet-redes-sociais",
   "Redes Sociais Meta Google TikTok — Indenização Honra Calúnia Difamação Internet Redes Sociais",
-  "instagram",
+  "share-2",
   "redes-sociais-meta-google-tiktok/10 Indenização Honra Calúnia Difamação Internet Redes Sociais — modelo 270.docx"
  ],
  [

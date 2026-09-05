@@ -1673,30 +1673,218 @@ const DocJurTemplates = (() => {
     if (!initPromise) initPromise = fetchManifestImpl();
     return initPromise;
   }
+
+  // ================================================================
+  //  HELPERS DE EXTRAÇÃO E SANITIZAÇÃO MAMOTH FULL-DOCUMENT
+  //  Arquivos gerados por Mammoth.js são HTML COMPLETO com DOCTYPE,
+  //  <html>, <head>, <style> e <body>. Se inserir innerHTML cru no div
+  //  do editor o <style> do <head> É REMOVIDO e o layout do Word
+  //  (padding, max-width, fontes, h1-h6) some → CSS "quebrado".
+  //  Esses helpers extraem body.innerHTML e reescrevem <style> com
+  //  escopo fechado em [data-mammoth-id="<id>"] para não vazar.
+  // ================================================================
+
+  /**
+   * Extrai inner do <body> + styles do <head> de um HTML completo
+   * (mammoth output), devolvendo HTML pronto pra ir no editor.
+   * @param {string} fullHtml — DOCTYPE + html + head + body
+   * @param {string} id — id do template para escopo CSS não colidir entre templates
+   * @returns {{ html: string, hasMammothStyle: boolean }}
+   */
+  function unwrapMammothHtml(fullHtml, id) {
+    if (!fullHtml) return { html: "", hasMammothStyle: false };
+    const raw = String(fullHtml);
+
+    // 1) Se NÃO é um HTML completo mammoth (não tem <html / <head / <body),
+    //    retorna sanitizado normal (html parcial já era skeleton).
+    const hasBodyTag = /<body[\s>]/i.test(raw);
+    if (!hasBodyTag) {
+      return { html: sanitizeDefensive(raw), hasMammothStyle: false };
+    }
+
+    // 2) Extrai <style> do head. Regex multiline DOTALL [\s\S]*? non-greedy.
+    /** @type {string[]} */
+    const styleBlocks = [];
+    const headMatch = raw.match(/<head[\s>]*([\s\S]*?)<\/head>/i);
+    if (headMatch && headMatch[1]) {
+      for (const m of headMatch[1].matchAll(
+        /<style[\s>]*([\s\S]*?)<\/style>/gi,
+      )) {
+        let css = (m[1] || "").trim();
+        if (!css) continue;
+        // Reescreve SELETORES TOP LEVEL:
+        //   body { padding:40px 56px; ... }
+        //   h1, h2 { font-family: serif }
+        // Prefixa o escopo [data-mammoth-tpl="<id>"]
+        const scope = `[data-mammoth-tpl="${id.replace(/[^a-zA-Z0-9_-]/g, "")}"]`;
+        css = css.replace(
+          /(^|[\s,{;])(body|h[1-6]|p|ol|ul|li|div|table|tr|td|th|thead|tbody|a|span|strong|em|b|i|u|s|sup|sub|blockquote|pre|code|hr|br)(?=[\s\.,{>+:#\[\]])/gi,
+          (_full, pre, sel) => `${pre}${scope} ${sel}`,
+        );
+        // Caso especial: seletor "body {" sozinho no início
+        css = css.replace(
+          /^\s*body\s*([{:])/gim,
+          (_m, punct) => `${scope}${punct}`,
+        );
+        styleBlocks.push(`<style type="text/css">${css}</style>`);
+      }
+    }
+
+    // 3) Extrai innerHTML do <body>. Suporta <body class=...> com attrs
+    let bodyInner = "";
+    const bodyOpen = /<body([^>]*)>/i.exec(raw);
+    const bodyClose = raw.lastIndexOf("</body>");
+    if (bodyOpen && bodyClose > bodyOpen.index) {
+      const bodyStart = bodyOpen.index + bodyOpen[0].length;
+      bodyInner = raw.slice(bodyStart, bodyClose);
+    } else {
+      bodyInner = raw;
+    }
+
+    // 4) Atributos do body: extrai style="" se existir (ex: body style="font: serif")
+    let bodyStyle = "";
+    if (bodyOpen && bodyOpen[1]) {
+      const sty = bodyOpen[1].match(/style\s*=\s*"([^"]*)"/i);
+      if (sty && sty[1]) bodyStyle = sty[1].trim();
+      const cls = bodyOpen[1].match(/class\s*=\s*"([^"]*)"/i);
+      if (cls && cls[1])
+        bodyStyle += (bodyStyle ? " " : "") + `class="${cls[1]}"`;
+    }
+
+    // 5) Embrulha conteúdo num wrapper escopado para os <style>
+    const scopeId = id.replace(/[^a-zA-Z0-9_-]/g, "");
+    const styleTag = styleBlocks.length ? styleBlocks.join("\n") + "\n" : "";
+    const finalHtml =
+      styleTag +
+      `<div data-mammoth-tpl="${scopeId}" style="${DocJurUtils ? DocJurUtils.escAttr(bodyStyle) : bodyStyle.replace(/"/g, "&quot;")}">` +
+      bodyInner +
+      `</div>`;
+
+    return {
+      html: sanitizeDefensive(finalHtml),
+      hasMammothStyle: styleBlocks.length > 0,
+    };
+  }
+
+  /**
+   * Sanitização DEFENSIVA (nunca mais usuário vê tag crua):
+   *  - Remove tags HTML tipo `<DIGITE NOME COMPLETO DA PESSOA>` usadas em deploys antigos
+   *    E TAMBÉM sua versão HTML-escapada `&lt;DIGITE ... &gt;` (super comum em arquivos
+   *    mammoth que importaram DOCX Word com texto `<DIGITE>` escapado como entidades)
+   *    e substitui ambos por placeholder `{{CHAVE}}` mapeado via heurística.
+   *  - Remove DOCTYPE / <?xml / comments HTML stray que podem sobrar.
+   *  - Normaliza `{{  CHAVE  }}` (com espaços) para `{{CHAVE}}`.
+   * @param {string} html
+   * @returns {string}
+   */
+  function sanitizeDefensive(html) {
+    if (!html) return "";
+    let out = String(html);
+    // Remove DOCTYPE, <?xml?>, comments
+    out = out.replace(/^\s*<!doctype[^>]*>/i, "");
+    out = out.replace(/<\?xml[^?]*\?>/gi, "");
+    out = out.replace(/<!--[\s\S]*?-->/g, "");
+    /**
+     * Converte texto `<DIGITE TEXTO>` (qualquer formato) no placeholder correto.
+     * @param {string} txt
+     * @returns {string}
+     */
+    function digiteToPlaceholder(txt) {
+      const up = String(txt || "").trim();
+      if (!up) return "{{GEN_1}}";
+      const find = /** @param {RegExp} re */ (re) => re.test(up);
+      // Ordem importa: casos específicos PRIMEIRO para não colidir com RG/UFF/Estado Civil
+      if (find(/ORGÃ?O\s*EXPEDIDOR|RG\s*[\-—]\s*ÓRGÃ?O/i)) return "{{CLI_RG}}";
+      if (
+        find(
+          /ENDERE[ÇC]O[^A-Z0-9]*COMPLETO|ENDERE[ÇC]O.*BAIRRO|ENDERE[ÇC]O\s*,\s*N[ÚU]MERO/i,
+        )
+      )
+        return "{{CLI_END}}";
+      if (find(/INSCRI[ÇC][ÃA]O\s*ESTADUAL/i)) return "{{CLI_RG}}";
+      if (find(/ESTADO\s*CIVIL/i)) return "{{CLI_EC}}";
+      if (find(/NOME\s*COMPLETO/i)) return "{{CLI_NOME}}";
+      if (find(/NACIONALIDADE|NAC\b/i)) return "{{CLI_NAC}}";
+      if (find(/PROFISS[ÃA]O|PROF\b/i)) return "{{CLI_PROF}}";
+      if (find(/TELEFONE|TEL\b|WHATS|CONTATO/i)) return "{{CLI_TEL}}";
+      if (find(/E-?MAIL|CORREIO\s*ELETR[ÔO]NICO/i)) return "{{CLI_EMAIL}}";
+      if (find(/CPF|CNPJ/i)) return "{{CLI_DOC}}";
+      if (find(/CEP\b/i)) return "{{CLI_CEP}}";
+      if (find(/CIDADE/i)) return "{{CLI_CIDADE}}";
+      if (find(/UF\b|ESTADO\b/)) return "{{CLI_UF}}";
+      if (find(/ADVOGADO\(a\)|ADV\b/i)) return "{{ADV_NOME}}";
+      if (find(/\bOAB\b/)) return "{{ADV_OAB}}";
+      if (find(/VARA|TRIBUNAL|JU[ÍI]ZO/i)) return "{{PROC_VARA}}";
+      if (find(/FOR[ÚU]M|FÓRUM|FORO/i)) return "{{PROC_FORUM}}";
+      if (find(/COMARCA/i)) return "{{PROC_COMARCA}}";
+      if (find(/RG\b/)) return "{{CLI_RG}}";
+      return "{{GEN_1}}";
+    }
+    // --- Forma A: <DIGITE ...> literal como tag HTML (não escapada) ---
+    out = out.replace(/<DIGITE\s*([^>]*)>/gi, (_full, inner) =>
+      digiteToPlaceholder(inner),
+    );
+    out = out.replace(/<\/DIGITE>/gi, "");
+    // --- Forma B: &lt;DIGITE ... &gt; / &#60;DIGITE ... &#62; / &#x3C;...&#x3E; ---
+    //     (versão HTML entities — formato que realmente está nos arquivos mammoth de seu print)
+    out = out.replace(
+      /&(?:lt|#60|#x3c);\s*DIGITE\s*([\s\S]*?)\s*&(?:gt|#62|#x3e);/gi,
+      (_full, inner) => {
+        const plain = String(inner || "")
+          .replace(/&(?:nbsp|#160|#xa0);/gi, " ")
+          .replace(/&(?:amp|#38|#x26);/gi, "&")
+          .replace(/&(?:quot|#34|#x22);/gi, '"')
+          .replace(/&apos;/gi, "'")
+          .replace(/&(?:lt|#60|#x3c);/gi, "<")
+          .replace(/&(?:gt|#62|#x3e);/gi, ">");
+        return digiteToPlaceholder(plain);
+      },
+    );
+    // Normaliza {{   CHAVE_COM_ESPACOS   }} → {{CHAVE}}
+    out = out.replace(/\{\{\s*([^{}]+?)\s*\}\}/g, (_m, k) => `{{${k.trim()}}}`);
+    return out;
+  }
   /**
    * Carrega HTML do template sob demanda (cache LRU).
+   * Aplica unwrapMammothHtml (extração de <body> e estilos) e sanitização
+   * defensiva em TODOS os retornos, seja fetch OK, fallback skeleton ou
+   * !IMPLEMENTED. Nunca mais cai fallback de deploy antigo.
    * @param {string} id
    * @returns {Promise<string>}
    */
   async function getHtmlAsync(id) {
     if (HTML_CACHE.has(id)) return /** @type {string} */ (HTML_CACHE.get(id));
-    if (!IMPLEMENTED[id]) return skeletonFor(id);
-    try {
-      const url = TEMPLATES_DIR + encodeURIComponent(id) + ".html";
-      const resp = await fetch(url, { cache: "force-cache" });
-      if (!resp.ok) return skeletonFor(id);
-      const txt = await resp.text();
-      // LRU evict mais antigo (ordem de inserção do Map)
-      if (HTML_CACHE.size >= CACHE_CAP) {
-        const firstKey = HTML_CACHE.keys().next().value;
-        if (firstKey !== undefined) HTML_CACHE.delete(firstKey);
+    let raw = "";
+    let usedSkeleton = false;
+    if (!IMPLEMENTED[id]) {
+      raw = skeletonFor(id);
+      usedSkeleton = true;
+    } else {
+      try {
+        const url = TEMPLATES_DIR + encodeURIComponent(id) + ".html";
+        const resp = await fetch(url, { cache: "force-cache" });
+        if (!resp.ok) {
+          raw = skeletonFor(id);
+          usedSkeleton = true;
+        } else {
+          raw = await resp.text();
+        }
+      } catch (err) {
+        console.warn("[DocJurTemplates] fetch template falhou id=" + id, err);
+        raw = skeletonFor(id);
+        usedSkeleton = true;
       }
-      HTML_CACHE.set(id, txt);
-      return txt;
-    } catch (err) {
-      console.warn("[DocJurTemplates] fetch template falhou id=" + id, err);
-      return skeletonFor(id);
     }
+    // Processamento uniforme: unwrap mammoth completo → extrai body + style escopado + sanitiza DIGITE/etc
+    const processed = unwrapMammothHtml(raw, id);
+    const result = processed.html || sanitizeDefensive(raw);
+    // LRU evict mais antigo (ordem de inserção do Map)
+    if (HTML_CACHE.size >= CACHE_CAP) {
+      const firstKey = HTML_CACHE.keys().next().value;
+      if (firstKey !== undefined) HTML_CACHE.delete(firstKey);
+    }
+    HTML_CACHE.set(id, result);
+    return result;
   }
   // Backward compat: !!Tpl.TEMPLATES[id] retorna truthy para implementados.
   const TEMPLATES = IMPLEMENTED;
@@ -1707,7 +1895,7 @@ const DocJurTemplates = (() => {
   /** @param {string} id */
   function skeletonFor(id) {
     const title = templateTitle(id) || "Documento Jurídico";
-    return `
+    const rawHtml = `
 <h1 style="text-align:center;font-size:16pt;margin-bottom:18pt;">${DocJurUtils.escHtml(title.toUpperCase())}</h1>
 <p style="text-align:justify;margin-bottom:14pt;">
 <strong>{{CLI_NOME}}</strong>, {{CLI_NAC}}, {{CLI_EC}}, {{CLI_PROF}}, CPF nº {{CLI_DOC}},
@@ -1737,6 +1925,7 @@ confiança e da moralidade administrativa.
 <div style="font-weight:600;">{{ADV_NOME}}</div>
 <div style="font-size:11pt;">OAB/{{ADV_UF}} nº {{ADV_OAB}}</div>
 </div>`;
+    return sanitizeDefensive(rawHtml);
   }
 
   // ================================================================

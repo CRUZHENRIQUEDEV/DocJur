@@ -180,7 +180,7 @@ const NOVA_CATEGORIAS = [
   {
     areaSlug: "administrativo-avancado",
     areaNome: "Direito Administrativo Avançado",
-    icon: "landmark-flag",
+    icon: "file-text",
     templates: [
       ["01-licitacao-edital-pregao-eletronico-contrato-administrativo-indenizacao", "01 Licitação Edital Pregão Eletrônico Contrato Administrativo Indenização"],
       ["02-servidor-publico-estavel-tempo-contribuicao-aposentadoria", "02 Servidor Público Estável Tempo Contribuição Aposentadoria"],
@@ -384,7 +384,7 @@ const NOVA_CATEGORIAS = [
   {
     areaSlug: "concorrencia-antitruste-cade",
     areaNome: "Concorrência e Antitruste CADE",
-    icon: "scale-balanced",
+    icon: "scale",
     templates: [
       ["01-acordo-acaracao-cartel-preco-supermercado-combustivel-gasolina", "01 Acordo Acareação Cartel Preço Supermercado Combustível Gasolina"],
       ["02-abuso-posicao-dominante-empresa-grande-mercado-micro-pequena", "02 Abuso Posição Dominante Empresa Grande Mercado Micro Pequena"],

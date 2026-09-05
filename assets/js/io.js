@@ -141,6 +141,16 @@ const DocJurIO = (() => {
     const content = editor?.innerHTML || "";
     const title = STATE?.docTitle || "documento";
 
+    const data =
+      DocJurStore && typeof DocJurStore.collectData === "function"
+        ? DocJurStore.collectData()
+        : /** @type {any} */ ({});
+    const replaced =
+      DocJurUtils && typeof DocJurUtils.replacePlaceholders === "function"
+        ? DocJurUtils.replacePlaceholders(content, data)
+        : null;
+    const cleanContent = replaced ? replaced.html : content;
+
     const styles = `
       body { font-family:"Times New Roman",Georgia,serif; font-size:12pt; line-height:1.5; }
       h1 { font-size:18pt; text-align:center; }
@@ -154,7 +164,7 @@ const DocJurIO = (() => {
 <!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom></w:WordDocument></xml><![endif]-->
 <style>${styles}</style>
 </head>
-<body style="padding:2.5cm 2.5cm;">${content}</body></html>`;
+<body style="padding:2.5cm 2.5cm;">${cleanContent}</body></html>`;
 
     const blob = new Blob(["\ufeff", html], { type: "application/msword" });
     const fname = `${title.replace(/[^\w\-]+/g, "_")}.doc`;
