@@ -1,4 +1,4 @@
-﻿(function () {
+﻿﻿(function () {
   "use strict";
   /**
    * @license Adv-catalog-3 (NOVO lote +300 templates 30 areas ineditas: Digital LGPD Bancario Sucessorio Civil Contratos Imobiliario Trabalho Previdenciario Tributario Penal Consumidor Admin Eleitoral Militar Aduaneiro PI Telecom Saude Seguros Societario Domestica Ambiental Urbanistico CADE Concorrencia Transito Educacional Alimentar Redes Sociais ANEEL Logistica Franquias).
@@ -6,1809 +6,1809 @@
    * Formato tupla: [ id, name, icon, sourceFile ]
    * @type {Array<[string,string,string,string]>}
    */
-  var CAT = [
- [
-  "adv-digital-lgpd-avancado-01-vazamento-dados-lgpd-multa-anpd-indenizacao-coletiva",
-  "Direito Digital e LGPD Avançado — Vazamento de Dados LGPD Multa ANPD Indenização Coletiva",
-  "shield-check",
-  "digital-lgpd-avancado/01 Vazamento de Dados LGPD Multa ANPD Indenização Coletiva — modelo 1.docx"
- ],
- [
-  "adv-digital-lgpd-avancado-02-deepfake-inteligencia-artificial-direito-imagem-indenizacao",
-  "Direito Digital e LGPD Avançado — Deepfake Inteligência Artificial Direito Imagem Indenização",
-  "shield-check",
-  "digital-lgpd-avancado/02 Deepfake Inteligência Artificial Direito Imagem Indenização — modelo 2.docx"
- ],
- [
-  "adv-digital-lgpd-avancado-03-biometria-nao-consentida-reconhecimento-facial-indenizacao",
-  "Direito Digital e LGPD Avançado — Biometria Não Consentida Reconhecimento Facial Indenização",
-  "shield-check",
-  "digital-lgpd-avancado/03 Biometria Não Consentida Reconhecimento Facial Indenização — modelo 3.docx"
- ],
- [
-  "adv-digital-lgpd-avancado-04-cookies-ilegais-coleta-nao-autorizada-lgpd-multa-anatel",
-  "Direito Digital e LGPD Avançado — Cookies Ilegais Coleta Não Autorizada LGPD Multa ANATEL",
-  "shield-check",
-  "digital-lgpd-avancado/04 Cookies Ilegais Coleta Não Autorizada LGPD Multa ANATEL — modelo 4.docx"
- ],
- [
-  "adv-digital-lgpd-avancado-05-golpe-pix-phishing-banco-clonagem-whatsapp-indenizacao",
-  "Direito Digital e LGPD Avançado — Golpe PIX Phishing Banco Clonagem WhatsApp Indenização",
-  "shield-check",
-  "digital-lgpd-avancado/05 Golpe PIX Phishing Banco Clonagem WhatsApp Indenização — modelo 5.docx"
- ],
- [
-  "adv-digital-lgpd-avancado-06-direito-esquecimento-google-remover-link-informacao-falsa",
-  "Direito Digital e LGPD Avançado — Direito Esquecimento Google Remover Link Informação Falsa",
-  "shield-check",
-  "digital-lgpd-avancado/06 Direito Esquecimento Google Remover Link Informação Falsa — modelo 6.docx"
- ],
- [
-  "adv-digital-lgpd-avancado-07-credito-serasa-score-baixo-nome-sujo-indevido-restricao",
-  "Direito Digital e LGPD Avançado — Crédito Serasa Score Baixo Nome Sujo Indevido Restrição",
-  "shield-check",
-  "digital-lgpd-avancado/07 Crédito Serasa Score Baixo Nome Sujo Indevido Restrição — modelo 7.docx"
- ],
- [
-  "adv-digital-lgpd-avancado-08-sigiloso-bancario-informacao-vazada-banco-financeira-indenizacao",
-  "Direito Digital e LGPD Avançado — Sigilo Bancário Informação Vazada Banco Financeira Indenização",
-  "shield-check",
-  "digital-lgpd-avancado/08 Sigilo Bancário Informação Vazada Banco Financeira Indenização — modelo 8.docx"
- ],
- [
-  "adv-digital-lgpd-avancado-09-aplicativo-banco-hackeado-saldo-roubado-indenizacao-falha",
-  "Direito Digital e LGPD Avançado — Aplicativo Banco Hackeado Saldo Roubado Indenização Falha",
-  "shield-check",
-  "digital-lgpd-avancado/09 Aplicativo Banco Hackeado Saldo Roubado Indenização Falha — modelo 9.docx"
- ],
- [
-  "adv-digital-lgpd-avancado-10-anpd-pedido-acesso-dados-titular-nao-atendido-indenizacao",
-  "Direito Digital e LGPD Avançado — ANPD Pedido Acesso Dados Titular Não Atendido Indenização",
-  "shield-check",
-  "digital-lgpd-avancado/10 ANPD Pedido Acesso Dados Titular Não Atendido Indenização — modelo 10.docx"
- ],
- [
-  "adv-bancario-financeiro-01-fraude-bancaria-conta-bloqueada-injustificadamente-indenizacao",
-  "Direito Bancário e Financeiro — Fraude Bancária Conta Bloqueada Injustificadamente Indenização",
-  "landmark",
-  "bancario-financeiro/01 Fraude Bancária Conta Bloqueada Injustificadamente Indenização — modelo 11.docx"
- ],
- [
-  "adv-bancario-financeiro-02-cheque-especial-tarifa-abusiva-juros-abusivos-conta",
-  "Direito Bancário e Financeiro — Cheque Especial Tarifa Abusiva Juros Abusivos Conta",
-  "landmark",
-  "bancario-financeiro/02 Cheque Especial Tarifa Abusiva Juros Abusivos Conta — modelo 12.docx"
- ],
- [
-  "adv-bancario-financeiro-03-cartao-credito-fatura-indevida-compra-nao-reconhecida-clonagem",
-  "Direito Bancário e Financeiro — Cartão Crédito Fatura Indevida Compra Não Reconhecida Clonagem",
-  "landmark",
-  "bancario-financeiro/03 Cartão Crédito Fatura Indevida Compra Não Reconhecida Clonagem — modelo 13.docx"
- ],
- [
-  "adv-bancario-financeiro-04-emprestimo-consignado-fraudulento-margem-liberada-sem-autorizacao",
-  "Direito Bancário e Financeiro — Empréstimo Consignado Fraudulento Margem Liberada Sem Autorização",
-  "landmark",
-  "bancario-financeiro/04 Empréstimo Consignado Fraudulento Margem Liberada Sem Autorização — modelo 14.docx"
- ],
- [
-  "adv-bancario-financeiro-05-pix-indevido-ted-transferida-errado-pessoa-recuperar-valor",
-  "Direito Bancário e Financeiro — PIX Indevido TED Transferida Errado Pessoa Recuperar Valor",
-  "landmark",
-  "bancario-financeiro/05 PIX Indevido TED Transferida Errado Pessoa Recuperar Valor — modelo 15.docx"
- ],
- [
-  "adv-bancario-financeiro-06-tarifa-bancaria-cobranca-indevida-conta-salario-invalida",
-  "Direito Bancário e Financeiro — Tarifa Bancária Cobrança Indevida Conta Salário Inválida",
-  "landmark",
-  "bancario-financeiro/06 Tarifa Bancária Cobrança Indevida Conta Salário Inválida — modelo 16.docx"
- ],
- [
-  "adv-bancario-financeiro-07-cheque-sem-fundo-sem-justificativa-desfalque-banco",
-  "Direito Bancário e Financeiro — Cheque Sem Fundo Sem Justificativa Desfalque Banco",
-  "landmark",
-  "bancario-financeiro/07 Cheque Sem Fundo Sem Justificativa Desfalque Banco — modelo 17.docx"
- ],
- [
-  "adv-bancario-financeiro-08-cheque-administrativo-bancario-valor-pago-divergente-erro",
-  "Direito Bancário e Financeiro — Cheque Administrativo Bancário Valor Pago Divergente Erro",
-  "landmark",
-  "bancario-financeiro/08 Cheque Administrativo Bancário Valor Pago Divergente Erro — modelo 18.docx"
- ],
- [
-  "adv-bancario-financeiro-09-financiamento-veiculo-itau-bb-caixa-juros-abusivos-parcela",
-  "Direito Bancário e Financeiro — Financiamento Veículo Itaú BB Caixa Juros Abusivos Parcela",
-  "landmark",
-  "bancario-financeiro/09 Financiamento Veículo Itaú BB Caixa Juros Abusivos Parcela — modelo 19.docx"
- ],
- [
-  "adv-bancario-financeiro-10-conta-salario-empresa-desvio-fgts-saque-fgts-indenizacao",
-  "Direito Bancário e Financeiro — Conta Salário Empresa Desvio FGTS Saque FGTS Indenização",
-  "landmark",
-  "bancario-financeiro/10 Conta Salário Empresa Desvio FGTS Saque FGTS Indenização — modelo 20.docx"
- ],
- [
-  "adv-sucessorio-familia-avancado-01-testamento-publico-privado-validade-nulidade-vicio-procedimento",
-  "Direito Sucessório e Família Avançado — Testamento Público Privado Validade Nulidade Vício Procedimento",
-  "scroll",
-  "sucessorio-familia-avancado/01 Testamento Público Privado Validade Nulidade Vício Procedimento — modelo 21.docx"
- ],
- [
-  "adv-sucessorio-familia-avancado-02-inventario-partilha-bens-heranca-imovel-dinheiro-acoes",
-  "Direito Sucessório e Família Avançado — Inventário Partilha Bens Herança Imóvel Dinheiro Ações",
-  "scroll",
-  "sucessorio-familia-avancado/02 Inventário Partilha Bens Herança Imóvel Dinheiro Ações — modelo 22.docx"
- ],
- [
-  "adv-sucessorio-familia-avancado-03-peticao-heranca-legado-usufruto-bem-familiar-testeiro",
-  "Direito Sucessório e Família Avançado — Petição Herança Legado Usufruto Bem Familiar Testeiro",
-  "scroll",
-  "sucessorio-familia-avancado/03 Petição Herança Legado Usufruto Bem Familiar Testeiro — modelo 23.docx"
- ],
- [
-  "adv-sucessorio-familia-avancado-04-fideicomisso-heranca-maior-idade-substituicao-testamentaria",
-  "Direito Sucessório e Família Avançado — Fideicomisso Herança Maior Idade Substituição Testamentária",
-  "scroll",
-  "sucessorio-familia-avancado/04 Fideicomisso Herança Maior Idade Substituição Testamentária — modelo 24.docx"
- ],
- [
-  "adv-sucessorio-familia-avancado-05-partilha-errada-heranca-irmaos-indenizacao-desacordo-conjuge",
-  "Direito Sucessório e Família Avançado — Partilha Errada Herança Irmãos Indenização Desacordo Cônjuge",
-  "scroll",
-  "sucessorio-familia-avancado/05 Partilha Errada Herança Irmãos Indenização Desacordo Cônjuge — modelo 25.docx"
- ],
- [
-  "adv-sucessorio-familia-avancado-06-usucapiao-heranca-imovel-nao-escritura-posse-malas-anotacoes",
-  "Direito Sucessório e Família Avançado — Usucapião Herança Imóvel Não Escritura Posse Malas Anotações",
-  "scroll",
-  "sucessorio-familia-avancado/06 Usucapião Herança Imóvel Não Escritura Posse Malas Anotações — modelo 26.docx"
- ],
- [
-  "adv-sucessorio-familia-avancado-07-indenizacao-por-atraso-inventario-cartorio-extra-judicial",
-  "Direito Sucessório e Família Avançado — Indenização Por Atraso Inventário Cartório Extra Judicial",
-  "scroll",
-  "sucessorio-familia-avancado/07 Indenização Por Atraso Inventário Cartório Extra Judicial — modelo 27.docx"
- ],
- [
-  "adv-sucessorio-familia-avancado-08-alienacao-imovel-heranca-antes-do-inventario-nulidade-venda",
-  "Direito Sucessório e Família Avançado — Alienação Imóvel Herança Antes do Inventário Nulidade Venda",
-  "scroll",
-  "sucessorio-familia-avancado/08 Alienação Imóvel Herança Antes do Inventário Nulidade Venda — modelo 28.docx"
- ],
- [
-  "adv-sucessorio-familia-avancado-09-administracao-heranca-inventario-longo-tempo-reivindicacao",
-  "Direito Sucessório e Família Avançado — Administração Herança Inventário Longo Tempo Reivindicação",
-  "scroll",
-  "sucessorio-familia-avancado/09 Administração Herança Inventário Longo Tempo Reivindicação — modelo 29.docx"
- ],
- [
-  "adv-sucessorio-familia-avancado-10-legado-especifico-bem-heranca-nao-entregue-cumprimento-legado",
-  "Direito Sucessório e Família Avançado — Legado Específico Bem Herança Não Entregue Cumprimento Legado",
-  "scroll",
-  "sucessorio-familia-avancado/10 Legado Específico Bem Herança Não Entregue Cumprimento Legado — modelo 30.docx"
- ],
- [
-  "adv-civil-contratos-avancado-01-rescisao-contratual-sem-multa-clausula-penal-indenizacao",
-  "Direito Civil e Contratos Avançado — Rescisão Contratual Sem Multa Cláusula Penal Indenização",
-  "file-signature",
-  "civil-contratos-avancado/01 Rescisão Contratual Sem Multa Cláusula Penal Indenização — modelo 31.docx"
- ],
- [
-  "adv-civil-contratos-avancado-02-clausula-abusiva-contrato-adesao-consumidor-supermercado-via-varejo",
-  "Direito Civil e Contratos Avançado — Cláusula Abusiva Contrato Adesão Consumidor Supermercado Via Varejo",
-  "file-signature",
-  "civil-contratos-avancado/02 Cláusula Abusiva Contrato Adesão Consumidor Supermercado Via Varejo — modelo 32.docx"
- ],
- [
-  "adv-civil-contratos-avancado-03-vicios-redibitorios-produto-defeito-carro-imovel-eletronico",
-  "Direito Civil e Contratos Avançado — Vícios Redibitórios Produto Defeito Carro Imóvel Eletrônico",
-  "file-signature",
-  "civil-contratos-avancado/03 Vícios Redibitórios Produto Defeito Carro Imóvel Eletrônico — modelo 33.docx"
- ],
- [
-  "adv-civil-contratos-avancado-04-eviccao-coisa-vendida-indenizacao-terceiro-reivindica-bem",
-  "Direito Civil e Contratos Avançado — Evicção Coisa Vendida Indenização Terceiro Reivindica Bem",
-  "file-signature",
-  "civil-contratos-avancado/04 Evicção Coisa Vendida Indenização Terceiro Reivindica Bem — modelo 34.docx"
- ],
- [
-  "adv-civil-contratos-avancado-05-contrato-locacao-imovel-comercial-residencial-despejo-trava",
-  "Direito Civil e Contratos Avançado — Contrato Locação Imóvel Comercial Residencial Despejo Trava",
-  "file-signature",
-  "civil-contratos-avancado/05 Contrato Locação Imóvel Comercial Residencial Despejo Trava — modelo 35.docx"
- ],
- [
-  "adv-civil-contratos-avancado-06-contrato-prestacao-servico-nao-cumprimento-falha-empresa",
-  "Direito Civil e Contratos Avançado — Contrato Prestação Serviço Não Cumprimento Falha Empresa",
-  "file-signature",
-  "civil-contratos-avancado/06 Contrato Prestação Serviço Não Cumprimento Falha Empresa — modelo 36.docx"
- ],
- [
-  "adv-civil-contratos-avancado-07-contrato-compra-e-venda-imovel-rescisao-multa-danilo-mora",
-  "Direito Civil e Contratos Avançado — Contrato Compra e Venda Imóvel Rescisão Multa Danilo Mora",
-  "file-signature",
-  "civil-contratos-avancado/07 Contrato Compra e Venda Imóvel Rescisão Multa Danilo Mora — modelo 37.docx"
- ],
- [
-  "adv-civil-contratos-avancado-08-contrato-doacao-irrevogavel-bem-imovel-doacao-indenizacao",
-  "Direito Civil e Contratos Avançado — Contrato Doação Irrevogável Bem Imóvel Doação Indenização",
-  "file-signature",
-  "civil-contratos-avancado/08 Contrato Doação Irrevogável Bem Imóvel Doação Indenização — modelo 38.docx"
- ],
- [
-  "adv-civil-contratos-avancado-09-contrato-mutuio-emprestimo-privado-pessoa-juridica-juros-legais",
-  "Direito Civil e Contratos Avançado — Contrato Mútuo Empréstimo Privado Pessoa Jurídica Juros Legais",
-  "file-signature",
-  "civil-contratos-avancado/09 Contrato Mútuo Empréstimo Privado Pessoa Jurídica Juros Legais — modelo 39.docx"
- ],
- [
-  "adv-civil-contratos-avancado-10-contrato-sociedade-simples-desfazimento-socio-sair-sociedade",
-  "Direito Civil e Contratos Avançado — Contrato Sociedade Simples Desfazimento Sócio Sair Sociedade",
-  "file-signature",
-  "civil-contratos-avancado/10 Contrato Sociedade Simples Desfazimento Sócio Sair Sociedade — modelo 40.docx"
- ],
- [
-  "adv-imobiliario-avancado-01-usucapiao-urbano-imovel-centro-bsb-vila-plano-dirceu-10-anos",
-  "Direito Imobiliário Avançado — Usucapião Urbano Imóvel Centro BSB Vila Plano Dirceu 10 Anos",
-  "home",
-  "imobiliario-avancado/01 Usucapião Urbano Imóvel Centro BSB Vila Plano Dirceu 10 Anos — modelo 41.docx"
- ],
- [
-  "adv-imobiliario-avancado-02-despejo-por-necessidade-proprietario-morar-imovel-despejo-locatario",
-  "Direito Imobiliário Avançado — Despejo Por Necessidade Proprietário Morar Imóvel Despejo Locatário",
-  "home",
-  "imobiliario-avancado/02 Despejo Por Necessidade Proprietário Morar Imóvel Despejo Locatário — modelo 42.docx"
- ],
- [
-  "adv-imobiliario-avancado-03-revisao-aluguel-locatario-imovel-residencial-comercial-reajuste",
-  "Direito Imobiliário Avançado — Revisão Aluguel Locatário Imóvel Residencial Comercial Reajuste",
-  "home",
-  "imobiliario-avancado/03 Revisão Aluguel Locatário Imóvel Residencial Comercial Reajuste — modelo 43.docx"
- ],
- [
-  "adv-imobiliario-avancado-04-acao-possessoria-manutencao-de-posse-reintegracao-terceiro",
-  "Direito Imobiliário Avançado — Ação Possessória Manutenção de Posse Reintegração Terceiro",
-  "home",
-  "imobiliario-avancado/04 Ação Possessória Manutenção de Posse Reintegração Terceiro — modelo 44.docx"
- ],
- [
-  "adv-imobiliario-avancado-05-interdito-proibitorio-nao-pode-mexer-bem-posse-nao-invadir",
-  "Direito Imobiliário Avançado — Interdito Proibitório Não Pode Mexer Bem Posse Não Invadir",
-  "home",
-  "imobiliario-avancado/05 Interdito Proibitório Não Pode Mexer Bem Posse Não Invadir — modelo 45.docx"
- ],
- [
-  "adv-imobiliario-avancado-06-regularizacao-imovel-loteamento-nao-registrado-cartorio-imovel",
-  "Direito Imobiliário Avançado — Regularização Imóvel Loteamento Não Registrado Cartório Imóvel",
-  "home",
-  "imobiliario-avancado/06 Regularização Imóvel Loteamento Não Registrado Cartório Imóvel — modelo 46.docx"
- ],
- [
-  "adv-imobiliario-avancado-07-financiamento-habitacional-caixa-economica-federal-sfhh-minha-casa",
-  "Direito Imobiliário Avançado — Financiamento Habitacional Caixa Econômica Federal SFH Minha Casa",
-  "home",
-  "imobiliario-avancado/07 Financiamento Habitacional Caixa Econômica Federal SFH Minha Casa — modelo 47.docx"
- ],
- [
-  "adv-imobiliario-avancado-08-condominio-regular-falta-agua-elevador-nao-funciona-multa",
-  "Direito Imobiliário Avançado — Condomínio Regular Falta Água Elevador Não Funciona Multa",
-  "home",
-  "imobiliario-avancado/08 Condomínio Regular Falta Água Elevador Não Funciona Multa — modelo 48.docx"
- ],
- [
-  "adv-imobiliario-avancado-09-inadimplencia-condominio-leilao-apartamento-cobranca-divida",
-  "Direito Imobiliário Avançado — Inadimplência Condomínio Leilão Apartamento Cobrança Dívida",
-  "home",
-  "imobiliario-avancado/09 Inadimplência Condomínio Leilão Apartamento Cobrança Dívida — modelo 49.docx"
- ],
- [
-  "adv-imobiliario-avancado-10-imovel-area-comum-condominio-vaga-garagem-indenizacao-conflito",
-  "Direito Imobiliário Avançado — Imóvel Área Comum Condomínio Vaga Garagem Indenização Conflito",
-  "home",
-  "imobiliario-avancado/10 Imóvel Área Comum Condomínio Vaga Garagem Indenização Conflito — modelo 50.docx"
- ],
- [
-  "adv-trabalho-avancado-clt-01-reconhecimento-vinculo-empregaticio-15-anos-pj-nao-existe",
-  "Direito do Trabalho Avançado CLT — Reconhecimento Vínculo Empregatício 15 Anos PJ Não Existe",
-  "hammer",
-  "trabalho-avancado-clt/01 Reconhecimento Vínculo Empregatício 15 Anos PJ Não Existe — modelo 51.docx"
- ],
- [
-  "adv-trabalho-avancado-clt-02-calculo-rescisao-indireta-demitida-sem-justa-causa-indenizacao",
-  "Direito do Trabalho Avançado CLT — Cálculo Rescisão Indireta Demitida Sem Justa Causa Indenização",
-  "hammer",
-  "trabalho-avancado-clt/02 Cálculo Rescisão Indireta Demitida Sem Justa Causa Indenização — modelo 52.docx"
- ],
- [
-  "adv-trabalho-avancado-clt-03-horas-extras-nao-pagas-50-100-dsr-acumulado-indenizacao",
-  "Direito do Trabalho Avançado CLT — Horas Extras Não Pagas 50% 100% DSR Acumulado Indenização",
-  "hammer",
-  "trabalho-avancado-clt/03 Horas Extras Não Pagas 50% 100% DSR Acumulado Indenização — modelo 53.docx"
- ],
- [
-  "adv-trabalho-avancado-clt-04-adicional-periculosidade-insalubridade-18-30-grau-medico-nao",
-  "Direito do Trabalho Avançado CLT — Adicional Periculosidade Insalubridade 18% 30% Grau Médico Não",
-  "hammer",
-  "trabalho-avancado-clt/04 Adicional Periculosidade Insalubridade 18% 30% Grau Médico Não — modelo 54.docx"
- ],
- [
-  "adv-trabalho-avancado-clt-05-intervalo-intrajornada-almoco-1-hora-nao-concedido-trabalhou",
-  "Direito do Trabalho Avançado CLT — Intervalo Intrajornada Almoço 1 Hora Não Concedido Trabalhou",
-  "hammer",
-  "trabalho-avancado-clt/05 Intervalo Intrajornada Almoço 1 Hora Não Concedido Trabalhou — modelo 55.docx"
- ],
- [
-  "adv-trabalho-avancado-clt-06-descanso-semanal-remunerado-dsr-feriado-nao-pagou-dobrado",
-  "Direito do Trabalho Avançado CLT — Descanso Semanal Remunerado DSR Feriado Não Pagou Dobrado",
-  "hammer",
-  "trabalho-avancado-clt/06 Descanso Semanal Remunerado DSR Feriado Não Pagou Dobrado — modelo 56.docx"
- ],
- [
-  "adv-trabalho-avancado-clt-07-aviso-previo-indenizado-trabalhado-30-dias-nao-usou",
-  "Direito do Trabalho Avançado CLT — Aviso Prévio Indenizado Trabalhado 30 Dias Não Usou",
-  "hammer",
-  "trabalho-avancado-clt/07 Aviso Prévio Indenizado Trabalhado 30 Dias Não Usou — modelo 57.docx"
- ],
- [
-  "adv-trabalho-avancado-clt-08-decimo-terceiro-salario-13-ferias-1-3-constitucional-nao",
-  "Direito do Trabalho Avançado CLT — Décimo Terceiro Salário 13º Férias 1/3 Constitucional Não",
-  "hammer",
-  "trabalho-avancado-clt/08 Décimo Terceiro Salário 13º Férias 1/3 Constitucional Não — modelo 58.docx"
- ],
- [
-  "adv-trabalho-avancado-clt-09-fgts-multa-40-desligamento-sem-justa-causa-saque-seguro",
-  "Direito do Trabalho Avançado CLT — FGTS Multa 40% Desligamento Sem Justa Causa Saque Seguro",
-  "hammer",
-  "trabalho-avancado-clt/09 FGTS Multa 40% Desligamento Sem Justa Causa Saque Seguro — modelo 59.docx"
- ],
- [
-  "adv-trabalho-avancado-clt-10-assedio-moral-trabalho-chefe-gestor-indenizacao-material-moral",
-  "Direito do Trabalho Avançado CLT — Assédio Moral Trabalho Chefe Gestor Indenização Material Moral",
-  "hammer",
-  "trabalho-avancado-clt/10 Assédio Moral Trabalho Chefe Gestor Indenização Material Moral — modelo 60.docx"
- ],
- [
-  "adv-previdenciario-avancado-inss-01-revisao-beneficio-aposentadoria-inss-valor-baixo-reajuste",
-  "Direito Previdenciário Avançado INSS — Revisão Benefício Aposentadoria INSS Valor Baixo Reajuste",
-  "coins",
-  "previdenciario-avancado-inss/01 Revisão Benefício Aposentadoria INSS Valor Baixo Reajuste — modelo 61.docx"
- ],
- [
-  "adv-previdenciario-avancado-inss-02-aposentadoria-por-invalidez-doenca-permanente-total-beneficio",
-  "Direito Previdenciário Avançado INSS — Aposentadoria Por Invalidez Doença Permanente Total Benefício",
-  "coins",
-  "previdenciario-avancado-inss/02 Aposentadoria Por Invalidez Doença Permanente Total Benefício — modelo 62.docx"
- ],
- [
-  "adv-previdenciario-avancado-inss-03-auxilio-doenca-beneficio-91-dias-inss-prova-doenca-indeferido",
-  "Direito Previdenciário Avançado INSS — Auxílio Doença Benefício 91 Dias INSS Prova Doença Indeferido",
-  "coins",
-  "previdenciario-avancado-inss/03 Auxílio Doença Benefício 91 Dias INSS Prova Doença Indeferido — modelo 63.docx"
- ],
- [
-  "adv-previdenciario-avancado-inss-04-salario-maternidade-120-dias-mulher-gestante-adotante-inss",
-  "Direito Previdenciário Avançado INSS — Salário Maternidade 120 Dias Mulher Gestante Adotante INSS",
-  "coins",
-  "previdenciario-avancado-inss/04 Salário Maternidade 120 Dias Mulher Gestante Adotante INSS — modelo 64.docx"
- ],
- [
-  "adv-previdenciario-avancado-inss-05-pensao-morte-esposa-viuva-filho-menor-inss-atrasado-beneficio",
-  "Direito Previdenciário Avançado INSS — Pensão Morte Esposa Viúva Filho Menor INSS Atrasado Benefício",
-  "coins",
-  "previdenciario-avancado-inss/05 Pensão Morte Esposa Viúva Filho Menor INSS Atrasado Benefício — modelo 65.docx"
- ],
- [
-  "adv-previdenciario-avancado-inss-06-loas-idoso-65-anos-baixa-renda-nao-contribuintes-indenizacao",
-  "Direito Previdenciário Avançado INSS — LOAS Idoso 65 Anos Baixa Renda Não Contribuintes Indenização",
-  "coins",
-  "previdenciario-avancado-inss/06 LOAS Idoso 65 Anos Baixa Renda Não Contribuintes Indenização — modelo 66.docx"
- ],
- [
-  "adv-previdenciario-avancado-inss-07-loas-pessoa-com-deficiencia-bpc-beneficio-indeferido-prova",
-  "Direito Previdenciário Avançado INSS — LOAS Pessoa Com Deficiência BPC Benefício Indeferido Prova",
-  "coins",
-  "previdenciario-avancado-inss/07 LOAS Pessoa Com Deficiência BPC Benefício Indeferido Prova — modelo 67.docx"
- ],
- [
-  "adv-previdenciario-avancado-inss-08-aposentadoria-por-idade-62-65-anos-faltando-cnis-tempo-prova",
-  "Direito Previdenciário Avançado INSS — Aposentadoria Por Idade 62 65 Anos Faltando CNIS Tempo Prova",
-  "coins",
-  "previdenciario-avancado-inss/08 Aposentadoria Por Idade 62 65 Anos Faltando CNIS Tempo Prova — modelo 68.docx"
- ],
- [
-  "adv-previdenciario-avancado-inss-09-aposentadoria-tempo-contribuicao-30-35-anos-homem-mulher-prova",
-  "Direito Previdenciário Avançado INSS — Aposentadoria Tempo Contribuição 30 35 Anos Homem Mulher Prova",
-  "coins",
-  "previdenciario-avancado-inss/09 Aposentadoria Tempo Contribuição 30 35 Anos Homem Mulher Prova — modelo 69.docx"
- ],
- [
-  "adv-previdenciario-avancado-inss-10-plano-beneficio-inss-88-99-96-fator-previdenciario-revisao",
-  "Direito Previdenciário Avançado INSS — Plano Benefício INSS 88/99/96 Fator Previdenciário Revisão",
-  "coins",
-  "previdenciario-avancado-inss/10 Plano Benefício INSS 88/99/96 Fator Previdenciário Revisão — modelo 70.docx"
- ],
- [
-  "adv-tributario-municipal-estadual-federal-01-ipva-veiculo-multa-juros-indenizacao-pagamento-indevido",
-  "Direito Tributário Municipal/Estadual/Federal — IPVA Veículo Multa Juros Indenização Pagamento Indevido",
-  "building-2",
-  "tributario-municipal-estadual-federal/01 IPVA Veículo Multa Juros Indenização Pagamento Indevido — modelo 71.docx"
- ],
- [
-  "adv-tributario-municipal-estadual-federal-02-iptu-imovel-progressivo-multa-isencao-idoso-indenizacao",
-  "Direito Tributário Municipal/Estadual/Federal — IPTU Imóvel Progressivo Multa Isenção Idoso Indenização",
-  "building-2",
-  "tributario-municipal-estadual-federal/02 IPTU Imóvel Progressivo Multa Isenção Idoso Indenização — modelo 72.docx"
- ],
- [
-  "adv-tributario-municipal-estadual-federal-03-itbi-transferencia-imovel-compra-venda-doador-pagamento-indevido",
-  "Direito Tributário Municipal/Estadual/Federal — ITBI Transferência Imóvel Compra Venda Doador Pagamento Indevido",
-  "building-2",
-  "tributario-municipal-estadual-federal/03 ITBI Transferência Imóvel Compra Venda Doador Pagamento Indevido — modelo 73.docx"
- ],
- [
-  "adv-tributario-municipal-estadual-federal-04-ipi-imposto-produto-industrializado-restituicao-indenizacao",
-  "Direito Tributário Municipal/Estadual/Federal — IPI Imposto Produto Industrializado Restituição Indenização",
-  "building-2",
-  "tributario-municipal-estadual-federal/04 IPI Imposto Produto Industrializado Restituição Indenização — modelo 74.docx"
- ],
- [
-  "adv-tributario-municipal-estadual-federal-05-imposto-renda-restituicao-retido-fonte-pf-indevido-multa",
-  "Direito Tributário Municipal/Estadual/Federal — Imposto Renda Restituição Retido Fonte PF Indevido Multa",
-  "building-2",
-  "tributario-municipal-estadual-federal/05 Imposto Renda Restituição Retido Fonte PF Indevido Multa — modelo 75.docx"
- ],
- [
-  "adv-tributario-municipal-estadual-federal-06-multa-tributaria-municipal-agua-esgoto-iss-indenizacao",
-  "Direito Tributário Municipal/Estadual/Federal — Multa Tributária Municipal Água Esgoto ISS Indenização",
-  "building-2",
-  "tributario-municipal-estadual-federal/06 Multa Tributária Municipal Água Esgoto ISS Indenização — modelo 76.docx"
- ],
- [
-  "adv-tributario-municipal-estadual-federal-07-parcelamento-tributario-receita-federal-estaduais-municipais",
-  "Direito Tributário Municipal/Estadual/Federal — Parcelamento Tributário Receita Federal Estaduais Municipais",
-  "building-2",
-  "tributario-municipal-estadual-federal/07 Parcelamento Tributário Receita Federal Estaduais Municipais — modelo 77.docx"
- ],
- [
-  "adv-tributario-municipal-estadual-federal-08-execucao-fiscal-carteira-divida-ativa-inscricao-imovel-bem",
-  "Direito Tributário Municipal/Estadual/Federal — Execução Fiscal Carteira Dívida Ativa Inscrição Imóvel Bem",
-  "building-2",
-  "tributario-municipal-estadual-federal/08 Execução Fiscal Carteira Dívida Ativa Inscrição Imóvel Bem — modelo 78.docx"
- ],
- [
-  "adv-tributario-municipal-estadual-federal-09-certidao-negativa-divida-ativa-cnh-cnpj-restricao-indenizacao",
-  "Direito Tributário Municipal/Estadual/Federal — Certidão Negativa Dívida Ativa CNH CNPJ Restrição Indenização",
-  "building-2",
-  "tributario-municipal-estadual-federal/09 Certidão Negativa Dívida Ativa CNH CNPJ Restrição Indenização — modelo 79.docx"
- ],
- [
-  "adv-tributario-municipal-estadual-federal-10-issqn-prefeitura-servico-indenizacao-multa-cobranca-indevida",
-  "Direito Tributário Municipal/Estadual/Federal — ISSQN Prefeitura Serviço Indenização Multa Cobrança Indevida",
-  "building-2",
-  "tributario-municipal-estadual-federal/10 ISSQN Prefeitura Serviço Indenização Multa Cobrança Indevida — modelo 80.docx"
- ],
- [
-  "adv-penal-execucao-criminal-01-habeas-corpus-liberdade-provisoria-pessoa-presa-privada-liberdade",
-  "Direito Penal e Execução Criminal — Habeas Corpus Liberdade Provisória Persona Presa Privada Liberdade",
-  "gavel",
-  "penal-execucao-criminal/01 Habeas Corpus Liberdade Provisória Persona Presa Privada Liberdade — modelo 81.docx"
- ],
- [
-  "adv-penal-execucao-criminal-02-liberdade-provisoria-fianza-pagamento-multa-cautelar-pessoa",
-  "Direito Penal e Execução Criminal — Liberdade Provisória Fiança Pagamento Multa Cautelar Pessoa",
-  "gavel",
-  "penal-execucao-criminal/02 Liberdade Provisória Fiança Pagamento Multa Cautelar Pessoa — modelo 82.docx"
- ],
- [
-  "adv-penal-execucao-criminal-03-prisao-preventiva-injusta-cancelar-matar-anular-pedido",
-  "Direito Penal e Execução Criminal — Prisão Preventiva Injusta Cancelar Matar Anular Pedido",
-  "gavel",
-  "penal-execucao-criminal/03 Prisão Preventiva Injusta Cancelar Matar Anular Pedido — modelo 83.docx"
- ],
- [
-  "adv-penal-execucao-criminal-04-audiencia-custodia-flagrante-delito-pessoa-liberdade-regular",
-  "Direito Penal e Execução Criminal — Audiência Custódia Flagrante Delito Pessoa Liberdade Regular",
-  "gavel",
-  "penal-execucao-criminal/04 Audiência Custódia Flagrante Delito Pessoa Liberdade Regular — modelo 84.docx"
- ],
- [
-  "adv-penal-execucao-criminal-05-progressao-regime-fechado-semiaberto-aberto-pessoa-cumprindo",
-  "Direito Penal e Execução Criminal — Progressão Regime Fechado Semiaberto Aberto Pessoa Cumprindo",
-  "gavel",
-  "penal-execucao-criminal/05 Progressão Regime Fechado Semiaberto Aberto Pessoa Cumprindo — modelo 85.docx"
- ],
- [
-  "adv-penal-execucao-criminal-06-remicao-pena-trabalho-estudo-pessoa-presa-tempo-servido",
-  "Direito Penal e Execução Criminal — Remição Pena Trabalho Estudo Pessoa Presa Tempo Servido",
-  "gavel",
-  "penal-execucao-criminal/06 Remição Pena Trabalho Estudo Pessoa Presa Tempo Servido — modelo 86.docx"
- ],
- [
-  "adv-penal-execucao-criminal-07-sursis-condenacao-nao-cumprir-pena-multa-boa-conduta",
-  "Direito Penal e Execução Criminal — Sursis Condenação Não Cumprir Pena Multa Boa Conduta",
-  "gavel",
-  "penal-execucao-criminal/07 Sursis Condenação Não Cumprir Pena Multa Boa Conduta — modelo 87.docx"
- ],
- [
-  "adv-penal-execucao-criminal-08-multa-penal-substituir-pena-restritiva-dias-multa-indenizacao",
-  "Direito Penal e Execução Criminal — Multa Penal Substituir Pena Restritiva Dias Multa Indenização",
-  "gavel",
-  "penal-execucao-criminal/08 Multa Penal Substituir Pena Restritiva Dias Multa Indenização — modelo 88.docx"
- ],
- [
-  "adv-penal-execucao-criminal-09-lei-drogas-artigo-33-traficos-posse-liberdade-provisoria",
-  "Direito Penal e Execução Criminal — Lei Drogas Artigo 33 Tráficos Posse Liberdade Provisória",
-  "gavel",
-  "penal-execucao-criminal/09 Lei Drogas Artigo 33 Tráficos Posse Liberdade Provisória — modelo 89.docx"
- ],
- [
-  "adv-penal-execucao-criminal-10-crimes-contra-honra-calunia-difamacao-injuria-indenizacao",
-  "Direito Penal e Execução Criminal — Crimes Contra Honra Calúnia Difamação Injúria Indenização",
-  "gavel",
-  "penal-execucao-criminal/10 Crimes Contra Honra Calúnia Difamação Injúria Indenização — modelo 90.docx"
- ],
- [
-  "adv-consumidor-avancado-01-vicio-produto-eletronico-celular-geladeira-ar-condicionado-troca",
-  "Direito do Consumidor Avançado — Vício Produto Eletrônico Celular Geladeira Ar Condicionado Troca",
-  "shopping-bag",
-  "consumidor-avancado/01 Vício Produto Eletrônico Celular Geladeira Ar Condicionado Troca — modelo 91.docx"
- ],
- [
-  "adv-consumidor-avancado-02-defeito-servico-reforma-casa-empresa-construcao-indenizacao",
-  "Direito do Consumidor Avançado — Defeito Serviço Reforma Casa Empresa Construção Indenização",
-  "shopping-bag",
-  "consumidor-avancado/02 Defeito Serviço Reforma Casa Empresa Construção Indenização — modelo 92.docx"
- ],
- [
-  "adv-consumidor-avancado-03-oferta-enganosa-produto-mercado-pao-de-acucar-carrefour-extra",
-  "Direito do Consumidor Avançado — Oferta Enganosa Produto Mercado Pão de Açúcar Carrefour Extra",
-  "shopping-bag",
-  "consumidor-avancado/03 Oferta Enganosa Produto Mercado Pão de Açúcar Carrefour Extra — modelo 93.docx"
- ],
- [
-  "adv-consumidor-avancado-04-publicidade-abusiva-infantil-produto-saude-alimentacao-anuncio",
-  "Direito do Consumidor Avançado — Publicidade Abusiva Infantil Produto Saúde Alimentação Anúncio",
-  "shopping-bag",
-  "consumidor-avancado/04 Publicidade Abusiva Infantil Produto Saúde Alimentação Anúncio — modelo 94.docx"
- ],
- [
-  "adv-consumidor-avancado-05-pratica-abusiva-venda-casada-produto-servico-supermercado",
-  "Direito do Consumidor Avançado — Prática Abusiva Venda Casada Produto Serviço Supermercado",
-  "shopping-bag",
-  "consumidor-avancado/05 Prática Abusiva Venda Casada Produto Serviço Supermercado — modelo 95.docx"
- ],
- [
-  "adv-consumidor-avancado-06-produto-vencido-alimento-farmacia-restaurante-hipermercado",
-  "Direito do Consumidor Avançado — Produto Vencido Alimento Farmácia Restaurante Hipermercado",
-  "shopping-bag",
-  "consumidor-avancado/06 Produto Vencido Alimento Farmácia Restaurante Hipermercado — modelo 96.docx"
- ],
- [
-  "adv-consumidor-avancado-07-servico-nao-prestado-empresa-limpeza-manutencao-indenizacao",
-  "Direito do Consumidor Avançado — Serviço Não Prestado Empresa Limpeza Manutenção Indenização",
-  "shopping-bag",
-  "consumidor-avancado/07 Serviço Não Prestado Empresa Limpeza Manutenção Indenização — modelo 97.docx"
- ],
- [
-  "adv-consumidor-avancado-08-devolucao-dinheiro-paguei-nao-recebi-produto-servico-indenizacao",
-  "Direito do Consumidor Avançado — Devolução Dinheiro Paguei Não Recebi Produto Serviço Indenização",
-  "shopping-bag",
-  "consumidor-avancado/08 Devolução Dinheiro Paguei Não Recebi Produto Serviço Indenização — modelo 98.docx"
- ],
- [
-  "adv-consumidor-avancado-09-descumprimento-oferta-site-mercado-livre-magalu-extra-pedido",
-  "Direito do Consumidor Avançado — Descumprimento Oferta Site Mercado Livre Magalu Extra Pedido",
-  "shopping-bag",
-  "consumidor-avancado/09 Descumprimento Oferta Site Mercado Livre Magalu Extra Pedido — modelo 99.docx"
- ],
- [
-  "adv-consumidor-avancado-10-telefonia-fixa-internet-vivo-claro-tim-oi-fatura-abusiva",
-  "Direito do Consumidor Avançado — Telefonia Fixa Internet Vivo Claro Tim Oi Fatura Abusiva",
-  "shopping-bag",
-  "consumidor-avancado/10 Telefonia Fixa Internet Vivo Claro Tim Oi Fatura Abusiva — modelo 100.docx"
- ],
- [
-  "adv-administrativo-avancado-01-licitacao-edital-pregao-eletronico-contrato-administrativo-indenizacao",
-  "Direito Administrativo Avançado — Licitação Edital Pregão Eletrônico Contrato Administrativo Indenização",
-  "file-text",
-  "administrativo-avancado/01 Licitação Edital Pregão Eletrônico Contrato Administrativo Indenização — modelo 101.docx"
- ],
- [
-  "adv-administrativo-avancado-02-servidor-publico-estavel-tempo-contribuicao-aposentadoria",
-  "Direito Administrativo Avançado — Servidor Público Estável Tempo Contribuição Aposentadoria",
-  "file-text",
-  "administrativo-avancado/02 Servidor Público Estável Tempo Contribuição Aposentadoria — modelo 102.docx"
- ],
- [
-  "adv-administrativo-avancado-03-ato-administrativo-anulacao-revogacao-indenizacao-conselho",
-  "Direito Administrativo Avançado — Ato Administrativo Anulação Revogação Indenização Conselho",
-  "file-text",
-  "administrativo-avancado/03 Ato Administrativo Anulação Revogação Indenização Conselho — modelo 103.docx"
- ],
- [
-  "adv-administrativo-avancado-04-improbidade-administrativa-lei-8429-multa-indenizacao-bem",
-  "Direito Administrativo Avançado — Improbidade Administrativa Lei 8429 Multa Indenização Bem",
-  "file-text",
-  "administrativo-avancado/04 Improbidade Administrativa Lei 8429 Multa Indenização Bem — modelo 104.docx"
- ],
- [
-  "adv-administrativo-avancado-05-serventia-extrajudicial-cartorio-notario-registro-imoveis",
-  "Direito Administrativo Avançado — Serventia Extrajudicial Cartório Notário Registro Imóveis",
-  "file-text",
-  "administrativo-avancado/05 Serventia Extrajudicial Cartório Notário Registro Imóveis — modelo 105.docx"
- ],
- [
-  "adv-administrativo-avancado-06-registro-contrato-imovel-cartorio-indenizacao-erro-registro",
-  "Direito Administrativo Avançado — Registro Contrato Imóvel Cartório Indenização Erro Registro",
-  "file-text",
-  "administrativo-avancado/06 Registro Contrato Imóvel Cartório Indenização Erro Registro — modelo 106.docx"
- ],
- [
-  "adv-administrativo-avancado-07-protesto-cartorio-titulo-divida-indenizacao-cancelamento",
-  "Direito Administrativo Avançado — Protesto Cartório Título Dívida Indenização Cancelamento",
-  "file-text",
-  "administrativo-avancado/07 Protesto Cartório Título Dívida Indenização Cancelamento — modelo 107.docx"
- ],
- [
-  "adv-administrativo-avancado-08-concurso-publico-edital-anulado-vaga-espera-convocacao",
-  "Direito Administrativo Avançado — Concurso Público Edital Anulado Vaga Espera Convocação",
-  "file-text",
-  "administrativo-avancado/08 Concurso Público Edital Anulado Vaga Espera Convocação — modelo 108.docx"
- ],
- [
-  "adv-administrativo-avancado-09-empresa-publica-sociedade-economica-mista-funcionario-publico",
-  "Direito Administrativo Avançado — Empresa Pública Sociedade Econômica Mista Funcionário Público",
-  "file-text",
-  "administrativo-avancado/09 Empresa Pública Sociedade Econômica Mista Funcionário Público — modelo 109.docx"
- ],
- [
-  "adv-administrativo-avancado-10-ata-notarial-negocio-juridico-cartorio-indenizacao-testamento",
-  "Direito Administrativo Avançado — Ata Notarial Negócio Jurídico Cartório Indenização Testamento",
-  "file-text",
-  "administrativo-avancado/10 Ata Notarial Negócio Jurídico Cartório Indenização Testamento — modelo 110.docx"
- ],
- [
-  "adv-eleitoral-partido-01-multa-eleitoral-titulo-nao-quitar-voto-obrigatorio-justificativa",
-  "Direito Eleitoral e Partidário — Multa Eleitoral Título Não Quitar Voto Obrigatório Justificativa",
-  "vote",
-  "eleitoral-partido/01 Multa Eleitoral Título Não Quitar Voto Obrigatório Justificativa — modelo 111.docx"
- ],
- [
-  "adv-eleitoral-partido-02-titulo-eleitor-transferencia-municipio-urgente-nova-cidade",
-  "Direito Eleitoral e Partidário — Título Eleitor Transferência Município Urgente Nova Cidade",
-  "vote",
-  "eleitoral-partido/02 Título Eleitor Transferência Município Urgente Nova Cidade — modelo 112.docx"
- ],
- [
-  "adv-eleitoral-partido-03-ficha-limpa-candidato-registro-impugnacao-cassacao-mandato",
-  "Direito Eleitoral e Partidário — Ficha Limpa Candidato Registro Impugnação Cassação Mandato",
-  "vote",
-  "eleitoral-partido/03 Ficha Limpa Candidato Registro Impugnação Cassação Mandato — modelo 113.docx"
- ],
- [
-  "adv-eleitoral-partido-04-campanha-eleitoral-prefeito-vereador-deputado-governador",
-  "Direito Eleitoral e Partidário — Campanha Eleitoral Prefeito Vereador Deputado Governador",
-  "vote",
-  "eleitoral-partido/04 Campanha Eleitoral Prefeito Vereador Deputado Governador — modelo 114.docx"
- ],
- [
-  "adv-eleitoral-partido-05-propaganda-eleitoral-regular-multa-tse-tre-excesso-gastos",
-  "Direito Eleitoral e Partidário — Propaganda Eleitoral Regular Multa TSE TRE Excesso Gastos",
-  "vote",
-  "eleitoral-partido/05 Propaganda Eleitoral Regular Multa TSE TRE Excesso Gastos — modelo 115.docx"
- ],
- [
-  "adv-eleitoral-partido-06-doacao-eleitoral-empresa-pessoa-fisica-candidato-partido",
-  "Direito Eleitoral e Partidário — Doação Eleitoral Empresa Pessoa Física Candidato Partido",
-  "vote",
-  "eleitoral-partido/06 Doação Eleitoral Empresa Pessoa Física Candidato Partido — modelo 116.docx"
- ],
- [
-  "adv-eleitoral-partido-07-registro-candidatura-partido-politico-tre-tse-eleicao-2024",
-  "Direito Eleitoral e Partidário — Registro Candidatura Partido Político TRE TSE Eleição 2024",
-  "vote",
-  "eleitoral-partido/07 Registro Candidatura Partido Político TRE TSE Eleição 2024 — modelo 117.docx"
- ],
- [
-  "adv-eleitoral-partido-08-partido-politico-filiacao-desfiliacao-indenizacao-fundo-partidario",
-  "Direito Eleitoral e Partidário — Partido Político Filiação Desfiliação Indenização Fundo Partidário",
-  "vote",
-  "eleitoral-partido/08 Partido Político Filiação Desfiliação Indenização Fundo Partidário — modelo 118.docx"
- ],
- [
-  "adv-eleitoral-partido-09-voto-impresso-urna-eletronica-auditoria-tre-secao-eleitoral",
-  "Direito Eleitoral e Partidário — Voto Impresso Urna Eletrônica Auditoria TRE Seção Eleitoral",
-  "vote",
-  "eleitoral-partido/09 Voto Impresso Urna Eletrônica Auditoria TRE Seção Eleitoral — modelo 119.docx"
- ],
- [
-  "adv-eleitoral-partido-10-diploma-cargo-eleito-mandato-cassacao-impugnacao-resultado",
-  "Direito Eleitoral e Partidário — Diploma Cargo Eleito Mandato Cassação Impugnação Resultado",
-  "vote",
-  "eleitoral-partido/10 Diploma Cargo Eleito Mandato Cassação Impugnação Resultado — modelo 120.docx"
- ],
- [
-  "adv-militar-forcas-armadas-01-exercito-brasileiro-soldado-sargento-oficial-licenca-premio",
-  "Direito Militar e Forças Armadas — Exército Brasileiro Soldado Sargento Oficial Licença Prêmio",
-  "swords",
-  "militar-forcas-armadas/01 Exército Brasileiro Soldado Sargento Oficial Licença Prêmio — modelo 121.docx"
- ],
- [
-  "adv-militar-forcas-armadas-02-marinha-do-brasil-marinheiro-sargento-capitao-ferias-soldo",
-  "Direito Militar e Forças Armadas — Marinha do Brasil Marinheiro Sargento Capitão Férias Soldo",
-  "swords",
-  "militar-forcas-armadas/02 Marinha do Brasil Marinheiro Sargento Capitão Férias Soldo — modelo 122.docx"
- ],
- [
-  "adv-militar-forcas-armadas-03-aeronautica-fab-soldado-sargento-piloto-oficial-indenizacao",
-  "Direito Militar e Forças Armadas — Aeronáutica FAB Soldado Sargento Piloto Oficial Indenização",
-  "swords",
-  "militar-forcas-armadas/03 Aeronáutica FAB Soldado Sargento Piloto Oficial Indenização — modelo 123.docx"
- ],
- [
-  "adv-militar-forcas-armadas-04-falecimento-militar-exercito-marinha-aeronautica-pensao-militar",
-  "Direito Militar e Forças Armadas — Falecimento Militar Exército Marinha Aeronáutica Pensão Militar",
-  "swords",
-  "militar-forcas-armadas/04 Falecimento Militar Exército Marinha Aeronáutica Pensão Militar — modelo 124.docx"
- ],
- [
-  "adv-militar-forcas-armadas-05-auxilio-alimentacao-moradia-militar-exercito-soldado-pagamento",
-  "Direito Militar e Forças Armadas — Auxílio Alimentação Moradia Militar Exército Soldado Pagamento",
-  "swords",
-  "militar-forcas-armadas/05 Auxílio Alimentação Moradia Militar Exército Soldado Pagamento — modelo 125.docx"
- ],
- [
-  "adv-militar-forcas-armadas-06-inatividade-militar-reserva-remuneracao-tempo-servico-indenizacao",
-  "Direito Militar e Forças Armadas — Inatividade Militar Reserva Remuneração Tempo Serviço Indenização",
-  "swords",
-  "militar-forcas-armadas/06 Inatividade Militar Reserva Remuneração Tempo Serviço Indenização — modelo 126.docx"
- ],
- [
-  "adv-militar-forcas-armadas-07-stm-tja-justica-militar-inquerito-policial-militar-crime-militar",
-  "Direito Militar e Forças Armadas — STM TJA Justiça Militar Inquérito Policial Militar Crime Militar",
-  "swords",
-  "militar-forcas-armadas/07 STM TJA Justiça Militar Inquérito Policial Militar Crime Militar — modelo 127.docx"
- ],
- [
-  "adv-militar-forcas-armadas-08-asedio-moral-militar-exercito-hierarquia-superior-indenizacao",
-  "Direito Militar e Forças Armadas — Assédio Moral Militar Exército Hierarquia Superior Indenização",
-  "swords",
-  "militar-forcas-armadas/08 Assédio Moral Militar Exército Hierarquia Superior Indenização — modelo 128.docx"
- ],
- [
-  "adv-militar-forcas-armadas-09-promocao-militar-exercito-curso-formacao-sargento-oficial",
-  "Direito Militar e Forças Armadas — Promoção Militar Exército Curso Formação Sargento Oficial",
-  "swords",
-  "militar-forcas-armadas/09 Promoção Militar Exército Curso Formação Sargento Oficial — modelo 129.docx"
- ],
- [
-  "adv-militar-forcas-armadas-10-fundo-previdencia-militar-fpm-saldo-aposentadoria-pensao",
-  "Direito Militar e Forças Armadas — Fundo Previdência Militar FPM Saldo Aposentadoria Pensão",
-  "swords",
-  "militar-forcas-armadas/10 Fundo Previdência Militar FPM Saldo Aposentadoria Pensão — modelo 130.docx"
- ],
- [
-  "adv-aduaneiro-comercio-exterior-01-alfandega-importacao-exportacao-carga-conteiner-multa-siscomex",
-  "Direito Aduaneiro e Comércio Exterior — Alfândega Importação Exportação Carga Contêiner Multa SISCOMEX",
-  "ship",
-  "aduaneiro-comercio-exterior/01 Alfândega Importação Exportação Carga Contêiner Multa SISCOMEX — modelo 131.docx"
- ],
- [
-  "adv-aduaneiro-comercio-exterior-02-drawback-incentivo-fiscal-importacao-exportacao-restituicao-icms",
-  "Direito Aduaneiro e Comércio Exterior — Drawback Incentivo Fiscal Importação Exportação Restituição ICMS",
-  "ship",
-  "aduaneiro-comercio-exterior/02 Drawback Incentivo Fiscal Importação Exportação Restituição ICMS — modelo 132.docx"
- ],
- [
-  "adv-aduaneiro-comercio-exterior-03-siscomex-sisdabra-declaracao-importacao-di-come-out-li",
-  "Direito Aduaneiro e Comércio Exterior — SISCOMEX SISDRABA Declaração Importação DI Come Out LI",
-  "ship",
-  "aduaneiro-comercio-exterior/03 SISCOMEX SISDRABA Declaração Importação DI Come Out LI — modelo 133.docx"
- ],
- [
-  "adv-aduaneiro-comercio-exterior-04-carga-conteiner-perdida-porto-santos-rio-itaguai-indenizacao",
-  "Direito Aduaneiro e Comércio Exterior — Carga Contêiner Perdida Porto Santos Rio Itaguaí Indenização",
-  "ship",
-  "aduaneiro-comercio-exterior/04 Carga Contêiner Perdida Porto Santos Rio Itaguaí Indenização — modelo 134.docx"
- ],
- [
-  "adv-aduaneiro-comercio-exterior-05-taxa-thd-tcra-terminal-carga-portuaria-indenizacao-multa",
-  "Direito Aduaneiro e Comércio Exterior — Taxa THD TCRA Terminal Carga Portuária Indenização Multa",
-  "ship",
-  "aduaneiro-comercio-exterior/05 Taxa THD TCRA Terminal Carga Portuária Indenização Multa — modelo 135.docx"
- ],
- [
-  "adv-aduaneiro-comercio-exterior-06-bl-knowledge-conhecimento-embarque-bill-lading-carga-maritima",
-  "Direito Aduaneiro e Comércio Exterior — BL Knowledge Conhecimento Embarque Bill Lading Carga Marítima",
-  "ship",
-  "aduaneiro-comercio-exterior/06 BL Knowledge Conhecimento Embarque Bill Lading Carga Marítima — modelo 136.docx"
- ],
- [
-  "adv-aduaneiro-comercio-exterior-07-marpol-convencao-maritima-poluicao-navio-multa-indenizacao",
-  "Direito Aduaneiro e Comércio Exterior — MARPOL Convenção Marítima Poluição Navio Multa Indenização",
-  "ship",
-  "aduaneiro-comercio-exterior/07 MARPOL Convenção Marítima Poluição Navio Multa Indenização — modelo 137.docx"
- ],
- [
-  "adv-aduaneiro-comercio-exterior-08-declaracao-aduaneira-importacao-exportacao-erro-multa-rfb",
-  "Direito Aduaneiro e Comércio Exterior — Declaração Aduaneira Importação Exportação Erro Multa RFB",
-  "ship",
-  "aduaneiro-comercio-exterior/08 Declaração Aduaneira Importação Exportação Erro Multa RFB — modelo 138.docx"
- ],
- [
-  "adv-aduaneiro-comercio-exterior-09-importacao-produto-china-eua-europa-taxa-icms-pis-cofins",
-  "Direito Aduaneiro e Comércio Exterior — Importação Produto China EUA Europa Taxa ICMS PIS COFINS",
-  "ship",
-  "aduaneiro-comercio-exterior/09 Importação Produto China EUA Europa Taxa ICMS PIS COFINS — modelo 139.docx"
- ],
- [
-  "adv-aduaneiro-comercio-exterior-10-come-out-licenca-importacao-exportacao-indenizacao-produto",
-  "Direito Aduaneiro e Comércio Exterior — Come Out Licença Importação Exportação Indenização Produto",
-  "ship",
-  "aduaneiro-comercio-exterior/10 Come Out Licença Importação Exportação Indenização Produto — modelo 140.docx"
- ],
- [
-  "adv-propriedade-intelectual-avancado-inpi-01-registro-marca-inpi-pedido-oposicao-marca-nome-empresa",
-  "Propriedade Intelectual Avançado INPI — Registro Marca INPI Pedido Oposição Marca Nome Empresa",
-  "copyright",
-  "propriedade-intelectual-avancado-inpi/01 Registro Marca INPI Pedido Oposição Marca Nome Empresa — modelo 141.docx"
- ],
- [
-  "adv-propriedade-intelectual-avancado-inpi-02-patente-invencao-inpi-modelo-utilidade-registro-indenizacao",
-  "Propriedade Intelectual Avançado INPI — Patente Invenção INPI Modelo Utilidade Registro Indenização",
-  "copyright",
-  "propriedade-intelectual-avancado-inpi/02 Patente Invenção INPI Modelo Utilidade Registro Indenização — modelo 142.docx"
- ],
- [
-  "adv-propriedade-intelectual-avancado-inpi-03-desenho-industrial-inpi-registro-pirateado-indenizacao",
-  "Propriedade Intelectual Avançado INPI — Desenho Industrial INPI Registro Pirateado Indenização",
-  "copyright",
-  "propriedade-intelectual-avancado-inpi/03 Desenho Industrial INPI Registro Pirateado Indenização — modelo 143.docx"
- ],
- [
-  "adv-propriedade-intelectual-avancado-inpi-04-indicacao-geografica-queijo-vinho-cafe-produto-regiao-inpi",
-  "Propriedade Intelectual Avançado INPI — Indicação Geográfica Queijo Vinho Café Produto Região INPI",
-  "copyright",
-  "propriedade-intelectual-avancado-inpi/04 Indicação Geográfica Queijo Vinho Café Produto Região INPI — modelo 144.docx"
- ],
- [
-  "adv-propriedade-intelectual-avancado-inpi-05-titularidade-marca-venda-cessao-marca-contrato-registro-inpi",
-  "Propriedade Intelectual Avançado INPI — Titularidade Marca Venda Cessão Marca Contrato Registro INPI",
-  "copyright",
-  "propriedade-intelectual-avancado-inpi/05 Titularidade Marca Venda Cessão Marca Contrato Registro INPI — modelo 145.docx"
- ],
- [
-  "adv-propriedade-intelectual-avancado-inpi-06-oposicao-marca-terceiro-registro-conflito-marca-anterior-inpi",
-  "Propriedade Intelectual Avançado INPI — Oposição Marca Terceiro Registro Conflito Marca Anterior INPI",
-  "copyright",
-  "propriedade-intelectual-avancado-inpi/06 Oposição Marca Terceiro Registro Conflito Marca Anterior INPI — modelo 146.docx"
- ],
- [
-  "adv-propriedade-intelectual-avancado-inpi-07-nulidade-marca-registrada-inpi-indenizacao-ilegal-conflito",
-  "Propriedade Intelectual Avançado INPI — Nulidade Marca Registrada INPI Indenização Ilegal Conflito",
-  "copyright",
-  "propriedade-intelectual-avancado-inpi/07 Nulidade Marca Registrada INPI Indenização Ilegal Conflito — modelo 147.docx"
- ],
- [
-  "adv-propriedade-intelectual-avancado-inpi-08-registro-nome-empresarial-junta-comercial-marca-conflito",
-  "Propriedade Intelectual Avançado INPI — Registro Nome Empresarial Junta Comercial Marca Conflito",
-  "copyright",
-  "propriedade-intelectual-avancado-inpi/08 Registro Nome Empresarial Junta Comercial Marca Conflito — modelo 148.docx"
- ],
- [
-  "adv-propriedade-intelectual-avancado-inpi-09-direito-imagem-atriz-cantor-modelo-publicidade-indenizacao",
-  "Propriedade Intelectual Avançado INPI — Direito Imagem Atriz Cantor Modelo Publicidade Indenização",
-  "copyright",
-  "propriedade-intelectual-avancado-inpi/09 Direito Imagem Atriz Cantor Modelo Publicidade Indenização — modelo 149.docx"
- ],
- [
-  "adv-propriedade-intelectual-avancado-inpi-10-direito-personalidade-honra-nome-indenizacao-abuso-midia",
-  "Propriedade Intelectual Avançado INPI — Direito Personalidade Honra Nome Indenização Abuso Mídia",
-  "copyright",
-  "propriedade-intelectual-avancado-inpi/10 Direito Personalidade Honra Nome Indenização Abuso Mídia — modelo 150.docx"
- ],
- [
-  "adv-telecom-redes-sociais-avanc-01-internet-fibra-1000-mb-claro-vivo-tim-nao-entrega-qualidade",
-  "Telecom e Redes Sociais Avançado — Internet Fibra 1000MB Claro Vivo Tim Não Entrega Qualidade",
-  "wifi",
-  "telecom-redes-sociais-avanc/01 Internet Fibra 1000MB Claro Vivo Tim Não Entrega Qualidade — modelo 151.docx"
- ],
- [
-  "adv-telecom-redes-sociais-avanc-02-plano-controle-celular-tim-claro-vivo-oi-melhor-que-plano-pos",
-  "Telecom e Redes Sociais Avançado — Plano Controle Celular Tim Claro Vivo Oi Melhor Que Plano Pós",
-  "wifi",
-  "telecom-redes-sociais-avanc/02 Plano Controle Celular Tim Claro Vivo Oi Melhor Que Plano Pós — modelo 152.docx"
- ],
- [
-  "adv-telecom-redes-sociais-avanc-03-celular-bloqueado-injustificadamente-operadora-clonagem-chip",
-  "Telecom e Redes Sociais Avançado — Celular Bloqueado Injustificadamente Operadora Clonagem Chip",
-  "wifi",
-  "telecom-redes-sociais-avanc/03 Celular Bloqueado Injustificadamente Operadora Clonagem Chip — modelo 153.docx"
- ],
- [
-  "adv-telecom-redes-sociais-avanc-04-chip-clonado-operadora-golpe-sms-whatsapp-indenizacao",
-  "Telecom e Redes Sociais Avançado — Chip Clonado Operadora Golpe SMS WhatsApp Indenização",
-  "wifi",
-  "telecom-redes-sociais-avanc/04 Chip Clonado Operadora Golpe SMS WhatsApp Indenização — modelo 154.docx"
- ],
- [
-  "adv-telecom-redes-sociais-avanc-05-fatura-indevida-operadora-telefonica-movel-fixa-internet-multa",
-  "Telecom e Redes Sociais Avançado — Fatura Indevida Operadora Telefônica Móvel Fixa Internet Multa",
-  "wifi",
-  "telecom-redes-sociais-avanc/05 Fatura Indevida Operadora Telefônica Móvel Fixa Internet Multa — modelo 155.docx"
- ],
- [
-  "adv-telecom-redes-sociais-avanc-06-sac-nao-resolve-operadora-atendimento-ruim-indenizacao-anatel",
-  "Telecom e Redes Sociais Avançado — SAC Não Resolve Operadora Atendimento Ruim Indenização ANATEL",
-  "wifi",
-  "telecom-redes-sociais-avanc/06 SAC Não Resolve Operadora Atendimento Ruim Indenização ANATEL — modelo 156.docx"
- ],
- [
-  "adv-telecom-redes-sociais-avanc-07-anatel-multa-operadora-qualidade-sinal-internet-telefonia",
-  "Telecom e Redes Sociais Avançado — ANATEL Multa Operadora Qualidade Sinal Internet Telefonia",
-  "wifi",
-  "telecom-redes-sociais-avanc/07 ANATEL Multa Operadora Qualidade Sinal Internet Telefonia — modelo 157.docx"
- ],
- [
-  "adv-telecom-redes-sociais-avanc-08-plano-pos-pago-migracao-involuntaria-operadora-indenizacao",
-  "Telecom e Redes Sociais Avançado — Plano Pós Pago Migração Involuntária Operadora Indenização",
-  "wifi",
-  "telecom-redes-sociais-avanc/08 Plano Pós Pago Migração Involuntária Operadora Indenização — modelo 158.docx"
- ],
- [
-  "adv-telecom-redes-sociais-avanc-09-roaming-internacional-cobranca-indevida-operadora-multa",
-  "Telecom e Redes Sociais Avançado — Roaming Internacional Cobrança Indevida Operadora Multa",
-  "wifi",
-  "telecom-redes-sociais-avanc/09 Roaming Internacional Cobrança Indevida Operadora Multa — modelo 159.docx"
- ],
- [
-  "adv-telecom-redes-sociais-avanc-10-provedor-internet-banda-larga-rural-satellite-via-embratel",
-  "Telecom e Redes Sociais Avançado — Provedor Internet Banda Larga Rural Satélite Via Embratel",
-  "wifi",
-  "telecom-redes-sociais-avanc/10 Provedor Internet Banda Larga Rural Satélite Via Embratel — modelo 160.docx"
- ],
- [
-  "adv-saude-sus-plano-saude-01-plano-saude-unimed-hapvida-amil-negacao-cirurgia-exame-tratamento",
-  "Saúde SUS e Planos de Saúde — Plano Saúde Unimed Hapvida Amil Negação Cirurgia Exame Tratamento",
-  "heart-pulse",
-  "saude-sus-plano-saude/01 Plano Saúde Unimed Hapvida Amil Negação Cirurgia Exame Tratamento — modelo 161.docx"
- ],
- [
-  "adv-saude-sus-plano-saude-02-remedio-alto-custo-sus-nao-fornece-medicamento-especial-indenizacao",
-  "Saúde SUS e Planos de Saúde — Remédio Alto Custo SUS Não Fornece Medicamento Especial Indenização",
-  "heart-pulse",
-  "saude-sus-plano-saude/02 Remédio Alto Custo SUS Não Fornece Medicamento Especial Indenização — modelo 162.docx"
- ],
- [
-  "adv-saude-sus-plano-saude-03-ubs-unidade-saude-familia-nao-atende-falta-medico-enfermeiro",
-  "Saúde SUS e Planos de Saúde — UBS Unidade Saúde Família Não Atende Falta Médico Enfermeiro",
-  "heart-pulse",
-  "saude-sus-plano-saude/03 UBS Unidade Saúde Família Não Atende Falta Médico Enfermeiro — modelo 163.docx"
- ],
- [
-  "adv-saude-sus-plano-saude-04-hospital-publico-federal-estadual-municipal-negligencia-erro",
-  "Saúde SUS e Planos de Saúde — Hospital Público Federal Estadual Municipal Negligência Erro",
-  "heart-pulse",
-  "saude-sus-plano-saude/04 Hospital Público Federal Estadual Municipal Negligência Erro — modelo 164.docx"
- ],
- [
-  "adv-saude-sus-plano-saude-05-erro-medico-hospital-clinica-profissional-saude-indenizacao",
-  "Saúde SUS e Planos de Saúde — Erro Médico Hospital Clínica Profissional Saúde Indenização",
-  "heart-pulse",
-  "saude-sus-plano-saude/05 Erro Médico Hospital Clínica Profissional Saúde Indenização — modelo 165.docx"
- ],
- [
-  "adv-saude-sus-plano-saude-06-cirurgia-plastica-estetica-reparadora-indenizacao-erro-mortal",
-  "Saúde SUS e Planos de Saúde — Cirurgia Plástica Estética Reparadora Indenização Erro Mortal",
-  "heart-pulse",
-  "saude-sus-plano-saude/06 Cirurgia Plástica Estética Reparadora Indenização Erro Mortal — modelo 166.docx"
- ],
- [
-  "adv-saude-sus-plano-saude-07-exame-medico-hospital-clinica-laboratorio-resultado-errado",
-  "Saúde SUS e Planos de Saúde — Exame Médico Hospital Clínica Laboratório Resultado Errado",
-  "heart-pulse",
-  "saude-sus-plano-saude/07 Exame Médico Hospital Clínica Laboratório Resultado Errado — modelo 167.docx"
- ],
- [
-  "adv-saude-sus-plano-saude-08-lista-transplante-orgaos-sus-cnh-doacao-orgaos-medula-ossea",
-  "Saúde SUS e Planos de Saúde — Lista Transplante Órgãos SUS CNH Doação Órgãos Medula Óssea",
-  "heart-pulse",
-  "saude-sus-plano-saude/08 Lista Transplante Órgãos SUS CNH Doação Órgãos Medula Óssea — modelo 168.docx"
- ],
- [
-  "adv-saude-sus-plano-saude-09-ans-multa-operadora-plano-saude-reajuste-abusivo-mensalidade",
-  "Saúde SUS e Planos de Saúde — ANS Multa Operadora Plano Saúde Reajuste Abusivo Mensalidade",
-  "heart-pulse",
-  "saude-sus-plano-saude/09 ANS Multa Operadora Plano Saúde Reajuste Abusivo Mensalidade — modelo 169.docx"
- ],
- [
-  "adv-saude-sus-plano-saude-10-vacina-sus-gripe-pandemia-covid-nao-recebeu-ubs-indenizacao",
-  "Saúde SUS e Planos de Saúde — Vacina SUS Gripe Pandemia COVID Não Recebeu UBS Indenização",
-  "heart-pulse",
-  "saude-sus-plano-saude/10 Vacina SUS Gripe Pandemia COVID Não Recebeu UBS Indenização — modelo 170.docx"
- ],
- [
-  "adv-seguros-previdencia-privada-01-seguro-auto-porto-seguro-bradesco-allianz-ituran-sinistro-recusa",
-  "Seguros e Previdência Privada — Seguro Auto Porto Seguro Bradesco Allianz Ituran Sinistro Recusa",
-  "shield",
-  "seguros-previdencia-privada/01 Seguro Auto Porto Seguro Bradesco Allianz Ituran Sinistro Recusa — modelo 171.docx"
- ],
- [
-  "adv-seguros-previdencia-privada-02-indenizacao-seguro-auto-roubo-furto-colisao-perda-total-valor",
-  "Seguros e Previdência Privada — Indenização Seguro Auto Roubo Furto Colisão Perda Total Valor",
-  "shield",
-  "seguros-previdencia-privada/02 Indenização Seguro Auto Roubo Furto Colisão Perda Total Valor — modelo 172.docx"
- ],
- [
-  "adv-seguros-previdencia-privada-03-seguro-vida-saude-hospitalar-indenizacao-falecimento-beneficiario",
-  "Seguros e Previdência Privada — Seguro Vida Saúde Hospitalar Indenização Falecimento Beneficiário",
-  "shield",
-  "seguros-previdencia-privada/03 Seguro Vida Saúde Hospitalar Indenização Falecimento Beneficiário — modelo 173.docx"
- ],
- [
-  "adv-seguros-previdencia-privada-04-seguro-residencial-incendio-roubo-furto-indenizacao-bem",
-  "Seguros e Previdência Privada — Seguro Residencial Incêndio Roubo Furto Indenização Bem",
-  "shield",
-  "seguros-previdencia-privada/04 Seguro Residencial Incêndio Roubo Furto Indenização Bem — modelo 174.docx"
- ],
- [
-  "adv-seguros-previdencia-privada-05-previdencia-privada-pgbl-vgbl-bradesco-itau-realizar-resgate",
-  "Seguros e Previdência Privada — Previdência Privada PGBL VGBL Bradesco Itaú Realizar Resgate",
-  "shield",
-  "seguros-previdencia-privada/05 Previdência Privada PGBL VGBL Bradesco Itaú Realizar Resgate — modelo 175.docx"
- ],
- [
-  "adv-seguros-previdencia-privada-06-plano-funerario-seguro-empresa-recusa-beneficio-familia",
-  "Seguros e Previdência Privada — Plano Funerário Seguro Empresa Recusa Benefício Família",
-  "shield",
-  "seguros-previdencia-privada/06 Plano Funerário Seguro Empresa Recusa Benefício Família — modelo 176.docx"
- ],
- [
-  "adv-seguros-previdencia-privada-07-seguro-desemprego-caixa-bb-itau-bradesco-beneficio-parcela",
-  "Seguros e Previdência Privada — Seguro Desemprego Caixa BB Itaú Bradesco Benefício Parcela",
-  "shield",
-  "seguros-previdencia-privada/07 Seguro Desemprego Caixa BB Itaú Bradesco Benefício Parcela — modelo 177.docx"
- ],
- [
-  "adv-seguros-previdencia-privada-08-seguro-viagem-internacional-mala-perdida-medico-emergencia",
-  "Seguros e Previdência Privada — Seguro Viagem Internacional Mala Perdida Médico Emergência",
-  "shield",
-  "seguros-previdencia-privada/08 Seguro Viagem Internacional Mala Perdida Médico Emergência — modelo 178.docx"
- ],
- [
-  "adv-seguros-previdencia-privada-09-indenizacao-sinistro-seguro-carga-caminhao-frete-transportadora",
-  "Seguros e Previdência Privada — Indenização Sinistro Seguro Carga Caminhão Frete Transportadora",
-  "shield",
-  "seguros-previdencia-privada/09 Indenização Sinistro Seguro Carga Caminhão Frete Transportadora — modelo 179.docx"
- ],
- [
-  "adv-seguros-previdencia-privada-10-susep-multa-seguradora-indenizacao-sinistro-nao-pago",
-  "Seguros e Previdência Privada — SUSEP Multa Seguradora Indenização Sinistro Não Pago",
-  "shield",
-  "seguros-previdencia-privada/10 SUSEP Multa Seguradora Indenização Sinistro Não Pago — modelo 180.docx"
- ],
- [
-  "adv-societario-empresarial-01-constituicao-empresa-ltda-mei-slu-sociedade-unipessoal-junta",
-  "Direito Societário e Empresarial — Constituição Empresa LTDA MEI SLU Sociedade Unipessoal Junta",
-  "building-2",
-  "societario-empresarial/01 Constituição Empresa LTDA MEI SLU Sociedade Unipessoal Junta — modelo 181.docx"
- ],
- [
-  "adv-societario-empresarial-02-alteracao-contratual-sociedade-ltda-aumento-capital-social",
-  "Direito Societário e Empresarial — Alteração Contratual Sociedade LTDA Aumento Capital Social",
-  "building-2",
-  "societario-empresarial/02 Alteração Contratual Sociedade LTDA Aumento Capital Social — modelo 182.docx"
- ],
- [
-  "adv-societario-empresarial-03-dissolucao-sociedade-empresa-liquidacao-encerramento-atividades",
-  "Direito Societário e Empresarial — Dissolução Sociedade Empresa Liquidação Encerramento Atividades",
-  "building-2",
-  "societario-empresarial/03 Dissolução Sociedade Empresa Liquidação Encerramento Atividades — modelo 183.docx"
- ],
- [
-  "adv-societario-empresarial-04-distribuicao-lucros-empresa-socios-dividendos-indenizacao-socio",
-  "Direito Societário e Empresarial — Distribuição Lucros Empresa Sócios Dividendos Indenização Sócio",
-  "building-2",
-  "societario-empresarial/04 Distribuição Lucros Empresa Sócios Dividendos Indenização Sócio — modelo 184.docx"
- ],
- [
-  "adv-societario-empresarial-05-cotas-sociedade-ltda-transferencia-compra-venda-socio",
-  "Direito Societário e Empresarial — Cotas Sociedade LTDA Transferência Compra Venda Sócio",
-  "building-2",
-  "societario-empresarial/05 Cotas Sociedade LTDA Transferência Compra Venda Sócio — modelo 185.docx"
- ],
- [
-  "adv-societario-empresarial-06-socio-gerente-sociedade-ltda-responsabilidade-indenizacao",
-  "Direito Societário e Empresarial — Sócio Gerente Sociedade LTDA Responsabilidade Indenização",
-  "building-2",
-  "societario-empresarial/06 Sócio Gerente Sociedade LTDA Responsabilidade Indenização — modelo 186.docx"
- ],
- [
-  "adv-societario-empresarial-07-cnpj-invalido-empresa-baixada-injustificadamente-receita",
-  "Direito Societário e Empresarial — CNPJ Inválido Empresa Baixada Injustificadamente Receita",
-  "building-2",
-  "societario-empresarial/07 CNPJ Inválido Empresa Baixada Injustificadamente Receita — modelo 187.docx"
- ],
- [
-  "adv-societario-empresarial-08-junta-comercial-df-sp-rj-mg-registro-empresa-indenizacao",
-  "Direito Societário e Empresarial — Junta Comercial DF SP RJ MG Registro Empresa Indenização",
-  "building-2",
-  "societario-empresarial/08 Junta Comercial DF SP RJ MG Registro Empresa Indenização — modelo 188.docx"
- ],
- [
-  "adv-societario-empresarial-09-recuperacao-judicial-empresa-falencia-lei-11101-2005",
-  "Direito Societário e Empresarial — Recuperação Judicial Empresa Falência Lei 11101-2005",
-  "building-2",
-  "societario-empresarial/09 Recuperação Judicial Empresa Falência Lei 11101-2005 — modelo 189.docx"
- ],
- [
-  "adv-societario-empresarial-10-falencia-empresa-devedor-credor-concurso-credores-massa-falida",
-  "Direito Societário e Empresarial — Falência Empresa Devedor Credor Concurso Credores Massa Falida",
-  "building-2",
-  "societario-empresarial/10 Falência Empresa Devedor Credor Concurso Credores Massa Falida — modelo 190.docx"
- ],
- [
-  "adv-trabalho-domestico-01-empregada-domestica-lei-complementar-150-2015-rescisao-indenizacao",
-  "Direito do Trabalho Doméstico — Empregada Doméstica Lei Complementar 150/2015 Rescisão Indenização",
-  "user-round-check",
-  "trabalho-domestico/01 Empregada Doméstica Lei Complementar 150/2015 Rescisão Indenização — modelo 191.docx"
- ],
- [
-  "adv-trabalho-domestico-02-baba-empregada-domestica-bebe-crianca-rescisao-justa-causa",
-  "Direito do Trabalho Doméstico — Babá Empregada Doméstica Bebê Criança Rescisão Justa Causa",
-  "user-round-check",
-  "trabalho-domestico/02 Babá Empregada Doméstica Bebê Criança Rescisão Justa Causa — modelo 192.docx"
- ],
- [
-  "adv-trabalho-domestico-03-motorista-domestico-empregado-residencia-indenizacao-rescisao",
-  "Direito do Trabalho Doméstico — Motorista Doméstico Empregado Residência Indenização Rescisão",
-  "user-round-check",
-  "trabalho-domestico/03 Motorista Doméstico Empregado Residência Indenização Rescisão — modelo 193.docx"
- ],
- [
-  "adv-trabalho-domestico-04-faxineira-domestica-limpeza-casa-residencia-rescisao-indenizacao",
-  "Direito do Trabalho Doméstico — Faxineira Doméstica Limpeza Casa Residência Rescisão Indenização",
-  "user-round-check",
-  "trabalho-domestico/04 Faxineira Doméstica Limpeza Casa Residência Rescisão Indenização — modelo 194.docx"
- ],
- [
-  "adv-trabalho-domestico-05-desligamento-justa-causa-empregado-domestico-indenizacao",
-  "Direito do Trabalho Doméstico — Desligamento Justa Causa Empregado Doméstico Indenização",
-  "user-round-check",
-  "trabalho-domestico/05 Desligamento Justa Causa Empregado Doméstico Indenização — modelo 195.docx"
- ],
- [
-  "adv-trabalho-domestico-06-calculo-rescisao-domestica-13-salario-ferias-1-3-aviso-previo",
-  "Direito do Trabalho Doméstico — Cálculo Rescisão Doméstica 13º Salário Férias 1/3 Aviso Prévio",
-  "user-round-check",
-  "trabalho-domestico/06 Cálculo Rescisão Doméstica 13º Salário Férias 1/3 Aviso Prévio — modelo 196.docx"
- ],
- [
-  "adv-trabalho-domestico-07-pis-domestica-empregada-carteira-trabalho-assinada-documento",
-  "Direito do Trabalho Doméstico — PIS Doméstica Empregada Carteira Trabalho Assinada Documento",
-  "user-round-check",
-  "trabalho-domestico/07 PIS Doméstica Empregada Carteira Trabalho Assinada Documento — modelo 197.docx"
- ],
- [
-  "adv-trabalho-domestico-08-fgts-domestico-salario-familia-empregada-domestica-rescisao",
-  "Direito do Trabalho Doméstico — FGTS Doméstico Salário Família Empregada Doméstica Rescisão",
-  "user-round-check",
-  "trabalho-domestico/08 FGTS Doméstico Salário Família Empregada Doméstica Rescisão — modelo 198.docx"
- ],
- [
-  "adv-trabalho-domestico-09-decimo-terceiro-salario-domestica-13-empregado-indenizacao",
-  "Direito do Trabalho Doméstico — Décimo Terceiro Salário Doméstica 13º Empregado Indenização",
-  "user-round-check",
-  "trabalho-domestico/09 Décimo Terceiro Salário Doméstica 13º Empregado Indenização — modelo 199.docx"
- ],
- [
-  "adv-trabalho-domestico-10-adicional-noturno-domestica-empregada-22-horas-5-horas-indenizacao",
-  "Direito do Trabalho Doméstico — Adicional Noturno Doméstica Empregada 22 Horas 5 Horas Indenização",
-  "user-round-check",
-  "trabalho-domestico/10 Adicional Noturno Doméstica Empregada 22 Horas 5 Horas Indenização — modelo 200.docx"
- ],
- [
-  "adv-ambiental-saneamento-01-multa-ibama-desmatamento-queimada-indenizacao-amazonia-cerrado",
-  "Direito Ambiental e Saneamento — Multa IBAMA Desmatamento Queimada Indenização Amazônia Cerrado",
-  "trees",
-  "ambiental-saneamento/01 Multa IBAMA Desmatamento Queimada Indenização Amazônia Cerrado — modelo 201.docx"
- ],
- [
-  "adv-ambiental-saneamento-02-poluicao-rio-lago-agua-cidade-saneamento-basico-multa",
-  "Direito Ambiental e Saneamento — Poluição Rio Lago Água Cidade Saneamento Básico Multa",
-  "trees",
-  "ambiental-saneamento/02 Poluição Rio Lago Água Cidade Saneamento Básico Multa — modelo 202.docx"
- ],
- [
-  "adv-ambiental-saneamento-03-saneamento-basico-falta-esgoto-agua-tratada-cedae-caesb",
-  "Direito Ambiental e Saneamento — Saneamento Básico Falta Esgoto Água Tratada Cedae Caesb",
-  "trees",
-  "ambiental-saneamento/03 Saneamento Básico Falta Esgoto Água Tratada Cedae Caesb — modelo 203.docx"
- ],
- [
-  "adv-ambiental-saneamento-04-agua-contaminada-capitais-interior-ribeirao-periferia-indenizacao",
-  "Direito Ambiental e Saneamento — Água Contaminada Capitais Interior Ribeirão Periferia Indenização",
-  "trees",
-  "ambiental-saneamento/04 Água Contaminada Capitais Interior Ribeirão Periferia Indenização — modelo 204.docx"
- ],
- [
-  "adv-ambiental-saneamento-05-aterro-sanitario-lixo-municipal-policao-ambiental-multa-smsa",
-  "Direito Ambiental e Saneamento — Aterro Sanitário Lixo Municipal Policião Ambiental Multa SMSA",
-  "trees",
-  "ambiental-saneamento/05 Aterro Sanitário Lixo Municipal Policião Ambiental Multa SMSA — modelo 205.docx"
- ],
- [
-  "adv-ambiental-saneamento-06-licenciamento-ambiental-empreendimento-ima-ibama-municipio",
-  "Direito Ambiental e Saneamento — Licenciamento Ambiental Empreendimento IMA IBAMA Município",
-  "trees",
-  "ambiental-saneamento/06 Licenciamento Ambiental Empreendimento IMA IBAMA Município — modelo 206.docx"
- ],
- [
-  "adv-ambiental-saneamento-07-eia-rima-estudo-impacto-ambiental-empreendimento-energia",
-  "Direito Ambiental e Saneamento — EIA RIMA Estudo Impacto Ambiental Empreendimento Energia",
-  "trees",
-  "ambiental-saneamento/07 EIA RIMA Estudo Impacto Ambiental Empreendimento Energia — modelo 207.docx"
- ],
- [
-  "adv-ambiental-saneamento-08-compensacao-ambiental-empreendimento-hidreletrica-rodovia-indenizacao",
-  "Direito Ambiental e Saneamento — Compensação Ambiental Empreendimento Hidrelétrica Rodovia Indenização",
-  "trees",
-  "ambiental-saneamento/08 Compensação Ambiental Empreendimento Hidrelétrica Rodovia Indenização — modelo 208.docx"
- ],
- [
-  "adv-ambiental-saneamento-09-residuo-solido-logistica-reversa-embalagem-plastico-pet",
-  "Direito Ambiental e Saneamento — Resíduo Sólido Logística Reversa Embalagem Plástico PET",
-  "trees",
-  "ambiental-saneamento/09 Resíduo Sólido Logística Reversa Embalagem Plástico PET — modelo 209.docx"
- ],
- [
-  "adv-ambiental-saneamento-10-recursos-hidricos-outorga-agua-ana-servico-autonomo-municipal",
-  "Direito Ambiental e Saneamento — Recursos Hídricos Outorga Água ANA Serviço Autônomo Municipal",
-  "trees",
-  "ambiental-saneamento/10 Recursos Hídricos Outorga Água ANA Serviço Autônomo Municipal — modelo 210.docx"
- ],
- [
-  "adv-urbanistico-municipal-01-iss-municipal-servico-empresa-indenizacao-cobranca-indevida",
-  "Direito Urbanístico e Municipal — ISS Municipal Serviço Empresa Indenização Cobrança Indevida",
-  "map",
-  "urbanistico-municipal/01 ISS Municipal Serviço Empresa Indenização Cobrança Indevida — modelo 211.docx"
- ],
- [
-  "adv-urbanistico-municipal-02-alvara-funcionamento-pessoa-juridica-empresa-prefeitura",
-  "Direito Urbanístico e Municipal — Alvará Funcionamento Pessoa Jurídica Empresa Prefeitura",
-  "map",
-  "urbanistico-municipal/02 Alvará Funcionamento Pessoa Jurídica Empresa Prefeitura — modelo 212.docx"
- ],
- [
-  "adv-urbanistico-municipal-03-edificacao-irregular-imovel-construcao-sem-alvara-multa",
-  "Direito Urbanístico e Municipal — Edificação Irregular Imóvel Construção Sem Alvará Multa",
-  "map",
-  "urbanistico-municipal/03 Edificação Irregular Imóvel Construção Sem Alvará Multa — modelo 213.docx"
- ],
- [
-  "adv-urbanistico-municipal-04-habite-se-imovel-construcao-prefeitura-regularizacao",
-  "Direito Urbanístico e Municipal — Habite-se Imóvel Construção Prefeitura Regularização",
-  "map",
-  "urbanistico-municipal/04 Habite-se Imóvel Construção Prefeitura Regularização — modelo 214.docx"
- ],
- [
-  "adv-urbanistico-municipal-05-zoneamento-municipal-plano-diretor-bairro-imovel-indenizacao",
-  "Direito Urbanístico e Municipal — Zoneamento Municipal Plano Diretor Bairro Imóvel Indenização",
-  "map",
-  "urbanistico-municipal/05 Zoneamento Municipal Plano Diretor Bairro Imóvel Indenização — modelo 215.docx"
- ],
- [
-  "adv-urbanistico-municipal-06-outorga-onerosa-do-direito-de-construir-imovel-area-centro",
-  "Direito Urbanístico e Municipal — Outorga Onerosa Do Direito de Construir Imóvel Área Centro",
-  "map",
-  "urbanistico-municipal/06 Outorga Onerosa Do Direito de Construir Imóvel Área Centro — modelo 216.docx"
- ],
- [
-  "adv-urbanistico-municipal-07-usucapiao-especial-coletivo-moradia-favela-bairro-popular",
-  "Direito Urbanístico e Municipal — Usucapião Especial Coletivo Moradia Favela Bairro Popular",
-  "map",
-  "urbanistico-municipal/07 Usucapião Especial Coletivo Moradia Favela Bairro Popular — modelo 217.docx"
- ],
- [
-  "adv-urbanistico-municipal-08-regularizacao-fundiaria-imovel-loteamento-orgaos-municipais",
-  "Direito Urbanístico e Municipal — Regularização Fundiária Imóvel Loteamento Órgãos Municipais",
-  "map",
-  "urbanistico-municipal/08 Regularização Fundiária Imóvel Loteamento Órgãos Municipais — modelo 218.docx"
- ],
- [
-  "adv-urbanistico-municipal-09-reassentamento-familia-habitacao-cdh-mcmv-minha-casa-minha-vida",
-  "Direito Urbanístico e Municipal — Reassentamento Família Habitação CDH MCMV Minha Casa Minha Vida",
-  "map",
-  "urbanistico-municipal/09 Reassentamento Família Habitação CDH MCMV Minha Casa Minha Vida — modelo 219.docx"
- ],
- [
-  "adv-urbanistico-municipal-10-direito-a-moradia-habitacao-popular-prefeitura-assistencia-social",
-  "Direito Urbanístico e Municipal — Direito a Moradia Habitação Popular Prefeitura Assistência Social",
-  "map",
-  "urbanistico-municipal/10 Direito a Moradia Habitação Popular Prefeitura Assistência Social — modelo 220.docx"
- ],
- [
-  "adv-concorrencia-antitruste-cade-01-acordo-acaracao-cartel-preco-supermercado-combustivel-gasolina",
-  "Concorrência e Antitruste CADE — Acordo Acareação Cartel Preço Supermercado Combustível Gasolina",
-  "scale",
-  "concorrencia-antitruste-cade/01 Acordo Acareação Cartel Preço Supermercado Combustível Gasolina — modelo 221.docx"
- ],
- [
-  "adv-concorrencia-antitruste-cade-02-abuso-posicao-dominante-empresa-grande-mercado-micro-pequena",
-  "Concorrência e Antitruste CADE — Abuso Posição Dominante Empresa Grande Mercado Micro Pequena",
-  "scale",
-  "concorrencia-antitruste-cade/02 Abuso Posição Dominante Empresa Grande Mercado Micro Pequena — modelo 222.docx"
- ],
- [
-  "adv-concorrencia-antitruste-cade-03-preco-predatorio-venda-abaixo-custo-empresa-concorrente",
-  "Concorrência e Antitruste CADE — Preço Predatório Venda Abaixo Custo Empresa Concorrente",
-  "scale",
-  "concorrencia-antitruste-cade/03 Preço Predatório Venda Abaixo Custo Empresa Concorrente — modelo 223.docx"
- ],
- [
-  "adv-concorrencia-antitruste-cade-04-barreira-entrada-mercado-nova-empresa-franquia-servico",
-  "Concorrência e Antitruste CADE — Barreira Entrada Mercado Nova Empresa Franquia Serviço",
-  "scale",
-  "concorrencia-antitruste-cade/04 Barreira Entrada Mercado Nova Empresa Franquia Serviço — modelo 224.docx"
- ],
- [
-  "adv-concorrencia-antitruste-cade-05-fusao-aquisicao-empresa-aprovacao-cade-concentracao-mercado",
-  "Concorrência e Antitruste CADE — Fusão Aquisição Empresa Aprovação CADE Concentração Mercado",
-  "scale",
-  "concorrencia-antitruste-cade/05 Fusão Aquisição Empresa Aprovação CADE Concentração Mercado — modelo 225.docx"
- ],
- [
-  "adv-concorrencia-antitruste-cade-06-processo-cade-cartel-supermercado-cimento-saude-educacao",
-  "Concorrência e Antitruste CADE — Processo CADE Cartel Supermercado Cimento Saúde Educação",
-  "scale",
-  "concorrencia-antitruste-cade/06 Processo CADE Cartel Supermercado Cimento Saúde Educação — modelo 226.docx"
- ],
- [
-  "adv-concorrencia-antitruste-cade-07-multa-cade-empresa-concorrencia-desleal-pratica-abusiva",
-  "Concorrência e Antitruste CADE — Multa CADE Empresa Concorrência Desleal Prática Abusiva",
-  "scale",
-  "concorrencia-antitruste-cade/07 Multa CADE Empresa Concorrência Desleal Prática Abusiva — modelo 227.docx"
- ],
- [
-  "adv-concorrencia-antitruste-cade-08-defesa-consumidor-supermercado-pao-acucar-carrefour-atacadao",
-  "Concorrência e Antitruste CADE — Defesa Consumidor Supermercado Pão Açúcar Carrefour Atacadão",
-  "scale",
-  "concorrencia-antitruste-cade/08 Defesa Consumidor Supermercado Pão Açúcar Carrefour Atacadão — modelo 228.docx"
- ],
- [
-  "adv-concorrencia-antitruste-cade-09-concorrencia-desleal-marketing-publicidade-difamacao-empresa",
-  "Concorrência e Antitruste CADE — Concorrência Desleal Marketing Publicidade Difamação Empresa",
-  "scale",
-  "concorrencia-antitruste-cade/09 Concorrência Desleal Marketing Publicidade Difamação Empresa — modelo 229.docx"
- ],
- [
-  "adv-concorrencia-antitruste-cade-10-conselho-administrativo-defesa-economica-cade-recurso-decisao",
-  "Concorrência e Antitruste CADE — Conselho Administrativo Defesa Econômica CADE Recurso Decisão",
-  "scale",
-  "concorrencia-antitruste-cade/10 Conselho Administrativo Defesa Econômica CADE Recurso Decisão — modelo 230.docx"
- ],
- [
-  "adv-transito-detran-veiculo-01-multa-transito-detran-df-sp-rj-mg-cnh-pontuacao-indenizacao",
-  "Direito de Trânsito e DETRAN — Multa Trânsito DETRAN DF SP RJ MG CNH Pontuação Indenização",
-  "car-front",
-  "transito-detran-veiculo/01 Multa Trânsito DETRAN DF SP RJ MG CNH Pontuação Indenização — modelo 231.docx"
- ],
- [
-  "adv-transito-detran-veiculo-02-pontuacao-cnh-pontos-detran-indenizacao-multa-injusta",
-  "Direito de Trânsito e DETRAN — Pontuação CNH Pontos DETRAN Indenização Multa Injusta",
-  "car-front",
-  "transito-detran-veiculo/02 Pontuação CNH Pontos DETRAN Indenização Multa Injusta — modelo 232.docx"
- ],
- [
-  "adv-transito-detran-veiculo-03-licenciamento-veiculo-anual-detran-dpvat-ipva-indenizacao",
-  "Direito de Trânsito e DETRAN — Licenciamento Veículo Anual DETRAN DPVAT IPVA Indenização",
-  "car-front",
-  "transito-detran-veiculo/03 Licenciamento Veículo Anual DETRAN DPVAT IPVA Indenização — modelo 233.docx"
- ],
- [
-  "adv-transito-detran-veiculo-04-apreensao-carro-moto-detran-guincho-indenizacao-documentacao",
-  "Direito de Trânsito e DETRAN — Apreensão Carro Moto DETRAN Guincho Indenização Documentação",
-  "car-front",
-  "transito-detran-veiculo/04 Apreensão Carro Moto DETRAN Guincho Indenização Documentação — modelo 234.docx"
- ],
- [
-  "adv-transito-detran-veiculo-05-documentacao-veiculo-transferencia-compra-venda-detran",
-  "Direito de Trânsito e DETRAN — Documentação Veículo Transferência Compra Venda DETRAN",
-  "car-front",
-  "transito-detran-veiculo/05 Documentação Veículo Transferência Compra Venda DETRAN — modelo 235.docx"
- ],
- [
-  "adv-transito-detran-veiculo-06-seguro-dpvat-indenizacao-acidente-transito-vitima-morte-invalidez",
-  "Direito de Trânsito e DETRAN — Seguro DPVAT Indenização Acidente Trânsito Vítima Morte Invalidez",
-  "car-front",
-  "transito-detran-veiculo/06 Seguro DPVAT Indenização Acidente Trânsito Vítima Morte Invalidez — modelo 236.docx"
- ],
- [
-  "adv-transito-detran-veiculo-07-indenizacao-acidente-transito-carro-moto-onibus-caminhao",
-  "Direito de Trânsito e DETRAN — Indenização Acidente Trânsito Carro Moto Ônibus Caminhão",
-  "car-front",
-  "transito-detran-veiculo/07 Indenização Acidente Trânsito Carro Moto Ônibus Caminhão — modelo 237.docx"
- ],
- [
-  "adv-transito-detran-veiculo-08-recurso-multa-jari-detran-multa-invalida-velocidade-estacionamento",
-  "Direito de Trânsito e DETRAN — Recurso Multa JARI DETRAN Multa Inválida Velocidade Estacionamento",
-  "car-front",
-  "transito-detran-veiculo/08 Recurso Multa JARI DETRAN Multa Inválida Velocidade Estacionamento — modelo 238.docx"
- ],
- [
-  "adv-transito-detran-veiculo-09-lei-seca-12-2008-9099-alcoolemia-etilometro-multa-cnh",
-  "Direito de Trânsito e DETRAN — Lei Seca 12.2008/9099 Alcoolemia Etilômetro Multa CNH",
-  "car-front",
-  "transito-detran-veiculo/09 Lei Seca 12.2008/9099 Alcoolemia Etilômetro Multa CNH — modelo 239.docx"
- ],
- [
-  "adv-transito-detran-veiculo-10-transporte-passageiro-onibus-urbano-metro-df-transporte-app",
-  "Direito de Trânsito e DETRAN — Transporte Passageiro Ônibus Urbano Metrô DF Transporte App",
-  "car-front",
-  "transito-detran-veiculo/10 Transporte Passageiro Ônibus Urbano Metrô DF Transporte App — modelo 240.docx"
- ],
- [
-  "adv-educacional-ensino-superior-01-faculdade-privada-universidade-estacio-unb-mensalidade-abusiva",
-  "Direito Educacional e Ensino Superior — Faculdade Privada Universidade Estácio UnB Mensalidade Abusiva",
-  "graduation-cap",
-  "educacional-ensino-superior/01 Faculdade Privada Universidade Estácio UnB Mensalidade Abusiva — modelo 241.docx"
- ],
- [
-  "adv-educacional-ensino-superior-02-fies-proeducacao-reestruturacao-multa-juros-educacao-superior",
-  "Direito Educacional e Ensino Superior — FIES Pro Educação Reestruturação Multa Juros Educação Superior",
-  "graduation-cap",
-  "educacional-ensino-superior/02 FIES Pro Educação Reestruturação Multa Juros Educação Superior — modelo 242.docx"
- ],
- [
-  "adv-educacional-ensino-superior-03-prouni-bolsa-estudo-universidade-publica-privada-indenizacao",
-  "Direito Educacional e Ensino Superior — PROUNI Bolsa Estudo Universidade Pública Privada Indenização",
-  "graduation-cap",
-  "educacional-ensino-superior/03 PROUNI Bolsa Estudo Universidade Pública Privada Indenização — modelo 243.docx"
- ],
- [
-  "adv-educacional-ensino-superior-04-bolsa-familia-beneficio-auxilio-brasil-cadunico-indenizacao",
-  "Direito Educacional e Ensino Superior — Bolsa Família Benefício Auxílio Brasil CadÚnico Indenização",
-  "graduation-cap",
-  "educacional-ensino-superior/04 Bolsa Família Benefício Auxílio Brasil CadÚnico Indenização — modelo 244.docx"
- ],
- [
-  "adv-educacional-ensino-superior-05-escola-particular-ensino-medio-fundamental-mensalidade-escola",
-  "Direito Educacional e Ensino Superior — Escola Particular Ensino Médio Fundamental Mensalidade Escola",
-  "graduation-cap",
-  "educacional-ensino-superior/05 Escola Particular Ensino Médio Fundamental Mensalidade Escola — modelo 245.docx"
- ],
- [
-  "adv-educacional-ensino-superior-06-material-escolar-colegio-escola-material-obrigatorio-indenizacao",
-  "Direito Educacional e Ensino Superior — Material Escolar Colégio Escola Material Obrigatório Indenização",
-  "graduation-cap",
-  "educacional-ensino-superior/06 Material Escolar Colégio Escola Material Obrigatório Indenização — modelo 246.docx"
- ],
- [
-  "adv-educacional-ensino-superior-07-enade-mec-curso-superior-faculdade-universidade-colacao-grau",
-  "Direito Educacional e Ensino Superior — ENADE MEC Curso Superior Faculdade Universidade Colação Grau",
-  "graduation-cap",
-  "educacional-ensino-superior/07 ENADE MEC Curso Superior Faculdade Universidade Colação Grau — modelo 247.docx"
- ],
- [
-  "adv-educacional-ensino-superior-08-colacao-grau-universidade-faculdade-diploma-curso-superior",
-  "Direito Educacional e Ensino Superior — Colação Grau Universidade Faculdade Diploma Curso Superior",
-  "graduation-cap",
-  "educacional-ensino-superior/08 Colação Grau Universidade Faculdade Diploma Curso Superior — modelo 248.docx"
- ],
- [
-  "adv-educacional-ensino-superior-09-diploma-curso-tecnologo-superior-registro-mec-capes-indenizacao",
-  "Direito Educacional e Ensino Superior — Diploma Curso Tecnólogo Superior Registro MEC CAPES Indenização",
-  "graduation-cap",
-  "educacional-ensino-superior/09 Diploma Curso Tecnólogo Superior Registro MEC CAPES Indenização — modelo 249.docx"
- ],
- [
-  "adv-educacional-ensino-superior-10-educacao-jovens-adultos-eja-ensino-medio-fundamental",
-  "Direito Educacional e Ensino Superior — Educação Jovens Adultos EJA Ensino Médio Fundamental",
-  "graduation-cap",
-  "educacional-ensino-superior/10 Educação Jovens Adultos EJA Ensino Médio Fundamental — modelo 250.docx"
- ],
- [
-  "adv-alimentar-agropecuario-avancado-01-anvisa-rotulagem-produto-alimento-padaria-supermercado-indenizacao",
-  "Direito Alimentar e Agropecuário Avançado — ANVISA Rotulagem Produto Alimento Padaria Supermercado Indenização",
-  "utensils",
-  "alimentar-agropecuario-avancado/01 ANVISA Rotulagem Produto Alimento Padaria Supermercado Indenização — modelo 251.docx"
- ],
- [
-  "adv-alimentar-agropecuario-avancado-02-transgenico-soja-milho-alimento-nao-rotulado-ctnbio-indenizacao",
-  "Direito Alimentar e Agropecuário Avançado — Transgênico Soja Milho Alimento Não Rotulado CTNBio Indenização",
-  "utensils",
-  "alimentar-agropecuario-avancado/02 Transgênico Soja Milho Alimento Não Rotulado CTNBio Indenização — modelo 252.docx"
- ],
- [
-  "adv-alimentar-agropecuario-avancado-03-agrotoxico-alimento-hortifruti-fruta-legume-contaminacao",
-  "Direito Alimentar e Agropecuário Avançado — Agrotóxico Alimento Hortifrutti Fruta Legume Contaminação",
-  "utensils",
-  "alimentar-agropecuario-avancado/03 Agrotóxico Alimento Hortifrutti Fruta Legume Contaminação — modelo 253.docx"
- ],
- [
-  "adv-alimentar-agropecuario-avancado-04-alimento-contaminacao-restaurante-lanchonete-hamburgueria-dt",
-  "Direito Alimentar e Agropecuário Avançado — Alimento Contaminação Restaurante Lanchonete Hamburgueria DT",
-  "utensils",
-  "alimentar-agropecuario-avancado/04 Alimento Contaminação Restaurante Lanchonete Hamburgueria DT — modelo 254.docx"
- ],
- [
-  "adv-alimentar-agropecuario-avancado-05-vigilancia-sanitaria-visa-municipal-estadual-anvisa-restaurante",
-  "Direito Alimentar e Agropecuário Avançado — Vigilância Sanitária VISA Municipal Estadual ANVISA Restaurante",
-  "utensils",
-  "alimentar-agropecuario-avancado/05 Vigilância Sanitária VISA Municipal Estadual ANVISA Restaurante — modelo 255.docx"
- ],
- [
-  "adv-alimentar-agropecuario-avancado-06-mapa-inspecao-federal-carne-bovina-suina-ave-sif-industria",
-  "Direito Alimentar e Agropecuário Avançado — MAPA Inspeção Federal Carne Bovina Suína Ave SIF Indústria",
-  "utensils",
-  "alimentar-agropecuario-avancado/06 MAPA Inspeção Federal Carne Bovina Suína Ave SIF Indústria — modelo 256.docx"
- ],
- [
-  "adv-alimentar-agropecuario-avancado-07-sif-sisp-siesprodutos-origem-animal-carne-leite-ovo",
-  "Direito Alimentar e Agropecuário Avançado — SIF SISP SIES Produtos Origem Animal Carne Leite Ovo",
-  "utensils",
-  "alimentar-agropecuario-avancado/07 SIF SISP SIES Produtos Origem Animal Carne Leite Ovo — modelo 257.docx"
- ],
- [
-  "adv-alimentar-agropecuario-avancado-08-leite-adulterado-agua-urea-formal-deido-industria-laticinios",
-  "Direito Alimentar e Agropecuário Avançado — Leite Adulterado Água Uréia Formaldeído Indústria Laticínios",
-  "utensils",
-  "alimentar-agropecuario-avancado/08 Leite Adulterado Água Uréia Formaldeído Indústria Laticínios — modelo 258.docx"
- ],
- [
-  "adv-alimentar-agropecuario-avancado-09-carne-contaminada-salmonela-e-coli-supermercado-acougue-indenizacao",
-  "Direito Alimentar e Agropecuário Avançado — Carne Contaminada Salmonela E. Coli Supermercado Açougue Indenização",
-  "utensils",
-  "alimentar-agropecuario-avancado/09 Carne Contaminada Salmonela E. Coli Supermercado Açougue Indenização — modelo 259.docx"
- ],
- [
-  "adv-alimentar-agropecuario-avancado-10-agrotoxico-proibido-ibama-anvisa-mapa-multa-indenizacao",
-  "Direito Alimentar e Agropecuário Avançado — Agrotóxico Proibido IBAMA ANVISA MAPA Multa Indenização",
-  "utensils",
-  "alimentar-agropecuario-avancado/10 Agrotóxico Proibido IBAMA ANVISA MAPA Multa Indenização — modelo 260.docx"
- ],
- [
-  "adv-redes-sociais-meta-google-tiktok-01-instagram-facebook-meta-remocao-conteudo-sem-justificativa",
-  "Redes Sociais Meta Google TikTok — Instagram Facebook Meta Remoção Conteúdo Sem Justificativa",
-  "share-2",
-  "redes-sociais-meta-google-tiktok/01 Instagram Facebook Meta Remoção Conteúdo Sem Justificativa — modelo 261.docx"
- ],
- [
-  "adv-redes-sociais-meta-google-tiktok-02-bloqueio-conta-instagram-facebook-meta-perfil-empresarial-pessoal",
-  "Redes Sociais Meta Google TikTok — Bloqueio Conta Instagram Facebook Meta Perfil Empresarial Pessoal",
-  "share-2",
-  "redes-sociais-meta-google-tiktok/02 Bloqueio Conta Instagram Facebook Meta Perfil Empresarial Pessoal — modelo 262.docx"
- ],
- [
-  "adv-redes-sociais-meta-google-tiktok-03-youtube-google-remocao-video-monetizacao-bloqueada-canal",
-  "Redes Sociais Meta Google TikTok — YouTube Google Remoção Vídeo Monetização Bloqueada Canal",
-  "share-2",
-  "redes-sociais-meta-google-tiktok/03 YouTube Google Remoção Vídeo Monetização Bloqueada Canal — modelo 263.docx"
- ],
- [
-  "adv-redes-sociais-meta-google-tiktok-04-tiktok-suspensao-conta-perfil-ao-vivo-live-bloqueio",
-  "Redes Sociais Meta Google TikTok — TikTok Suspensão Conta Perfil Ao Vivo Live Bloqueio",
-  "share-2",
-  "redes-sociais-meta-google-tiktok/04 TikTok Suspensão Conta Perfil Ao Vivo Live Bloqueio — modelo 264.docx"
- ],
- [
-  "adv-redes-sociais-meta-google-tiktok-05-google-ads-banimento-conta-anunciante-restricao-publicidade",
-  "Redes Sociais Meta Google TikTok — Google Ads Banimento Conta Anunciante Restrição Publicidade",
-  "share-2",
-  "redes-sociais-meta-google-tiktok/05 Google Ads Banimento Conta Anunciante Restrição Publicidade — modelo 265.docx"
- ],
- [
-  "adv-redes-sociais-meta-google-tiktok-06-lgpd-redes-sociais-dados-pessoais-conta-meta-google-tiktok",
-  "Redes Sociais Meta Google TikTok — LGPD Redes Sociais Dados Pessoais Conta Meta Google TikTok",
-  "share-2",
-  "redes-sociais-meta-google-tiktok/06 LGPD Redes Sociais Dados Pessoais Conta Meta Google TikTok — modelo 266.docx"
- ],
- [
-  "adv-redes-sociais-meta-google-tiktok-07-golpe-whatsapp-pix-clone-grupo-familia-indenizacao-banco",
-  "Redes Sociais Meta Google TikTok — Golpe WhatsApp PIX Clone Grupo Família Indenização Banco",
-  "share-2",
-  "redes-sociais-meta-google-tiktok/07 Golpe WhatsApp PIX Clone Grupo Família Indenização Banco — modelo 267.docx"
- ],
- [
-  "adv-redes-sociais-meta-google-tiktok-08-fake-news-instagram-facebook-whatsapp-telegram-indenizacao-honra",
-  "Redes Sociais Meta Google TikTok — Fake News Instagram Facebook WhatsApp Telegram Indenização Honra",
-  "share-2",
-  "redes-sociais-meta-google-tiktok/08 Fake News Instagram Facebook WhatsApp Telegram Indenização Honra — modelo 268.docx"
- ],
- [
-  "adv-redes-sociais-meta-google-tiktok-09-direito-a-desconexao-trabalho-whatsapp-empresa-horario-extra",
-  "Redes Sociais Meta Google TikTok — Direito a Desconexão Trabalho WhatsApp Empresa Horário Extra",
-  "share-2",
-  "redes-sociais-meta-google-tiktok/09 Direito a Desconexão Trabalho WhatsApp Empresa Horário Extra — modelo 269.docx"
- ],
- [
-  "adv-redes-sociais-meta-google-tiktok-10-indenizacao-honra-calunia-difamacao-internet-redes-sociais",
-  "Redes Sociais Meta Google TikTok — Indenização Honra Calúnia Difamação Internet Redes Sociais",
-  "share-2",
-  "redes-sociais-meta-google-tiktok/10 Indenização Honra Calúnia Difamação Internet Redes Sociais — modelo 270.docx"
- ],
- [
-  "adv-energia-aneel-gas-01-concessionaria-energia-eletrica-neoen-cemig-enel-cemig-falta-energia",
-  "Energia ANEEL e Gás Natural — Concessionária Energia Elétrica Neoenerg Cemig Enel Falta Energia",
-  "zap",
-  "energia-aneel-gas/01 Concessionária Energia Elétrica Neoenerg Cemig Enel Falta Energia — modelo 271.docx"
- ],
- [
-  "adv-energia-aneel-gas-02-bandeira-tarifaria-aneel-energia-escassez-hidreletrica-conta-luz",
-  "Energia ANEEL e Gás Natural — Bandeira Tarifária ANEEL Energia Escassez Hidrelétrica Conta Luz",
-  "zap",
-  "energia-aneel-gas/02 Bandeira Tarifária ANEEL Energia Escassez Hidrelétrica Conta Luz — modelo 272.docx"
- ],
- [
-  "adv-energia-aneel-gas-03-falta-energia-bairro-cidade-tempestade-indenizacao-eletrodomestico",
-  "Energia ANEEL e Gás Natural — Falta Energia Bairro Cidade Tempestade Indenização Eletrodoméstico",
-  "zap",
-  "energia-aneel-gas/03 Falta Energia Bairro Cidade Tempestade Indenização Eletrodoméstico — modelo 273.docx"
- ],
- [
-  "adv-energia-aneel-gas-04-conta-luz-abusiva-energia-eletrica-leitura-medidor-errado-aneel",
-  "Energia ANEEL e Gás Natural — Conta Luz Abusiva Energia Elétrica Leitura Medidor Errado ANEEL",
-  "zap",
-  "energia-aneel-gas/04 Conta Luz Abusiva Energia Elétrica Leitura Medidor Errado ANEEL — modelo 274.docx"
- ],
- [
-  "adv-energia-aneel-gas-05-religacao-atrasada-energia-eletrica-concessionaria-indenizacao",
-  "Energia ANEEL e Gás Natural — Religacao Atrasada Energia Elétrica Concessionária Indenização",
-  "zap",
-  "energia-aneel-gas/05 Religacao Atrasada Energia Elétrica Concessionária Indenização — modelo 275.docx"
- ],
- [
-  "adv-energia-aneel-gas-06-gas-natural-encanado-comgas-sabesp-tarifa-abusiva-conta",
-  "Energia ANEEL e Gás Natural — Gás Natural Encanado Comgás Sabesp Tarifa Abusiva Conta",
-  "zap",
-  "energia-aneel-gas/06 Gás Natural Encanado Comgás Sabesp Tarifa Abusiva Conta — modelo 276.docx"
- ],
- [
-  "adv-energia-aneel-gas-07-aneel-concessionaria-energia-eletrica-multa-indenizacao-qualidade",
-  "Energia ANEEL e Gás Natural — ANEEL Concessionária Energia Elétrica Multa Indenização Qualidade",
-  "zap",
-  "energia-aneel-gas/07 ANEEL Concessionária Energia Elétrica Multa Indenização Qualidade — modelo 277.docx"
- ],
- [
-  "adv-energia-aneel-gas-08-geracao-distribuida-energia-solar-placa-fotovoltaica-reembolso",
-  "Energia ANEEL e Gás Natural — Geração Distribuída Energia Solar Placa Fotovoltaica Reembolso",
-  "zap",
-  "energia-aneel-gas/08 Geração Distribuída Energia Solar Placa Fotovoltaica Reembolso — modelo 278.docx"
- ],
- [
-  "adv-energia-aneel-gas-09-microgeracao-energia-solar-residencial-comercial-aneel-conta",
-  "Energia ANEEL e Gás Natural — Microgeração Energia Solar Residencial Comercial ANEEL Conta",
-  "zap",
-  "energia-aneel-gas/09 Microgeração Energia Solar Residencial Comercial ANEEL Conta — modelo 279.docx"
- ],
- [
-  "adv-energia-aneel-gas-10-conta-luz-residencial-social-tarifa-social-energia-eletrica",
-  "Energia ANEEL e Gás Natural — Conta Luz Residencial Social Tarifa Social Energia Elétrica",
-  "zap",
-  "energia-aneel-gas/10 Conta Luz Residencial Social Tarifa Social Energia Elétrica — modelo 280.docx"
- ],
- [
-  "adv-logistica-transporte-cargas-01-transportadora-rodoviaria-carga-perdida-trevo-rodo-trans-jadlog",
-  "Logística e Transporte de Cargas — Transportadora Rodoviária Carga Perdida Trevo Rodo Trans Jadlog",
-  "truck",
-  "logistica-transporte-cargas/01 Transportadora Rodoviária Carga Perdida Trevo Rodo Trans Jadlog — modelo 281.docx"
- ],
- [
-  "adv-logistica-transporte-cargas-02-frete-transportadora-caminhao-carreta-sinistro-acidente-carga",
-  "Logística e Transporte de Cargas — Frete Transportadora Caminhão Carreta Sinistro Acidente Carga",
-  "truck",
-  "logistica-transporte-cargas/02 Frete Transportadora Caminhão Carreta Sinistro Acidente Carga — modelo 282.docx"
- ],
- [
-  "adv-logistica-transporte-cargas-03-seguro-transporte-carga-transportadora-rodoviaria-indenizacao",
-  "Logística e Transporte de Cargas — Seguro Transporte Carga Transportadora Rodoviária Indenização",
-  "truck",
-  "logistica-transporte-cargas/03 Seguro Transporte Carga Transportadora Rodoviária Indenização — modelo 283.docx"
- ],
- [
-  "adv-logistica-transporte-cargas-04-caminhoneiro-autonomo-frete-empresa-embarcador-pagamento-frete",
-  "Logística e Transporte de Cargas — Caminhoneiro Autônomo Frete Empresa Embarcador Pagamento Frete",
-  "truck",
-  "logistica-transporte-cargas/04 Caminhoneiro Autônomo Frete Empresa Embarcador Pagamento Frete — modelo 284.docx"
- ],
- [
-  "adv-logistica-transporte-cargas-05-embarcador-transportadora-carga-empresa-logistica-pagamento",
-  "Logística e Transporte de Cargas — Embarcador Transportadora Carga Empresa Logística Pagamento",
-  "truck",
-  "logistica-transporte-cargas/05 Embarcador Transportadora Carga Empresa Logística Pagamento — modelo 285.docx"
- ],
- [
-  "adv-logistica-transporte-cargas-06-carreta-cavalo-mecanico-carga-peso-excesso-multa-transito",
-  "Logística e Transporte de Cargas — Carreta Cavalo Mecânico Carga Peso Excesso Multa Trânsito",
-  "truck",
-  "logistica-transporte-cargas/06 Carreta Cavalo Mecânico Carga Peso Excesso Multa Trânsito — modelo 286.docx"
- ],
- [
-  "adv-logistica-transporte-cargas-07-correios-sedex-pac-jadlog-tnt-express-dhl-pacote-perdido",
-  "Logística e Transporte de Cargas — Correios SEDEX PAC Jadlog TNT Express DHL Pacote Perdido",
-  "truck",
-  "logistica-transporte-cargas/07 Correios SEDEX PAC Jadlog TNT Express DHL Pacote Perdido — modelo 287.docx"
- ],
- [
-  "adv-logistica-transporte-cargas-08-logistica-reversa-produto-devolucao-loja-ecommerce-magazine",
-  "Logística e Transporte de Cargas — Logística Reversa Produto Devolução Loja E-commerce Magazine",
-  "truck",
-  "logistica-transporte-cargas/08 Logística Reversa Produto Devolução Loja E-commerce Magazine — modelo 288.docx"
- ],
- [
-  "adv-logistica-transporte-cargas-09-transporte-cargas-ecommerce-mercado-livre-shopee-magalu-lojas",
-  "Logística e Transporte de Cargas — Transporte Cargas E-commerce Mercado Livre Shopee Magalu Lojas",
-  "truck",
-  "logistica-transporte-cargas/09 Transporte Cargas E-commerce Mercado Livre Shopee Magalu Lojas — modelo 289.docx"
- ],
- [
-  "adv-logistica-transporte-cargas-10-abastecimento-caminhao-posto-ipiranga-shell-petrobras-ale",
-  "Logística e Transporte de Cargas — Abastecimento Caminhão Posto Ipiranga Shell Petrobras ALE",
-  "truck",
-  "logistica-transporte-cargas/10 Abastecimento Caminhão Posto Ipiranga Shell Petrobras ALE — modelo 290.docx"
- ],
- [
-  "adv-franquias-empreendimento-01-contrato-franquia-franqueado-franqueador-lei-13966-2019",
-  "Franquias e Empreendimentos — Contrato Franquia Franqueado Franqueador Lei 13966/2019",
-  "rocket",
-  "franquias-empreendimento/01 Contrato Franquia Franqueado Franqueador Lei 13966/2019 — modelo 291.docx"
- ],
- [
-  "adv-franquias-empreendimento-02-royalties-mensal-franquia-alimenticia-educacional-saude-pagamento",
-  "Franquias e Empreendimentos — Royalties Mensal Franquia Alimentícia Educacional Saúde Pagamento",
-  "rocket",
-  "franquias-empreendimento/02 Royalties Mensal Franquia Alimentícia Educacional Saúde Pagamento — modelo 292.docx"
- ],
- [
-  "adv-franquias-empreendimento-03-taxa-franquia-inicial-franqueado-empreendimento-marca-franquia",
-  "Franquias e Empreendimentos — Taxa Franquia Inicial Franqueado Empreendimento Marca Franquia",
-  "rocket",
-  "franquias-empreendimento/03 Taxa Franquia Inicial Franqueado Empreendimento Marca Franquia — modelo 293.docx"
- ],
- [
-  "adv-franquias-empreendimento-04-negocio-proprio-franquia-cama-chape-coco-bom-bom-mcdonalds",
-  "Franquias e Empreendimentos — Negócio Próprio Franquia Cama Chape Coco Bom Bom McDonald's",
-  "rocket",
-  "franquias-empreendimento/04 Negócio Próprio Franquia Cama Chape Coco Bom Bom McDonald's — modelo 294.docx"
- ],
- [
-  "adv-franquias-empreendimento-05-franquia-alimenticia-hamburgueria-pizza-sorvete-pao-queijo",
-  "Franquias e Empreendimentos — Franquia Alimentícia Hamburgueria Pizza Sorvete Pão Queijo",
-  "rocket",
-  "franquias-empreendimento/05 Franquia Alimentícia Hamburgueria Pizza Sorvete Pão Queijo — modelo 295.docx"
- ],
- [
-  "adv-franquias-empreendimento-06-franquia-educacional-curso-idioma-graduacao-pos-senac-senai",
-  "Franquias e Empreendimentos — Franquia Educacional Curso Idioma Graduação Pós Senac Senai",
-  "rocket",
-  "franquias-empreendimento/06 Franquia Educacional Curso Idioma Graduação Pós Senac Senai — modelo 296.docx"
- ],
- [
-  "adv-franquias-empreendimento-07-lei-de-franquias-13-966-2019-contrato-franquia-nulo-vicio",
-  "Franquias e Empreendimentos — Lei de Franquias 13.966/2019 Contrato Franquia Nulo Vício",
-  "rocket",
-  "franquias-empreendimento/07 Lei de Franquias 13.966/2019 Contrato Franquia Nulo Vício — modelo 297.docx"
- ],
- [
-  "adv-franquias-empreendimento-08-marca-franquia-registro-inpi-franqueador-franqueado-direito",
-  "Franquias e Empreendimentos — Marca Franquia Registro INPI Franqueador Franqueado Direito",
-  "rocket",
-  "franquias-empreendimento/08 Marca Franquia Registro INPI Franqueador Franqueado Direito — modelo 298.docx"
- ],
- [
-  "adv-franquias-empreendimento-09-rescisao-contrato-franquia-franqueado-sair-franquia-indenizacao",
-  "Franquias e Empreendimentos — Rescisão Contrato Franquia Franqueado Sair Franquia Indenização",
-  "rocket",
-  "franquias-empreendimento/09 Rescisão Contrato Franquia Franqueado Sair Franquia Indenização — modelo 299.docx"
- ],
- [
-  "adv-franquias-empreendimento-10-franquia-servicos-limpeza-beleza-estetica-saude-transporte",
-  "Franquias e Empreendimentos — Franquia Serviços Limpeza Beleza Estética Saúde Transporte",
-  "rocket",
-  "franquias-empreendimento/10 Franquia Serviços Limpeza Beleza Estética Saúde Transporte — modelo 300.docx"
- ]
-];
+  const CAT = [
+    [
+      "adv-digital-lgpd-avancado-01-vazamento-dados-lgpd-multa-anpd-indenizacao-coletiva",
+      "Direito Digital e LGPD Avançado — Vazamento de Dados LGPD Multa ANPD Indenização Coletiva",
+      "shield-check",
+      "digital-lgpd-avancado/01 Vazamento de Dados LGPD Multa ANPD Indenização Coletiva — modelo 1.docx",
+    ],
+    [
+      "adv-digital-lgpd-avancado-02-deepfake-inteligencia-artificial-direito-imagem-indenizacao",
+      "Direito Digital e LGPD Avançado — Deepfake Inteligência Artificial Direito Imagem Indenização",
+      "shield-check",
+      "digital-lgpd-avancado/02 Deepfake Inteligência Artificial Direito Imagem Indenização — modelo 2.docx",
+    ],
+    [
+      "adv-digital-lgpd-avancado-03-biometria-nao-consentida-reconhecimento-facial-indenizacao",
+      "Direito Digital e LGPD Avançado — Biometria Não Consentida Reconhecimento Facial Indenização",
+      "shield-check",
+      "digital-lgpd-avancado/03 Biometria Não Consentida Reconhecimento Facial Indenização — modelo 3.docx",
+    ],
+    [
+      "adv-digital-lgpd-avancado-04-cookies-ilegais-coleta-nao-autorizada-lgpd-multa-anatel",
+      "Direito Digital e LGPD Avançado — Cookies Ilegais Coleta Não Autorizada LGPD Multa ANATEL",
+      "shield-check",
+      "digital-lgpd-avancado/04 Cookies Ilegais Coleta Não Autorizada LGPD Multa ANATEL — modelo 4.docx",
+    ],
+    [
+      "adv-digital-lgpd-avancado-05-golpe-pix-phishing-banco-clonagem-whatsapp-indenizacao",
+      "Direito Digital e LGPD Avançado — Golpe PIX Phishing Banco Clonagem WhatsApp Indenização",
+      "shield-check",
+      "digital-lgpd-avancado/05 Golpe PIX Phishing Banco Clonagem WhatsApp Indenização — modelo 5.docx",
+    ],
+    [
+      "adv-digital-lgpd-avancado-06-direito-esquecimento-google-remover-link-informacao-falsa",
+      "Direito Digital e LGPD Avançado — Direito Esquecimento Google Remover Link Informação Falsa",
+      "shield-check",
+      "digital-lgpd-avancado/06 Direito Esquecimento Google Remover Link Informação Falsa — modelo 6.docx",
+    ],
+    [
+      "adv-digital-lgpd-avancado-07-credito-serasa-score-baixo-nome-sujo-indevido-restricao",
+      "Direito Digital e LGPD Avançado — Crédito Serasa Score Baixo Nome Sujo Indevido Restrição",
+      "shield-check",
+      "digital-lgpd-avancado/07 Crédito Serasa Score Baixo Nome Sujo Indevido Restrição — modelo 7.docx",
+    ],
+    [
+      "adv-digital-lgpd-avancado-08-sigiloso-bancario-informacao-vazada-banco-financeira-indenizacao",
+      "Direito Digital e LGPD Avançado — Sigilo Bancário Informação Vazada Banco Financeira Indenização",
+      "shield-check",
+      "digital-lgpd-avancado/08 Sigilo Bancário Informação Vazada Banco Financeira Indenização — modelo 8.docx",
+    ],
+    [
+      "adv-digital-lgpd-avancado-09-aplicativo-banco-hackeado-saldo-roubado-indenizacao-falha",
+      "Direito Digital e LGPD Avançado — Aplicativo Banco Hackeado Saldo Roubado Indenização Falha",
+      "shield-check",
+      "digital-lgpd-avancado/09 Aplicativo Banco Hackeado Saldo Roubado Indenização Falha — modelo 9.docx",
+    ],
+    [
+      "adv-digital-lgpd-avancado-10-anpd-pedido-acesso-dados-titular-nao-atendido-indenizacao",
+      "Direito Digital e LGPD Avançado — ANPD Pedido Acesso Dados Titular Não Atendido Indenização",
+      "shield-check",
+      "digital-lgpd-avancado/10 ANPD Pedido Acesso Dados Titular Não Atendido Indenização — modelo 10.docx",
+    ],
+    [
+      "adv-bancario-financeiro-01-fraude-bancaria-conta-bloqueada-injustificadamente-indenizacao",
+      "Direito Bancário e Financeiro — Fraude Bancária Conta Bloqueada Injustificadamente Indenização",
+      "landmark",
+      "bancario-financeiro/01 Fraude Bancária Conta Bloqueada Injustificadamente Indenização — modelo 11.docx",
+    ],
+    [
+      "adv-bancario-financeiro-02-cheque-especial-tarifa-abusiva-juros-abusivos-conta",
+      "Direito Bancário e Financeiro — Cheque Especial Tarifa Abusiva Juros Abusivos Conta",
+      "landmark",
+      "bancario-financeiro/02 Cheque Especial Tarifa Abusiva Juros Abusivos Conta — modelo 12.docx",
+    ],
+    [
+      "adv-bancario-financeiro-03-cartao-credito-fatura-indevida-compra-nao-reconhecida-clonagem",
+      "Direito Bancário e Financeiro — Cartão Crédito Fatura Indevida Compra Não Reconhecida Clonagem",
+      "landmark",
+      "bancario-financeiro/03 Cartão Crédito Fatura Indevida Compra Não Reconhecida Clonagem — modelo 13.docx",
+    ],
+    [
+      "adv-bancario-financeiro-04-emprestimo-consignado-fraudulento-margem-liberada-sem-autorizacao",
+      "Direito Bancário e Financeiro — Empréstimo Consignado Fraudulento Margem Liberada Sem Autorização",
+      "landmark",
+      "bancario-financeiro/04 Empréstimo Consignado Fraudulento Margem Liberada Sem Autorização — modelo 14.docx",
+    ],
+    [
+      "adv-bancario-financeiro-05-pix-indevido-ted-transferida-errado-pessoa-recuperar-valor",
+      "Direito Bancário e Financeiro — PIX Indevido TED Transferida Errado Pessoa Recuperar Valor",
+      "landmark",
+      "bancario-financeiro/05 PIX Indevido TED Transferida Errado Pessoa Recuperar Valor — modelo 15.docx",
+    ],
+    [
+      "adv-bancario-financeiro-06-tarifa-bancaria-cobranca-indevida-conta-salario-invalida",
+      "Direito Bancário e Financeiro — Tarifa Bancária Cobrança Indevida Conta Salário Inválida",
+      "landmark",
+      "bancario-financeiro/06 Tarifa Bancária Cobrança Indevida Conta Salário Inválida — modelo 16.docx",
+    ],
+    [
+      "adv-bancario-financeiro-07-cheque-sem-fundo-sem-justificativa-desfalque-banco",
+      "Direito Bancário e Financeiro — Cheque Sem Fundo Sem Justificativa Desfalque Banco",
+      "landmark",
+      "bancario-financeiro/07 Cheque Sem Fundo Sem Justificativa Desfalque Banco — modelo 17.docx",
+    ],
+    [
+      "adv-bancario-financeiro-08-cheque-administrativo-bancario-valor-pago-divergente-erro",
+      "Direito Bancário e Financeiro — Cheque Administrativo Bancário Valor Pago Divergente Erro",
+      "landmark",
+      "bancario-financeiro/08 Cheque Administrativo Bancário Valor Pago Divergente Erro — modelo 18.docx",
+    ],
+    [
+      "adv-bancario-financeiro-09-financiamento-veiculo-itau-bb-caixa-juros-abusivos-parcela",
+      "Direito Bancário e Financeiro — Financiamento Veículo Itaú BB Caixa Juros Abusivos Parcela",
+      "landmark",
+      "bancario-financeiro/09 Financiamento Veículo Itaú BB Caixa Juros Abusivos Parcela — modelo 19.docx",
+    ],
+    [
+      "adv-bancario-financeiro-10-conta-salario-empresa-desvio-fgts-saque-fgts-indenizacao",
+      "Direito Bancário e Financeiro — Conta Salário Empresa Desvio FGTS Saque FGTS Indenização",
+      "landmark",
+      "bancario-financeiro/10 Conta Salário Empresa Desvio FGTS Saque FGTS Indenização — modelo 20.docx",
+    ],
+    [
+      "adv-sucessorio-familia-avancado-01-testamento-publico-privado-validade-nulidade-vicio-procedimento",
+      "Direito Sucessório e Família Avançado — Testamento Público Privado Validade Nulidade Vício Procedimento",
+      "scroll",
+      "sucessorio-familia-avancado/01 Testamento Público Privado Validade Nulidade Vício Procedimento — modelo 21.docx",
+    ],
+    [
+      "adv-sucessorio-familia-avancado-02-inventario-partilha-bens-heranca-imovel-dinheiro-acoes",
+      "Direito Sucessório e Família Avançado — Inventário Partilha Bens Herança Imóvel Dinheiro Ações",
+      "scroll",
+      "sucessorio-familia-avancado/02 Inventário Partilha Bens Herança Imóvel Dinheiro Ações — modelo 22.docx",
+    ],
+    [
+      "adv-sucessorio-familia-avancado-03-peticao-heranca-legado-usufruto-bem-familiar-testeiro",
+      "Direito Sucessório e Família Avançado — Petição Herança Legado Usufruto Bem Familiar Testeiro",
+      "scroll",
+      "sucessorio-familia-avancado/03 Petição Herança Legado Usufruto Bem Familiar Testeiro — modelo 23.docx",
+    ],
+    [
+      "adv-sucessorio-familia-avancado-04-fideicomisso-heranca-maior-idade-substituicao-testamentaria",
+      "Direito Sucessório e Família Avançado — Fideicomisso Herança Maior Idade Substituição Testamentária",
+      "scroll",
+      "sucessorio-familia-avancado/04 Fideicomisso Herança Maior Idade Substituição Testamentária — modelo 24.docx",
+    ],
+    [
+      "adv-sucessorio-familia-avancado-05-partilha-errada-heranca-irmaos-indenizacao-desacordo-conjuge",
+      "Direito Sucessório e Família Avançado — Partilha Errada Herança Irmãos Indenização Desacordo Cônjuge",
+      "scroll",
+      "sucessorio-familia-avancado/05 Partilha Errada Herança Irmãos Indenização Desacordo Cônjuge — modelo 25.docx",
+    ],
+    [
+      "adv-sucessorio-familia-avancado-06-usucapiao-heranca-imovel-nao-escritura-posse-malas-anotacoes",
+      "Direito Sucessório e Família Avançado — Usucapião Herança Imóvel Não Escritura Posse Malas Anotações",
+      "scroll",
+      "sucessorio-familia-avancado/06 Usucapião Herança Imóvel Não Escritura Posse Malas Anotações — modelo 26.docx",
+    ],
+    [
+      "adv-sucessorio-familia-avancado-07-indenizacao-por-atraso-inventario-cartorio-extra-judicial",
+      "Direito Sucessório e Família Avançado — Indenização Por Atraso Inventário Cartório Extra Judicial",
+      "scroll",
+      "sucessorio-familia-avancado/07 Indenização Por Atraso Inventário Cartório Extra Judicial — modelo 27.docx",
+    ],
+    [
+      "adv-sucessorio-familia-avancado-08-alienacao-imovel-heranca-antes-do-inventario-nulidade-venda",
+      "Direito Sucessório e Família Avançado — Alienação Imóvel Herança Antes do Inventário Nulidade Venda",
+      "scroll",
+      "sucessorio-familia-avancado/08 Alienação Imóvel Herança Antes do Inventário Nulidade Venda — modelo 28.docx",
+    ],
+    [
+      "adv-sucessorio-familia-avancado-09-administracao-heranca-inventario-longo-tempo-reivindicacao",
+      "Direito Sucessório e Família Avançado — Administração Herança Inventário Longo Tempo Reivindicação",
+      "scroll",
+      "sucessorio-familia-avancado/09 Administração Herança Inventário Longo Tempo Reivindicação — modelo 29.docx",
+    ],
+    [
+      "adv-sucessorio-familia-avancado-10-legado-especifico-bem-heranca-nao-entregue-cumprimento-legado",
+      "Direito Sucessório e Família Avançado — Legado Específico Bem Herança Não Entregue Cumprimento Legado",
+      "scroll",
+      "sucessorio-familia-avancado/10 Legado Específico Bem Herança Não Entregue Cumprimento Legado — modelo 30.docx",
+    ],
+    [
+      "adv-civil-contratos-avancado-01-rescisao-contratual-sem-multa-clausula-penal-indenizacao",
+      "Direito Civil e Contratos Avançado — Rescisão Contratual Sem Multa Cláusula Penal Indenização",
+      "file-signature",
+      "civil-contratos-avancado/01 Rescisão Contratual Sem Multa Cláusula Penal Indenização — modelo 31.docx",
+    ],
+    [
+      "adv-civil-contratos-avancado-02-clausula-abusiva-contrato-adesao-consumidor-supermercado-via-varejo",
+      "Direito Civil e Contratos Avançado — Cláusula Abusiva Contrato Adesão Consumidor Supermercado Via Varejo",
+      "file-signature",
+      "civil-contratos-avancado/02 Cláusula Abusiva Contrato Adesão Consumidor Supermercado Via Varejo — modelo 32.docx",
+    ],
+    [
+      "adv-civil-contratos-avancado-03-vicios-redibitorios-produto-defeito-carro-imovel-eletronico",
+      "Direito Civil e Contratos Avançado — Vícios Redibitórios Produto Defeito Carro Imóvel Eletrônico",
+      "file-signature",
+      "civil-contratos-avancado/03 Vícios Redibitórios Produto Defeito Carro Imóvel Eletrônico — modelo 33.docx",
+    ],
+    [
+      "adv-civil-contratos-avancado-04-eviccao-coisa-vendida-indenizacao-terceiro-reivindica-bem",
+      "Direito Civil e Contratos Avançado — Evicção Coisa Vendida Indenização Terceiro Reivindica Bem",
+      "file-signature",
+      "civil-contratos-avancado/04 Evicção Coisa Vendida Indenização Terceiro Reivindica Bem — modelo 34.docx",
+    ],
+    [
+      "adv-civil-contratos-avancado-05-contrato-locacao-imovel-comercial-residencial-despejo-trava",
+      "Direito Civil e Contratos Avançado — Contrato Locação Imóvel Comercial Residencial Despejo Trava",
+      "file-signature",
+      "civil-contratos-avancado/05 Contrato Locação Imóvel Comercial Residencial Despejo Trava — modelo 35.docx",
+    ],
+    [
+      "adv-civil-contratos-avancado-06-contrato-prestacao-servico-nao-cumprimento-falha-empresa",
+      "Direito Civil e Contratos Avançado — Contrato Prestação Serviço Não Cumprimento Falha Empresa",
+      "file-signature",
+      "civil-contratos-avancado/06 Contrato Prestação Serviço Não Cumprimento Falha Empresa — modelo 36.docx",
+    ],
+    [
+      "adv-civil-contratos-avancado-07-contrato-compra-e-venda-imovel-rescisao-multa-danilo-mora",
+      "Direito Civil e Contratos Avançado — Contrato Compra e Venda Imóvel Rescisão Multa Danilo Mora",
+      "file-signature",
+      "civil-contratos-avancado/07 Contrato Compra e Venda Imóvel Rescisão Multa Danilo Mora — modelo 37.docx",
+    ],
+    [
+      "adv-civil-contratos-avancado-08-contrato-doacao-irrevogavel-bem-imovel-doacao-indenizacao",
+      "Direito Civil e Contratos Avançado — Contrato Doação Irrevogável Bem Imóvel Doação Indenização",
+      "file-signature",
+      "civil-contratos-avancado/08 Contrato Doação Irrevogável Bem Imóvel Doação Indenização — modelo 38.docx",
+    ],
+    [
+      "adv-civil-contratos-avancado-09-contrato-mutuio-emprestimo-privado-pessoa-juridica-juros-legais",
+      "Direito Civil e Contratos Avançado — Contrato Mútuo Empréstimo Privado Pessoa Jurídica Juros Legais",
+      "file-signature",
+      "civil-contratos-avancado/09 Contrato Mútuo Empréstimo Privado Pessoa Jurídica Juros Legais — modelo 39.docx",
+    ],
+    [
+      "adv-civil-contratos-avancado-10-contrato-sociedade-simples-desfazimento-socio-sair-sociedade",
+      "Direito Civil e Contratos Avançado — Contrato Sociedade Simples Desfazimento Sócio Sair Sociedade",
+      "file-signature",
+      "civil-contratos-avancado/10 Contrato Sociedade Simples Desfazimento Sócio Sair Sociedade — modelo 40.docx",
+    ],
+    [
+      "adv-imobiliario-avancado-01-usucapiao-urbano-imovel-centro-bsb-vila-plano-dirceu-10-anos",
+      "Direito Imobiliário Avançado — Usucapião Urbano Imóvel Centro BSB Vila Plano Dirceu 10 Anos",
+      "home",
+      "imobiliario-avancado/01 Usucapião Urbano Imóvel Centro BSB Vila Plano Dirceu 10 Anos — modelo 41.docx",
+    ],
+    [
+      "adv-imobiliario-avancado-02-despejo-por-necessidade-proprietario-morar-imovel-despejo-locatario",
+      "Direito Imobiliário Avançado — Despejo Por Necessidade Proprietário Morar Imóvel Despejo Locatário",
+      "home",
+      "imobiliario-avancado/02 Despejo Por Necessidade Proprietário Morar Imóvel Despejo Locatário — modelo 42.docx",
+    ],
+    [
+      "adv-imobiliario-avancado-03-revisao-aluguel-locatario-imovel-residencial-comercial-reajuste",
+      "Direito Imobiliário Avançado — Revisão Aluguel Locatário Imóvel Residencial Comercial Reajuste",
+      "home",
+      "imobiliario-avancado/03 Revisão Aluguel Locatário Imóvel Residencial Comercial Reajuste — modelo 43.docx",
+    ],
+    [
+      "adv-imobiliario-avancado-04-acao-possessoria-manutencao-de-posse-reintegracao-terceiro",
+      "Direito Imobiliário Avançado — Ação Possessória Manutenção de Posse Reintegração Terceiro",
+      "home",
+      "imobiliario-avancado/04 Ação Possessória Manutenção de Posse Reintegração Terceiro — modelo 44.docx",
+    ],
+    [
+      "adv-imobiliario-avancado-05-interdito-proibitorio-nao-pode-mexer-bem-posse-nao-invadir",
+      "Direito Imobiliário Avançado — Interdito Proibitório Não Pode Mexer Bem Posse Não Invadir",
+      "home",
+      "imobiliario-avancado/05 Interdito Proibitório Não Pode Mexer Bem Posse Não Invadir — modelo 45.docx",
+    ],
+    [
+      "adv-imobiliario-avancado-06-regularizacao-imovel-loteamento-nao-registrado-cartorio-imovel",
+      "Direito Imobiliário Avançado — Regularização Imóvel Loteamento Não Registrado Cartório Imóvel",
+      "home",
+      "imobiliario-avancado/06 Regularização Imóvel Loteamento Não Registrado Cartório Imóvel — modelo 46.docx",
+    ],
+    [
+      "adv-imobiliario-avancado-07-financiamento-habitacional-caixa-economica-federal-sfhh-minha-casa",
+      "Direito Imobiliário Avançado — Financiamento Habitacional Caixa Econômica Federal SFH Minha Casa",
+      "home",
+      "imobiliario-avancado/07 Financiamento Habitacional Caixa Econômica Federal SFH Minha Casa — modelo 47.docx",
+    ],
+    [
+      "adv-imobiliario-avancado-08-condominio-regular-falta-agua-elevador-nao-funciona-multa",
+      "Direito Imobiliário Avançado — Condomínio Regular Falta Água Elevador Não Funciona Multa",
+      "home",
+      "imobiliario-avancado/08 Condomínio Regular Falta Água Elevador Não Funciona Multa — modelo 48.docx",
+    ],
+    [
+      "adv-imobiliario-avancado-09-inadimplencia-condominio-leilao-apartamento-cobranca-divida",
+      "Direito Imobiliário Avançado — Inadimplência Condomínio Leilão Apartamento Cobrança Dívida",
+      "home",
+      "imobiliario-avancado/09 Inadimplência Condomínio Leilão Apartamento Cobrança Dívida — modelo 49.docx",
+    ],
+    [
+      "adv-imobiliario-avancado-10-imovel-area-comum-condominio-vaga-garagem-indenizacao-conflito",
+      "Direito Imobiliário Avançado — Imóvel Área Comum Condomínio Vaga Garagem Indenização Conflito",
+      "home",
+      "imobiliario-avancado/10 Imóvel Área Comum Condomínio Vaga Garagem Indenização Conflito — modelo 50.docx",
+    ],
+    [
+      "adv-trabalho-avancado-clt-01-reconhecimento-vinculo-empregaticio-15-anos-pj-nao-existe",
+      "Direito do Trabalho Avançado CLT — Reconhecimento Vínculo Empregatício 15 Anos PJ Não Existe",
+      "hammer",
+      "trabalho-avancado-clt/01 Reconhecimento Vínculo Empregatício 15 Anos PJ Não Existe — modelo 51.docx",
+    ],
+    [
+      "adv-trabalho-avancado-clt-02-calculo-rescisao-indireta-demitida-sem-justa-causa-indenizacao",
+      "Direito do Trabalho Avançado CLT — Cálculo Rescisão Indireta Demitida Sem Justa Causa Indenização",
+      "hammer",
+      "trabalho-avancado-clt/02 Cálculo Rescisão Indireta Demitida Sem Justa Causa Indenização — modelo 52.docx",
+    ],
+    [
+      "adv-trabalho-avancado-clt-03-horas-extras-nao-pagas-50-100-dsr-acumulado-indenizacao",
+      "Direito do Trabalho Avançado CLT — Horas Extras Não Pagas 50% 100% DSR Acumulado Indenização",
+      "hammer",
+      "trabalho-avancado-clt/03 Horas Extras Não Pagas 50% 100% DSR Acumulado Indenização — modelo 53.docx",
+    ],
+    [
+      "adv-trabalho-avancado-clt-04-adicional-periculosidade-insalubridade-18-30-grau-medico-nao",
+      "Direito do Trabalho Avançado CLT — Adicional Periculosidade Insalubridade 18% 30% Grau Médico Não",
+      "hammer",
+      "trabalho-avancado-clt/04 Adicional Periculosidade Insalubridade 18% 30% Grau Médico Não — modelo 54.docx",
+    ],
+    [
+      "adv-trabalho-avancado-clt-05-intervalo-intrajornada-almoco-1-hora-nao-concedido-trabalhou",
+      "Direito do Trabalho Avançado CLT — Intervalo Intrajornada Almoço 1 Hora Não Concedido Trabalhou",
+      "hammer",
+      "trabalho-avancado-clt/05 Intervalo Intrajornada Almoço 1 Hora Não Concedido Trabalhou — modelo 55.docx",
+    ],
+    [
+      "adv-trabalho-avancado-clt-06-descanso-semanal-remunerado-dsr-feriado-nao-pagou-dobrado",
+      "Direito do Trabalho Avançado CLT — Descanso Semanal Remunerado DSR Feriado Não Pagou Dobrado",
+      "hammer",
+      "trabalho-avancado-clt/06 Descanso Semanal Remunerado DSR Feriado Não Pagou Dobrado — modelo 56.docx",
+    ],
+    [
+      "adv-trabalho-avancado-clt-07-aviso-previo-indenizado-trabalhado-30-dias-nao-usou",
+      "Direito do Trabalho Avançado CLT — Aviso Prévio Indenizado Trabalhado 30 Dias Não Usou",
+      "hammer",
+      "trabalho-avancado-clt/07 Aviso Prévio Indenizado Trabalhado 30 Dias Não Usou — modelo 57.docx",
+    ],
+    [
+      "adv-trabalho-avancado-clt-08-decimo-terceiro-salario-13-ferias-1-3-constitucional-nao",
+      "Direito do Trabalho Avançado CLT — Décimo Terceiro Salário 13º Férias 1/3 Constitucional Não",
+      "hammer",
+      "trabalho-avancado-clt/08 Décimo Terceiro Salário 13º Férias 1/3 Constitucional Não — modelo 58.docx",
+    ],
+    [
+      "adv-trabalho-avancado-clt-09-fgts-multa-40-desligamento-sem-justa-causa-saque-seguro",
+      "Direito do Trabalho Avançado CLT — FGTS Multa 40% Desligamento Sem Justa Causa Saque Seguro",
+      "hammer",
+      "trabalho-avancado-clt/09 FGTS Multa 40% Desligamento Sem Justa Causa Saque Seguro — modelo 59.docx",
+    ],
+    [
+      "adv-trabalho-avancado-clt-10-assedio-moral-trabalho-chefe-gestor-indenizacao-material-moral",
+      "Direito do Trabalho Avançado CLT — Assédio Moral Trabalho Chefe Gestor Indenização Material Moral",
+      "hammer",
+      "trabalho-avancado-clt/10 Assédio Moral Trabalho Chefe Gestor Indenização Material Moral — modelo 60.docx",
+    ],
+    [
+      "adv-previdenciario-avancado-inss-01-revisao-beneficio-aposentadoria-inss-valor-baixo-reajuste",
+      "Direito Previdenciário Avançado INSS — Revisão Benefício Aposentadoria INSS Valor Baixo Reajuste",
+      "coins",
+      "previdenciario-avancado-inss/01 Revisão Benefício Aposentadoria INSS Valor Baixo Reajuste — modelo 61.docx",
+    ],
+    [
+      "adv-previdenciario-avancado-inss-02-aposentadoria-por-invalidez-doenca-permanente-total-beneficio",
+      "Direito Previdenciário Avançado INSS — Aposentadoria Por Invalidez Doença Permanente Total Benefício",
+      "coins",
+      "previdenciario-avancado-inss/02 Aposentadoria Por Invalidez Doença Permanente Total Benefício — modelo 62.docx",
+    ],
+    [
+      "adv-previdenciario-avancado-inss-03-auxilio-doenca-beneficio-91-dias-inss-prova-doenca-indeferido",
+      "Direito Previdenciário Avançado INSS — Auxílio Doença Benefício 91 Dias INSS Prova Doença Indeferido",
+      "coins",
+      "previdenciario-avancado-inss/03 Auxílio Doença Benefício 91 Dias INSS Prova Doença Indeferido — modelo 63.docx",
+    ],
+    [
+      "adv-previdenciario-avancado-inss-04-salario-maternidade-120-dias-mulher-gestante-adotante-inss",
+      "Direito Previdenciário Avançado INSS — Salário Maternidade 120 Dias Mulher Gestante Adotante INSS",
+      "coins",
+      "previdenciario-avancado-inss/04 Salário Maternidade 120 Dias Mulher Gestante Adotante INSS — modelo 64.docx",
+    ],
+    [
+      "adv-previdenciario-avancado-inss-05-pensao-morte-esposa-viuva-filho-menor-inss-atrasado-beneficio",
+      "Direito Previdenciário Avançado INSS — Pensão Morte Esposa Viúva Filho Menor INSS Atrasado Benefício",
+      "coins",
+      "previdenciario-avancado-inss/05 Pensão Morte Esposa Viúva Filho Menor INSS Atrasado Benefício — modelo 65.docx",
+    ],
+    [
+      "adv-previdenciario-avancado-inss-06-loas-idoso-65-anos-baixa-renda-nao-contribuintes-indenizacao",
+      "Direito Previdenciário Avançado INSS — LOAS Idoso 65 Anos Baixa Renda Não Contribuintes Indenização",
+      "coins",
+      "previdenciario-avancado-inss/06 LOAS Idoso 65 Anos Baixa Renda Não Contribuintes Indenização — modelo 66.docx",
+    ],
+    [
+      "adv-previdenciario-avancado-inss-07-loas-pessoa-com-deficiencia-bpc-beneficio-indeferido-prova",
+      "Direito Previdenciário Avançado INSS — LOAS Pessoa Com Deficiência BPC Benefício Indeferido Prova",
+      "coins",
+      "previdenciario-avancado-inss/07 LOAS Pessoa Com Deficiência BPC Benefício Indeferido Prova — modelo 67.docx",
+    ],
+    [
+      "adv-previdenciario-avancado-inss-08-aposentadoria-por-idade-62-65-anos-faltando-cnis-tempo-prova",
+      "Direito Previdenciário Avançado INSS — Aposentadoria Por Idade 62 65 Anos Faltando CNIS Tempo Prova",
+      "coins",
+      "previdenciario-avancado-inss/08 Aposentadoria Por Idade 62 65 Anos Faltando CNIS Tempo Prova — modelo 68.docx",
+    ],
+    [
+      "adv-previdenciario-avancado-inss-09-aposentadoria-tempo-contribuicao-30-35-anos-homem-mulher-prova",
+      "Direito Previdenciário Avançado INSS — Aposentadoria Tempo Contribuição 30 35 Anos Homem Mulher Prova",
+      "coins",
+      "previdenciario-avancado-inss/09 Aposentadoria Tempo Contribuição 30 35 Anos Homem Mulher Prova — modelo 69.docx",
+    ],
+    [
+      "adv-previdenciario-avancado-inss-10-plano-beneficio-inss-88-99-96-fator-previdenciario-revisao",
+      "Direito Previdenciário Avançado INSS — Plano Benefício INSS 88/99/96 Fator Previdenciário Revisão",
+      "coins",
+      "previdenciario-avancado-inss/10 Plano Benefício INSS 88/99/96 Fator Previdenciário Revisão — modelo 70.docx",
+    ],
+    [
+      "adv-tributario-municipal-estadual-federal-01-ipva-veiculo-multa-juros-indenizacao-pagamento-indevido",
+      "Direito Tributário Municipal/Estadual/Federal — IPVA Veículo Multa Juros Indenização Pagamento Indevido",
+      "building-2",
+      "tributario-municipal-estadual-federal/01 IPVA Veículo Multa Juros Indenização Pagamento Indevido — modelo 71.docx",
+    ],
+    [
+      "adv-tributario-municipal-estadual-federal-02-iptu-imovel-progressivo-multa-isencao-idoso-indenizacao",
+      "Direito Tributário Municipal/Estadual/Federal — IPTU Imóvel Progressivo Multa Isenção Idoso Indenização",
+      "building-2",
+      "tributario-municipal-estadual-federal/02 IPTU Imóvel Progressivo Multa Isenção Idoso Indenização — modelo 72.docx",
+    ],
+    [
+      "adv-tributario-municipal-estadual-federal-03-itbi-transferencia-imovel-compra-venda-doador-pagamento-indevido",
+      "Direito Tributário Municipal/Estadual/Federal — ITBI Transferência Imóvel Compra Venda Doador Pagamento Indevido",
+      "building-2",
+      "tributario-municipal-estadual-federal/03 ITBI Transferência Imóvel Compra Venda Doador Pagamento Indevido — modelo 73.docx",
+    ],
+    [
+      "adv-tributario-municipal-estadual-federal-04-ipi-imposto-produto-industrializado-restituicao-indenizacao",
+      "Direito Tributário Municipal/Estadual/Federal — IPI Imposto Produto Industrializado Restituição Indenização",
+      "building-2",
+      "tributario-municipal-estadual-federal/04 IPI Imposto Produto Industrializado Restituição Indenização — modelo 74.docx",
+    ],
+    [
+      "adv-tributario-municipal-estadual-federal-05-imposto-renda-restituicao-retido-fonte-pf-indevido-multa",
+      "Direito Tributário Municipal/Estadual/Federal — Imposto Renda Restituição Retido Fonte PF Indevido Multa",
+      "building-2",
+      "tributario-municipal-estadual-federal/05 Imposto Renda Restituição Retido Fonte PF Indevido Multa — modelo 75.docx",
+    ],
+    [
+      "adv-tributario-municipal-estadual-federal-06-multa-tributaria-municipal-agua-esgoto-iss-indenizacao",
+      "Direito Tributário Municipal/Estadual/Federal — Multa Tributária Municipal Água Esgoto ISS Indenização",
+      "building-2",
+      "tributario-municipal-estadual-federal/06 Multa Tributária Municipal Água Esgoto ISS Indenização — modelo 76.docx",
+    ],
+    [
+      "adv-tributario-municipal-estadual-federal-07-parcelamento-tributario-receita-federal-estaduais-municipais",
+      "Direito Tributário Municipal/Estadual/Federal — Parcelamento Tributário Receita Federal Estaduais Municipais",
+      "building-2",
+      "tributario-municipal-estadual-federal/07 Parcelamento Tributário Receita Federal Estaduais Municipais — modelo 77.docx",
+    ],
+    [
+      "adv-tributario-municipal-estadual-federal-08-execucao-fiscal-carteira-divida-ativa-inscricao-imovel-bem",
+      "Direito Tributário Municipal/Estadual/Federal — Execução Fiscal Carteira Dívida Ativa Inscrição Imóvel Bem",
+      "building-2",
+      "tributario-municipal-estadual-federal/08 Execução Fiscal Carteira Dívida Ativa Inscrição Imóvel Bem — modelo 78.docx",
+    ],
+    [
+      "adv-tributario-municipal-estadual-federal-09-certidao-negativa-divida-ativa-cnh-cnpj-restricao-indenizacao",
+      "Direito Tributário Municipal/Estadual/Federal — Certidão Negativa Dívida Ativa CNH CNPJ Restrição Indenização",
+      "building-2",
+      "tributario-municipal-estadual-federal/09 Certidão Negativa Dívida Ativa CNH CNPJ Restrição Indenização — modelo 79.docx",
+    ],
+    [
+      "adv-tributario-municipal-estadual-federal-10-issqn-prefeitura-servico-indenizacao-multa-cobranca-indevida",
+      "Direito Tributário Municipal/Estadual/Federal — ISSQN Prefeitura Serviço Indenização Multa Cobrança Indevida",
+      "building-2",
+      "tributario-municipal-estadual-federal/10 ISSQN Prefeitura Serviço Indenização Multa Cobrança Indevida — modelo 80.docx",
+    ],
+    [
+      "adv-penal-execucao-criminal-01-habeas-corpus-liberdade-provisoria-pessoa-presa-privada-liberdade",
+      "Direito Penal e Execução Criminal — Habeas Corpus Liberdade Provisória Persona Presa Privada Liberdade",
+      "gavel",
+      "penal-execucao-criminal/01 Habeas Corpus Liberdade Provisória Persona Presa Privada Liberdade — modelo 81.docx",
+    ],
+    [
+      "adv-penal-execucao-criminal-02-liberdade-provisoria-fianza-pagamento-multa-cautelar-pessoa",
+      "Direito Penal e Execução Criminal — Liberdade Provisória Fiança Pagamento Multa Cautelar Pessoa",
+      "gavel",
+      "penal-execucao-criminal/02 Liberdade Provisória Fiança Pagamento Multa Cautelar Pessoa — modelo 82.docx",
+    ],
+    [
+      "adv-penal-execucao-criminal-03-prisao-preventiva-injusta-cancelar-matar-anular-pedido",
+      "Direito Penal e Execução Criminal — Prisão Preventiva Injusta Cancelar Matar Anular Pedido",
+      "gavel",
+      "penal-execucao-criminal/03 Prisão Preventiva Injusta Cancelar Matar Anular Pedido — modelo 83.docx",
+    ],
+    [
+      "adv-penal-execucao-criminal-04-audiencia-custodia-flagrante-delito-pessoa-liberdade-regular",
+      "Direito Penal e Execução Criminal — Audiência Custódia Flagrante Delito Pessoa Liberdade Regular",
+      "gavel",
+      "penal-execucao-criminal/04 Audiência Custódia Flagrante Delito Pessoa Liberdade Regular — modelo 84.docx",
+    ],
+    [
+      "adv-penal-execucao-criminal-05-progressao-regime-fechado-semiaberto-aberto-pessoa-cumprindo",
+      "Direito Penal e Execução Criminal — Progressão Regime Fechado Semiaberto Aberto Pessoa Cumprindo",
+      "gavel",
+      "penal-execucao-criminal/05 Progressão Regime Fechado Semiaberto Aberto Pessoa Cumprindo — modelo 85.docx",
+    ],
+    [
+      "adv-penal-execucao-criminal-06-remicao-pena-trabalho-estudo-pessoa-presa-tempo-servido",
+      "Direito Penal e Execução Criminal — Remição Pena Trabalho Estudo Pessoa Presa Tempo Servido",
+      "gavel",
+      "penal-execucao-criminal/06 Remição Pena Trabalho Estudo Pessoa Presa Tempo Servido — modelo 86.docx",
+    ],
+    [
+      "adv-penal-execucao-criminal-07-sursis-condenacao-nao-cumprir-pena-multa-boa-conduta",
+      "Direito Penal e Execução Criminal — Sursis Condenação Não Cumprir Pena Multa Boa Conduta",
+      "gavel",
+      "penal-execucao-criminal/07 Sursis Condenação Não Cumprir Pena Multa Boa Conduta — modelo 87.docx",
+    ],
+    [
+      "adv-penal-execucao-criminal-08-multa-penal-substituir-pena-restritiva-dias-multa-indenizacao",
+      "Direito Penal e Execução Criminal — Multa Penal Substituir Pena Restritiva Dias Multa Indenização",
+      "gavel",
+      "penal-execucao-criminal/08 Multa Penal Substituir Pena Restritiva Dias Multa Indenização — modelo 88.docx",
+    ],
+    [
+      "adv-penal-execucao-criminal-09-lei-drogas-artigo-33-traficos-posse-liberdade-provisoria",
+      "Direito Penal e Execução Criminal — Lei Drogas Artigo 33 Tráficos Posse Liberdade Provisória",
+      "gavel",
+      "penal-execucao-criminal/09 Lei Drogas Artigo 33 Tráficos Posse Liberdade Provisória — modelo 89.docx",
+    ],
+    [
+      "adv-penal-execucao-criminal-10-crimes-contra-honra-calunia-difamacao-injuria-indenizacao",
+      "Direito Penal e Execução Criminal — Crimes Contra Honra Calúnia Difamação Injúria Indenização",
+      "gavel",
+      "penal-execucao-criminal/10 Crimes Contra Honra Calúnia Difamação Injúria Indenização — modelo 90.docx",
+    ],
+    [
+      "adv-consumidor-avancado-01-vicio-produto-eletronico-celular-geladeira-ar-condicionado-troca",
+      "Direito do Consumidor Avançado — Vício Produto Eletrônico Celular Geladeira Ar Condicionado Troca",
+      "shopping-bag",
+      "consumidor-avancado/01 Vício Produto Eletrônico Celular Geladeira Ar Condicionado Troca — modelo 91.docx",
+    ],
+    [
+      "adv-consumidor-avancado-02-defeito-servico-reforma-casa-empresa-construcao-indenizacao",
+      "Direito do Consumidor Avançado — Defeito Serviço Reforma Casa Empresa Construção Indenização",
+      "shopping-bag",
+      "consumidor-avancado/02 Defeito Serviço Reforma Casa Empresa Construção Indenização — modelo 92.docx",
+    ],
+    [
+      "adv-consumidor-avancado-03-oferta-enganosa-produto-mercado-pao-de-acucar-carrefour-extra",
+      "Direito do Consumidor Avançado — Oferta Enganosa Produto Mercado Pão de Açúcar Carrefour Extra",
+      "shopping-bag",
+      "consumidor-avancado/03 Oferta Enganosa Produto Mercado Pão de Açúcar Carrefour Extra — modelo 93.docx",
+    ],
+    [
+      "adv-consumidor-avancado-04-publicidade-abusiva-infantil-produto-saude-alimentacao-anuncio",
+      "Direito do Consumidor Avançado — Publicidade Abusiva Infantil Produto Saúde Alimentação Anúncio",
+      "shopping-bag",
+      "consumidor-avancado/04 Publicidade Abusiva Infantil Produto Saúde Alimentação Anúncio — modelo 94.docx",
+    ],
+    [
+      "adv-consumidor-avancado-05-pratica-abusiva-venda-casada-produto-servico-supermercado",
+      "Direito do Consumidor Avançado — Prática Abusiva Venda Casada Produto Serviço Supermercado",
+      "shopping-bag",
+      "consumidor-avancado/05 Prática Abusiva Venda Casada Produto Serviço Supermercado — modelo 95.docx",
+    ],
+    [
+      "adv-consumidor-avancado-06-produto-vencido-alimento-farmacia-restaurante-hipermercado",
+      "Direito do Consumidor Avançado — Produto Vencido Alimento Farmácia Restaurante Hipermercado",
+      "shopping-bag",
+      "consumidor-avancado/06 Produto Vencido Alimento Farmácia Restaurante Hipermercado — modelo 96.docx",
+    ],
+    [
+      "adv-consumidor-avancado-07-servico-nao-prestado-empresa-limpeza-manutencao-indenizacao",
+      "Direito do Consumidor Avançado — Serviço Não Prestado Empresa Limpeza Manutenção Indenização",
+      "shopping-bag",
+      "consumidor-avancado/07 Serviço Não Prestado Empresa Limpeza Manutenção Indenização — modelo 97.docx",
+    ],
+    [
+      "adv-consumidor-avancado-08-devolucao-dinheiro-paguei-nao-recebi-produto-servico-indenizacao",
+      "Direito do Consumidor Avançado — Devolução Dinheiro Paguei Não Recebi Produto Serviço Indenização",
+      "shopping-bag",
+      "consumidor-avancado/08 Devolução Dinheiro Paguei Não Recebi Produto Serviço Indenização — modelo 98.docx",
+    ],
+    [
+      "adv-consumidor-avancado-09-descumprimento-oferta-site-mercado-livre-magalu-extra-pedido",
+      "Direito do Consumidor Avançado — Descumprimento Oferta Site Mercado Livre Magalu Extra Pedido",
+      "shopping-bag",
+      "consumidor-avancado/09 Descumprimento Oferta Site Mercado Livre Magalu Extra Pedido — modelo 99.docx",
+    ],
+    [
+      "adv-consumidor-avancado-10-telefonia-fixa-internet-vivo-claro-tim-oi-fatura-abusiva",
+      "Direito do Consumidor Avançado — Telefonia Fixa Internet Vivo Claro Tim Oi Fatura Abusiva",
+      "shopping-bag",
+      "consumidor-avancado/10 Telefonia Fixa Internet Vivo Claro Tim Oi Fatura Abusiva — modelo 100.docx",
+    ],
+    [
+      "adv-administrativo-avancado-01-licitacao-edital-pregao-eletronico-contrato-administrativo-indenizacao",
+      "Direito Administrativo Avançado — Licitação Edital Pregão Eletrônico Contrato Administrativo Indenização",
+      "file-text",
+      "administrativo-avancado/01 Licitação Edital Pregão Eletrônico Contrato Administrativo Indenização — modelo 101.docx",
+    ],
+    [
+      "adv-administrativo-avancado-02-servidor-publico-estavel-tempo-contribuicao-aposentadoria",
+      "Direito Administrativo Avançado — Servidor Público Estável Tempo Contribuição Aposentadoria",
+      "file-text",
+      "administrativo-avancado/02 Servidor Público Estável Tempo Contribuição Aposentadoria — modelo 102.docx",
+    ],
+    [
+      "adv-administrativo-avancado-03-ato-administrativo-anulacao-revogacao-indenizacao-conselho",
+      "Direito Administrativo Avançado — Ato Administrativo Anulação Revogação Indenização Conselho",
+      "file-text",
+      "administrativo-avancado/03 Ato Administrativo Anulação Revogação Indenização Conselho — modelo 103.docx",
+    ],
+    [
+      "adv-administrativo-avancado-04-improbidade-administrativa-lei-8429-multa-indenizacao-bem",
+      "Direito Administrativo Avançado — Improbidade Administrativa Lei 8429 Multa Indenização Bem",
+      "file-text",
+      "administrativo-avancado/04 Improbidade Administrativa Lei 8429 Multa Indenização Bem — modelo 104.docx",
+    ],
+    [
+      "adv-administrativo-avancado-05-serventia-extrajudicial-cartorio-notario-registro-imoveis",
+      "Direito Administrativo Avançado — Serventia Extrajudicial Cartório Notário Registro Imóveis",
+      "file-text",
+      "administrativo-avancado/05 Serventia Extrajudicial Cartório Notário Registro Imóveis — modelo 105.docx",
+    ],
+    [
+      "adv-administrativo-avancado-06-registro-contrato-imovel-cartorio-indenizacao-erro-registro",
+      "Direito Administrativo Avançado — Registro Contrato Imóvel Cartório Indenização Erro Registro",
+      "file-text",
+      "administrativo-avancado/06 Registro Contrato Imóvel Cartório Indenização Erro Registro — modelo 106.docx",
+    ],
+    [
+      "adv-administrativo-avancado-07-protesto-cartorio-titulo-divida-indenizacao-cancelamento",
+      "Direito Administrativo Avançado — Protesto Cartório Título Dívida Indenização Cancelamento",
+      "file-text",
+      "administrativo-avancado/07 Protesto Cartório Título Dívida Indenização Cancelamento — modelo 107.docx",
+    ],
+    [
+      "adv-administrativo-avancado-08-concurso-publico-edital-anulado-vaga-espera-convocacao",
+      "Direito Administrativo Avançado — Concurso Público Edital Anulado Vaga Espera Convocação",
+      "file-text",
+      "administrativo-avancado/08 Concurso Público Edital Anulado Vaga Espera Convocação — modelo 108.docx",
+    ],
+    [
+      "adv-administrativo-avancado-09-empresa-publica-sociedade-economica-mista-funcionario-publico",
+      "Direito Administrativo Avançado — Empresa Pública Sociedade Econômica Mista Funcionário Público",
+      "file-text",
+      "administrativo-avancado/09 Empresa Pública Sociedade Econômica Mista Funcionário Público — modelo 109.docx",
+    ],
+    [
+      "adv-administrativo-avancado-10-ata-notarial-negocio-juridico-cartorio-indenizacao-testamento",
+      "Direito Administrativo Avançado — Ata Notarial Negócio Jurídico Cartório Indenização Testamento",
+      "file-text",
+      "administrativo-avancado/10 Ata Notarial Negócio Jurídico Cartório Indenização Testamento — modelo 110.docx",
+    ],
+    [
+      "adv-eleitoral-partido-01-multa-eleitoral-titulo-nao-quitar-voto-obrigatorio-justificativa",
+      "Direito Eleitoral e Partidário — Multa Eleitoral Título Não Quitar Voto Obrigatório Justificativa",
+      "vote",
+      "eleitoral-partido/01 Multa Eleitoral Título Não Quitar Voto Obrigatório Justificativa — modelo 111.docx",
+    ],
+    [
+      "adv-eleitoral-partido-02-titulo-eleitor-transferencia-municipio-urgente-nova-cidade",
+      "Direito Eleitoral e Partidário — Título Eleitor Transferência Município Urgente Nova Cidade",
+      "vote",
+      "eleitoral-partido/02 Título Eleitor Transferência Município Urgente Nova Cidade — modelo 112.docx",
+    ],
+    [
+      "adv-eleitoral-partido-03-ficha-limpa-candidato-registro-impugnacao-cassacao-mandato",
+      "Direito Eleitoral e Partidário — Ficha Limpa Candidato Registro Impugnação Cassação Mandato",
+      "vote",
+      "eleitoral-partido/03 Ficha Limpa Candidato Registro Impugnação Cassação Mandato — modelo 113.docx",
+    ],
+    [
+      "adv-eleitoral-partido-04-campanha-eleitoral-prefeito-vereador-deputado-governador",
+      "Direito Eleitoral e Partidário — Campanha Eleitoral Prefeito Vereador Deputado Governador",
+      "vote",
+      "eleitoral-partido/04 Campanha Eleitoral Prefeito Vereador Deputado Governador — modelo 114.docx",
+    ],
+    [
+      "adv-eleitoral-partido-05-propaganda-eleitoral-regular-multa-tse-tre-excesso-gastos",
+      "Direito Eleitoral e Partidário — Propaganda Eleitoral Regular Multa TSE TRE Excesso Gastos",
+      "vote",
+      "eleitoral-partido/05 Propaganda Eleitoral Regular Multa TSE TRE Excesso Gastos — modelo 115.docx",
+    ],
+    [
+      "adv-eleitoral-partido-06-doacao-eleitoral-empresa-pessoa-fisica-candidato-partido",
+      "Direito Eleitoral e Partidário — Doação Eleitoral Empresa Pessoa Física Candidato Partido",
+      "vote",
+      "eleitoral-partido/06 Doação Eleitoral Empresa Pessoa Física Candidato Partido — modelo 116.docx",
+    ],
+    [
+      "adv-eleitoral-partido-07-registro-candidatura-partido-politico-tre-tse-eleicao-2024",
+      "Direito Eleitoral e Partidário — Registro Candidatura Partido Político TRE TSE Eleição 2024",
+      "vote",
+      "eleitoral-partido/07 Registro Candidatura Partido Político TRE TSE Eleição 2024 — modelo 117.docx",
+    ],
+    [
+      "adv-eleitoral-partido-08-partido-politico-filiacao-desfiliacao-indenizacao-fundo-partidario",
+      "Direito Eleitoral e Partidário — Partido Político Filiação Desfiliação Indenização Fundo Partidário",
+      "vote",
+      "eleitoral-partido/08 Partido Político Filiação Desfiliação Indenização Fundo Partidário — modelo 118.docx",
+    ],
+    [
+      "adv-eleitoral-partido-09-voto-impresso-urna-eletronica-auditoria-tre-secao-eleitoral",
+      "Direito Eleitoral e Partidário — Voto Impresso Urna Eletrônica Auditoria TRE Seção Eleitoral",
+      "vote",
+      "eleitoral-partido/09 Voto Impresso Urna Eletrônica Auditoria TRE Seção Eleitoral — modelo 119.docx",
+    ],
+    [
+      "adv-eleitoral-partido-10-diploma-cargo-eleito-mandato-cassacao-impugnacao-resultado",
+      "Direito Eleitoral e Partidário — Diploma Cargo Eleito Mandato Cassação Impugnação Resultado",
+      "vote",
+      "eleitoral-partido/10 Diploma Cargo Eleito Mandato Cassação Impugnação Resultado — modelo 120.docx",
+    ],
+    [
+      "adv-militar-forcas-armadas-01-exercito-brasileiro-soldado-sargento-oficial-licenca-premio",
+      "Direito Militar e Forças Armadas — Exército Brasileiro Soldado Sargento Oficial Licença Prêmio",
+      "swords",
+      "militar-forcas-armadas/01 Exército Brasileiro Soldado Sargento Oficial Licença Prêmio — modelo 121.docx",
+    ],
+    [
+      "adv-militar-forcas-armadas-02-marinha-do-brasil-marinheiro-sargento-capitao-ferias-soldo",
+      "Direito Militar e Forças Armadas — Marinha do Brasil Marinheiro Sargento Capitão Férias Soldo",
+      "swords",
+      "militar-forcas-armadas/02 Marinha do Brasil Marinheiro Sargento Capitão Férias Soldo — modelo 122.docx",
+    ],
+    [
+      "adv-militar-forcas-armadas-03-aeronautica-fab-soldado-sargento-piloto-oficial-indenizacao",
+      "Direito Militar e Forças Armadas — Aeronáutica FAB Soldado Sargento Piloto Oficial Indenização",
+      "swords",
+      "militar-forcas-armadas/03 Aeronáutica FAB Soldado Sargento Piloto Oficial Indenização — modelo 123.docx",
+    ],
+    [
+      "adv-militar-forcas-armadas-04-falecimento-militar-exercito-marinha-aeronautica-pensao-militar",
+      "Direito Militar e Forças Armadas — Falecimento Militar Exército Marinha Aeronáutica Pensão Militar",
+      "swords",
+      "militar-forcas-armadas/04 Falecimento Militar Exército Marinha Aeronáutica Pensão Militar — modelo 124.docx",
+    ],
+    [
+      "adv-militar-forcas-armadas-05-auxilio-alimentacao-moradia-militar-exercito-soldado-pagamento",
+      "Direito Militar e Forças Armadas — Auxílio Alimentação Moradia Militar Exército Soldado Pagamento",
+      "swords",
+      "militar-forcas-armadas/05 Auxílio Alimentação Moradia Militar Exército Soldado Pagamento — modelo 125.docx",
+    ],
+    [
+      "adv-militar-forcas-armadas-06-inatividade-militar-reserva-remuneracao-tempo-servico-indenizacao",
+      "Direito Militar e Forças Armadas — Inatividade Militar Reserva Remuneração Tempo Serviço Indenização",
+      "swords",
+      "militar-forcas-armadas/06 Inatividade Militar Reserva Remuneração Tempo Serviço Indenização — modelo 126.docx",
+    ],
+    [
+      "adv-militar-forcas-armadas-07-stm-tja-justica-militar-inquerito-policial-militar-crime-militar",
+      "Direito Militar e Forças Armadas — STM TJA Justiça Militar Inquérito Policial Militar Crime Militar",
+      "swords",
+      "militar-forcas-armadas/07 STM TJA Justiça Militar Inquérito Policial Militar Crime Militar — modelo 127.docx",
+    ],
+    [
+      "adv-militar-forcas-armadas-08-asedio-moral-militar-exercito-hierarquia-superior-indenizacao",
+      "Direito Militar e Forças Armadas — Assédio Moral Militar Exército Hierarquia Superior Indenização",
+      "swords",
+      "militar-forcas-armadas/08 Assédio Moral Militar Exército Hierarquia Superior Indenização — modelo 128.docx",
+    ],
+    [
+      "adv-militar-forcas-armadas-09-promocao-militar-exercito-curso-formacao-sargento-oficial",
+      "Direito Militar e Forças Armadas — Promoção Militar Exército Curso Formação Sargento Oficial",
+      "swords",
+      "militar-forcas-armadas/09 Promoção Militar Exército Curso Formação Sargento Oficial — modelo 129.docx",
+    ],
+    [
+      "adv-militar-forcas-armadas-10-fundo-previdencia-militar-fpm-saldo-aposentadoria-pensao",
+      "Direito Militar e Forças Armadas — Fundo Previdência Militar FPM Saldo Aposentadoria Pensão",
+      "swords",
+      "militar-forcas-armadas/10 Fundo Previdência Militar FPM Saldo Aposentadoria Pensão — modelo 130.docx",
+    ],
+    [
+      "adv-aduaneiro-comercio-exterior-01-alfandega-importacao-exportacao-carga-conteiner-multa-siscomex",
+      "Direito Aduaneiro e Comércio Exterior — Alfândega Importação Exportação Carga Contêiner Multa SISCOMEX",
+      "ship",
+      "aduaneiro-comercio-exterior/01 Alfândega Importação Exportação Carga Contêiner Multa SISCOMEX — modelo 131.docx",
+    ],
+    [
+      "adv-aduaneiro-comercio-exterior-02-drawback-incentivo-fiscal-importacao-exportacao-restituicao-icms",
+      "Direito Aduaneiro e Comércio Exterior — Drawback Incentivo Fiscal Importação Exportação Restituição ICMS",
+      "ship",
+      "aduaneiro-comercio-exterior/02 Drawback Incentivo Fiscal Importação Exportação Restituição ICMS — modelo 132.docx",
+    ],
+    [
+      "adv-aduaneiro-comercio-exterior-03-siscomex-sisdabra-declaracao-importacao-di-come-out-li",
+      "Direito Aduaneiro e Comércio Exterior — SISCOMEX SISDRABA Declaração Importação DI Come Out LI",
+      "ship",
+      "aduaneiro-comercio-exterior/03 SISCOMEX SISDRABA Declaração Importação DI Come Out LI — modelo 133.docx",
+    ],
+    [
+      "adv-aduaneiro-comercio-exterior-04-carga-conteiner-perdida-porto-santos-rio-itaguai-indenizacao",
+      "Direito Aduaneiro e Comércio Exterior — Carga Contêiner Perdida Porto Santos Rio Itaguaí Indenização",
+      "ship",
+      "aduaneiro-comercio-exterior/04 Carga Contêiner Perdida Porto Santos Rio Itaguaí Indenização — modelo 134.docx",
+    ],
+    [
+      "adv-aduaneiro-comercio-exterior-05-taxa-thd-tcra-terminal-carga-portuaria-indenizacao-multa",
+      "Direito Aduaneiro e Comércio Exterior — Taxa THD TCRA Terminal Carga Portuária Indenização Multa",
+      "ship",
+      "aduaneiro-comercio-exterior/05 Taxa THD TCRA Terminal Carga Portuária Indenização Multa — modelo 135.docx",
+    ],
+    [
+      "adv-aduaneiro-comercio-exterior-06-bl-knowledge-conhecimento-embarque-bill-lading-carga-maritima",
+      "Direito Aduaneiro e Comércio Exterior — BL Knowledge Conhecimento Embarque Bill Lading Carga Marítima",
+      "ship",
+      "aduaneiro-comercio-exterior/06 BL Knowledge Conhecimento Embarque Bill Lading Carga Marítima — modelo 136.docx",
+    ],
+    [
+      "adv-aduaneiro-comercio-exterior-07-marpol-convencao-maritima-poluicao-navio-multa-indenizacao",
+      "Direito Aduaneiro e Comércio Exterior — MARPOL Convenção Marítima Poluição Navio Multa Indenização",
+      "ship",
+      "aduaneiro-comercio-exterior/07 MARPOL Convenção Marítima Poluição Navio Multa Indenização — modelo 137.docx",
+    ],
+    [
+      "adv-aduaneiro-comercio-exterior-08-declaracao-aduaneira-importacao-exportacao-erro-multa-rfb",
+      "Direito Aduaneiro e Comércio Exterior — Declaração Aduaneira Importação Exportação Erro Multa RFB",
+      "ship",
+      "aduaneiro-comercio-exterior/08 Declaração Aduaneira Importação Exportação Erro Multa RFB — modelo 138.docx",
+    ],
+    [
+      "adv-aduaneiro-comercio-exterior-09-importacao-produto-china-eua-europa-taxa-icms-pis-cofins",
+      "Direito Aduaneiro e Comércio Exterior — Importação Produto China EUA Europa Taxa ICMS PIS COFINS",
+      "ship",
+      "aduaneiro-comercio-exterior/09 Importação Produto China EUA Europa Taxa ICMS PIS COFINS — modelo 139.docx",
+    ],
+    [
+      "adv-aduaneiro-comercio-exterior-10-come-out-licenca-importacao-exportacao-indenizacao-produto",
+      "Direito Aduaneiro e Comércio Exterior — Come Out Licença Importação Exportação Indenização Produto",
+      "ship",
+      "aduaneiro-comercio-exterior/10 Come Out Licença Importação Exportação Indenização Produto — modelo 140.docx",
+    ],
+    [
+      "adv-propriedade-intelectual-avancado-inpi-01-registro-marca-inpi-pedido-oposicao-marca-nome-empresa",
+      "Propriedade Intelectual Avançado INPI — Registro Marca INPI Pedido Oposição Marca Nome Empresa",
+      "copyright",
+      "propriedade-intelectual-avancado-inpi/01 Registro Marca INPI Pedido Oposição Marca Nome Empresa — modelo 141.docx",
+    ],
+    [
+      "adv-propriedade-intelectual-avancado-inpi-02-patente-invencao-inpi-modelo-utilidade-registro-indenizacao",
+      "Propriedade Intelectual Avançado INPI — Patente Invenção INPI Modelo Utilidade Registro Indenização",
+      "copyright",
+      "propriedade-intelectual-avancado-inpi/02 Patente Invenção INPI Modelo Utilidade Registro Indenização — modelo 142.docx",
+    ],
+    [
+      "adv-propriedade-intelectual-avancado-inpi-03-desenho-industrial-inpi-registro-pirateado-indenizacao",
+      "Propriedade Intelectual Avançado INPI — Desenho Industrial INPI Registro Pirateado Indenização",
+      "copyright",
+      "propriedade-intelectual-avancado-inpi/03 Desenho Industrial INPI Registro Pirateado Indenização — modelo 143.docx",
+    ],
+    [
+      "adv-propriedade-intelectual-avancado-inpi-04-indicacao-geografica-queijo-vinho-cafe-produto-regiao-inpi",
+      "Propriedade Intelectual Avançado INPI — Indicação Geográfica Queijo Vinho Café Produto Região INPI",
+      "copyright",
+      "propriedade-intelectual-avancado-inpi/04 Indicação Geográfica Queijo Vinho Café Produto Região INPI — modelo 144.docx",
+    ],
+    [
+      "adv-propriedade-intelectual-avancado-inpi-05-titularidade-marca-venda-cessao-marca-contrato-registro-inpi",
+      "Propriedade Intelectual Avançado INPI — Titularidade Marca Venda Cessão Marca Contrato Registro INPI",
+      "copyright",
+      "propriedade-intelectual-avancado-inpi/05 Titularidade Marca Venda Cessão Marca Contrato Registro INPI — modelo 145.docx",
+    ],
+    [
+      "adv-propriedade-intelectual-avancado-inpi-06-oposicao-marca-terceiro-registro-conflito-marca-anterior-inpi",
+      "Propriedade Intelectual Avançado INPI — Oposição Marca Terceiro Registro Conflito Marca Anterior INPI",
+      "copyright",
+      "propriedade-intelectual-avancado-inpi/06 Oposição Marca Terceiro Registro Conflito Marca Anterior INPI — modelo 146.docx",
+    ],
+    [
+      "adv-propriedade-intelectual-avancado-inpi-07-nulidade-marca-registrada-inpi-indenizacao-ilegal-conflito",
+      "Propriedade Intelectual Avançado INPI — Nulidade Marca Registrada INPI Indenização Ilegal Conflito",
+      "copyright",
+      "propriedade-intelectual-avancado-inpi/07 Nulidade Marca Registrada INPI Indenização Ilegal Conflito — modelo 147.docx",
+    ],
+    [
+      "adv-propriedade-intelectual-avancado-inpi-08-registro-nome-empresarial-junta-comercial-marca-conflito",
+      "Propriedade Intelectual Avançado INPI — Registro Nome Empresarial Junta Comercial Marca Conflito",
+      "copyright",
+      "propriedade-intelectual-avancado-inpi/08 Registro Nome Empresarial Junta Comercial Marca Conflito — modelo 148.docx",
+    ],
+    [
+      "adv-propriedade-intelectual-avancado-inpi-09-direito-imagem-atriz-cantor-modelo-publicidade-indenizacao",
+      "Propriedade Intelectual Avançado INPI — Direito Imagem Atriz Cantor Modelo Publicidade Indenização",
+      "copyright",
+      "propriedade-intelectual-avancado-inpi/09 Direito Imagem Atriz Cantor Modelo Publicidade Indenização — modelo 149.docx",
+    ],
+    [
+      "adv-propriedade-intelectual-avancado-inpi-10-direito-personalidade-honra-nome-indenizacao-abuso-midia",
+      "Propriedade Intelectual Avançado INPI — Direito Personalidade Honra Nome Indenização Abuso Mídia",
+      "copyright",
+      "propriedade-intelectual-avancado-inpi/10 Direito Personalidade Honra Nome Indenização Abuso Mídia — modelo 150.docx",
+    ],
+    [
+      "adv-telecom-redes-sociais-avanc-01-internet-fibra-1000-mb-claro-vivo-tim-nao-entrega-qualidade",
+      "Telecom e Redes Sociais Avançado — Internet Fibra 1000MB Claro Vivo Tim Não Entrega Qualidade",
+      "wifi",
+      "telecom-redes-sociais-avanc/01 Internet Fibra 1000MB Claro Vivo Tim Não Entrega Qualidade — modelo 151.docx",
+    ],
+    [
+      "adv-telecom-redes-sociais-avanc-02-plano-controle-celular-tim-claro-vivo-oi-melhor-que-plano-pos",
+      "Telecom e Redes Sociais Avançado — Plano Controle Celular Tim Claro Vivo Oi Melhor Que Plano Pós",
+      "wifi",
+      "telecom-redes-sociais-avanc/02 Plano Controle Celular Tim Claro Vivo Oi Melhor Que Plano Pós — modelo 152.docx",
+    ],
+    [
+      "adv-telecom-redes-sociais-avanc-03-celular-bloqueado-injustificadamente-operadora-clonagem-chip",
+      "Telecom e Redes Sociais Avançado — Celular Bloqueado Injustificadamente Operadora Clonagem Chip",
+      "wifi",
+      "telecom-redes-sociais-avanc/03 Celular Bloqueado Injustificadamente Operadora Clonagem Chip — modelo 153.docx",
+    ],
+    [
+      "adv-telecom-redes-sociais-avanc-04-chip-clonado-operadora-golpe-sms-whatsapp-indenizacao",
+      "Telecom e Redes Sociais Avançado — Chip Clonado Operadora Golpe SMS WhatsApp Indenização",
+      "wifi",
+      "telecom-redes-sociais-avanc/04 Chip Clonado Operadora Golpe SMS WhatsApp Indenização — modelo 154.docx",
+    ],
+    [
+      "adv-telecom-redes-sociais-avanc-05-fatura-indevida-operadora-telefonica-movel-fixa-internet-multa",
+      "Telecom e Redes Sociais Avançado — Fatura Indevida Operadora Telefônica Móvel Fixa Internet Multa",
+      "wifi",
+      "telecom-redes-sociais-avanc/05 Fatura Indevida Operadora Telefônica Móvel Fixa Internet Multa — modelo 155.docx",
+    ],
+    [
+      "adv-telecom-redes-sociais-avanc-06-sac-nao-resolve-operadora-atendimento-ruim-indenizacao-anatel",
+      "Telecom e Redes Sociais Avançado — SAC Não Resolve Operadora Atendimento Ruim Indenização ANATEL",
+      "wifi",
+      "telecom-redes-sociais-avanc/06 SAC Não Resolve Operadora Atendimento Ruim Indenização ANATEL — modelo 156.docx",
+    ],
+    [
+      "adv-telecom-redes-sociais-avanc-07-anatel-multa-operadora-qualidade-sinal-internet-telefonia",
+      "Telecom e Redes Sociais Avançado — ANATEL Multa Operadora Qualidade Sinal Internet Telefonia",
+      "wifi",
+      "telecom-redes-sociais-avanc/07 ANATEL Multa Operadora Qualidade Sinal Internet Telefonia — modelo 157.docx",
+    ],
+    [
+      "adv-telecom-redes-sociais-avanc-08-plano-pos-pago-migracao-involuntaria-operadora-indenizacao",
+      "Telecom e Redes Sociais Avançado — Plano Pós Pago Migração Involuntária Operadora Indenização",
+      "wifi",
+      "telecom-redes-sociais-avanc/08 Plano Pós Pago Migração Involuntária Operadora Indenização — modelo 158.docx",
+    ],
+    [
+      "adv-telecom-redes-sociais-avanc-09-roaming-internacional-cobranca-indevida-operadora-multa",
+      "Telecom e Redes Sociais Avançado — Roaming Internacional Cobrança Indevida Operadora Multa",
+      "wifi",
+      "telecom-redes-sociais-avanc/09 Roaming Internacional Cobrança Indevida Operadora Multa — modelo 159.docx",
+    ],
+    [
+      "adv-telecom-redes-sociais-avanc-10-provedor-internet-banda-larga-rural-satellite-via-embratel",
+      "Telecom e Redes Sociais Avançado — Provedor Internet Banda Larga Rural Satélite Via Embratel",
+      "wifi",
+      "telecom-redes-sociais-avanc/10 Provedor Internet Banda Larga Rural Satélite Via Embratel — modelo 160.docx",
+    ],
+    [
+      "adv-saude-sus-plano-saude-01-plano-saude-unimed-hapvida-amil-negacao-cirurgia-exame-tratamento",
+      "Saúde SUS e Planos de Saúde — Plano Saúde Unimed Hapvida Amil Negação Cirurgia Exame Tratamento",
+      "heart-pulse",
+      "saude-sus-plano-saude/01 Plano Saúde Unimed Hapvida Amil Negação Cirurgia Exame Tratamento — modelo 161.docx",
+    ],
+    [
+      "adv-saude-sus-plano-saude-02-remedio-alto-custo-sus-nao-fornece-medicamento-especial-indenizacao",
+      "Saúde SUS e Planos de Saúde — Remédio Alto Custo SUS Não Fornece Medicamento Especial Indenização",
+      "heart-pulse",
+      "saude-sus-plano-saude/02 Remédio Alto Custo SUS Não Fornece Medicamento Especial Indenização — modelo 162.docx",
+    ],
+    [
+      "adv-saude-sus-plano-saude-03-ubs-unidade-saude-familia-nao-atende-falta-medico-enfermeiro",
+      "Saúde SUS e Planos de Saúde — UBS Unidade Saúde Família Não Atende Falta Médico Enfermeiro",
+      "heart-pulse",
+      "saude-sus-plano-saude/03 UBS Unidade Saúde Família Não Atende Falta Médico Enfermeiro — modelo 163.docx",
+    ],
+    [
+      "adv-saude-sus-plano-saude-04-hospital-publico-federal-estadual-municipal-negligencia-erro",
+      "Saúde SUS e Planos de Saúde — Hospital Público Federal Estadual Municipal Negligência Erro",
+      "heart-pulse",
+      "saude-sus-plano-saude/04 Hospital Público Federal Estadual Municipal Negligência Erro — modelo 164.docx",
+    ],
+    [
+      "adv-saude-sus-plano-saude-05-erro-medico-hospital-clinica-profissional-saude-indenizacao",
+      "Saúde SUS e Planos de Saúde — Erro Médico Hospital Clínica Profissional Saúde Indenização",
+      "heart-pulse",
+      "saude-sus-plano-saude/05 Erro Médico Hospital Clínica Profissional Saúde Indenização — modelo 165.docx",
+    ],
+    [
+      "adv-saude-sus-plano-saude-06-cirurgia-plastica-estetica-reparadora-indenizacao-erro-mortal",
+      "Saúde SUS e Planos de Saúde — Cirurgia Plástica Estética Reparadora Indenização Erro Mortal",
+      "heart-pulse",
+      "saude-sus-plano-saude/06 Cirurgia Plástica Estética Reparadora Indenização Erro Mortal — modelo 166.docx",
+    ],
+    [
+      "adv-saude-sus-plano-saude-07-exame-medico-hospital-clinica-laboratorio-resultado-errado",
+      "Saúde SUS e Planos de Saúde — Exame Médico Hospital Clínica Laboratório Resultado Errado",
+      "heart-pulse",
+      "saude-sus-plano-saude/07 Exame Médico Hospital Clínica Laboratório Resultado Errado — modelo 167.docx",
+    ],
+    [
+      "adv-saude-sus-plano-saude-08-lista-transplante-orgaos-sus-cnh-doacao-orgaos-medula-ossea",
+      "Saúde SUS e Planos de Saúde — Lista Transplante Órgãos SUS CNH Doação Órgãos Medula Óssea",
+      "heart-pulse",
+      "saude-sus-plano-saude/08 Lista Transplante Órgãos SUS CNH Doação Órgãos Medula Óssea — modelo 168.docx",
+    ],
+    [
+      "adv-saude-sus-plano-saude-09-ans-multa-operadora-plano-saude-reajuste-abusivo-mensalidade",
+      "Saúde SUS e Planos de Saúde — ANS Multa Operadora Plano Saúde Reajuste Abusivo Mensalidade",
+      "heart-pulse",
+      "saude-sus-plano-saude/09 ANS Multa Operadora Plano Saúde Reajuste Abusivo Mensalidade — modelo 169.docx",
+    ],
+    [
+      "adv-saude-sus-plano-saude-10-vacina-sus-gripe-pandemia-covid-nao-recebeu-ubs-indenizacao",
+      "Saúde SUS e Planos de Saúde — Vacina SUS Gripe Pandemia COVID Não Recebeu UBS Indenização",
+      "heart-pulse",
+      "saude-sus-plano-saude/10 Vacina SUS Gripe Pandemia COVID Não Recebeu UBS Indenização — modelo 170.docx",
+    ],
+    [
+      "adv-seguros-previdencia-privada-01-seguro-auto-porto-seguro-bradesco-allianz-ituran-sinistro-recusa",
+      "Seguros e Previdência Privada — Seguro Auto Porto Seguro Bradesco Allianz Ituran Sinistro Recusa",
+      "shield",
+      "seguros-previdencia-privada/01 Seguro Auto Porto Seguro Bradesco Allianz Ituran Sinistro Recusa — modelo 171.docx",
+    ],
+    [
+      "adv-seguros-previdencia-privada-02-indenizacao-seguro-auto-roubo-furto-colisao-perda-total-valor",
+      "Seguros e Previdência Privada — Indenização Seguro Auto Roubo Furto Colisão Perda Total Valor",
+      "shield",
+      "seguros-previdencia-privada/02 Indenização Seguro Auto Roubo Furto Colisão Perda Total Valor — modelo 172.docx",
+    ],
+    [
+      "adv-seguros-previdencia-privada-03-seguro-vida-saude-hospitalar-indenizacao-falecimento-beneficiario",
+      "Seguros e Previdência Privada — Seguro Vida Saúde Hospitalar Indenização Falecimento Beneficiário",
+      "shield",
+      "seguros-previdencia-privada/03 Seguro Vida Saúde Hospitalar Indenização Falecimento Beneficiário — modelo 173.docx",
+    ],
+    [
+      "adv-seguros-previdencia-privada-04-seguro-residencial-incendio-roubo-furto-indenizacao-bem",
+      "Seguros e Previdência Privada — Seguro Residencial Incêndio Roubo Furto Indenização Bem",
+      "shield",
+      "seguros-previdencia-privada/04 Seguro Residencial Incêndio Roubo Furto Indenização Bem — modelo 174.docx",
+    ],
+    [
+      "adv-seguros-previdencia-privada-05-previdencia-privada-pgbl-vgbl-bradesco-itau-realizar-resgate",
+      "Seguros e Previdência Privada — Previdência Privada PGBL VGBL Bradesco Itaú Realizar Resgate",
+      "shield",
+      "seguros-previdencia-privada/05 Previdência Privada PGBL VGBL Bradesco Itaú Realizar Resgate — modelo 175.docx",
+    ],
+    [
+      "adv-seguros-previdencia-privada-06-plano-funerario-seguro-empresa-recusa-beneficio-familia",
+      "Seguros e Previdência Privada — Plano Funerário Seguro Empresa Recusa Benefício Família",
+      "shield",
+      "seguros-previdencia-privada/06 Plano Funerário Seguro Empresa Recusa Benefício Família — modelo 176.docx",
+    ],
+    [
+      "adv-seguros-previdencia-privada-07-seguro-desemprego-caixa-bb-itau-bradesco-beneficio-parcela",
+      "Seguros e Previdência Privada — Seguro Desemprego Caixa BB Itaú Bradesco Benefício Parcela",
+      "shield",
+      "seguros-previdencia-privada/07 Seguro Desemprego Caixa BB Itaú Bradesco Benefício Parcela — modelo 177.docx",
+    ],
+    [
+      "adv-seguros-previdencia-privada-08-seguro-viagem-internacional-mala-perdida-medico-emergencia",
+      "Seguros e Previdência Privada — Seguro Viagem Internacional Mala Perdida Médico Emergência",
+      "shield",
+      "seguros-previdencia-privada/08 Seguro Viagem Internacional Mala Perdida Médico Emergência — modelo 178.docx",
+    ],
+    [
+      "adv-seguros-previdencia-privada-09-indenizacao-sinistro-seguro-carga-caminhao-frete-transportadora",
+      "Seguros e Previdência Privada — Indenização Sinistro Seguro Carga Caminhão Frete Transportadora",
+      "shield",
+      "seguros-previdencia-privada/09 Indenização Sinistro Seguro Carga Caminhão Frete Transportadora — modelo 179.docx",
+    ],
+    [
+      "adv-seguros-previdencia-privada-10-susep-multa-seguradora-indenizacao-sinistro-nao-pago",
+      "Seguros e Previdência Privada — SUSEP Multa Seguradora Indenização Sinistro Não Pago",
+      "shield",
+      "seguros-previdencia-privada/10 SUSEP Multa Seguradora Indenização Sinistro Não Pago — modelo 180.docx",
+    ],
+    [
+      "adv-societario-empresarial-01-constituicao-empresa-ltda-mei-slu-sociedade-unipessoal-junta",
+      "Direito Societário e Empresarial — Constituição Empresa LTDA MEI SLU Sociedade Unipessoal Junta",
+      "building-2",
+      "societario-empresarial/01 Constituição Empresa LTDA MEI SLU Sociedade Unipessoal Junta — modelo 181.docx",
+    ],
+    [
+      "adv-societario-empresarial-02-alteracao-contratual-sociedade-ltda-aumento-capital-social",
+      "Direito Societário e Empresarial — Alteração Contratual Sociedade LTDA Aumento Capital Social",
+      "building-2",
+      "societario-empresarial/02 Alteração Contratual Sociedade LTDA Aumento Capital Social — modelo 182.docx",
+    ],
+    [
+      "adv-societario-empresarial-03-dissolucao-sociedade-empresa-liquidacao-encerramento-atividades",
+      "Direito Societário e Empresarial — Dissolução Sociedade Empresa Liquidação Encerramento Atividades",
+      "building-2",
+      "societario-empresarial/03 Dissolução Sociedade Empresa Liquidação Encerramento Atividades — modelo 183.docx",
+    ],
+    [
+      "adv-societario-empresarial-04-distribuicao-lucros-empresa-socios-dividendos-indenizacao-socio",
+      "Direito Societário e Empresarial — Distribuição Lucros Empresa Sócios Dividendos Indenização Sócio",
+      "building-2",
+      "societario-empresarial/04 Distribuição Lucros Empresa Sócios Dividendos Indenização Sócio — modelo 184.docx",
+    ],
+    [
+      "adv-societario-empresarial-05-cotas-sociedade-ltda-transferencia-compra-venda-socio",
+      "Direito Societário e Empresarial — Cotas Sociedade LTDA Transferência Compra Venda Sócio",
+      "building-2",
+      "societario-empresarial/05 Cotas Sociedade LTDA Transferência Compra Venda Sócio — modelo 185.docx",
+    ],
+    [
+      "adv-societario-empresarial-06-socio-gerente-sociedade-ltda-responsabilidade-indenizacao",
+      "Direito Societário e Empresarial — Sócio Gerente Sociedade LTDA Responsabilidade Indenização",
+      "building-2",
+      "societario-empresarial/06 Sócio Gerente Sociedade LTDA Responsabilidade Indenização — modelo 186.docx",
+    ],
+    [
+      "adv-societario-empresarial-07-cnpj-invalido-empresa-baixada-injustificadamente-receita",
+      "Direito Societário e Empresarial — CNPJ Inválido Empresa Baixada Injustificadamente Receita",
+      "building-2",
+      "societario-empresarial/07 CNPJ Inválido Empresa Baixada Injustificadamente Receita — modelo 187.docx",
+    ],
+    [
+      "adv-societario-empresarial-08-junta-comercial-df-sp-rj-mg-registro-empresa-indenizacao",
+      "Direito Societário e Empresarial — Junta Comercial DF SP RJ MG Registro Empresa Indenização",
+      "building-2",
+      "societario-empresarial/08 Junta Comercial DF SP RJ MG Registro Empresa Indenização — modelo 188.docx",
+    ],
+    [
+      "adv-societario-empresarial-09-recuperacao-judicial-empresa-falencia-lei-11101-2005",
+      "Direito Societário e Empresarial — Recuperação Judicial Empresa Falência Lei 11101-2005",
+      "building-2",
+      "societario-empresarial/09 Recuperação Judicial Empresa Falência Lei 11101-2005 — modelo 189.docx",
+    ],
+    [
+      "adv-societario-empresarial-10-falencia-empresa-devedor-credor-concurso-credores-massa-falida",
+      "Direito Societário e Empresarial — Falência Empresa Devedor Credor Concurso Credores Massa Falida",
+      "building-2",
+      "societario-empresarial/10 Falência Empresa Devedor Credor Concurso Credores Massa Falida — modelo 190.docx",
+    ],
+    [
+      "adv-trabalho-domestico-01-empregada-domestica-lei-complementar-150-2015-rescisao-indenizacao",
+      "Direito do Trabalho Doméstico — Empregada Doméstica Lei Complementar 150/2015 Rescisão Indenização",
+      "user-round-check",
+      "trabalho-domestico/01 Empregada Doméstica Lei Complementar 150/2015 Rescisão Indenização — modelo 191.docx",
+    ],
+    [
+      "adv-trabalho-domestico-02-baba-empregada-domestica-bebe-crianca-rescisao-justa-causa",
+      "Direito do Trabalho Doméstico — Babá Empregada Doméstica Bebê Criança Rescisão Justa Causa",
+      "user-round-check",
+      "trabalho-domestico/02 Babá Empregada Doméstica Bebê Criança Rescisão Justa Causa — modelo 192.docx",
+    ],
+    [
+      "adv-trabalho-domestico-03-motorista-domestico-empregado-residencia-indenizacao-rescisao",
+      "Direito do Trabalho Doméstico — Motorista Doméstico Empregado Residência Indenização Rescisão",
+      "user-round-check",
+      "trabalho-domestico/03 Motorista Doméstico Empregado Residência Indenização Rescisão — modelo 193.docx",
+    ],
+    [
+      "adv-trabalho-domestico-04-faxineira-domestica-limpeza-casa-residencia-rescisao-indenizacao",
+      "Direito do Trabalho Doméstico — Faxineira Doméstica Limpeza Casa Residência Rescisão Indenização",
+      "user-round-check",
+      "trabalho-domestico/04 Faxineira Doméstica Limpeza Casa Residência Rescisão Indenização — modelo 194.docx",
+    ],
+    [
+      "adv-trabalho-domestico-05-desligamento-justa-causa-empregado-domestico-indenizacao",
+      "Direito do Trabalho Doméstico — Desligamento Justa Causa Empregado Doméstico Indenização",
+      "user-round-check",
+      "trabalho-domestico/05 Desligamento Justa Causa Empregado Doméstico Indenização — modelo 195.docx",
+    ],
+    [
+      "adv-trabalho-domestico-06-calculo-rescisao-domestica-13-salario-ferias-1-3-aviso-previo",
+      "Direito do Trabalho Doméstico — Cálculo Rescisão Doméstica 13º Salário Férias 1/3 Aviso Prévio",
+      "user-round-check",
+      "trabalho-domestico/06 Cálculo Rescisão Doméstica 13º Salário Férias 1/3 Aviso Prévio — modelo 196.docx",
+    ],
+    [
+      "adv-trabalho-domestico-07-pis-domestica-empregada-carteira-trabalho-assinada-documento",
+      "Direito do Trabalho Doméstico — PIS Doméstica Empregada Carteira Trabalho Assinada Documento",
+      "user-round-check",
+      "trabalho-domestico/07 PIS Doméstica Empregada Carteira Trabalho Assinada Documento — modelo 197.docx",
+    ],
+    [
+      "adv-trabalho-domestico-08-fgts-domestico-salario-familia-empregada-domestica-rescisao",
+      "Direito do Trabalho Doméstico — FGTS Doméstico Salário Família Empregada Doméstica Rescisão",
+      "user-round-check",
+      "trabalho-domestico/08 FGTS Doméstico Salário Família Empregada Doméstica Rescisão — modelo 198.docx",
+    ],
+    [
+      "adv-trabalho-domestico-09-decimo-terceiro-salario-domestica-13-empregado-indenizacao",
+      "Direito do Trabalho Doméstico — Décimo Terceiro Salário Doméstica 13º Empregado Indenização",
+      "user-round-check",
+      "trabalho-domestico/09 Décimo Terceiro Salário Doméstica 13º Empregado Indenização — modelo 199.docx",
+    ],
+    [
+      "adv-trabalho-domestico-10-adicional-noturno-domestica-empregada-22-horas-5-horas-indenizacao",
+      "Direito do Trabalho Doméstico — Adicional Noturno Doméstica Empregada 22 Horas 5 Horas Indenização",
+      "user-round-check",
+      "trabalho-domestico/10 Adicional Noturno Doméstica Empregada 22 Horas 5 Horas Indenização — modelo 200.docx",
+    ],
+    [
+      "adv-ambiental-saneamento-01-multa-ibama-desmatamento-queimada-indenizacao-amazonia-cerrado",
+      "Direito Ambiental e Saneamento — Multa IBAMA Desmatamento Queimada Indenização Amazônia Cerrado",
+      "trees",
+      "ambiental-saneamento/01 Multa IBAMA Desmatamento Queimada Indenização Amazônia Cerrado — modelo 201.docx",
+    ],
+    [
+      "adv-ambiental-saneamento-02-poluicao-rio-lago-agua-cidade-saneamento-basico-multa",
+      "Direito Ambiental e Saneamento — Poluição Rio Lago Água Cidade Saneamento Básico Multa",
+      "trees",
+      "ambiental-saneamento/02 Poluição Rio Lago Água Cidade Saneamento Básico Multa — modelo 202.docx",
+    ],
+    [
+      "adv-ambiental-saneamento-03-saneamento-basico-falta-esgoto-agua-tratada-cedae-caesb",
+      "Direito Ambiental e Saneamento — Saneamento Básico Falta Esgoto Água Tratada Cedae Caesb",
+      "trees",
+      "ambiental-saneamento/03 Saneamento Básico Falta Esgoto Água Tratada Cedae Caesb — modelo 203.docx",
+    ],
+    [
+      "adv-ambiental-saneamento-04-agua-contaminada-capitais-interior-ribeirao-periferia-indenizacao",
+      "Direito Ambiental e Saneamento — Água Contaminada Capitais Interior Ribeirão Periferia Indenização",
+      "trees",
+      "ambiental-saneamento/04 Água Contaminada Capitais Interior Ribeirão Periferia Indenização — modelo 204.docx",
+    ],
+    [
+      "adv-ambiental-saneamento-05-aterro-sanitario-lixo-municipal-policao-ambiental-multa-smsa",
+      "Direito Ambiental e Saneamento — Aterro Sanitário Lixo Municipal Policião Ambiental Multa SMSA",
+      "trees",
+      "ambiental-saneamento/05 Aterro Sanitário Lixo Municipal Policião Ambiental Multa SMSA — modelo 205.docx",
+    ],
+    [
+      "adv-ambiental-saneamento-06-licenciamento-ambiental-empreendimento-ima-ibama-municipio",
+      "Direito Ambiental e Saneamento — Licenciamento Ambiental Empreendimento IMA IBAMA Município",
+      "trees",
+      "ambiental-saneamento/06 Licenciamento Ambiental Empreendimento IMA IBAMA Município — modelo 206.docx",
+    ],
+    [
+      "adv-ambiental-saneamento-07-eia-rima-estudo-impacto-ambiental-empreendimento-energia",
+      "Direito Ambiental e Saneamento — EIA RIMA Estudo Impacto Ambiental Empreendimento Energia",
+      "trees",
+      "ambiental-saneamento/07 EIA RIMA Estudo Impacto Ambiental Empreendimento Energia — modelo 207.docx",
+    ],
+    [
+      "adv-ambiental-saneamento-08-compensacao-ambiental-empreendimento-hidreletrica-rodovia-indenizacao",
+      "Direito Ambiental e Saneamento — Compensação Ambiental Empreendimento Hidrelétrica Rodovia Indenização",
+      "trees",
+      "ambiental-saneamento/08 Compensação Ambiental Empreendimento Hidrelétrica Rodovia Indenização — modelo 208.docx",
+    ],
+    [
+      "adv-ambiental-saneamento-09-residuo-solido-logistica-reversa-embalagem-plastico-pet",
+      "Direito Ambiental e Saneamento — Resíduo Sólido Logística Reversa Embalagem Plástico PET",
+      "trees",
+      "ambiental-saneamento/09 Resíduo Sólido Logística Reversa Embalagem Plástico PET — modelo 209.docx",
+    ],
+    [
+      "adv-ambiental-saneamento-10-recursos-hidricos-outorga-agua-ana-servico-autonomo-municipal",
+      "Direito Ambiental e Saneamento — Recursos Hídricos Outorga Água ANA Serviço Autônomo Municipal",
+      "trees",
+      "ambiental-saneamento/10 Recursos Hídricos Outorga Água ANA Serviço Autônomo Municipal — modelo 210.docx",
+    ],
+    [
+      "adv-urbanistico-municipal-01-iss-municipal-servico-empresa-indenizacao-cobranca-indevida",
+      "Direito Urbanístico e Municipal — ISS Municipal Serviço Empresa Indenização Cobrança Indevida",
+      "map",
+      "urbanistico-municipal/01 ISS Municipal Serviço Empresa Indenização Cobrança Indevida — modelo 211.docx",
+    ],
+    [
+      "adv-urbanistico-municipal-02-alvara-funcionamento-pessoa-juridica-empresa-prefeitura",
+      "Direito Urbanístico e Municipal — Alvará Funcionamento Pessoa Jurídica Empresa Prefeitura",
+      "map",
+      "urbanistico-municipal/02 Alvará Funcionamento Pessoa Jurídica Empresa Prefeitura — modelo 212.docx",
+    ],
+    [
+      "adv-urbanistico-municipal-03-edificacao-irregular-imovel-construcao-sem-alvara-multa",
+      "Direito Urbanístico e Municipal — Edificação Irregular Imóvel Construção Sem Alvará Multa",
+      "map",
+      "urbanistico-municipal/03 Edificação Irregular Imóvel Construção Sem Alvará Multa — modelo 213.docx",
+    ],
+    [
+      "adv-urbanistico-municipal-04-habite-se-imovel-construcao-prefeitura-regularizacao",
+      "Direito Urbanístico e Municipal — Habite-se Imóvel Construção Prefeitura Regularização",
+      "map",
+      "urbanistico-municipal/04 Habite-se Imóvel Construção Prefeitura Regularização — modelo 214.docx",
+    ],
+    [
+      "adv-urbanistico-municipal-05-zoneamento-municipal-plano-diretor-bairro-imovel-indenizacao",
+      "Direito Urbanístico e Municipal — Zoneamento Municipal Plano Diretor Bairro Imóvel Indenização",
+      "map",
+      "urbanistico-municipal/05 Zoneamento Municipal Plano Diretor Bairro Imóvel Indenização — modelo 215.docx",
+    ],
+    [
+      "adv-urbanistico-municipal-06-outorga-onerosa-do-direito-de-construir-imovel-area-centro",
+      "Direito Urbanístico e Municipal — Outorga Onerosa Do Direito de Construir Imóvel Área Centro",
+      "map",
+      "urbanistico-municipal/06 Outorga Onerosa Do Direito de Construir Imóvel Área Centro — modelo 216.docx",
+    ],
+    [
+      "adv-urbanistico-municipal-07-usucapiao-especial-coletivo-moradia-favela-bairro-popular",
+      "Direito Urbanístico e Municipal — Usucapião Especial Coletivo Moradia Favela Bairro Popular",
+      "map",
+      "urbanistico-municipal/07 Usucapião Especial Coletivo Moradia Favela Bairro Popular — modelo 217.docx",
+    ],
+    [
+      "adv-urbanistico-municipal-08-regularizacao-fundiaria-imovel-loteamento-orgaos-municipais",
+      "Direito Urbanístico e Municipal — Regularização Fundiária Imóvel Loteamento Órgãos Municipais",
+      "map",
+      "urbanistico-municipal/08 Regularização Fundiária Imóvel Loteamento Órgãos Municipais — modelo 218.docx",
+    ],
+    [
+      "adv-urbanistico-municipal-09-reassentamento-familia-habitacao-cdh-mcmv-minha-casa-minha-vida",
+      "Direito Urbanístico e Municipal — Reassentamento Família Habitação CDH MCMV Minha Casa Minha Vida",
+      "map",
+      "urbanistico-municipal/09 Reassentamento Família Habitação CDH MCMV Minha Casa Minha Vida — modelo 219.docx",
+    ],
+    [
+      "adv-urbanistico-municipal-10-direito-a-moradia-habitacao-popular-prefeitura-assistencia-social",
+      "Direito Urbanístico e Municipal — Direito a Moradia Habitação Popular Prefeitura Assistência Social",
+      "map",
+      "urbanistico-municipal/10 Direito a Moradia Habitação Popular Prefeitura Assistência Social — modelo 220.docx",
+    ],
+    [
+      "adv-concorrencia-antitruste-cade-01-acordo-acaracao-cartel-preco-supermercado-combustivel-gasolina",
+      "Concorrência e Antitruste CADE — Acordo Acareação Cartel Preço Supermercado Combustível Gasolina",
+      "scale",
+      "concorrencia-antitruste-cade/01 Acordo Acareação Cartel Preço Supermercado Combustível Gasolina — modelo 221.docx",
+    ],
+    [
+      "adv-concorrencia-antitruste-cade-02-abuso-posicao-dominante-empresa-grande-mercado-micro-pequena",
+      "Concorrência e Antitruste CADE — Abuso Posição Dominante Empresa Grande Mercado Micro Pequena",
+      "scale",
+      "concorrencia-antitruste-cade/02 Abuso Posição Dominante Empresa Grande Mercado Micro Pequena — modelo 222.docx",
+    ],
+    [
+      "adv-concorrencia-antitruste-cade-03-preco-predatorio-venda-abaixo-custo-empresa-concorrente",
+      "Concorrência e Antitruste CADE — Preço Predatório Venda Abaixo Custo Empresa Concorrente",
+      "scale",
+      "concorrencia-antitruste-cade/03 Preço Predatório Venda Abaixo Custo Empresa Concorrente — modelo 223.docx",
+    ],
+    [
+      "adv-concorrencia-antitruste-cade-04-barreira-entrada-mercado-nova-empresa-franquia-servico",
+      "Concorrência e Antitruste CADE — Barreira Entrada Mercado Nova Empresa Franquia Serviço",
+      "scale",
+      "concorrencia-antitruste-cade/04 Barreira Entrada Mercado Nova Empresa Franquia Serviço — modelo 224.docx",
+    ],
+    [
+      "adv-concorrencia-antitruste-cade-05-fusao-aquisicao-empresa-aprovacao-cade-concentracao-mercado",
+      "Concorrência e Antitruste CADE — Fusão Aquisição Empresa Aprovação CADE Concentração Mercado",
+      "scale",
+      "concorrencia-antitruste-cade/05 Fusão Aquisição Empresa Aprovação CADE Concentração Mercado — modelo 225.docx",
+    ],
+    [
+      "adv-concorrencia-antitruste-cade-06-processo-cade-cartel-supermercado-cimento-saude-educacao",
+      "Concorrência e Antitruste CADE — Processo CADE Cartel Supermercado Cimento Saúde Educação",
+      "scale",
+      "concorrencia-antitruste-cade/06 Processo CADE Cartel Supermercado Cimento Saúde Educação — modelo 226.docx",
+    ],
+    [
+      "adv-concorrencia-antitruste-cade-07-multa-cade-empresa-concorrencia-desleal-pratica-abusiva",
+      "Concorrência e Antitruste CADE — Multa CADE Empresa Concorrência Desleal Prática Abusiva",
+      "scale",
+      "concorrencia-antitruste-cade/07 Multa CADE Empresa Concorrência Desleal Prática Abusiva — modelo 227.docx",
+    ],
+    [
+      "adv-concorrencia-antitruste-cade-08-defesa-consumidor-supermercado-pao-acucar-carrefour-atacadao",
+      "Concorrência e Antitruste CADE — Defesa Consumidor Supermercado Pão Açúcar Carrefour Atacadão",
+      "scale",
+      "concorrencia-antitruste-cade/08 Defesa Consumidor Supermercado Pão Açúcar Carrefour Atacadão — modelo 228.docx",
+    ],
+    [
+      "adv-concorrencia-antitruste-cade-09-concorrencia-desleal-marketing-publicidade-difamacao-empresa",
+      "Concorrência e Antitruste CADE — Concorrência Desleal Marketing Publicidade Difamação Empresa",
+      "scale",
+      "concorrencia-antitruste-cade/09 Concorrência Desleal Marketing Publicidade Difamação Empresa — modelo 229.docx",
+    ],
+    [
+      "adv-concorrencia-antitruste-cade-10-conselho-administrativo-defesa-economica-cade-recurso-decisao",
+      "Concorrência e Antitruste CADE — Conselho Administrativo Defesa Econômica CADE Recurso Decisão",
+      "scale",
+      "concorrencia-antitruste-cade/10 Conselho Administrativo Defesa Econômica CADE Recurso Decisão — modelo 230.docx",
+    ],
+    [
+      "adv-transito-detran-veiculo-01-multa-transito-detran-df-sp-rj-mg-cnh-pontuacao-indenizacao",
+      "Direito de Trânsito e DETRAN — Multa Trânsito DETRAN DF SP RJ MG CNH Pontuação Indenização",
+      "car-front",
+      "transito-detran-veiculo/01 Multa Trânsito DETRAN DF SP RJ MG CNH Pontuação Indenização — modelo 231.docx",
+    ],
+    [
+      "adv-transito-detran-veiculo-02-pontuacao-cnh-pontos-detran-indenizacao-multa-injusta",
+      "Direito de Trânsito e DETRAN — Pontuação CNH Pontos DETRAN Indenização Multa Injusta",
+      "car-front",
+      "transito-detran-veiculo/02 Pontuação CNH Pontos DETRAN Indenização Multa Injusta — modelo 232.docx",
+    ],
+    [
+      "adv-transito-detran-veiculo-03-licenciamento-veiculo-anual-detran-dpvat-ipva-indenizacao",
+      "Direito de Trânsito e DETRAN — Licenciamento Veículo Anual DETRAN DPVAT IPVA Indenização",
+      "car-front",
+      "transito-detran-veiculo/03 Licenciamento Veículo Anual DETRAN DPVAT IPVA Indenização — modelo 233.docx",
+    ],
+    [
+      "adv-transito-detran-veiculo-04-apreensao-carro-moto-detran-guincho-indenizacao-documentacao",
+      "Direito de Trânsito e DETRAN — Apreensão Carro Moto DETRAN Guincho Indenização Documentação",
+      "car-front",
+      "transito-detran-veiculo/04 Apreensão Carro Moto DETRAN Guincho Indenização Documentação — modelo 234.docx",
+    ],
+    [
+      "adv-transito-detran-veiculo-05-documentacao-veiculo-transferencia-compra-venda-detran",
+      "Direito de Trânsito e DETRAN — Documentação Veículo Transferência Compra Venda DETRAN",
+      "car-front",
+      "transito-detran-veiculo/05 Documentação Veículo Transferência Compra Venda DETRAN — modelo 235.docx",
+    ],
+    [
+      "adv-transito-detran-veiculo-06-seguro-dpvat-indenizacao-acidente-transito-vitima-morte-invalidez",
+      "Direito de Trânsito e DETRAN — Seguro DPVAT Indenização Acidente Trânsito Vítima Morte Invalidez",
+      "car-front",
+      "transito-detran-veiculo/06 Seguro DPVAT Indenização Acidente Trânsito Vítima Morte Invalidez — modelo 236.docx",
+    ],
+    [
+      "adv-transito-detran-veiculo-07-indenizacao-acidente-transito-carro-moto-onibus-caminhao",
+      "Direito de Trânsito e DETRAN — Indenização Acidente Trânsito Carro Moto Ônibus Caminhão",
+      "car-front",
+      "transito-detran-veiculo/07 Indenização Acidente Trânsito Carro Moto Ônibus Caminhão — modelo 237.docx",
+    ],
+    [
+      "adv-transito-detran-veiculo-08-recurso-multa-jari-detran-multa-invalida-velocidade-estacionamento",
+      "Direito de Trânsito e DETRAN — Recurso Multa JARI DETRAN Multa Inválida Velocidade Estacionamento",
+      "car-front",
+      "transito-detran-veiculo/08 Recurso Multa JARI DETRAN Multa Inválida Velocidade Estacionamento — modelo 238.docx",
+    ],
+    [
+      "adv-transito-detran-veiculo-09-lei-seca-12-2008-9099-alcoolemia-etilometro-multa-cnh",
+      "Direito de Trânsito e DETRAN — Lei Seca 12.2008/9099 Alcoolemia Etilômetro Multa CNH",
+      "car-front",
+      "transito-detran-veiculo/09 Lei Seca 12.2008/9099 Alcoolemia Etilômetro Multa CNH — modelo 239.docx",
+    ],
+    [
+      "adv-transito-detran-veiculo-10-transporte-passageiro-onibus-urbano-metro-df-transporte-app",
+      "Direito de Trânsito e DETRAN — Transporte Passageiro Ônibus Urbano Metrô DF Transporte App",
+      "car-front",
+      "transito-detran-veiculo/10 Transporte Passageiro Ônibus Urbano Metrô DF Transporte App — modelo 240.docx",
+    ],
+    [
+      "adv-educacional-ensino-superior-01-faculdade-privada-universidade-estacio-unb-mensalidade-abusiva",
+      "Direito Educacional e Ensino Superior — Faculdade Privada Universidade Estácio UnB Mensalidade Abusiva",
+      "graduation-cap",
+      "educacional-ensino-superior/01 Faculdade Privada Universidade Estácio UnB Mensalidade Abusiva — modelo 241.docx",
+    ],
+    [
+      "adv-educacional-ensino-superior-02-fies-proeducacao-reestruturacao-multa-juros-educacao-superior",
+      "Direito Educacional e Ensino Superior — FIES Pro Educação Reestruturação Multa Juros Educação Superior",
+      "graduation-cap",
+      "educacional-ensino-superior/02 FIES Pro Educação Reestruturação Multa Juros Educação Superior — modelo 242.docx",
+    ],
+    [
+      "adv-educacional-ensino-superior-03-prouni-bolsa-estudo-universidade-publica-privada-indenizacao",
+      "Direito Educacional e Ensino Superior — PROUNI Bolsa Estudo Universidade Pública Privada Indenização",
+      "graduation-cap",
+      "educacional-ensino-superior/03 PROUNI Bolsa Estudo Universidade Pública Privada Indenização — modelo 243.docx",
+    ],
+    [
+      "adv-educacional-ensino-superior-04-bolsa-familia-beneficio-auxilio-brasil-cadunico-indenizacao",
+      "Direito Educacional e Ensino Superior — Bolsa Família Benefício Auxílio Brasil CadÚnico Indenização",
+      "graduation-cap",
+      "educacional-ensino-superior/04 Bolsa Família Benefício Auxílio Brasil CadÚnico Indenização — modelo 244.docx",
+    ],
+    [
+      "adv-educacional-ensino-superior-05-escola-particular-ensino-medio-fundamental-mensalidade-escola",
+      "Direito Educacional e Ensino Superior — Escola Particular Ensino Médio Fundamental Mensalidade Escola",
+      "graduation-cap",
+      "educacional-ensino-superior/05 Escola Particular Ensino Médio Fundamental Mensalidade Escola — modelo 245.docx",
+    ],
+    [
+      "adv-educacional-ensino-superior-06-material-escolar-colegio-escola-material-obrigatorio-indenizacao",
+      "Direito Educacional e Ensino Superior — Material Escolar Colégio Escola Material Obrigatório Indenização",
+      "graduation-cap",
+      "educacional-ensino-superior/06 Material Escolar Colégio Escola Material Obrigatório Indenização — modelo 246.docx",
+    ],
+    [
+      "adv-educacional-ensino-superior-07-enade-mec-curso-superior-faculdade-universidade-colacao-grau",
+      "Direito Educacional e Ensino Superior — ENADE MEC Curso Superior Faculdade Universidade Colação Grau",
+      "graduation-cap",
+      "educacional-ensino-superior/07 ENADE MEC Curso Superior Faculdade Universidade Colação Grau — modelo 247.docx",
+    ],
+    [
+      "adv-educacional-ensino-superior-08-colacao-grau-universidade-faculdade-diploma-curso-superior",
+      "Direito Educacional e Ensino Superior — Colação Grau Universidade Faculdade Diploma Curso Superior",
+      "graduation-cap",
+      "educacional-ensino-superior/08 Colação Grau Universidade Faculdade Diploma Curso Superior — modelo 248.docx",
+    ],
+    [
+      "adv-educacional-ensino-superior-09-diploma-curso-tecnologo-superior-registro-mec-capes-indenizacao",
+      "Direito Educacional e Ensino Superior — Diploma Curso Tecnólogo Superior Registro MEC CAPES Indenização",
+      "graduation-cap",
+      "educacional-ensino-superior/09 Diploma Curso Tecnólogo Superior Registro MEC CAPES Indenização — modelo 249.docx",
+    ],
+    [
+      "adv-educacional-ensino-superior-10-educacao-jovens-adultos-eja-ensino-medio-fundamental",
+      "Direito Educacional e Ensino Superior — Educação Jovens Adultos EJA Ensino Médio Fundamental",
+      "graduation-cap",
+      "educacional-ensino-superior/10 Educação Jovens Adultos EJA Ensino Médio Fundamental — modelo 250.docx",
+    ],
+    [
+      "adv-alimentar-agropecuario-avancado-01-anvisa-rotulagem-produto-alimento-padaria-supermercado-indenizacao",
+      "Direito Alimentar e Agropecuário Avançado — ANVISA Rotulagem Produto Alimento Padaria Supermercado Indenização",
+      "utensils",
+      "alimentar-agropecuario-avancado/01 ANVISA Rotulagem Produto Alimento Padaria Supermercado Indenização — modelo 251.docx",
+    ],
+    [
+      "adv-alimentar-agropecuario-avancado-02-transgenico-soja-milho-alimento-nao-rotulado-ctnbio-indenizacao",
+      "Direito Alimentar e Agropecuário Avançado — Transgênico Soja Milho Alimento Não Rotulado CTNBio Indenização",
+      "utensils",
+      "alimentar-agropecuario-avancado/02 Transgênico Soja Milho Alimento Não Rotulado CTNBio Indenização — modelo 252.docx",
+    ],
+    [
+      "adv-alimentar-agropecuario-avancado-03-agrotoxico-alimento-hortifruti-fruta-legume-contaminacao",
+      "Direito Alimentar e Agropecuário Avançado — Agrotóxico Alimento Hortifrutti Fruta Legume Contaminação",
+      "utensils",
+      "alimentar-agropecuario-avancado/03 Agrotóxico Alimento Hortifrutti Fruta Legume Contaminação — modelo 253.docx",
+    ],
+    [
+      "adv-alimentar-agropecuario-avancado-04-alimento-contaminacao-restaurante-lanchonete-hamburgueria-dt",
+      "Direito Alimentar e Agropecuário Avançado — Alimento Contaminação Restaurante Lanchonete Hamburgueria DT",
+      "utensils",
+      "alimentar-agropecuario-avancado/04 Alimento Contaminação Restaurante Lanchonete Hamburgueria DT — modelo 254.docx",
+    ],
+    [
+      "adv-alimentar-agropecuario-avancado-05-vigilancia-sanitaria-visa-municipal-estadual-anvisa-restaurante",
+      "Direito Alimentar e Agropecuário Avançado — Vigilância Sanitária VISA Municipal Estadual ANVISA Restaurante",
+      "utensils",
+      "alimentar-agropecuario-avancado/05 Vigilância Sanitária VISA Municipal Estadual ANVISA Restaurante — modelo 255.docx",
+    ],
+    [
+      "adv-alimentar-agropecuario-avancado-06-mapa-inspecao-federal-carne-bovina-suina-ave-sif-industria",
+      "Direito Alimentar e Agropecuário Avançado — MAPA Inspeção Federal Carne Bovina Suína Ave SIF Indústria",
+      "utensils",
+      "alimentar-agropecuario-avancado/06 MAPA Inspeção Federal Carne Bovina Suína Ave SIF Indústria — modelo 256.docx",
+    ],
+    [
+      "adv-alimentar-agropecuario-avancado-07-sif-sisp-siesprodutos-origem-animal-carne-leite-ovo",
+      "Direito Alimentar e Agropecuário Avançado — SIF SISP SIES Produtos Origem Animal Carne Leite Ovo",
+      "utensils",
+      "alimentar-agropecuario-avancado/07 SIF SISP SIES Produtos Origem Animal Carne Leite Ovo — modelo 257.docx",
+    ],
+    [
+      "adv-alimentar-agropecuario-avancado-08-leite-adulterado-agua-urea-formal-deido-industria-laticinios",
+      "Direito Alimentar e Agropecuário Avançado — Leite Adulterado Água Uréia Formaldeído Indústria Laticínios",
+      "utensils",
+      "alimentar-agropecuario-avancado/08 Leite Adulterado Água Uréia Formaldeído Indústria Laticínios — modelo 258.docx",
+    ],
+    [
+      "adv-alimentar-agropecuario-avancado-09-carne-contaminada-salmonela-e-coli-supermercado-acougue-indenizacao",
+      "Direito Alimentar e Agropecuário Avançado — Carne Contaminada Salmonela E. Coli Supermercado Açougue Indenização",
+      "utensils",
+      "alimentar-agropecuario-avancado/09 Carne Contaminada Salmonela E. Coli Supermercado Açougue Indenização — modelo 259.docx",
+    ],
+    [
+      "adv-alimentar-agropecuario-avancado-10-agrotoxico-proibido-ibama-anvisa-mapa-multa-indenizacao",
+      "Direito Alimentar e Agropecuário Avançado — Agrotóxico Proibido IBAMA ANVISA MAPA Multa Indenização",
+      "utensils",
+      "alimentar-agropecuario-avancado/10 Agrotóxico Proibido IBAMA ANVISA MAPA Multa Indenização — modelo 260.docx",
+    ],
+    [
+      "adv-redes-sociais-meta-google-tiktok-01-instagram-facebook-meta-remocao-conteudo-sem-justificativa",
+      "Redes Sociais Meta Google TikTok — Instagram Facebook Meta Remoção Conteúdo Sem Justificativa",
+      "share-2",
+      "redes-sociais-meta-google-tiktok/01 Instagram Facebook Meta Remoção Conteúdo Sem Justificativa — modelo 261.docx",
+    ],
+    [
+      "adv-redes-sociais-meta-google-tiktok-02-bloqueio-conta-instagram-facebook-meta-perfil-empresarial-pessoal",
+      "Redes Sociais Meta Google TikTok — Bloqueio Conta Instagram Facebook Meta Perfil Empresarial Pessoal",
+      "share-2",
+      "redes-sociais-meta-google-tiktok/02 Bloqueio Conta Instagram Facebook Meta Perfil Empresarial Pessoal — modelo 262.docx",
+    ],
+    [
+      "adv-redes-sociais-meta-google-tiktok-03-youtube-google-remocao-video-monetizacao-bloqueada-canal",
+      "Redes Sociais Meta Google TikTok — YouTube Google Remoção Vídeo Monetização Bloqueada Canal",
+      "share-2",
+      "redes-sociais-meta-google-tiktok/03 YouTube Google Remoção Vídeo Monetização Bloqueada Canal — modelo 263.docx",
+    ],
+    [
+      "adv-redes-sociais-meta-google-tiktok-04-tiktok-suspensao-conta-perfil-ao-vivo-live-bloqueio",
+      "Redes Sociais Meta Google TikTok — TikTok Suspensão Conta Perfil Ao Vivo Live Bloqueio",
+      "share-2",
+      "redes-sociais-meta-google-tiktok/04 TikTok Suspensão Conta Perfil Ao Vivo Live Bloqueio — modelo 264.docx",
+    ],
+    [
+      "adv-redes-sociais-meta-google-tiktok-05-google-ads-banimento-conta-anunciante-restricao-publicidade",
+      "Redes Sociais Meta Google TikTok — Google Ads Banimento Conta Anunciante Restrição Publicidade",
+      "share-2",
+      "redes-sociais-meta-google-tiktok/05 Google Ads Banimento Conta Anunciante Restrição Publicidade — modelo 265.docx",
+    ],
+    [
+      "adv-redes-sociais-meta-google-tiktok-06-lgpd-redes-sociais-dados-pessoais-conta-meta-google-tiktok",
+      "Redes Sociais Meta Google TikTok — LGPD Redes Sociais Dados Pessoais Conta Meta Google TikTok",
+      "share-2",
+      "redes-sociais-meta-google-tiktok/06 LGPD Redes Sociais Dados Pessoais Conta Meta Google TikTok — modelo 266.docx",
+    ],
+    [
+      "adv-redes-sociais-meta-google-tiktok-07-golpe-whatsapp-pix-clone-grupo-familia-indenizacao-banco",
+      "Redes Sociais Meta Google TikTok — Golpe WhatsApp PIX Clone Grupo Família Indenização Banco",
+      "share-2",
+      "redes-sociais-meta-google-tiktok/07 Golpe WhatsApp PIX Clone Grupo Família Indenização Banco — modelo 267.docx",
+    ],
+    [
+      "adv-redes-sociais-meta-google-tiktok-08-fake-news-instagram-facebook-whatsapp-telegram-indenizacao-honra",
+      "Redes Sociais Meta Google TikTok — Fake News Instagram Facebook WhatsApp Telegram Indenização Honra",
+      "share-2",
+      "redes-sociais-meta-google-tiktok/08 Fake News Instagram Facebook WhatsApp Telegram Indenização Honra — modelo 268.docx",
+    ],
+    [
+      "adv-redes-sociais-meta-google-tiktok-09-direito-a-desconexao-trabalho-whatsapp-empresa-horario-extra",
+      "Redes Sociais Meta Google TikTok — Direito a Desconexão Trabalho WhatsApp Empresa Horário Extra",
+      "share-2",
+      "redes-sociais-meta-google-tiktok/09 Direito a Desconexão Trabalho WhatsApp Empresa Horário Extra — modelo 269.docx",
+    ],
+    [
+      "adv-redes-sociais-meta-google-tiktok-10-indenizacao-honra-calunia-difamacao-internet-redes-sociais",
+      "Redes Sociais Meta Google TikTok — Indenização Honra Calúnia Difamação Internet Redes Sociais",
+      "share-2",
+      "redes-sociais-meta-google-tiktok/10 Indenização Honra Calúnia Difamação Internet Redes Sociais — modelo 270.docx",
+    ],
+    [
+      "adv-energia-aneel-gas-01-concessionaria-energia-eletrica-neoen-cemig-enel-cemig-falta-energia",
+      "Energia ANEEL e Gás Natural — Concessionária Energia Elétrica Neoenerg Cemig Enel Falta Energia",
+      "zap",
+      "energia-aneel-gas/01 Concessionária Energia Elétrica Neoenerg Cemig Enel Falta Energia — modelo 271.docx",
+    ],
+    [
+      "adv-energia-aneel-gas-02-bandeira-tarifaria-aneel-energia-escassez-hidreletrica-conta-luz",
+      "Energia ANEEL e Gás Natural — Bandeira Tarifária ANEEL Energia Escassez Hidrelétrica Conta Luz",
+      "zap",
+      "energia-aneel-gas/02 Bandeira Tarifária ANEEL Energia Escassez Hidrelétrica Conta Luz — modelo 272.docx",
+    ],
+    [
+      "adv-energia-aneel-gas-03-falta-energia-bairro-cidade-tempestade-indenizacao-eletrodomestico",
+      "Energia ANEEL e Gás Natural — Falta Energia Bairro Cidade Tempestade Indenização Eletrodoméstico",
+      "zap",
+      "energia-aneel-gas/03 Falta Energia Bairro Cidade Tempestade Indenização Eletrodoméstico — modelo 273.docx",
+    ],
+    [
+      "adv-energia-aneel-gas-04-conta-luz-abusiva-energia-eletrica-leitura-medidor-errado-aneel",
+      "Energia ANEEL e Gás Natural — Conta Luz Abusiva Energia Elétrica Leitura Medidor Errado ANEEL",
+      "zap",
+      "energia-aneel-gas/04 Conta Luz Abusiva Energia Elétrica Leitura Medidor Errado ANEEL — modelo 274.docx",
+    ],
+    [
+      "adv-energia-aneel-gas-05-religacao-atrasada-energia-eletrica-concessionaria-indenizacao",
+      "Energia ANEEL e Gás Natural — Religacao Atrasada Energia Elétrica Concessionária Indenização",
+      "zap",
+      "energia-aneel-gas/05 Religacao Atrasada Energia Elétrica Concessionária Indenização — modelo 275.docx",
+    ],
+    [
+      "adv-energia-aneel-gas-06-gas-natural-encanado-comgas-sabesp-tarifa-abusiva-conta",
+      "Energia ANEEL e Gás Natural — Gás Natural Encanado Comgás Sabesp Tarifa Abusiva Conta",
+      "zap",
+      "energia-aneel-gas/06 Gás Natural Encanado Comgás Sabesp Tarifa Abusiva Conta — modelo 276.docx",
+    ],
+    [
+      "adv-energia-aneel-gas-07-aneel-concessionaria-energia-eletrica-multa-indenizacao-qualidade",
+      "Energia ANEEL e Gás Natural — ANEEL Concessionária Energia Elétrica Multa Indenização Qualidade",
+      "zap",
+      "energia-aneel-gas/07 ANEEL Concessionária Energia Elétrica Multa Indenização Qualidade — modelo 277.docx",
+    ],
+    [
+      "adv-energia-aneel-gas-08-geracao-distribuida-energia-solar-placa-fotovoltaica-reembolso",
+      "Energia ANEEL e Gás Natural — Geração Distribuída Energia Solar Placa Fotovoltaica Reembolso",
+      "zap",
+      "energia-aneel-gas/08 Geração Distribuída Energia Solar Placa Fotovoltaica Reembolso — modelo 278.docx",
+    ],
+    [
+      "adv-energia-aneel-gas-09-microgeracao-energia-solar-residencial-comercial-aneel-conta",
+      "Energia ANEEL e Gás Natural — Microgeração Energia Solar Residencial Comercial ANEEL Conta",
+      "zap",
+      "energia-aneel-gas/09 Microgeração Energia Solar Residencial Comercial ANEEL Conta — modelo 279.docx",
+    ],
+    [
+      "adv-energia-aneel-gas-10-conta-luz-residencial-social-tarifa-social-energia-eletrica",
+      "Energia ANEEL e Gás Natural — Conta Luz Residencial Social Tarifa Social Energia Elétrica",
+      "zap",
+      "energia-aneel-gas/10 Conta Luz Residencial Social Tarifa Social Energia Elétrica — modelo 280.docx",
+    ],
+    [
+      "adv-logistica-transporte-cargas-01-transportadora-rodoviaria-carga-perdida-trevo-rodo-trans-jadlog",
+      "Logística e Transporte de Cargas — Transportadora Rodoviária Carga Perdida Trevo Rodo Trans Jadlog",
+      "truck",
+      "logistica-transporte-cargas/01 Transportadora Rodoviária Carga Perdida Trevo Rodo Trans Jadlog — modelo 281.docx",
+    ],
+    [
+      "adv-logistica-transporte-cargas-02-frete-transportadora-caminhao-carreta-sinistro-acidente-carga",
+      "Logística e Transporte de Cargas — Frete Transportadora Caminhão Carreta Sinistro Acidente Carga",
+      "truck",
+      "logistica-transporte-cargas/02 Frete Transportadora Caminhão Carreta Sinistro Acidente Carga — modelo 282.docx",
+    ],
+    [
+      "adv-logistica-transporte-cargas-03-seguro-transporte-carga-transportadora-rodoviaria-indenizacao",
+      "Logística e Transporte de Cargas — Seguro Transporte Carga Transportadora Rodoviária Indenização",
+      "truck",
+      "logistica-transporte-cargas/03 Seguro Transporte Carga Transportadora Rodoviária Indenização — modelo 283.docx",
+    ],
+    [
+      "adv-logistica-transporte-cargas-04-caminhoneiro-autonomo-frete-empresa-embarcador-pagamento-frete",
+      "Logística e Transporte de Cargas — Caminhoneiro Autônomo Frete Empresa Embarcador Pagamento Frete",
+      "truck",
+      "logistica-transporte-cargas/04 Caminhoneiro Autônomo Frete Empresa Embarcador Pagamento Frete — modelo 284.docx",
+    ],
+    [
+      "adv-logistica-transporte-cargas-05-embarcador-transportadora-carga-empresa-logistica-pagamento",
+      "Logística e Transporte de Cargas — Embarcador Transportadora Carga Empresa Logística Pagamento",
+      "truck",
+      "logistica-transporte-cargas/05 Embarcador Transportadora Carga Empresa Logística Pagamento — modelo 285.docx",
+    ],
+    [
+      "adv-logistica-transporte-cargas-06-carreta-cavalo-mecanico-carga-peso-excesso-multa-transito",
+      "Logística e Transporte de Cargas — Carreta Cavalo Mecânico Carga Peso Excesso Multa Trânsito",
+      "truck",
+      "logistica-transporte-cargas/06 Carreta Cavalo Mecânico Carga Peso Excesso Multa Trânsito — modelo 286.docx",
+    ],
+    [
+      "adv-logistica-transporte-cargas-07-correios-sedex-pac-jadlog-tnt-express-dhl-pacote-perdido",
+      "Logística e Transporte de Cargas — Correios SEDEX PAC Jadlog TNT Express DHL Pacote Perdido",
+      "truck",
+      "logistica-transporte-cargas/07 Correios SEDEX PAC Jadlog TNT Express DHL Pacote Perdido — modelo 287.docx",
+    ],
+    [
+      "adv-logistica-transporte-cargas-08-logistica-reversa-produto-devolucao-loja-ecommerce-magazine",
+      "Logística e Transporte de Cargas — Logística Reversa Produto Devolução Loja E-commerce Magazine",
+      "truck",
+      "logistica-transporte-cargas/08 Logística Reversa Produto Devolução Loja E-commerce Magazine — modelo 288.docx",
+    ],
+    [
+      "adv-logistica-transporte-cargas-09-transporte-cargas-ecommerce-mercado-livre-shopee-magalu-lojas",
+      "Logística e Transporte de Cargas — Transporte Cargas E-commerce Mercado Livre Shopee Magalu Lojas",
+      "truck",
+      "logistica-transporte-cargas/09 Transporte Cargas E-commerce Mercado Livre Shopee Magalu Lojas — modelo 289.docx",
+    ],
+    [
+      "adv-logistica-transporte-cargas-10-abastecimento-caminhao-posto-ipiranga-shell-petrobras-ale",
+      "Logística e Transporte de Cargas — Abastecimento Caminhão Posto Ipiranga Shell Petrobras ALE",
+      "truck",
+      "logistica-transporte-cargas/10 Abastecimento Caminhão Posto Ipiranga Shell Petrobras ALE — modelo 290.docx",
+    ],
+    [
+      "adv-franquias-empreendimento-01-contrato-franquia-franqueado-franqueador-lei-13966-2019",
+      "Franquias e Empreendimentos — Contrato Franquia Franqueado Franqueador Lei 13966/2019",
+      "rocket",
+      "franquias-empreendimento/01 Contrato Franquia Franqueado Franqueador Lei 13966/2019 — modelo 291.docx",
+    ],
+    [
+      "adv-franquias-empreendimento-02-royalties-mensal-franquia-alimenticia-educacional-saude-pagamento",
+      "Franquias e Empreendimentos — Royalties Mensal Franquia Alimentícia Educacional Saúde Pagamento",
+      "rocket",
+      "franquias-empreendimento/02 Royalties Mensal Franquia Alimentícia Educacional Saúde Pagamento — modelo 292.docx",
+    ],
+    [
+      "adv-franquias-empreendimento-03-taxa-franquia-inicial-franqueado-empreendimento-marca-franquia",
+      "Franquias e Empreendimentos — Taxa Franquia Inicial Franqueado Empreendimento Marca Franquia",
+      "rocket",
+      "franquias-empreendimento/03 Taxa Franquia Inicial Franqueado Empreendimento Marca Franquia — modelo 293.docx",
+    ],
+    [
+      "adv-franquias-empreendimento-04-negocio-proprio-franquia-cama-chape-coco-bom-bom-mcdonalds",
+      "Franquias e Empreendimentos — Negócio Próprio Franquia Cama Chape Coco Bom Bom McDonald's",
+      "rocket",
+      "franquias-empreendimento/04 Negócio Próprio Franquia Cama Chape Coco Bom Bom McDonald's — modelo 294.docx",
+    ],
+    [
+      "adv-franquias-empreendimento-05-franquia-alimenticia-hamburgueria-pizza-sorvete-pao-queijo",
+      "Franquias e Empreendimentos — Franquia Alimentícia Hamburgueria Pizza Sorvete Pão Queijo",
+      "rocket",
+      "franquias-empreendimento/05 Franquia Alimentícia Hamburgueria Pizza Sorvete Pão Queijo — modelo 295.docx",
+    ],
+    [
+      "adv-franquias-empreendimento-06-franquia-educacional-curso-idioma-graduacao-pos-senac-senai",
+      "Franquias e Empreendimentos — Franquia Educacional Curso Idioma Graduação Pós Senac Senai",
+      "rocket",
+      "franquias-empreendimento/06 Franquia Educacional Curso Idioma Graduação Pós Senac Senai — modelo 296.docx",
+    ],
+    [
+      "adv-franquias-empreendimento-07-lei-de-franquias-13-966-2019-contrato-franquia-nulo-vicio",
+      "Franquias e Empreendimentos — Lei de Franquias 13.966/2019 Contrato Franquia Nulo Vício",
+      "rocket",
+      "franquias-empreendimento/07 Lei de Franquias 13.966/2019 Contrato Franquia Nulo Vício — modelo 297.docx",
+    ],
+    [
+      "adv-franquias-empreendimento-08-marca-franquia-registro-inpi-franqueador-franqueado-direito",
+      "Franquias e Empreendimentos — Marca Franquia Registro INPI Franqueador Franqueado Direito",
+      "rocket",
+      "franquias-empreendimento/08 Marca Franquia Registro INPI Franqueador Franqueado Direito — modelo 298.docx",
+    ],
+    [
+      "adv-franquias-empreendimento-09-rescisao-contrato-franquia-franqueado-sair-franquia-indenizacao",
+      "Franquias e Empreendimentos — Rescisão Contrato Franquia Franqueado Sair Franquia Indenização",
+      "rocket",
+      "franquias-empreendimento/09 Rescisão Contrato Franquia Franqueado Sair Franquia Indenização — modelo 299.docx",
+    ],
+    [
+      "adv-franquias-empreendimento-10-franquia-servicos-limpeza-beleza-estetica-saude-transporte",
+      "Franquias e Empreendimentos — Franquia Serviços Limpeza Beleza Estética Saúde Transporte",
+      "rocket",
+      "franquias-empreendimento/10 Franquia Serviços Limpeza Beleza Estética Saúde Transporte — modelo 300.docx",
+    ],
+  ];
   if (typeof window !== "undefined") {
-    window.DocJurAdvCatalog3 = CAT;
+    /** @type {any} */ (window).DocJurAdvCatalog3 = CAT;
   }
 })();
